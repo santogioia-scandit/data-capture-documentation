@@ -1,14 +1,51 @@
-# Website
+<p align="center">
+  <a href="https://www.scandit.com/">
+    <img src="static/img/logo.png" width="314px" alt="Scandit logo" />
+  </a>
+</p>
+<h3 align="center">Data Capture. Smarter.</h3>
+<p align="center">Empower frontline workers and innovate customer experiences with Scandit Smart Data Capture. The flexible, modern way to capture barcodes, text, objects and IDs.</p>
+<br />
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+## Documentation website
 
-### Installation
+The main official Scandit documentation website is hosted at [docs.scandit.com](https://docs.scandit.com).
+
+## Contribution requirements
+
+The following are required if you are submitting pull requests to the documentation:
+
+- NodeJS >=18.x.x
+- NPM >= 6.x
+- Yarn >= 1.22.x
+
+## Issues
+
+Submitting issues help to improve the documentation. If you find incorrect screenshot(s), instructions, or code examples, or if you discover UX/UI bugs on the website, please report them here.
+
+## Requests
+
+Requests for new documentation are highly encouraged. This is not limited to new additions but also changes or more information requested on existing documentation.
+
+These requests will be checked by the Scandit Documentation team then transferred to another internal tool outside GitHub for prioritization and subsequent actions.
+
+## Releases
+
+Thanks to a continuous integration/continuous delivery workflow, the Scandit documentation can be updated up to several times a day.
+
+## License
+
+See the [LICENSE](./LICENSE) file for licensing information.
+
+## Local Development
+
+Install all dependencies:
 
 ```
 $ yarn
 ```
 
-### Local Development
+Start the development server:
 
 ```
 $ yarn start
@@ -16,26 +53,4 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
 
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
