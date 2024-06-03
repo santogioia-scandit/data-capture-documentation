@@ -1,8 +1,7 @@
-<p align="center">
-  <a href="https://www.scandit.com/">
-    <img src="static/img/logo.png" width="314px" alt="Scandit logo" />
-  </a>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="static/img/logo.png">
+  <img alt="Scandit logo" src="static/img/logo-dark.png">
+</picture>
 <h3 align="center">Data Capture. Smarter.</h3>
 <p align="center">Empower frontline workers and innovate customer experiences with Scandit Smart Data Capture. The flexible, modern way to capture barcodes, text, objects and IDs.</p>
 <br />
