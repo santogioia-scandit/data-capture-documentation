@@ -1,0 +1,89 @@
+#__docusaurus {
+  .theme-admonition {
+    display: flex;
+    gap: 14px;
+
+    &.theme-admonition-important span svg path {
+      fill: var(--light-yellow-100);
+    }
+
+    &.theme-admonition-note span svg path {
+      fill: var(--dark-blue-40);
+    }
+
+    &.theme-admonition-tip span svg path {
+      fill: var(--light-green-80);
+    }
+
+    &.theme-admonition-note {
+      border: 1px solid var(--light-gray-60);
+
+      html[data-theme="dark"] & {
+        border-color: var(--dark-blue-70);
+        background-color: var(--dark-blue-90);
+      }
+    }
+
+    &.theme-admonition-tip {
+      border: 1px solid var(--light-green-60);
+      background-color: var(--light-green-40);
+      color: var(--light-green-100);
+
+      html[data-theme="dark"] & {
+        border-color: var(--dark-green-80);
+        background-color: var(--dark-green-100);
+        color: var(--dark-green-60);
+      }
+    }
+
+    &.theme-admonition-important,
+    &.theme-admonition-warning {
+      border: 1px solid var(--light-yellow-80);
+      border-radius: 10px;
+      padding: 17px 20px;
+      background: var(--light-yellow-40);
+      display: flex;
+      align-items: baseline;
+      box-shadow: none;
+
+      & code {
+        background-color: var(--light-yellow-60);
+        color: var(--light-yellow-120);
+
+        html[data-theme="dark"] & {
+          background: var(--dark-brown-100);
+          border-color: var(--dark-brown-60);
+        }
+      }
+
+      html[data-theme="dark"] & {
+        border-color: var(--dark-brown-60);
+        background: var(--dark-brown-80);
+        color: var(--dark-brown-40);
+      }
+    }
+
+    & [class^="admonitionHeading_"] {
+      height: 100%;
+      margin: 0;
+      font-size: 0;
+
+      & span {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #__docusaurus {
+    .theme-admonition {
+      &.theme-admonition-important,
+      &.theme-admonition-warning {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}

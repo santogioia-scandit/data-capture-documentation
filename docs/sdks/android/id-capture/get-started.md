@@ -1,0 +1,188 @@
+---
+sidebar_position: 2
+---
+
+# Get Started
+
+This page desribes the steps to add ID Capture to your application.
+
+:::note
+Using ID Capture at the same time as other modes (e.g. Barcode Capture or Text Capture) is not supported.
+:::
+
+The general steps are:
+
+- Create a new Data Capture Context instance
+- Access a Camera
+- Configure the Capture Settings
+- Implement a Listener to Receive Scan Results
+- Set-up the Capture View and Overlay
+- Start the Capture Process
+
+## Prerequisites
+
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out this [guide](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html).
+
+:::note
+You can retrieve your Scandit Data Capture SDK license key, by signing in to your account at [ssl.scandit.com/dashboard/sign-in](https://ssl.scandit.com/dashboard/sign-in?_gl=1*hur6tm*_ga*NzIzNjQ1MTc0LjE3MDI2NTI4MTg.*_ga_TXJZRPJJ0T*MTcwNTgxMDk0My4xMS4xLjE3MDU4MzUwMzEuNDguMC4w).
+:::
+
+### External Dependencies
+
+The Scandit Data Capture SDK modules depend on a few standard libraries that you can find listed below. If you are including the Scandit Data Capture SDK through **Gradle** or **Maven**, all of these dependencies are automatically pulled in and there is no need for you to do anything further. On the other hand, if you directly add the AAR files to the project, you need to add these dependencies yourself.
+
+| Module      | Dependencies |
+| ----------- | ----------- |
+| *ScanditCaptureCore.aar*      | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]; com.squareup.okhttp3:okhttp:4.9.2       |
+| *ScanditBarcodeCapture.aar*   | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]        |
+| *ScanditParser.aar*      | No dependencies       |
+| *ScanditTextCapture.aar*   | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]        |
+| *ScanditIdCapture.aar*      | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]       |
+------------------
+
+### Internal Dependencies
+
+Some of the Scandit Data Capture SDK modules depend on others to work:
+
+| Module      | Dependencies |
+| ----------- | ----------- |
+| *ScanditCaptureCore*      | No dependencies       |
+| *ScanditBarcodeCapture*   | *ScanditCaptureCore*        |
+| *ScanditParser*      | No dependencies       |
+| *ScanditTextCapture*   | *ScanditCaptureCore*; *ScanditTextCaptureBackend*        |
+| *ScanditIdCapture*      | *ScanditCaptureCore*; *ScanditIdCaptureBackend (VIZ documents)*       |
+| *ScanditIdCaptureBackend*      | No dependencies       |
+| *ScanditTextCaptureBackend*   | No dependencies        |
+------------------
+
+:::note
+Note that your license may support only a subset of ID Capture features. If you need to use additional features, [contact us](mailto:support@scandit.com).
+:::
+
+### Show Loading Status with Default UI
+
+To show some feedback to the user about the loading status, you have two options:
+
+- Use the default UI provided with the SDK
+- Subscribe to the loading status and update your own custom UI.
+
+### Show Loading Status with Custom UI
+
+In this case, you can subscribe for the [loading status](https://docs.scandit.com/data-capture-sdk/android/core/api/web/loading-status.html) of the library by simply attaching a listener like this:
+
+:::note
+It is recommended to serve the library files with appropriate headers *Content-Length* and *Content-Encoding* if any compression is present. In case of totally missing information, you may want to show an estimated progress.
+:::
+
+## Create a Data Capture Context
+
+The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
+
+```java
+DataCaptureContext dataCaptureContext = DataCaptureContext.forLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
+```
+
+## Access a Camera
+
+Next, you need to create a new instance of the [Camera] class to indicate the camera to stream previews and to capture images. The camera settings are also configured, in this case, we use the `recommendedCameraSettings` that come withe ID Capture SDK.
+
+```java
+camera = Camera.getDefaultCamera(IdCapture.createRecommendedCameraSettings());
+
+if (camera == null) {
+    throw new IllegalStateException("Failed to init camera!");
+}
+
+dataCaptureContext.setFrameSource(camera);
+```
+
+## Configure the Capture Settings
+
+Use [IdCaptureSettings] to configure the types of documents you need to scan. Check [IdDocumentType] for all the available options.
+
+:::warning
+Use IdDocumentType.DL_VIZ or IdDocumentType.ID_CARD_VIZ for configuration together with any MRZ document (IdDocumentType.ID_CARD_MRZ, IdDocumentType.VISA_MRZ, IdDocumentType.PASSPORT_MRZ, IdDocumentType.SWISS_DL_MRZ) while [SupportedSides.FRONT_AND_BACK is enabled] **is not** supported.
+:::
+
+```java
+IdCaptureSettings settings = new IdCaptureSettings();
+settings.setSupportedDocuments(
+        IdDocumentType.ID_CARD_VIZ,
+        IdDocumentType.DL_VIZ,
+        IdDocumentType.AAMVA_BARCODE
+);
+```
+
+## Implement a Listener
+
+To receive scan results, implement [IdCaptureListener].
+
+A result is delivered as an [CapturedId]. This class contains data common for all kinds of personal identification documents. For more specific information, use its non-null result properties (for example [CapturedId.aamvaBarcode]).
+
+```java
+class MyListener implements IdCaptureListener {
+    @Override
+    public void onIdCaptured(
+            @NotNull IdCapture mode,
+            @NotNull IdCaptureSession session,
+            @NotNull FrameData data
+    ) {
+        CapturedId capturedId = session.getNewlyCapturedId();
+
+        // The recognized fields of the captured Id can vary based on the type.
+        if (capturedId.getMrz() != null) {
+            // Handle the information extracted.
+        } else if (capturedId.getViz() != null) {
+            // Handle the information extracted.
+        } else if (capturedId.getAamvaBarcode() != null) {
+            // Handle the information extracted.
+        } else if (capturedId.getUsUniformedServicesBarcode() != null) {
+            // Handle the information extracted.
+        }
+    }
+
+    @Override
+    public void onErrorEncountered(
+            @NotNull IdCapture mode,
+            @NotNull Throwable error,
+            @NotNull IdCaptureSession session,
+            @NotNull FrameData data
+    ) {
+      // Handle the error
+    }
+}
+```
+
+Create a new ID Capture mode with the chosen settings. Then register the listener:
+
+```java
+idCapture = IdCapture.forDataCaptureContext(dataCaptureContext, settings);
+idCapture.addListener(this);
+```
+
+## Set up Capture View and Overlay
+
+When using the built-in camera as frame source, you may typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process.
+
+To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/android/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
+
+```java
+DataCaptureView dataCaptureView = DataCaptureView.newInstance(this, dataCaptureContext);
+setContentView(dataCaptureView);
+```
+
+Then, add an instance of [IdCaptureOverlay](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/ui/id-capture-overlay.html#class-scandit.datacapture.id.ui.IdCaptureOverlay) to the view:
+
+```java
+IdCaptureOverlay overlay = IdCaptureOverlay.newInstance(idCapture, dataCaptureView);
+```
+
+The overlay chooses the displayed UI automatically, based on the selected [IdCaptureSettings]. If you prefer to show a different UI or to temporarily hide it, set the appropriate [IdCaptureOverlay.idLayout].
+
+## Start the Capture Process
+
+Finally, turn on the camera to start scanning:
+
+```java
+camera.switchToDesiredState(FrameSourceState.ON);
+```

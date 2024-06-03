@@ -1,0 +1,141 @@
+---
+sidebar_position: 2
+---
+
+# Get Started
+
+In this guide you will learn step-by-step how to add SparkScan to your application by:
+
+- Create a new Data Capture Context instance.
+- Configure the Spark Scan Mode.
+- Create the SparkScanView with the desired settings and bind it to the application’s lifecycle.
+- Register the listener to be informed when new barcodes are scanned and update your data whenever this event occurs.
+
+## 1. Create a New Data Capture Context Instance
+
+The first step to add capture capabilities to your application is to create a new [Data Capture Context](core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
+
+```c#
+DataCaptureContext dataCaptureContext = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE--");
+```
+
+## 2. Configure the SparkScan Mode
+
+The SparkScan Mode is configured through SparkScanSettings and allows you to register one or more listeners that are informed whenever a new barcode is scanned.
+
+For this tutorial, we will set up SparkScan for scanning EAN13 codes. Change this to the correct symbologies for your use case (for example, Code 128, Code 39…).
+
+```c#
+SparkScanSettings settings = new SparkScanSettings();
+HashSet<Symbology> symbologies = new HashSet<Symbology>()
+{
+Symbology.Ean13Upca
+};
+settings.EnableSymbologies(symbologies);
+```
+
+Next, create a SparkScan instance with the settings initialized in the previous step:
+
+```c#
+SparkScan sparkScan = new SparkScan(settings);
+```
+
+## 3. Setup the Spark Scan View
+
+The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
+
+The SparkScanView appearance can be customized through SparkScanViewSettings.
+
+```c#
+SparkScanViewSettings viewSettings = new SparkScanViewSettings();
+// setup the desired appearance settings by updating the fields in the object above
+```
+
+By adding a SparkScanView, the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
+
+Add a SparkScanView to your view hierarchy:
+
+Construct a new SparkScan view. The SparkScan view is automatically added to the provided parentView (preferably an instance of [SparkScanCoordinatorLayout](barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanCoordinatorLayout)):
+
+```c#
+SparkScanView sparkScanView = SparkScanView.Create(parentView, dataCaptureContext, sparkScan, viewSettings);
+```
+
+Additionally, make sure to call sparkScanView.onPause() and sparkScanView.onResume() in your Fragment/Activity onPause and onResume callbacks. You have to call these for the correct functioning of the SparkScanView.
+
+```c#
+protected override void OnPause()
+{
+sparkScanView.OnPause();
+base.OnPause();
+}
+
+protected override void OnResume()
+{
+sparkScanView.OnResume();
+base.OnResume();
+}
+```
+
+## 4. Register the Listener to Be Informed When a New Barcode Is Scanned
+
+To keep track of the barcodes that have been scanned, implement the [ISparkScanListener](barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
+
+```c#
+// Register self as a listener to monitor the spark scan session.
+sparkScan.AddListener(this);
+```
+
+[ISparkScanListener.OnBarcodeScanned()](barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [SparkScanSession.NewlyRecognizedBarcodes](barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes). Please note that this list only contains one barcode entry.
+
+```c#
+public void OnBarcodeScanned(SparkScan sparkScan, SparkScanSession session, IFrameData? data)
+{
+if (session.NewlyRecognizedBarcodes.Count == 0)
+{
+return;
+}
+
+// Gather the recognized barcode
+Barcode barcode = session.NewlyRecognizedBarcodes[0];
+
+// This method is invoked from a recognition internal thread.
+// Run the specified action in the UI thread to update the internal barcode list.
+RunOnUiThread(() =>
+{
+// Update the internal list and the UI with the barcode retrieved above
+this.latestBarcode = barcode;
+});
+}
+```
+
+Alternatively to register [ISparkScanListener](barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface it is possible to subscribe to corresponding events. For example:
+
+```c#
+sparkScan.BarcodeScanned += (object sender, SparkScanEventArgs args) =>
+{
+if (args.Session.NewlyRecognizedBarcodes.Count == 0)
+{
+return;
+}
+
+// Gather the recognized barcode
+Barcode barcode = args.Session.NewlyRecognizedBarcodes[0];
+
+// This method is invoked from a recognition internal thread.
+// Run the specified action in the UI thread to update the internal barcode list.
+RunOnUiThread(() =>
+{
+// Update the internal list and the UI with the barcode retrieved above
+this.latestBarcode = barcode;
+
+// Emit sound and vibration feedback
+this.sparkScanView.EmitFeedback(new SparkScanViewSuccessFeedback());
+});
+}
+```
+
+## 5. Scan Some Barcodes
+
+Now that you’re up and running, go find some barcodes to scan. Don’t feel like getting up from your desk? Here’s a [handy pdf of barcodes](https://github.com/Scandit/.github/blob/main/images/PrintTheseBarcodes.pdf)
+you can print out.

@@ -1,0 +1,63 @@
+#__docusaurus {
+  & [class*="markdown"] [class*="language"][class*="codeBlockContainer_"] {
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+    background: none;
+
+    & [class*="codeBlockContent_"] pre[style] {
+      border: 1px solid var(--light-blue-80);
+      border-radius: 10px;
+      background: var(--light-blue-60) !important;
+
+      & code {
+        padding: 20px;
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 135%;
+        color: #065db8;
+
+        & .token.keyword {
+          font-style: normal !important;
+          color: #065db8 !important;
+        }
+
+        & .token-line {
+          & .token.keyword {
+            color: #065db8 !important;
+          }
+
+          & .token.plain,
+          & .token.operator,
+          & .token.class-name,
+          & .token.punctuation {
+            color: var(--light-black) !important;
+          }
+
+          & .token.function {
+            color: var(--code-orange) !important;
+          }
+
+          & .token.boolean,
+          & .token.number {
+            color: var(--code-blue) !important;
+          }
+
+          & .token.string-literal.string {
+            color: var(--code-red) !important;
+          }
+
+          & .token.comment {
+            color: var(--light-gray-80);
+          }
+        }
+      }
+
+      html[data-theme="dark"] & {
+        background: var(--dark-blue-100) !important;
+        border-color: var(--dark-blue-70);
+      }
+    }
+  }
+}

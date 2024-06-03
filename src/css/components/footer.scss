@@ -1,0 +1,21 @@
+#__docusaurus {
+  .footer.footer--dark {
+    padding: 20px 0;
+    background: var(--gradient-card);
+    --ifm-footer-link-color: var(--light-black);
+    --ifm-footer-title-color: var(--light-black);
+
+    & .footer__item .footer__link-item:hover {
+      color: var(--light-blue-100);
+    }
+
+    & .footer__copyright {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      text-align: center;
+      color: var(--light-black);
+    }
+  }
+}

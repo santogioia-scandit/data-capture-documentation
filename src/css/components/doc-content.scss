@@ -1,0 +1,117 @@
+#__docusaurus {
+  [class^="docMainContainer_"] {
+    & .container {
+      padding-top: 48px !important;
+      padding-left: 24px;
+
+      & .row {
+        flex-wrap: nowrap;
+      }
+
+      & .col--3 {
+        padding-left: 24px;
+      }
+    }
+
+    & .col--3 {
+      padding: 0;
+      --ifm-col-width: calc(3 / 13.628 * 100%);
+    }
+
+    & article .theme-edit-this-page {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: var(--light-black);
+      border: 1px solid var(--light-gray-60);
+      border-radius: 100px;
+      padding: 8px 12px 8px 8px;
+      background: var(--light-white);
+      display: inline-flex;
+      align-items: flex-start;
+
+      html[data-theme="dark"] & {
+        border-color: var(--dark-blue-70);
+        background-color: transparent;
+      }
+    }
+
+    & .pagination-nav {
+      & .pagination-nav__link {
+        padding: 16px 20px;
+        border-color: var(--light-gray-60);
+        border-radius: 10px;
+
+        html[data-theme="dark"] & {
+          border-color: var(--dark-blue-70);
+        }
+
+        &:hover {
+          border-color: var(--light-blue-100);
+
+          html[data-theme="dark"] & {
+            border-color: var(--dark-blue-accent);
+          }
+        }
+
+        & .pagination-nav__sublabel {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 167%;
+          color: var(--light-gray-80);
+          margin-bottom: 8px;
+
+          html[data-theme="dark"] & {
+            color: var(--dark-blue-50);
+          }
+        }
+
+        & .pagination-nav__label {
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 16px;
+          color: var(--light-blue-100);
+
+          html[data-theme="dark"] & {
+            color: var(--dark-blue-accent);
+          }
+
+          &::before {
+            display: none;
+          }
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 997px) {
+  #__docusaurus [class^="docMainContainer_"] {
+    & .container .row > div:first-of-type {
+      max-width: 76% !important;
+    }
+  }
+  
+  [class*="docsWrapper_"] {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  #__docusaurus [class*="docMainContainer"] {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #__docusaurus [class*="col--3"] {
+   display: none;
+  }
+}

@@ -1,0 +1,165 @@
+---
+sidebar_position: 2
+---
+
+# Get Started
+
+In this guide you will learn step-by-step how to add MatrixScan to your application.
+
+The general steps are:
+
+- Creating a new Data Capture Context instance
+- Configuring the MatrixScan mode
+- Using the built-in camera
+- Visualizing the scan process
+- Providing feedback
+- Disabling barcode tracking
+
+## Create a Data Capture Context
+
+The first step to add capture capabilities to your application is to create a new [data capture context](core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
+
+```c#
+DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
+```
+
+## Configure the Barcode Tracking Mode
+
+The main entry point for the Barcode Tracking Mode is the [BarcodeTracking](barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) object. It is configured through [BarcodeTrackingSettings](barcode-capture/api/barcode-tracking-settings.html#class-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings) and allows to register one or more [listeners](barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener) that will get informed whenever a new frame has been processed.
+
+Most of the times, you will not need to implement a [IBarcodeTrackingListener](barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener), instead you will add a [BarcodeTrackingBasicOverlay](barcode-capture/api/ui/barcode-tracking-basic-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay) and implement a [IBarcodeTrackingBasicOverlayListener](barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener).
+
+For this tutorial, we will setup Barcode Tracking for tracking QR codes.
+
+```c#
+BarcodeTrackingSettings settings = BarcodeTrackingSettings.Create();
+settings.EnableSymbology(Symbology.Qr, true);
+```
+
+:::note
+If your scenario is similar to one described in [Barcode Tracking Scenarios](barcode-capture/barcode-tracking-scenarios.html), then you should consider using [BarcodeTrackingSettings.Create()](barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
+:::
+
+Next, create a [BarcodeTracking](barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance with the data capture context and the settings initialized in the previous steps:
+
+```c#
+BarcodeTracking barcodeTracking = BarcodeTracking.Create(context, settings);
+```
+
+## Use the Built-in Camera
+
+The data capture context supports using different frame sources to perform recognition on. Most applications will use the built-in camera of the device, e.g. the world-facing camera of a device. The remainder of this tutorial will assume that you use the built-in camera.
+
+:::important
+In iOS, the user must explicitly grant permission for each app to access cameras. Your app needs to provide static messages to display to the user when the system asks for camera permission. To do that include the [NSCameraUsageDescription](https://learn.microsoft.com/en-us/xamarin/ios/app-fundamentals/security-privacy?tabs=macos#:~:text=NSCameraUsageDescription)
+key in your app’s Info.plist file.
+:::
+
+When using the built-in camera there are recommended settings for each capture mode. These should be used to achieve the best performance and user experience for the respective mode. The following couple of lines show how to get the recommended settings and create the camera from it:
+
+```c#
+camera = Camera.GetDefaultCamera();
+camera?.ApplySettingsAsync(BarcodeTracking.RecommendedCameraSettings);
+```
+
+Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.SetFrameSourceAsync()](core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
+
+```c#
+context.SetFrameSourceAsync(camera);
+```
+
+The camera is off by default and must be turned on. This is done by calling [IFrameSource.SwitchToDesiredState()](core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.On](core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
+
+```c#
+camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
+```
+
+There is a separate guide for [more advanced camera functionality](advanced-topics.html).
+
+## Use a Capture View to Visualize the Scan Process
+
+When using the built-in camera as frame source, you will typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
+
+```c#
+DataCaptureView dataCaptureView = DataCaptureView.Create(dataCaptureContext, View.Bounds);
+View.AddSubview(dataCaptureView);
+```
+
+To visualize the results of Barcode Tracking, first you need to add the following [overlay](barcode-capture/api/ui/barcode-tracking-basic-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay):
+
+```c#
+BarcodeTrackingBasicOverlay overlay = BarcodeTrackingBasicOverlay.Create(barcodeTracking, dataCaptureView);
+```
+
+Once the overlay has been added, you should implement the [IBarcodeTrackingBasicOverlayListener](barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener) interface. The method [IBarcodeTrackingBasicOverlayListener.BrushForTrackedBarcode()](barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener.BrushForTrackedBarcode) is invoked every time a new tracked barcode appears and it can be used to set a [brush](core/api/ui/brush.html#class-scandit.datacapture.core.ui.Brush) that will be used to highlight that specific barcode in the [overlay](barcode-capture/api/ui/barcode-tracking-basic-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay).
+
+```c#
+public Brush BrushForTrackedBarcode(BarcodeTrackingBasicOverlay overlay, TrackedBarcode trackedBarcode)
+{
+// Return a custom Brush based on the tracked barcode.
+}
+```
+
+If you would like to make the highlights tappable, you need to implement the [IBarcodeTrackingBasicOverlayListener.OnTrackedBarcodeTapped()](barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener.OnTrackedBarcodeTapped) method.
+
+```c#
+public void OnTrackedBarcodeTapped(BarcodeTrackingBasicOverlay overlay, TrackedBarcode trackedBarcode)
+{
+// A tracked barcode was tapped.
+}
+```
+
+## Get Barcode Tracking Feedback
+
+Barcode Tracking, unlike Barcode Capture, doesn’t emit feedback (sound or vibration) when a new barcode is recognized. However, you may implement a [IBarcodeTrackingListener](barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener) to provide a similar experience. Below, we use the default [Feedback](core/api/feedback.html#class-scandit.datacapture.core.Feedback), but you may configure it
+with your own sound or vibration if you want.
+
+```c#
+public override void ViewDidLoad()
+{
+base.ViewDidLoad();
+feedback = Feedback.DefaultFeedback;
+}
+```
+
+Next, use this [feedback](core/api/feedback.html#class-scandit.datacapture.core.Feedback) in a [IBarcodeTrackingListener](barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener):
+
+```c#
+public class FeedbackListener : Foundation.NSObject, IBarcodeTrackingListener
+{
+public void OnObservationStarted(BarcodeTracking barcodeTracking)
+{
+// Called when Barcode Tracking is started.
+// We don't use this callback in this guide.
+}
+
+public void OnObservationStopped(BarcodeTracking barcodeTracking)
+{
+// Called when Barcode Tracking is stopped.
+// We don't use this callback in this guide.
+}
+
+public void OnSessionUpdated(BarcodeTracking barcodeTracking, BarcodeTrackingSession session, IFrameData frameData)
+{
+if (session.AddedTrackedBarcodes.Any())
+{
+this.feedback.Emit();
+}
+}
+}
+```
+
+[IBarcodeTrackingListener.OnSessionUpdated()](barcode-capture/api/barcode-tracking-listener.html#method-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener.OnSessionUpdated) is invoked for every processed frame. The [session](barcode-capture/api/barcode-tracking-session.html#class-scandit.datacapture.barcode.tracking.BarcodeTrackingSession) parameter contains information about the currently tracked barcodes, in particular, the newly recognized ones. We check if there are any and if so, we emit the feedback.
+
+As the last step, register the listener responsible for emitting the feedback with the [BarcodeTracking](barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance.
+
+```c#
+barcodeTracking.AddListener(feedbackListener);
+```
+
+## Disabling Barcode Tracking
+
+To disable barcode tracking set [BarcodeTracking.Enabled](barcode-capture/api/barcode-tracking.html#property-scandit.datacapture.barcode.tracking.BarcodeTracking.IsEnabled) to _false_. The effect is immediate: no more frames will be processed _after_ the change. However, if a frame is currently being processed, this frame will be completely processed and deliver any results/callbacks to the registered listeners.
+
+Note that disabling the capture mode does not stop the camera, the camera continues to stream frames until it is turned off or put it in standby calling
+[SwitchToDesiredState](core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [StandBy](core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.Standby).

@@ -1,0 +1,56 @@
+:root {
+  --doc-sidebar-width: 276px !important;
+}
+
+#__docusaurus {
+  .theme-doc-sidebar-container {
+    border: none;
+
+    & .menu {
+      padding-top: 32px;
+    }
+  }
+
+  .theme-doc-sidebar-item-category {
+    margin-top: 12px;
+  }
+
+  .theme-doc-sidebar-item-category-level-1
+    > .menu__list
+    > .menu__list-item:last-of-type {
+    padding-block-end: 40px;
+  }
+
+  .theme-doc-sidebar-menu {
+    & .theme-doc-sidebar-item-link-level-1 {
+      & .menu__link {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--light-black);
+
+        html[data-theme="dark"] &.menu__link--active {
+          background-color: var(--light-blue-60);
+          color: var(--light-blue-100);
+        }
+
+        html[data-theme="dark"] & {
+          color: var(--dark-white);
+        }
+      }
+    }
+
+    & .theme-doc-sidebar-item-category-level-2 {
+      & .menu__link.menu__link--sublist {
+        font-size: 14px;
+        line-height: 1.25;
+        font-weight: 400;
+        color: var(--light-black);
+      }
+    }
+  }
+}
+
+html[data-theme="dark"] .navbar-sidebar {
+  background-color: var(--dark-blue-90);
+}

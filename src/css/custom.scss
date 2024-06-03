@@ -1,0 +1,89 @@
+@use "./fonts";
+@use "./components/navbar";
+@use "./components/nav-dropdown";
+@use "./components/search";
+@use "./components/navbar-sidebar";
+@use "./components/doc-content";
+@use "./components/menu";
+@use "./components/toc";
+@use "./components/code";
+@use "./components/markdown";
+@use "./components/doc-admonition";
+@use "./components/footer";
+@use "./components/cards";
+
+:root {
+  --light-white: #fff;
+  --light-black: #121619;
+  --light-yellow-120: #4d3800;
+  --light-yellow-100: #fbc02c;
+  --light-yellow-80: #eddec0;
+  --light-yellow-60: #ffeecb;
+  --light-yellow-40: #fff8e2;
+  --light-gray-100: #717375;
+  --light-gray-80: #b2c1cd;
+  --light-gray-60: #dae1e7;
+  --light-gray-40: #f4f7f9;
+  --light-blue-120: #141f2e;
+  --light-blue-100: #0a3390;
+  --light-blue-80: #c2cce3;
+  --light-blue-60: #f0f5ff;
+  --light-green-100: #064e3b;
+  --light-green-80: #079669;
+  --light-green-60: #d0eee2;
+  --light-green-40: #f3fafa;
+  --code-blue: #2ec1ce;
+  --code-red: #fb696b;
+  --code-orange: #ff9345;
+  --dark-white: #f0f0f0;
+  --dark-blue-accent: #2385ec;
+  --dark-blue-100: #0f1723;
+  --dark-blue-90: #141f2e;
+  --dark-blue-80: #202c3a;
+  --dark-blue-70: #303d55;
+  --dark-blue-60: #374e6d;
+  --dark-blue-50: #5d728e;
+  --dark-blue-40: #8194ad;
+  --dark-brown-100: #191715;
+  --dark-brown-80: #1e1c19;
+  --dark-brown-60: #282521;
+  --dark-brown-40: #d6c8b4;
+  --dark-green-100: #191f1d;
+  --dark-green-80: #2d3833;
+  --dark-green-60: #90b9ae;
+  --nav-border: #dae1e7;
+  --toc-title: #b2c1cd;
+
+  --ifm-code-background: var(--light-gray-40);
+  --ifm-code-padding-vertical: 4px;
+  --ifm-code-padding-horizontal: 4px;
+  --ifm-alert-border-left-width: 0;
+
+  --gradient-100: linear-gradient(to left, #1074d8, #56e2ef);
+  --gradient-card: linear-gradient(326deg, #c3e1ff 0%, #e0f6f8 100%);
+
+  --btn-radius: 100px;
+
+  --font-family: "Helvetica Neue", sans-serif;
+  --second-family: "Inter", sans-serif;
+  --third-family: "IBM Plex Mono", sans-serif;
+}
+
+html[data-theme="dark"] {
+  --light-black: #f0f0f0;
+  --dark-blue-40: #717375;
+  --light-blue-60: #202c3a;
+  --light-blue-100: #2385ec;
+  --light-yellow-40: #1e1c19;
+  --light-yellow-60: #191715;
+  --light-yellow-80: #282521;
+  --light-yellow-120: #d6c8b4;
+  --light-gray-100: #8194ad;
+
+  --gradient-100: linear-gradient(to left, #013e7c, #03708c);
+  --gradient-card: linear-gradient(326deg, #013e7c 0%, #03708c 100%);
+  --ifm-background-color: #141f2e;
+  --ifm-code-background: var(--dark-blue-80);
+  --nav-border: #303d55;
+  --toc-title: #5d728e;
+}

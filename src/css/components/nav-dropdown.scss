@@ -1,0 +1,24 @@
+#__docusaurus {
+  .dropdown {
+    &__menu {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: var(--light-black);
+
+      html[data-theme="dark"] & {
+        background: var(--dark-blue-80);
+      }
+
+      & li a:hover {
+        background: var(--light-blue-60);
+        color: var(--light-blue-100);
+      }
+
+      html[data-theme="dark"] & li a:hover {
+        background: var(--dark-blue-70);
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+:root {
+  --ifm-menu-link-sublist-icon: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 10L8 6L4 10' stroke='%23121619' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+#__docusaurus {
+  .menu {
+    font-family: var(--font-family);
+
+    &__list {
+      padding-left: 0;
+
+      & .menu__link {
+        padding-left: 24px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--light-gray-100);
+
+        &:hover {
+          color: var(--light-blue-100);
+          background-color: transparent;
+        }
+
+        html[data-theme="dark"] &:hover {
+          color: var(--dark-blue-accent);
+        }
+
+        &.menu__link--active {
+          background-color: var(--light-blue-60);
+          color: var(--light-blue-100);
+        }
+      }
+
+      & .menu__link.menu__link--sublist {
+        padding: 0;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--light-black);
+
+        &::after {
+          padding-right: 4px;
+          margin: 0;
+          background: var(--ifm-menu-link-sublist-icon) 50% /1.2rem 1.2rem;
+          order: -1;
+        }
+
+        &:hover {
+          background-color: transparent;
+          color: var(--light-blue-100);
+        }
+
+        html[data-theme="dark"] &:hover {
+          color: var(--dark-blue-accent);
+        }
+
+        &.menu__link--active {
+          background-color: var(--light-blue-60);
+        }
+
+        html[data-theme="dark"] & {
+          color: var(--dark-white);
+        }
+      }
+    }
+
+    &__list-item-collapsible {
+      &.menu__list-item-collapsible--active {
+        background-color: transparent;
+        color: var(--light-black);
+      }
+
+      & > .menu__caret {
+        padding: 6px 4px;
+        order: -1;
+
+        &::before {
+          content: "";
+          background: var(--ifm-menu-link-sublist-icon) 50% / 1.2rem 1.4rem;
+          filter: var(--ifm-menu-link-sublist-icon-filter);
+          height: 1rem;
+          width: 1rem;
+        }
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+:root {
+  --ifm-heading-font-family: var(--font-family);
+}
+
+#__docusaurus {
+  .theme-doc-markdown.markdown {
+    & h1:first-child {
+      color: var(--light-black);
+      margin-bottom: 16px;
+    }
+
+    & h2.anchor {
+      line-height: 1.25;
+    }
+
+    & h3.anchor {
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    & h4.anchor {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    & h5.anchor {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    & code {
+      html[data-theme="dark"] & {
+        border-color: var(--dark-blue-60);
+      }
+    }
+
+    & > p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 135%;
+      color: var(--light-black);
+      margin-bottom: 0;
+      padding-bottom: 16px;
+
+      & > code {
+        display: inline-block;
+        max-width: 100%;
+        margin-top: 2px;
+      }
+    }
+
+    & > ol li {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 135%;
+      color: var(--light-black);
+    }
+
+    & > ul {
+      margin-bottom: 0;
+      padding: 0;
+      padding-bottom: 16px;
+
+      & li {
+        position: relative;
+        padding-left: 24px;
+        list-style: none;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 135%;
+        color: var(--light-black);
+        margin-top: 12px;
+
+        & code {
+          font-family: var(--third-family);
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 135%;
+          color: var(--light-black);
+
+          border-radius: 5px;
+          padding: 3px 5px;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 10px;
+          left: 0;
+          width: 12px;
+          height: 2px;
+          background: var(--light-blue-120);
+
+          html[data-theme="dark"] & {
+            background: var(--dark-blue-60);
+          }
+        }
+      }
+    }
+  }
+}
