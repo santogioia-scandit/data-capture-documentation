@@ -12,6 +12,35 @@ Symbologies often have different properties, such as symbol count (length of the
 * Color-inverted (bright bars on dark background) decoding for symbologies that support it is disabled and must be explicitly enabled.
 * Optional checksum digits (e.g. for interleaved 2 of 5 codes, or MSI-Plessey codes) are always returned as part of the data.
 
+| Symbology | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checksum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Symbol Count | Supports Color-Inversion | Extensions    |
+|-----------|:-----------|--------------|:------------------------:|---------------|
+| EAN-13<br/>UPC-A  | **Mandatory**: mod10 | **Default**: 12<br/>**Range**: 12 | yes| relaxed_sharp_quiet_zone_check<br/>remove_leading_upca_zero<br/>two_digit_add_on<br/>five_digit_add_on<br/>strict |
+| EAN-8  | **Mandatory**: mod10 | **Default**: 8<br/>**Range**: 8 | yes| relaxed_sharp_quiet_zone_check<br/>two_digit_add_on<br/>five_digit_add_on<br/>strict |
+| UPC-E  | **Mandatory**: mod10 | **Default**: 6<br/>**Range**: 6 | yes| return_as_upca<br/>remove_leading_upca_zero<br/>two_digit_add_on<br/>five_digit_add_on<br/>strict |
+| Two-Digit Add-on  | **Mandatory**: mod10 | **Default**: 2<br/>**Range**: 2 | yes| strict |
+| Five-Digit Add-on  | **Mandatory**: mod10 | **Default**: 5<br/>**Range**: 5 | yes| strict |
+| MSI Plessey  | **Mandatory**: none<br/>**Supported**: mod10, mod11, mod1010, mod1110<br/>**Default**: mod10 | **Default**: 6-32<br/>**Range**: 3-32 | no| strict |
+| Code 128  | **Mandatory**: mod103 | **Default**: 6-40<br/>**Range**: 4-50 | yes| strip_leading_fnc1<br/>strict |
+| Code 11  | **Mandatory**: none<br/>**Supported**: mod11<br/>**Default**: mod11 | **Default**: 7-20<br/>**Range**: 5-34 | no| strict |
+| Code 25  | **Mandatory**: none<br/>**Supported**: mod10 | **Default**: 7-20<br/>**Range**: 3-32 | no| strict |
+| IATA 2 of 5  | **Mandatory**: none<br/>**Supported**: mod1010 | **Default**: 7-20<br/>**Range**: 3-32 | no| strict |
+| Matrix 2 of 5  | **Mandatory**: none<br/>**Supported**: mod10 | **Default**: 7-20<br/>**Range**: 3-32 | no| strict |
+| Code 32  | **Mandatory**: mod10 | **Default**: 8<br/>**Range**: 8 | no| strict |
+| Code 39  | **Mandatory**: none<br/>**Supported**: mod43 | **Default**: 6-40<br/>**Range**: 3-50 | yes| full_ascii<br/>relaxed_sharp_quiet_zone_check<br/>strict |
+| Code 93  | **Mandatory**: mod47 | **Default**: 6-40<br/>**Range**: 5-60 | yes| full_ascii<br/>strict |
+| Codabar  | **Mandatory**: none<br/>**Supported**: mod16, mod11 | **Default**: 7-20<br/>**Range**: 3-34 | no| strict |
+| GS1 DataBar 14  | **Mandatory**: mod10 | **Default**: 2<br/>**Range**: 2 | no| strict |
+| GS1 DataBar Expanded  | **Mandatory**: mod211 | **Default**: 1-11<br/>**Range**: 1-11 | no| strict |
+| GS1 DataBar Limited  | **Mandatory**: mod89 | **Default**: 1<br/>**Range**: 1 | no| relaxed_sharp_quiet_zone_check<br/>strict |
+| ITF  | **Mandatory**: none<br/>**Supported**: mod10 | **Default**: 6-40<br/>**Range**: 4-50 | no| strict |
+| RM4SCC  | **Mandatory**: mod103 | **Default**: 7-24<br/>**Range**: 4-50 | no|  |
+| KIX  | **Mandatory**: none | **Default**: 7-24<br/>**Range**: 4-50 | no|  |
+| LAPA  | **Mandatory**: none | **Default**: 16<br/>**Range**: 16 | no|  |
+| USPS Intelligent Mail  | **Mandatory**: none | **Default**: 65<br/>**Range**: 65 | no|  |
+| UPU S18 4-State  | **Mandatory**: none | **Default**: 19 or 25<br/>**Range**: 19 or 25 | no| fluorescent_orange_ink |
+| Australian Post 4-State  | **Mandatory**: none | **Default**: 10-41<br/>**Range**: 10-41 | no| force_table_c<br/>force_table_n<br/>decode_bar_states |
+| French Post  | **Mandatory**: none |  | no| fluorescent_orange_ink |
+
 ## 2D Symbology Properties
 
 | Symbology      | Supports Color-Inversion | Extensions                               |
