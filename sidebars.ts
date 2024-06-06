@@ -74,7 +74,7 @@ const sidebars: SidebarsConfig = {
   iosSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "iOS Getting Started",
       items: ["sdks/ios/add-sdk"],
     },
     {
@@ -193,12 +193,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/ios/release-notes',
+    },
   ],
 
   androidSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Android Getting Started",
       items: ["sdks/android/add-sdk"],
     },
     {
@@ -317,12 +322,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/android/release-notes',
+    },
   ],
 
   webSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Web Getting Started",
       items: ["sdks/web/add-sdk"],
     },
     {
@@ -399,12 +409,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/web/release-notes',
+    },
   ],
 
   cordovaSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Cordova Getting Started",
       items: ["sdks/cordova/add-sdk"],
     },
     {
@@ -509,12 +524,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/cordova/release-notes',
+    },
   ],
 
   reactnativeSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "React Native Getting Started",
       items: ["sdks/react-native/add-sdk"],
     },
     {
@@ -642,12 +662,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/react-native/release-notes',
+    },
   ],
 
   flutterSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Flutter Getting Started",
       items: ["sdks/flutter/add-sdk"],
     },
     {
@@ -771,12 +796,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/flutter/release-notes',
+    },
   ],
 
   capacitorSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Capacitor Getting Started",
       items: ["sdks/capacitor/add-sdk"],
     },
     {
@@ -874,12 +904,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/capacitor/release-notes',
+    },
   ],
 
   titaniumSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Titanium Getting Started",
       items: ["sdks/titanium/add-sdk"],
     },
     {
@@ -918,12 +953,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/titanium/release-notes',
+    },
   ],
 
   xamarinIosSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Xamarin Getting Started",
       items: ["sdks/xamarin/ios/add-sdk"],
     },
     {
@@ -1038,12 +1078,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/xamarin/ios/release-notes',
+    },
   ],
 
   xamarinAndroidSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Xamarin Getting Started",
       items: ["sdks/xamarin/android/add-sdk"],
     },
     {
@@ -1158,12 +1203,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/xamarin/android/release-notes',
+    },
   ],
 
   xamarinFormsSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: "Xamarin Getting Started",
       items: ["sdks/xamarin/forms/add-sdk"],
     },
     {
@@ -1278,12 +1328,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/xamarin/forms/release-notes',
+    },
   ],
 
   netIosSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: ".NET Getting Started",
       items: ["sdks/net/ios/add-sdk"],
     },
     {
@@ -1398,12 +1453,17 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/net/ios/release-notes',
+    },
   ],
 
   netAndroidSidebar: [
     {
       type: "category",
-      label: "Getting Started",
+      label: ".NET Getting Started",
       items: ["sdks/net/android/add-sdk"],
     },
     {
@@ -1517,6 +1577,11 @@ const sidebars: SidebarsConfig = {
           href: "https://docs.scandit.com/data-capture-sdk/dotnet.android/genindex.html",
         },
       ],
+    },
+    {
+      type: 'doc',
+      label: 'Release Notes',
+      id: 'sdks/net/android/release-notes',
     },
   ],
 };

@@ -74,7 +74,7 @@ const config: Config = {
         src: "img/logo2.png",
         srcDark: "img/logo-dark.svg",
       },
-      title: "Documentation",
+      title: "Docs",
       items: [
         {
           type: "dropdown",
