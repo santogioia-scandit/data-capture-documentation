@@ -1,5 +1,5 @@
 ---
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 displayed_sidebar: iosSidebar
 hide_title: true
 title: Release Notes
@@ -278,3 +278,92 @@ title: Release Notes
 #### Barcode
 
 - Deprecated `SDCSparkScanViewSettings.ignoreDragLimits`. There is no drag limit anymore; the button can be repositioned from the bottom to the top of the screen.
+
+## 6.21.2
+
+**Released**: January 19, 2024
+
+* Fixed a rare issue where error 33794 is reported in the data capture view.
+* Latin name from the back side is now returned when scanning Oman IDs in SDCSupportedSidesFrontAndBack.
+* Fixed an issue where US Border Crossing Cards were not recognized.
+
+## 6.21.0
+
+**Released**: December 8, 2023
+
+### New Features
+
+#### Barcode
+
+- Added `SDCBarcodeFind.setBarcodeTransformer` method to `SDCBarcodeFind`, to allow the addition of an intermediate barcode transformer to the `BarcodeFind` instance.
+- Added support for landscape orientation in `SDCBarcodeCountView`.
+- Added `SDCBarcodeGenerator` class for generating Code 39, Code 128, EAN13, ITF, QR, and DataMatrix codes.
+- Added support for QR model 1 codes (legacy format).
+- Added support for UPU 4-State codes with fluorescent orange ink (`fluorescent_orange_ink` extension, see also Symbology Properties).
+
+#### ID
+
+- Added `SDCIdCaptureFeedback.JSONString`.
+- Added `SDCAAMVABarcodeResult.firstNameWithoutMiddleName`.
+
+#### Label
+
+- Added a new way to initialize `SDCLabelCaptureSettings` using `SDCLabelDefinition`. Creating Label Capture Settings using `SDCLabelCaptureSettings.settingsFromString:error:` is now deprecated.
+
+### Performance Improvements
+
+#### Barcode
+
+- Improved the responsiveness of MatrixScan Count on low-end devices.
+- Improved QR code scan performance of codes occluded by glare.
+
+### Bug Fixes
+
+#### Barcode
+
+- Fixed a rare crash during the destruction of tracking-based capture modes.
+
+#### ID
+
+- Fixed issues with scanning `SDCIdDocumentTypeAAMVABarcode` documents that had some special characters in its content.
+
+### API Changes
+
+#### Barcode
+
+- In Swift, the `BarcodeCount.add(_:)` and `BarcodeCount.remove(_:)` methods have been renamed to `BarcodeCount.addListener(_:)` and `BarcodeCount.removeListener(_:)`.
+
+## 6.20.1
+
+**Released**: November 28, 2023
+
+* Fixed an issue affecting devices running iOS 17 and supporting macro mode, which prevented the camera from switching between wide and ultra-wide cameras.
+
+## 6.20.0
+
+**Released**: November 7, 2023
+
+### New Features
+
+#### Barcode
+
+SparkScan has been expanded with a range of new features and improvements:
+
+- Introduced a smart battery management to lower the energy consumption and increase the up-time of the device. In our tests (repeatedly scanning a sequence of 5 different labels mimicking the user movement), this led to an improvement of up to 15% in battery life. This option is enabled by default, but it is possible to control it via battery saving mode, deciding whether it’s automatic (default), always on, or always off.
+- Added `SDCSparkScanViewUIDelegate.sparkScanView:didChangeScanningMode:` and `SDCSparkScanView.scanningMode` for getting information when the `SparkScanScanningMode` changes and to get the currently used `SDCSparkScanScanningMode`. This is useful, for example, to apply different settings when the Target Mode (or the Continuous Mode) is enabled/disabled.
+- Added a gesture to collapse the trigger button with a swipe from the setting toolbar to the edge of the screen.
+- The setting toolbar icons have been slightly redesigned and grouped into categories.
+- Added contextual messages within the trigger button, called toasts, to guide the user while interacting with the UI. SparkScan offers a series of built-in messages, but custom messages can be shown by using the method `SDCSparkScanView.showToast:`. For more information, check `SDCSparkScanToastSettings`.
+- Added support for `SDCSymbologyUPU4State`.
+- Added `SDCBarcodeFindView.shouldShowTorchControl` and `SDCBarcodeFindView.torchControlPosition` to allow displaying and positioning a button to turn the device’s torch on and off in BarcodeFind.
+
+#### ID
+
+- `SDCAAMVABarcodeVerifier` now performs document verification entirely on-device. However, to use it, an additional artifact is now required. Check documentation for details.
+- For ID cards issued by the United Arab Emirates, data parsed from the Machine Readable Zone (MRZ) is now returned automatically when `SDCIdDocumentTypeIdCardVIZ` and `SDCSupportedSidesFrontAndBack` are selected.
+
+### Behavioral Changes
+
+#### Barcode
+
+- Changed the default value of `SDCSparkScanToastSettings.toastEnabled` to true.

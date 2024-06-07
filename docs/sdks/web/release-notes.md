@@ -1,5 +1,5 @@
 ---
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 displayed_sidebar: webSidebar
 hide_title: true
 title: Release Notes
@@ -49,3 +49,235 @@ title: Release Notes
 - Fixed a crash when scanning a passport MRZ followed by a non-passport VIZ.
 - Fixed an issue causing the century of birth dates, issue dates, and expiry dates to be returned incorrectly when scanning the VIZ of European IDs, Swiss driver’s licenses, and UAE IDs.
 - Fixed instances where information was incorrectly extracted from British Columbia PDF417.
+
+## 6.23.2
+
+**Released**: April 30, 2024
+
+* Fixed crash (SIGILL) on Exynos 9810-based Galaxy S9 and Galaxy S9+ devices that advertise support for FP16 arithmetics. A previous fix in 6.21.0 only partially resolved the issue.
+* Removed unused code and updated the privacy manifest to conform to the [new privacy requirements](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files).
+
+## 6.23.1
+
+**Released**: April 24, 2024
+
+* Added support for Mexican Matrícula Consular MRZ codes.
+* Fixed truncated surnames in US driver’s licenses using magnetic stripe format.
+
+## 6.23.0
+
+**Released**: March 22, 2024
+
+### New Features
+
+#### Core
+
+- Added the possibility to consume the SDK inside an Electron app. The encrypted license location must be passed through `ConfigureOptions.licenseDataPath` option.
+
+### Behavioral Changes
+
+#### Core
+
+- Removed the hard requirement of HTTPS protocol to support more execution contexts.
+
+### Bug Fixes
+
+#### ID
+
+- Fixed issues with scanning AAMVA documents (barcode part) that contain characters from non-English alphabets.
+- Fixed a licensing issue where a Barcode Scanner license was wrongly required when scanning the back side of a UK driver’s license.
+- Fixed a crash when scanning a passport MRZ then a non-passport VIZ.
+
+#### Core
+
+- Fixed the radius of the radius location selection for cases where the `DataCaptureView`’s aspect ratio is considerably different from the aspect ratio of the camera frames.
+
+## 6.22.2
+
+**Released**: April 30, 2024
+
+* Removed unused code and updated the privacy manifest to conform to the [new privacy requirements](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files).
+
+## 6.22.1
+
+**Released**: March 13, 2024
+
+* Fixed a licensing issue where a Barcode Scanner license was wrongly required when scanning the back side of a UK driver’s license.
+* Fixed UI glitch that was happening when disabling ID Capture mode.
+
+## 6.22.0
+
+**Released**: February 16, 2024
+
+### New Features
+
+#### Barcode
+
+- Added QR symbology extension called `strict` to suppress rare QR reader false positives. `strict` reduces the scan robustness of damaged codes.
+
+#### ID
+
+- Added `AamvaVizBarcodeComparisonResult.frontMismatchImage` that visualizes the document data printed on the front side that differs from what is encoded in the barcode. Please contact [support@scandit.com](mailto:support@scandit.com) if you want to use this feature.
+- Improved the accuracy of `AamvaVizBarcodeComparisonVerifier`.
+- Improved the accuracy of `VizMrzComparisonVerifier`.
+- Added `IdCaptureOverlay.showTextHints` for showing/hiding text hints.
+- Added `AamvaVizBarcodeComparisonResult.frontMismatchImage` that highlights suspicious fields. This feature is currently in beta and may change significantly in future releases.
+
+#### Core
+
+- Added `DataCaptureView.allowPictureInPicture()` to configure video element picture-in-picture capability.
+
+### Performance Improvements
+
+#### Barcode
+
+- Further improved QR code scan performance of codes occluded by glare.
+- Improved scan performance for 1D barcodes with missing or damaged quiet zones.
+
+### Bug Fixes
+
+#### Barcode
+
+- Fixed a bug in handling of active symbol counts for Codabar.
+
+#### ID
+
+- Fixed an issue on barcode localization overlay not being drawn on the screen.
+- Fixed an issue where US Border Crossing Cards were not recognized.
+
+## 6.21.3
+
+**Released**: March 5, 2024
+
+* Fixed UI glitch that was happening when disabling ID Capture mode.
+
+## 6.21.2
+
+**Released**: February 19, 2024
+
+* Fixed an issue where US Border Crossing Cards were not recognized.
+* Fixed Id Verification Zone Comparison reported erroneously as not included in a license for some licenses that, in fact, include it.
+
+## 6.21.0
+
+**Released**: December 8, 2024
+
+### New Features
+
+#### Barcode
+
+- Added support for QR model 1 codes (legacy format).
+- Added support for UPU 4-State codes with fluorescent orange ink (`fluorescent_orange_ink` extension, see also Symbology Properties).
+- Added the possibility to freeze the barcode locations on the overlay after scan through `BarcodeCaptureOverlay.setShouldRemoveLocationsAfterScan()`.
+
+#### ID
+
+- Added `AAMVABarcodeResult.firstNameWithoutMiddleName`.
+
+#### Core
+
+- Added `Localization` class to manage localization strings from a central place.
+- Improved file structure in distributed package to allow bundlers to tree-shake unused features of the SDK, resulting in lighter resources to download for the browser.
+- Fixed an issue where code is executed at import time, causing issues in SSR context (Server Side Rendering).
+
+### Behavioral Changes
+
+#### Core
+
+- Removed `ResizeObserver` polyfill as a dependency due to the browsers we support.
+
+### Performance Improvements
+
+#### Barcode
+
+- Improved the responsiveness of MatrixScan Count on low-end devices.
+- Improved QR code scan performance of codes occluded by glare.
+
+#### Core
+
+- Improved MatrixScan frames per second by 80% for SIMD-enabled browsers.
+
+### Bug Fixes
+
+#### Barcode
+
+- Fixed a rare crash during the destruction of tracking-based capture modes.
+
+#### ID
+
+- Fixed issues with scanning `IdDocumentType.AAMVABarcode` documents that had some special characters in their content.
+- Fixed an issue on barcode localization overlay not being drawn on the screen.
+
+#### Core
+
+- Fixed a crash (SIGILL) on Samsung Galaxy S9 (Exynos 9810 based) with Android version 8.
+- Resolved an issue where a loading loop occasionally occurred on iOS 15.x devices when IndexedDB became unresponsive.
+
+### Deprecations
+
+#### ID
+
+- Deprecated `IdCaptureOverlay.setBackSideTextHint()`, `IdCaptureOverlay.setFrontSideTextHint()`, `IdCaptureOverlay.setMoveCloserTextHint()`, and `IdCaptureOverlay.setMoveFurtherAwayTextHint()` in favor of the `Localization` class.
+
+#### Core
+
+- Deprecated `DataCaptureView.cameraRecoveryText` in favor of the `Localization` class.
+
+## 6.20.3
+
+**Released**: January 18, 2024
+
+* Fixed Id Verification Zone Comparison reported erroneously as not included in a license for some licenses that, in fact, include it.
+* Fixed the UI occasionally incorrectly presenting the front & back flow while capturing `IdDocumentType.AAMVABarcode`.
+
+## 6.20.2
+
+**Released**: December 14, 2023
+
+* Fixed a crash (SIGILL) on Samsung Galaxy S9 (Exynos 9810 based) with Android version 8.
+
+## 6.20.1
+
+**Released**: November 28, 2023
+
+* Fixed an issue that caused the SDK to get stuck during loading on certain devices.
+
+## 6.20.0
+
+**Released**: November 7, 2023
+
+### New Features
+
+#### Barcode
+
+- Updated the camera behavior to overcome the scanning challenges found on the iPhone 13 Pro (Max) and iPhone 14 Pro (Max) when using the built-in camera for barcode scanning. Our testing showed that barcodes that are less than 2 cm or ~1 inch in size (and usually have such small features) were impacted.
+
+#### ID
+
+- New textual hints and animations guide the user if the camera is too close or too far to capture a document.
+- Redesigned ID Capture viewfinders to enable smoother drawing performance.
+- For ID cards issued by the United Arab Emirates, data parsed from the Machine Readable Zone (MRZ) is now returned automatically when `IdDocumentType.IdCardVIZ` and `SupportedSides.FrontAndBack` are selected.
+- Added textual hints and animations appearing when the document is detected to be too close or too far from the camera.
+- Improved recognition of cropped ID document images when using the `SingleImageUploader` frame source.
+
+#### Core
+
+- Added property `SingleImageUploaderSettings.onlyCameraCapture` to force the image to be captured by the camera instead of allowing the selection of an image from the device’s photo library.
+- Added `ImageFrameSource`. This new type of `FrameSource` allows processing a single image, file, or [`ImageData`](https://developer.mozilla.org/en-US/docs/Web/API/ImageData).
+- Added `Camera.settings` to `Camera`.
+
+### Bug Fixes
+
+#### ID
+
+- Fixed an issue where hints were not being shown when the `DataCaptureView` is attached after the `id.IdCapture` instance is created.
+
+#### Core
+
+- Restored some logs that were not being properly sent to the console anymore.
+
+### API Changes
+
+#### ID
+
+- Added `IdCaptureOverlay.setMoveCloserTextHint()` and `IdCaptureOverlay.setMoveFurtherAwayTextHint()` that allow setting custom text for textual hints displayed when scanning a document.
