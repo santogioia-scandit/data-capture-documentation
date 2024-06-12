@@ -175,7 +175,7 @@ ID Bolt is a cloud-based identity scanning solution that can be quickly and easi
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icons/id_capture.svg" title="ID Bolt" description="Get Started with ID Bolt" link="/hosted/id-bolt/overview" smallIcon />
+<CustomDocCard imgSrc="/img/icons/bolt.png" title="ID Bolt" description="Get Started with ID Bolt" link="/hosted/id-bolt/overview" smallIcon />
 
 </CustomDocCardsWrapper>
 
@@ -185,6 +185,6 @@ Scandit Express is an application that enables you to instantly add barcode scan
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icon_small.png" title="Scandit Express" description="Get Started with Scandit Express" link="/hosted/express/overview" smallIcon />
+<CustomDocCard imgSrc="/img/icons/express.png" title="Scandit Express" description="Get Started with Scandit Express" link="/hosted/express/overview" smallIcon />
 
 </CustomDocCardsWrapper>

@@ -2,7 +2,7 @@
 sidebar_label: 'API Reference'
 title: 'API Reference'
 displayed_sidebar: boltSidebar
-toc_max_heading_level: 6
+toc_max_heading_level: 4
 ---
 
 ## IdBoltSession
