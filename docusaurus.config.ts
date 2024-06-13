@@ -1,6 +1,9 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import * as dotenv from 'dotenv';
+dotenv.config();  // Load environment variables from .env file
+
 
 const config: Config = {
   title: "Scandit Developer Documentation",
@@ -12,7 +15,7 @@ const config: Config = {
   url: "https://docs.scandit.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: process.env.base_url ?? '',
 
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
