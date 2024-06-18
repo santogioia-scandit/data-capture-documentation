@@ -12,7 +12,9 @@ This page describes how to integrate the Scandit Data Capture SDK into your Andr
 
 Scandit Data Capture SDK is distributed as [AAR libraries](https://developer.android.com/studio/projects/android-library#aar-contents) in the [official Scandit maven repository](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
 
-You need to add a reference to _com.scandit.datacapture:core_, which contains the shared functionality used by the other data capture modules. If you’re using textcapture-related functionalities, make sure to also add a reference to _com.scandit.datacapture:text-base_. In addition, depending on the data capture task, you need a reference to:
+You need to add a reference to _com.scandit.datacapture:core_, which contains the shared functionality used by the other data capture modules.
+
+If youe are using text capture-related functionalities, make sure to also add a reference to _com.scandit.datacapture:text-base_. In addition, depending on the data capture task, you need a reference to:
 
 - _com.scandit.datacapture:barcode_ [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan.
 - _com.scandit.datacapture:parser_ [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings.
@@ -20,7 +22,6 @@ You need to add a reference to _com.scandit.datacapture:core_, which contains th
 - _com.scandit.datacapture:id_ [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas.
 
 :::note
-
 You can safely remove _barcode_, _parser_, _text_ or _id_ dependencies if you are not going to use their features.
 :::
 
@@ -33,7 +34,7 @@ Before you begin, make sure you have the following prerequisites in place:
 - Valid Scandit Data Capture SDK license key
 
 :::note
-Th Devices running the Scandit Data Capture SDK need a GPU. Otherwise, you can see a significant decrease in the performance.
+Devices running the Scandit Data Capture SDK need a GPU. Otherwise, you can see a significant decrease in performance.
 :::
 
 ## Gradle
@@ -59,10 +60,10 @@ dependencies {
 }
 ```
 
-You can find the latest version (6.21.1) on [Sonatype](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
+You can find the latest version on [Sonatype](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
 
 :::note
-The core module depends on okhttp version 4.9.2. If your project already implements a different version of okhttp (within the supported version range specified in the requirements page), make sure to exclude the group from the gradle implementation of the core module.
+The core module depends on `okhttp` version 4.9.2. If your project already implements a different version of `okhttp` (within the supported version range specified in the requirements page), make sure to exclude the group from the gradle implementation of the core module.
 
 ```java
 implementation("com.scandit.datacapture:core:[version]") {
@@ -131,14 +132,14 @@ You can add the necessary artifacts as dependencies:
 
 ## Manually Add Library to Project
 
-You need to add a reference to ScanditCaptureCore.aar, which contains the shared functionality used by the other data capture modules. In addition, depending on the data capture task, you need a reference to:
+You need to add a reference to `ScanditCaptureCore.aar`, which contains the shared functionality used by the other data capture modules. In addition, depending on the data capture task, you need a reference to:
 
 - [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan
 - [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings
 - [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/android/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture
 - [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas
 
-If your project already has a local flatDir repository, add the AAR files to that folder. If you do not have a flatDir respository yet, create a new one in your _build.gradle_ file as illustrated below:
+If your project already has a local `flatDir` repository, add the AAR files to that folder. If you do not have a `flatDir` repository yet, create a new one in your _build.gradle_ file as illustrated below:
 
 ```java
 repositories {
@@ -160,7 +161,7 @@ dependencies {
 
 ## External Dependencies
 
-The Scandit Data Capture SDK modules depend on the following few standard libraries. If you include the Scandit Data Capture SDK through Gradle or Maven, all of these dependencies are automatically pulled in and there is no further action itesms for you. On the other hand, if you directly ad the AAR files to the project, you need to add these dependencies yourself.
+The Scandit Data Capture SDK modules depend on the following few standard libraries. If you include the Scandit Data Capture SDK through Gradle or Maven, all of these dependencies are automatically pulled in and there is no further action items for you. On the other hand, if you directly ad the AAR files to the project, you need to add these dependencies yourself.
 
 | Module                    | Dependencies                                                                                                              |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |

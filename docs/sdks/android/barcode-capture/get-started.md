@@ -20,15 +20,19 @@ The general steps are:
 
 ## Prerequisites
 
-Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out this [guide](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html).
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out this [guide](/sdks/android/add-sdk).
 
 :::note
-You can retrieve your Scandit Data Capture SDK license key, by signing in to your account at [ssl.scandit.com/dashboard/sign-in](https://ssl.scandit.com/dashboard/sign-in?_gl=1*hur6tm*_ga*NzIzNjQ1MTc0LjE3MDI2NTI4MTg.*_ga_TXJZRPJJ0T*MTcwNTgxMDk0My4xMS4xLjE3MDU4MzUwMzEuNDguMC4w).
+You can retrieve your Scandit Data Capture SDK license key, by signing in to your account [Dashboard](https://ssl.scandit.com/dashboard/sign-in).
 :::
 
 ### External Dependencies
 
-The Scandit Data Capture SDK modules depend on a few standard libraries that you can find listed below. If you are including the Scandit Data Capture SDK through **Gradle** or **Maven**, all of these dependencies are automatically pulled in and there is no need for you to do anything further. On the other hand, if you directly add the AAR files to the project, you need to add these dependencies yourself.
+The Scandit Data Capture SDK modules depend on a few standard libraries that you can find listed below.
+
+If you are including the Scandit Data Capture SDK through **Gradle** or **Maven**, all of these dependencies are automatically pulled in and there is no need for you to do anything further.
+
+If you directly add the AAR files to the project, you need to add these dependencies yourself.
 
 | Module      | Dependencies |
 | ----------- | ----------- |
@@ -114,10 +118,10 @@ barcodeCapture.addListener(this);
 The data capture context supports using different frame sources to perform recognition on. Most applications use the built-in camera of the device.
 
 :::note
-In Android, the user must explicitly grant permission for each app to access cameras. Your app needs to declare the use of the Camera permission in the *AndroidManifest.xml* file and request it at runtime so the user can grant or deny the permission. To do that follow the guidelines from [Request app permissions](https://developer.android.com/training/permissions/requesting) to request the android.permission.CAMERA permission.
+In Android, the user must explicitly grant permission for each app to access cameras. Your app needs to declare the use of the Camera permission in the *AndroidManifest.xml* file and request it at runtime so the user can grant or deny the permission. To do that follow the guidelines from [Request app permissions](https://developer.android.com/training/permissions/requesting) to request the `android.permission.CAMERA` permission.
 :::
 
-When using the built-in camera there are recommended settings for each capture mode. These must be used to achieve the best performance and user experience for the respective mode. The following couple of lines show how to get the recommended settings and create the camera from it:
+When using the built-in camera there are recommended settings for each capture mode. These must be used to achieve the best performance and user experience for the respective mode. The following code shows how to get the recommended settings and create the camera:
 
 ```java
 CameraSettings cameraSettings = BarcodeCapture.createRecommendedCameraSettings();
@@ -146,12 +150,14 @@ if (camera != null) {
 ```
 
 :::note
-On Android, the Scandit Data Capture SDK is not lifecycle aware which means it is not able to turn off the camera when the app goes in the background etc. which has to be done as otherwise the camera is locked for other apps. This responsibility is left to the implementer. Make sure that you always turn the camera off in the activity’s **onPause lifecycle** method. Often this means that you want to (re)start it in **onResume**. You can see a way of doing this in all of the [samples](https://docs.scandit.com/data-capture-sdk/android/samples/run-samples.html).
+On Android, the Scandit Data Capture SDK is not lifecycle aware which means it is not able to turn off the camera when the app goes in the background. This has to be done so the camera is not locked for other apps and is left to the implementer. Make sure that you turn the camera off in the activity’s **onPause lifecycle** method. Often this means that you want to (re)start it in **onResume**. You can see a way of doing this in all of the [samples](https://github.com/Scandit/datacapture-android-samples).
 :::
 
 ## Use a Capture View to Visualize the Scan Process
 
-When using the built-in camera as frame source, you may typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/android/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
+When using the built-in camera as frame source, you may want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. 
+
+To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/android/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
 
 ```java
 DataCaptureView dataCaptureView = DataCaptureView.newInstance(this, dataCaptureContext);
