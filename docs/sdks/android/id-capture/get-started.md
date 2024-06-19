@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Get Started
 
-This page desribes the steps to add ID Capture to your application.
+This page describes the steps to add ID Capture to your application.
 
 :::note
 Using ID Capture at the same time as other modes (e.g. Barcode Capture or Text Capture) is not supported.
@@ -21,10 +21,10 @@ The general steps are:
 
 ## Prerequisites
 
-Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out this [guide](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html).
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out this [guide](/sdks/android/add-sdk.md).
 
 :::note
-You can retrieve your Scandit Data Capture SDK license key, by signing in to your account at [ssl.scandit.com/dashboard/sign-in](https://ssl.scandit.com/dashboard/sign-in?_gl=1*hur6tm*_ga*NzIzNjQ1MTc0LjE3MDI2NTI4MTg.*_ga_TXJZRPJJ0T*MTcwNTgxMDk0My4xMS4xLjE3MDU4MzUwMzEuNDguMC4w).
+You can retrieve your Scandit Data Capture SDK license key, by signing in to your account [Dashboard](https://ssl.scandit.com/dashboard/sign-in).
 :::
 
 ### External Dependencies
@@ -84,7 +84,7 @@ DataCaptureContext dataCaptureContext = DataCaptureContext.forLicenseKey("-- ENT
 
 ## Access a Camera
 
-Next, you need to create a new instance of the [Camera] class to indicate the camera to stream previews and to capture images. The camera settings are also configured, in this case, we use the `recommendedCameraSettings` that come withe ID Capture SDK.
+Next, you need to create a new instance of the [Camera](https://docs.scandit.com/data-capture-sdk/android/core/api/camera.html#class-scandit.datacapture.core.Camera) class to indicate the camera to stream previews and to capture images.
 
 ```java
 camera = Camera.getDefaultCamera(IdCapture.createRecommendedCameraSettings());
@@ -98,10 +98,10 @@ dataCaptureContext.setFrameSource(camera);
 
 ## Configure the Capture Settings
 
-Use [IdCaptureSettings] to configure the types of documents you need to scan. Check [IdDocumentType] for all the available options.
+Use [IdCaptureSettings](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/id-capture-settings.html#class-scandit.datacapture.id.IdCaptureSettings) to configure the types of documents you need to scan. Check [IdDocumentType](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/id-document-type.html#enum-scandit.datacapture.id.IdDocumentType) for all the available options.
 
 :::warning
-Use IdDocumentType.DL_VIZ or IdDocumentType.ID_CARD_VIZ for configuration together with any MRZ document (IdDocumentType.ID_CARD_MRZ, IdDocumentType.VISA_MRZ, IdDocumentType.PASSPORT_MRZ, IdDocumentType.SWISS_DL_MRZ) while [SupportedSides.FRONT_AND_BACK is enabled] **is not** supported.
+Using `IdDocumentType.DL_VIZ` or `IdDocumentType.ID_CARD_VIZ` for configuration together with any MRZ document (`IdDocumentType.ID_CARD_MRZ`, `IdDocumentType.VISA_MRZ`, `IdDocumentType.PASSPORT_MRZ`, `IdDocumentType.SWISS_DL_MRZ`) while [SupportedSides.FRONT_AND_BACK is enabled](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/id-supported-document-sides.html#value-scandit.datacapture.id.SupportedSides.FrontAndBack) **is not** supported.
 :::
 
 ```java
@@ -115,9 +115,9 @@ settings.setSupportedDocuments(
 
 ## Implement a Listener
 
-To receive scan results, implement [IdCaptureListener].
+To receive scan results, implement [IdCaptureListener](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/id-capture-listener.html#interface-scandit.datacapture.id.IIdCaptureListener).
 
-A result is delivered as an [CapturedId]. This class contains data common for all kinds of personal identification documents. For more specific information, use its non-null result properties (for example [CapturedId.aamvaBarcode]).
+A result is delivered as an [CapturedId](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/captured-id.html#class-scandit.datacapture.id.CapturedId). This class contains data common for all kinds of personal identification documents. For more specific information, use its non-null result properties (for example [CapturedId.aamvaBarcode](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/captured-id.html#property-scandit.datacapture.id.CapturedId.AamvaBarcode)).
 
 ```java
 class MyListener implements IdCaptureListener {
@@ -177,7 +177,7 @@ Then, add an instance of [IdCaptureOverlay](https://docs.scandit.com/data-captur
 IdCaptureOverlay overlay = IdCaptureOverlay.newInstance(idCapture, dataCaptureView);
 ```
 
-The overlay chooses the displayed UI automatically, based on the selected [IdCaptureSettings]. If you prefer to show a different UI or to temporarily hide it, set the appropriate [IdCaptureOverlay.idLayout].
+The overlay chooses the displayed UI automatically, based on the selected [IdCaptureSettings](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/id-capture-settings.html#class-scandit.datacapture.id.IdCaptureSettings). If you prefer to show a different UI or to temporarily hide it, set the appropriate [IdCaptureOverlay.idLayout](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/ui/id-capture-overlay.html#property-scandit.datacapture.id.ui.IdCaptureOverlay.IdLayout).
 
 ## Start the Capture Process
 
