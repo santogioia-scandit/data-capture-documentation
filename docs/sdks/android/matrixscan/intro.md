@@ -6,7 +6,7 @@ sidebar_position: 1
 
 MatrixScan enables you to build applications and workflows involving highlighting and/or interacting with multiple barcodes within the same frame. It can be used to build augmented-reality (AR) experiences by adding overlays to the application UI.
 
-MatrixScan is powered by the [BarcodeTracking] functionality of the Scandit Smart Data Capture SDK.
+MatrixScan is powered by the [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) functionality of the Scandit Smart Data Capture SDK.
 
 ## Limitations
 
