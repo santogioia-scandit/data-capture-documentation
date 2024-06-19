@@ -22,13 +22,13 @@ The Scandit Barcode Scanner SDK provides a set of pre-built UI components that e
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icons/sparkscan.svg" title="SparkScan" description="High-speed single scanning" link="/sdks/android/sparkscan/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/sparkscan.svg" title="SparkScan" description="High-speed single scanning" link="/sdks/android/sparkscan/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/ms_count.svg" title="MatrixScan Count" description="Scanning and counting of multiple items" link="/sdks/android/matrixscan-count/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/ms_count.svg" title="MatrixScan Count" description="Scanning and counting of multiple items" link="/sdks/android/matrixscan-count/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/ms_find.svg" title="MatrixScan Find" description="Search and find items via AR overlays" link="/sdks/android/matrixscan-find/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/ms_find.svg" title="MatrixScan Find" description="Search and find items via AR overlays" link="/sdks/android/matrixscan-find/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/barcode_selection.svg" title="Barcode Selection" description="Scan only the desired barcode from many" link="/sdks/android/barcode-selection/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/barcode_selection.svg" title="Barcode Selection" description="Scan only the desired barcode from many" link="/sdks/android/barcode-selection/intro" smallIcon />
 
 </CustomDocCardsWrapper>
 
@@ -39,9 +39,9 @@ The Scandit Barcode Scanner SDK provides a comprehensive set of APIs that enable
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icons/barcode_capture.svg" title="Barcode Capture" description="Scanning one or many barcodes" link="/sdks/android/barcode-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/barcode_capture.svg" title="Barcode Capture" description="Scanning one or many barcodes" link="/sdks/android/barcode-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/ms_ar.svg" title="MatrixScan + AR" description="Identify and track multiple barcodes" link="/sdks/android/matrixscan/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/ms_ar.svg" title="MatrixScan + AR" description="Identify and track multiple barcodes" link="/sdks/android/matrixscan/intro" smallIcon />
 
 </CustomDocCardsWrapper>
 
@@ -143,25 +143,25 @@ To experience Scandit scanning and verification capabilities firsthand, check ou
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icons/ios.svg" title="iOS" description="Integrate ID Scanning in iOS" link="/sdks/ios/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/ios.svg" title="iOS" description="Integrate ID Scanning in iOS" link="/sdks/ios/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/android.svg" title="Android" description="Integrate ID Scanning in Android" link="/sdks/android/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/android.svg" title="Android" description="Integrate ID Scanning in Android" link="/sdks/android/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/javascript.png" title="Web" description="Integrate ID Scanning for Web" link="/sdks/web/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/javascript.png" title="Web" description="Integrate ID Scanning for Web" link="/sdks/web/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/cordova.svg" title="Cordova" description="Integrate ID Scanning in Cordova" link="/sdks/cordova/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/cordova.svg" title="Cordova" description="Integrate ID Scanning in Cordova" link="/sdks/cordova/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/react.svg" title="React Native" description="Integrate ID Scanning in React Native" link="/sdks/react/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/react.svg" title="React Native" description="Integrate ID Scanning in React Native" link="/sdks/react/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/flutter.svg" title="Flutter" description="Integrate ID Scanning in Flutter" link="/sdks/flutter/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/flutter.svg" title="Flutter" description="Integrate ID Scanning in Flutter" link="/sdks/flutter/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/capacitor.svg" title="Capacitor" description="Integrate ID Scanning in Capacitor" link="/sdks/capacitor/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/capacitor.svg" title="Capacitor" description="Integrate ID Scanning in Capacitor" link="/sdks/capacitor/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/xamarin.svg" title="Xamarin iOS" description="Integrate ID Scanning in Xamarin iOS" link="/sdks/xamarin/ios/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/xamarin.svg" title="Xamarin iOS" description="Integrate ID Scanning in Xamarin iOS" link="/sdks/xamarin/ios/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/xamarin.svg" title="Xamarin Android" description="Integrate ID Scanning for Xamarin Android" link="/sdks/xamarin/android/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/xamarin.svg" title="Xamarin Android" description="Integrate ID Scanning for Xamarin Android" link="/sdks/xamarin/android/id-capture/intro" smallIcon />
 
-<CustomDocCard imgSrc="/img/icons/xamarin.svg" title="Xamarin Forms" description="Integrate ID Scanning in Xamarin Forms" link="/sdks/xamarim/forms/id-capture/intro" smallIcon />
+<CustomDocCard imgSrc="../img/icons/xamarin.svg" title="Xamarin Forms" description="Integrate ID Scanning in Xamarin Forms" link="/sdks/xamarim/forms/id-capture/intro" smallIcon />
 
 <CustomDocCard title=".NET iOS" description="Integrate ID Scanning in .NET iOS" link="/sdks/net/ios/id-capture/intro" />
 
@@ -175,7 +175,7 @@ ID Bolt is a cloud-based identity scanning solution that can be quickly and easi
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icons/bolt.png" title="ID Bolt" description="Get Started with ID Bolt" link="/hosted/id-bolt/overview" smallIcon />
+<CustomDocCard imgSrc="../img/icons/bolt.png" title="ID Bolt" description="Get Started with ID Bolt" link="/hosted/id-bolt/overview" smallIcon />
 
 </CustomDocCardsWrapper>
 
@@ -185,6 +185,6 @@ Scandit Express is an application that enables you to instantly add barcode scan
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard imgSrc="/img/icons/express.png" title="Scandit Express" description="Get Started with Scandit Express" link="/hosted/express/overview" smallIcon />
+<CustomDocCard imgSrc="../img/icons/express.png" title="Scandit Express" description="Get Started with Scandit Express" link="/hosted/express/overview" smallIcon />
 
 </CustomDocCardsWrapper>
