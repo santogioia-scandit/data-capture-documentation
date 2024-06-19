@@ -74,34 +74,40 @@ barcodeCountView.shouldShowClearHighlightsButton = true
 
 ## Customizing the AR Overlays
 
-MatrixScan Count comes with recommended and user-tested AR overlays. You can customize the overlay colors once the overlay has been added according to the `SDCBarcodeCountViewDelegate` protocol.
+MatrixScan Count comes with recommended and user-tested AR overlays. However, if you wish to customize the overlay colors, once the overlay has been added, you can conform to the [BarcodeCountViewListener](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-count-view-listener.html#interface-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener) interface.
 
-The methods `SDCBarcodeCountViewDelegate.barcodeCountView:brushForRecognizedBarcode:` and `SDCBarcodeCountViewDelegate.barcodeCountView:brushForUnrecognizedBarcode:` are invoked every time a new recognized or unrecognized barcode appears. These can be used to set a brush that will highlight that specific barcode in the overlay. Keep in mind that these methods are relevant only when using the style `SDCBarcodeCountViewStyleDot`.
+The methods [BarcodeCountViewListener.brushForRecognizedBarcode()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.BrushForRecognizedBarcode) and [BarcodeCountViewListener.brushForUnrecognizedBarcode()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.BrushForUnrecognizedBarcode) are invoked every time a new recognized or unrecognized barcode appears. These can be used to set a brush that will be used to highlight that specific barcode in the overlay. Keep in mind that these methods are relevant only when using the style [BarcodeCountViewStyle.DOT](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-count-view.html#value-scandit.datacapture.barcode.count.ui.BarcodeCountViewStyle.Dot).
 
 ```java
-func barcodeCountView(_ view: BarcodeCountView,
-                      brushForRecognizedBarcode trackedBarcode: TrackedBarcode) -> Brush? {
+@Nullable
+@Override
+public Brush brushForRecognizedBarcode(
+        @NonNull BarcodeCountView view, @NonNull TrackedBarcode trackedBarcode) {
     // Return a custom brush
 }
 
-func barcodeCountView(_ view: BarcodeCountView,
-                      brushForUnrecognizedBarcode trackedBarcode: TrackedBarcode) -> Brush? {
+@Nullable
+@Override
+public Brush brushForUnrecognizedBarcode(
+        @NonNull BarcodeCountView view, @NonNull TrackedBarcode trackedBarcode) {
     // Return a custom brush
 }
 ```
 
 ## Notifications
 
-To be notified when a user taps on an overlay, you need to implement the `SDCBarcodeCountViewDelegate.barcodeCountView:didTapRecognizedBarcode:` and `SDCBarcodeCountViewDelegate.barcodeCountView:didTapUnrecognizedBarcode:` methods:
+If you want to be notified when a user taps on an overlay, you need to implement the [BarcodeCountViewListener.onRecognizedBarcodeTapped()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.OnRecognizedBarcodeTapped) and [BarcodeCountViewListener.onUnrecognizedBarcodeTapped()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.OnUnrecognizedBarcodeTapped) methods.
 
 ```java
-func barcodeCountView(_ view: BarcodeCountView,
-                      didTapRecognizedBarcode trackedBarcode: TrackedBarcode) {
+@Override
+public void onRecognizedBarcodeTapped(
+        @NonNull BarcodeCountView view, @NonNull TrackedBarcode trackedBarcode) {
     // Do something with the tapped barcode
 }
 
-func barcodeCountView(_ view: BarcodeCountView,
-                      didTapUnrecognizedBarcode trackedBarcode: TrackedBarcode) {
+@Override
+public void onUnrecognizedBarcodeTapped(
+        @NonNull BarcodeCountView view, @NonNull TrackedBarcode trackedBarcode) {
     // Do something with the tapped barcode
 }
 ```
