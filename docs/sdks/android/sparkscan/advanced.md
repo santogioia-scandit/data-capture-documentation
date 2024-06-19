@@ -30,32 +30,30 @@ You can customize:
 - The color of the highlight for the scanned barcode.
 - The feedback (sound, vibration).
 
-To emit an error, you have to implement a `barcode.spark.feedback.ISparkScanFeedbackDelegate` and set it to the `barcode.spark.ui.SparkScanView.FeedbackDelegate`:
+To emit an error, you have to implement a [`SparkScanFeedbackDelegate`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-feedback-delegate.html#interface-scandit.datacapture.barcode.spark.feedback.ISparkScanFeedbackDelegate) and set it to the `SparkScanView`:
 
 ```java
 sparkScanView.setFeedbackDelegate(this);
 ```
 
-In the `scandit.datacapture.barcode.spark.feedback.ISparkScanFeedbackDelegate.GetFeedbackForBarcode` method you can then return an error or a success feedback:
+In the [`SparkScanFeedbackDelegate.getFeedbackForBarcode()`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-feedback-delegate.html#method-scandit.datacapture.barcode.spark.feedback.ISparkScanFeedbackDelegate.GetFeedbackForBarcode) you can then return an error or a success feedback:
 
 ```java
 @Nullable
-        @Override
-        public SparkScanBarcodeFeedback getFeedbackForBarcode(@NonNull Barcode barcode) {
-            if (isValidBarcode(barcode)) {
-                return new SparkScanBarcodeFeedback.Success();
-            } else {
-                return new SparkScanBarcodeFeedback.Error("This code should not have been scanned",
-                    TimeInterval.seconds(60f));
-            }
-        }
+@Override
+public SparkScanBarcodeFeedback getFeedbackForBarcode(@NonNull Barcode barcode) {
+  if (isValidBarcode(barcode)) {
+        return new SparkScanBarcodeFeedback.Success();
+  } else {
+        return new SparkScanBarcodeFeedback.Error("This code should not have been scanned",
+        TimeInterval.seconds(60f));
+  }
+}
 ```
 
 :::note
 You can have different error states triggered by different logic conditions. For example you can trigger an error state when a wrong barcode is scanned, and another one when a duplicate barcode is scanned. These errors can show different colors and have different timeouts.
 :::
-
-
 
 A high timeout (for instance, `10`+ seconds) typically requires the users to interact with the UI to start scanning again. This is a good choice when you want to interrupt the scanning workflow (e.g. because a wrong barcode is scanned and some actions need to be performed). 
 
@@ -63,20 +61,7 @@ A small timeout (for instance, less than `2`seconds) could allow the user to sca
 
 ### Reject Barcodes
 
-To prevent scanning unwanted barcodes (like those already listed or from incorrect lots), use SparkScan's built-in error state. Setting the `scandit.datacapture.barcode.spark.feedback.Error.ResumeCapturingDelay` parameter to `0` allows the user to continue scanning immediately without pausing on rejected codes.
-
-### Increase Scanning Precision
-
-In scenarios where numerous barcodes are close together or in crowded environments, accurately selecting the right barcode can be difficult. To address this challenge, a new workflow that incorporates an aimer in the camera preview is recommended so that users can precisely target and scan intended barcodes.
-
-You can select two different SparkScan workflows by picking a `barcode.spark.ui.SparkScanScanningPrecision` value:
-
-* **DEFAULT**
-* **ACCURACY**
-
-Depending on the selection, the behavior of the preview will be different.
-
-![Default workflow VS Accuracy workflow.](/img/sparkscan/default-vs-accuracy.png)
+To prevent scanning unwanted barcodes (like those already listed or from incorrect lots), use SparkScan's built-in error state. Setting the [`Error.resumeCapturingDelay`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-barcode-feedback.html#property-scandit.datacapture.barcode.spark.feedback.Error.ResumeCapturingDelay) parameter to `0` allows the user to continue scanning immediately without pausing on rejected codes.
 
 #### Default workflow
 

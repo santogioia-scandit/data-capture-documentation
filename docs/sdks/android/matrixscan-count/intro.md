@@ -31,9 +31,8 @@ MatrixScan Count is conformed through functionality provided by [BarcodeCount](h
 
 ## Prerequisites
 
-The Scandit Data Capture SDK. Check out this [guide](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html) for more details.
-
-A valid Scandit Data Capture SDK license key including MatrixScan AR add-on. You can sign up for a free test account at **ssl.scandit.com**.
+- [Installed the Scandit Data Capture SDK](/sdks/android/add-sdk.md).
+- A valid Scandit Data Capture SDK license key including MatrixScan AR add-on. You can sign up for a [free test account](https://www.scandit.com/trial/).
 
 ## Supported Symbologies
 
