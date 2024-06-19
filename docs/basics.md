@@ -175,7 +175,9 @@ ID Bolt is a cloud-based identity scanning solution that can be quickly and easi
 
 <CustomDocCardsWrapper>
 
+
 <CustomDocCard imgSrc="../img/icons/bolt.svg" title="ID Bolt" description="Get Started with ID Bolt" link="/hosted/id-bolt/overview" smallIcon />
+
 
 </CustomDocCardsWrapper>
 
