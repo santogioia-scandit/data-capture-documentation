@@ -12,22 +12,11 @@ This page describes the step-by-step instructions that helps you to add SparkSca
 - Register the listener to be informed when new barcodes are scanned and update your data whenever this event occurs
 
 :::note
-If you need to integrate SparkScan into a SwiftUI view hierarchy, these are the additional steps:
-    - Create a custom `UIViewController` subclass for managing SparkScan, as described in the rest of this section.
-    - Download `SparkScanSwiftUI.swift` and add it to your Xcode project.
-    - Incorporate SparkScan into your SwiftUI view using the `withSparkScan` view modifier. Pass an instance of the SparkScan view controller as demonstrated below:
+If you’re looking to integrate SparkScan into a Compose view hierarchy, there are additional steps you need to follow:
 
-    ```java
-    var body: some View {
-    VStack {
-        Image(systemName: "globe")
-            .imageScale(.large)
-            .foregroundStyle(.tint)
-        Text("Hello, world!")
-    }
-    .withSparkScan(sparkScanViewController)
-    }
-    ```
+Create an `AndroidView` to wrap the `SparkScanView` instance, initialized as described in the rest of this section.
+
+Monitor the view lifecycle so you can call the view lifecycle methods in `SparkScanView` when necessary. This can be done using a combination of `DisposableEffect` and the `onRelease` callback of `AndroidView`.
 :::
 
 ## Create a New Data Capture Context Instance
@@ -61,23 +50,22 @@ SparkScan sparkScan = new SparkScan(settings);
 
 The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
 
-The SparkScanView appearance can be customized through SparkScanViewSettings.
+The `SparkScanView` appearance can be customized through `SparkScanViewSettings`.
 
 ```java
 SparkScanViewSettings viewSettings = new SparkScanViewSettings();
 // setup the desired appearance settings by updating the fields in the object above
 ```
 
-By adding a SparkScanView, the scanning interface (camera preview and scanning UI elements) gets added automatically to your application.
+By adding a `SparkScanView`, the scanning interface (camera preview and scanning UI elements) gets added automatically to your application.
 
-You can add a SparkScanView to your view hierarchy:
 Construct a new SparkScan view. The SparkScan view is automatically added to the provided parentView:
 
 ```java
 SparkScanView sparkScanView = SparkScanView.newInstance(parentView, dataCaptureContext, sparkScan, viewSettings);
 ```
 
-Additionally, make sure to call sparkScanView.onPause() and sparkScanView.onResume() in your Fragment/Activity onPause and onResume callbacks. You have to call these for the correct functioning of the SparkScanView.
+Additionally, make sure to call `sparkScanView.onPause()` and `sparkScanView.onResume()` in your Fragment/Activity `onPause` and `onResume` callbacks. You have to call these for the correct functioning of the `SparkScanView`.
 
 ```java
 @Override
