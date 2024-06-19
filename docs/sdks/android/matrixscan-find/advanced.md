@@ -10,31 +10,51 @@ MatrixScan Find is optimized by default for efficiency, accuracy, and a seamless
 
 You may want more fine-grained knowledge over the different events happening during the life of the `BarcodeFind` mode, such as when the search starts, pauses, and stops.
 
-To do this, you can directly register a `SDCBarcodeFindListener` on the mode itself, keeping in mind that these listeners are called from a background thread.
+To do this, you can directly register a [`BarcodeFindListener`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-find-listener.html#interface-scandit.datacapture.barcode.find.IBarcodeFindListener) on the mode itself, keeping in mind that these listeners are called from a background thread.
 
 ```java
-mode.addListener(self)
-
-extension PlaygroundViewController: BarcodeFindListener {
-    func barcodeFind(_ barcodeFind: BarcodeFind,
-                     didPauseSearch foundItems: Set<BarcodeFindItem>) {
+mode.addListener(new BarcodeFindListener() {
+    @Override
+    public void onSearchPaused(@NonNull Set<BarcodeFindItem> foundItems) {
         // The mode was paused
     }
 
-    func barcodeFindDidStartSearch(_ barcodeFind: BarcodeFind) {
+    @Override
+    public void onSearchStarted() {
         // The mode was started
     }
 
-    func barcodeFind(_ barcodeFind: BarcodeFind,
-                     didStopSearch foundItems: Set<BarcodeFindItem>) {
-        // The mode was stopped
+    @Override
+    public void onSearchStopped(@NonNull Set<BarcodeFindItem> foundItems) {
+        // The mode was stopped after the finish button was clicked
+    }
+});
+```
+
+## Set up a transformation
+
+Sometimes, the barcode data needs to be transformed. For example, if the barcode contains the product identifier and other information, when a product is scanned, the barcode data is first parsed (via a transformation) and then the input list is checked.
+
+First implement the [BarcodeFindTransformer](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-find-transformer.html#interface-scandit.datacapture.barcode.find.IBarcodeFindTransformer) interface. For example, if you want to only consider the first 5 characters:
+
+```java
+class Transformer implements BarcodeFindTransformer {
+    @Override
+    public String transformBarcodeData(String data) {
+        return data.substring(0, 5);
     }
 }
 ```
 
+Then the transformer needs to be set so it can be used by MatrixScan Find:
+
+```java
+barcodeFind.setBarcodeTransformer(new Transformer())
+```
+
 ## UI Customization
 
-The `SDCBarcodeFindView` by default shows a set of UI elements, any of which can be optionally hidden:
+The `BarcodeFindView` by default shows a set of UI elements, any of which can be optionally hidden:
 
 - Play/Pause button
 - Finish button
@@ -45,6 +65,7 @@ The `SDCBarcodeFindView` by default shows a set of UI elements, any of which can
 Each of these elements can be shown or hidden as needed. For example:
 
 ```java
-barcodeFindView.shouldShowCarousel = false
-barcodeFindView.shouldShowProgressBar = true
+barcodeFindView.setShouldShowCarousel(false);
+barcodeFindView.setShouldShowProgressBar(true);
+// …
 ```

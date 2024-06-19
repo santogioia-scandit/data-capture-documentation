@@ -10,7 +10,7 @@ In this guide you will learn step-by-step how to add MatrixScan Find to your app
 - A Barcode Find View: The pre-built UI elements used to highlight found items.
 
 :::note
-MatrixScan Count is implemented via `SDCBarcodeFind`.
+MatrixScan Count is implemented via [`BarcodeFind`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-find.html#class-scandit.datacapture.barcode.find.BarcodeFind).
 :::
 
 The general steps are:
@@ -25,79 +25,78 @@ The general steps are:
 The first step to add capture capabilities to your application is to create a new Data Capture Context. The context expects a valid Scandit Data Capture SDK license key during construction.
 
 ```java
-self.context = DataCaptureContext(licenseKey: "-- ENTER YOUR SCANDIT LICENSE KEY HERE --")
+DataCaptureContext dataCaptureContext = DataCaptureContext.forLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
 ## Configure the Barcode Count Mode
 
-The main entry point for the Barcode Find Mode is the `SDCBarcodeFind` object. You can configure the supported Symbologies through its `SDCBarcodeFindSettings`, and set up the list of items that you want MatrixScan Find to highlight.
+The main entry point for the Barcode Find Mode is the `BarcodeFind` object. You can configure the supported Symbologies through its [`BarcodeFindSettings`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-find-settings.html#class-scandit.datacapture.barcode.find.BarcodeFindSettings), and set up the list of items that you want MatrixScan Find to highlight.
 
 Here we configure it for tracking EAN13 codes, but you should change this to the correct symbologies for your use case.
 
 ```java
-let settings = BarcodeFindSettings()
-settings.set(symbology: .ean13UPCA, enabled: true)
+BarcodeFindSettings settings = new BarcodeFindSettings();
+settings.setSymbologyEnabled(Symbology.EAN13_UPCA, true);
 ```
 
 Next, create the list of items that will be actively searched for. We will also attach some optional information to the first item that can be used by the `BarcodeFindView` to display extra information:
 
 ```java
-var items = Set<BarcodeFindItem>()
-items.insert(BarcodeFindItem(
-    searchOptions: BarcodeFindItemSearchOptions(barcodeData: "9783598215438"),
-    content: BarcodeFindItemContent(
-        info: "Mini Screwdriver Set",
-        additionalInfo: "(6-Piece)",
-        image: nil)
-))
-items.insert(BarcodeFindItem(
-    searchOptions: BarcodeFindItemSearchOptions(barcodeData: "9783598215414"),
-    content: nil // Content information is optional, used for display only
-))
+Set<BarcodeFindItem> items = new HashSet<>();
+items.add(
+        new BarcodeFindItem(
+                new BarcodeFindItemSearchOptions("9783598215438"),
+                new BarcodeFindItemContent("Mini Screwdriver Set", "(6-Piece)", null)
+        )
+);
+items.add(
+        new BarcodeFindItem(
+                new BarcodeFindItemSearchOptions("9783598215414"),
+                null // Item information is optional, used for display only
+        )
+);
 ```
 
-Finally, create a `SDCBarcodeFind` instance with the Data Capture Context and the settings initialized in the previous step:
+Finally, create a `BarcodeFind` instance with the Data Capture Context and the settings initialized in the previous step:
 
 ```java
-let barcodeFind = BarcodeFind(context: context, settings: settings)
-mode.setItemsList(items)
+BarcodeFind mode = new BarcodeFind(settings);
+mode.setItemList(items);
 ```
 
 ## Setup the `BarcodeFindView`
 
-MatrixScan Find’s built-in AR user interface includes buttons and overlays that guide the user through the searching process. By adding a `SDCBarcodeFindView`, the scanning interface is added automatically to your application.
+MatrixScan Find’s built-in AR user interface includes buttons and overlays that guide the user through the searching process. By adding a [`BarcodeFindView`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-find-view.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindView), the scanning interface is added automatically to your application.
 
-The `BarcodeFindView` appearance can be customized through `SDCBarcodeFindViewSettings` to match your application’s look and feel. For example, you can change the color of the dots that are overlaid on top of the items that are found and enable sound and haptic alerts.
+The `BarcodeFindView` appearance can be customized through [`BarcodeFindViewSettings`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-find-view-settings.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindViewSettings) to match your application’s look and feel. For example, you can change the color of the dots that are overlaid on top of the items that are found and enable sound and haptic alerts.
 
 ```java
-let viewSettings = BarcodeFindViewSettings()
+BarcodeFindViewSettings viewSettings = new BarcodeFindViewSettings();
 viewSettings.inListItemColor = .green
 viewSettings.notInListItemColor = .red
 viewSettings.soundEnabled = true
 viewSettings.hapticEnabled = true
 ```
 
-Next, create a `SDCBarcodeFindView` instance with the Data Capture Context and the settings initialized in the previous step. he BarcodeFindView is automatically added to the provided parent view.
+Next, create a `BarcodeFindView` instance with the Data Capture Context and the settings initialized in the previous step. The `BarcodeFindView` is automatically added to the provided parent view.
 
 ```java
-let barcodeFindView = BarcodeFindView(parentView: view, context: context, barcodeFind: mode, settings: viewSettings)
+BarcodeFindView barcodeFindView = BarcodeFindView.newInstance(parentView, dataCaptureContext, mode, viewSettings);
 ```
 
-Last, connect the `BarcodeFindView` to the iOS view controller lifecycle. 
-
-:::note
-Be sure to call `BarcodeFindView.prepareSearching()` on your `UIViewController`’s `viewWillAppear` method to ensure optimal start up time.
-:::
+Connect the `BarcodeFindView` to the Android lifecycle. The view is dependent on calling `BarcodeFindView.onPause()` and `BarcodeFindView.onResume()` to set up the camera and its overlays properly.
 
 ```java
-override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    barcodeFindView.prepareSearching()
+@Override
+public void onResume() {
+    super.onResume();
+    barcodeFindView.onResume();
 }
 
-override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    barcodeFindView.stopSearching()
+@Override
+public void onPause() {
+    super.onPause();
+    barcodeFindView.onPause();
 }
 ```
 
@@ -105,17 +104,17 @@ override func viewWillDisappear(_ animated: Bool) {
 
 The `BarcodeFindView` displays a **Finish** button next to its shutter button button. 
 
-Here we register a `SDCBarcodeFindViewUIDelegate` to be notified what items have been found once the finish button is pressed, and then navigate back to the previous screen to finish the find session.
+Register a [BarcodeFindViewUiListener](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-find-view.html#interface-scandit.datacapture.barcode.find.ui.IBarcodeFindViewUiListener) to be notified what items have been found once the finish button is pressed.
+
+In this tutorial, we will then navigate back to the previous screen to finish the find session.
 
 ```java
-barcodeFindView.uiDelegate = self
-
-extension ViewController: BarcodeFindViewUIDelegate {
-    func barcodeFindView(_ view: BarcodeFindView,
-                        didTapFinishButton foundItems: Set<BarcodeFindItem>) {
-        navigationController?.popViewController(animated: true)
+barcodeFindView.setListener(new BarcodeFindViewUiListener() {
+    @Override
+    public void onFinishButtonTapped(@NonNull Set<BarcodeFindItem> foundItems) {
+        requireActivity().onBackPressed();
     }
-}
+});
 ```
 
 ## Start Searching
@@ -123,10 +122,7 @@ extension ViewController: BarcodeFindViewUIDelegate {
 With everything configured, you can now start searching for items. This is done by calling `barcodeFindView.startSearching()`.
 
 ```java
-override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    barcodeFindView.startSearching()
-}
+barcodeFindView.startSearching();
 ```
 
 This is the equivalent of pressing the Play button programmatically. It will start the search process, turn on the camera, and hide the item carousel.
