@@ -204,7 +204,10 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Android Getting Started",
-      items: ["sdks/android/add-sdk"],
+      items: [
+          "sdks/android/add-sdk",
+          "sdks/android/samples",
+      ],
     },
     {
       type: "category",
