@@ -39,10 +39,17 @@ Additionally, this command also download `ScanditCaptureCore` as `ScanditBarcode
 
 ## Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate the Scandit Data Capture SDK into your Xcode project using Carthage, specify it in your `Cartfile`:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+To integrate the Scandit Data Capture SDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ruby
 binary "https://ssl.scandit.com/sdk/download/carthage/ScanditBarcodeCapture.json"
+```
+
+You also need to add [`ScanditCaptureCore`](https://docs.scandit.com/data-capture-sdk/ios/core/api.html) since [`ScanditBarcodeCapture`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api.html) API depends on it.
+
+```ruby
 binary "https://ssl.scandit.com/sdk/download/carthage/ScanditCaptureCore.json"
 ```
 
@@ -50,12 +57,35 @@ binary "https://ssl.scandit.com/sdk/download/carthage/ScanditCaptureCore.json"
 
 To integrate the Scandit Data Capture SDK into your Xcode project using Swift Package Manager:
 
-1. Navigate to __File__ > __Add Package Dependencies__:
-    ![Add Package Dependencies](./img/add-via-spm.png)
-2. Enter the URL of the Scandit Data Capture SDK repository in the search field: `https://github.com/Scandit/datacapture-spm`
-3. Select __Add Package__. When prompted, select the products you want to use.:
-    ![Select Products](./img/choose_products.png).
-4. Select __Add Package__ again to add the selected products to your project.
+Add the frameworks you want to add in the _Swift Packages_ section of your project. Add our SPM package repository:
+
+```swift
+https://github.com/Scandit/datacapture-spm
+```
+
+Or if you prefer checking out git repositories via SSH:
+
+```shell
+git@github.com:Scandit/datacapture-spm.git
+```
+
+You also need to add [`ScanditCaptureCore`](https://docs.scandit.com/data-capture-sdk/ios/core/api.html) since [`ScanditBarcodeCapture`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api.html) API depends on it.
+
+## Add the Frameworks Manually
+
+Adding the frameworks manually is a single step process when using the XCFramework archives.
+
+All you need to do is drag the frameworks into the _Frameworks, Libraries, and Embedded Content_ section of your target. Make sure to select _Embed and Sign_ for the _Embed_ option.
+
+Please note that you will always need at least `ScanditCaptureCore.xcframework` which contains the shared functionality used by the other data capture modules.
+
+![Add Frameworks Manually](./img/embedded-binaries.png)
+
+:::note
+When building the project, by default Xcode will look for the frameworks in the root folder of the project.
+
+If you choose to copy the frameworks in a different location, don’t forget to update the `FRAMEWORK_SEARCH_PATHS` build setting accordingly.
+:::
 
 ## Import in Source Code
 

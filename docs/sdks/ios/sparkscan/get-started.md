@@ -14,18 +14,18 @@ In this guide you will learn step-by-step how to add SparkScan to your applicati
 :::note
 If you’re looking to integrate SparkScan into a SwiftUI view hierarchy, there are additional steps you need to follow:
     - Create a custom `UIViewController` subclass for managing SparkScan, as described in the rest of this section.
-    - Download `SparkScanSwiftUI.swift` and add it to your Xcode project.
-    - Incorporate SparkScan into your SwiftUI view using the `withSparkScan` view modifier. Pass an instance of the SparkScan view controller as demonstrated below:
+    - Add `import ScanditBarcodeCapture` to your SwiftUI view file.
+    - Use the `withSparkScan` view modifier to incorporate SparkScan into your SwiftUI view. Pass an instance of the SparkScan view controller as demonstrated below:
 
     ```swift
     var body: some View {
-    VStack {
-        Image(systemName: "globe")
-            .imageScale(.large)
-            .foregroundStyle(.tint)
-        Text("Hello, world!")
-    }
-    .withSparkScan(sparkScanViewController)
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .withSparkScan(sparkScanViewController)
     }
     ```
 :::
@@ -75,7 +75,7 @@ Add a SparkScanView to your view hierarchy: Construct a new SparkScan view. The 
 let sparkScanView = SparkScanView(parentView: view, context: context, sparkScan: sparkScan, settings: viewSettings)
 ```
 
-Additionally, make sure to call SDCSparkScanView.prepareScanning and SDCSparkScanView.stopScanning in your UIViewController’s viewWillAppear and viewWillDisappear callbacks, to make sure that start up time is optimal and scanning is stopped when the app is going in the background.
+Additionally, make sure to call [`SDCSparkScanView.prepareScanning`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.PrepareScanning) and [`SDCSparkScanView.stopScanning`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.StopScanning) in your UIViewController’s [`viewWillAppear`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621510-viewwillappear) and [`viewWillDisappear`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621485-viewwilldisappear) callbacks, to make sure that start up time is optimal and scanning is stopped when the app is going in the background.
 
 ```swift
 override func viewWillAppear(animated: Bool) {
@@ -91,14 +91,14 @@ override func viewWillDisappear(animated: Bool) {
 
 ## Register the Listener
 
-To keep track of the barcodes that have been scanned, implement the SDCSparkScanListener protocol and register the listener to the SparkScan mode.
+To keep track of the barcodes that have been scanned, implement the [`SDCSparkScanListener`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) protocol and register the listener to the SparkScan mode.
 
 ```swift
 // Register self as a listener to monitor the spark scan session.
 sparkScan.addListener(self)
 ```
 
-`SDCSparkScanListener.sparkScan:didScanInSession:frameData:` is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: `SDCSparkScanSession.newlyRecognizedBarcodes`.
+[`SDCSparkScanListener.sparkScan:didScanInSession:frameData:`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [`SDCSparkScanSession.newlyRecognizedBarcodes`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes).
 
 Please note that this list only contains one barcode entry.
 
