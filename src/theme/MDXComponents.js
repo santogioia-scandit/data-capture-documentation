@@ -10,6 +10,7 @@ import TabItem from '@theme/TabItem';
 // Import custom components, globally as well
 import CustomDocCard from '../components/CustomDocCard';
 import CustomDocCardsWrapper from '../components/CustomDocCardsWrapper';
+import { Android, BarcodeCapture, BarcodeSelection, Cordova, Flutter, Ios, Javascript, MsAr, MsCount, MsFind, Sparkscan, ReactIcon, Capacitor, Xamarin, Bolt, Express } from '../components/IconComponents';
 
 // import '../pages/wpwp.css';
 
@@ -28,4 +29,20 @@ export default {
   TabItem,
   CustomDocCard,
   CustomDocCardsWrapper,
+  Sparkscan,
+  MsCount,
+  MsFind,
+  BarcodeSelection,
+  BarcodeCapture,
+  MsAr,
+  Ios,
+  Android,
+  Javascript,
+  Cordova,
+  ReactIcon, 
+  Flutter,
+  Capacitor,
+  Xamarin,
+  Bolt,
+  Express,
 };
