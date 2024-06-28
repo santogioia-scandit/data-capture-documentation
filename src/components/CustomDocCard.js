@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames';
 
 export default function CustomDocCard(props) {
-  const { title, description, link, imgSrc, small = false, smallIcon = false } = props;
+  const { title, description, link, imgSrc, small = false, smallIcon = false, children } = props;
   const linkClasses = classNames({
     card: true,
     cardContainer: true,
@@ -24,9 +24,9 @@ export default function CustomDocCard(props) {
           }`}
           title={title}
         >
-          <div className="img-wrap">
+          <div className='img-wrap'>
             {" "}
-            {imgSrc ? <img src={imgSrc} alt="Image description" /> : ""}{" "}
+            {imgSrc ? <img src={imgSrc} alt="Image description" /> : children}{" "}
           </div>{" "}
           {title}
         </h2>

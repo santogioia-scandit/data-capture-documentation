@@ -52,6 +52,23 @@
              filter: invert(88%);
             }
           }
+
+          & .svg-wrap--blue {
+            color: #0A3390;
+            margin: 0;
+
+            html[data-theme="dark"] & {
+             color: #fff;
+            }
+          }
+          & .svg-wrap--gray {
+            color: #B8C2CC;
+            margin-bottom: 8px;
+
+            html[data-theme="dark"] & {
+             color: #fff;
+            }
+          }
         }
       }
 
