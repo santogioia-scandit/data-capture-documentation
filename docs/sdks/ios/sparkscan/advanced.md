@@ -12,7 +12,7 @@ SparkScan is optimized by default for efficiency, accuracy, and a seamless user 
 
 Allowing the end user to control the scanner with hardware buttons can be useful if your users typically wear gloves. It can also improve ergonomics in some workflows.
 
-SparkScan offers a built-in API to let you do this via `scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.HardwareTriggerEnabled`.
+SparkScan offers a built-in API to let you do this via [`SDCSparkScanViewSettings.hardwareTriggerEnabled`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view-settings.html#property-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.HardwareTriggerEnabled).
 
 ### Trigger Error State
 
@@ -22,7 +22,7 @@ You can customize:
 
 * The text message.
 * The timeout of the error message. The scanner will be paused for the specified amount of time, but the user can quickly restart the scanning process by tapping the trigger button.
-* The color of the flashing screen upon scan. You can enable or disable the visual feedback via `scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.VisualFeedbackEnabled` and control the color via `scandit.datacapture.barcode.spark.ui.SparkScanViewFeedback`.
+* The color of the flashing screen upon scan. You can enable or disable the visual feedback via [`SDCSparkScanViewSettings.visualFeedbackEnabled`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view-settings.html#property-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.VisualFeedbackEnabled) and you can control the color via [`SDCSparkScanViewFeedback`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view-feedback.html#class-scandit.datacapture.barcode.spark.ui.SparkScanViewFeedback).
 * The color of the highlight for the scanned barcode.
 * The feedback (sound, vibration).
 
@@ -49,6 +49,7 @@ extension ViewController: SparkScanFeedbackDelegate {
 :::note
 You can have different error states triggered by different logic conditions. For example you can trigger an error state when a wrong barcode is scanned, and another one when a duplicate barcode is scanned. These errors can show different colors and have different timeouts.
 :::
+![SparkScan Error State](../img/errors.png)
 
 A high timeout (e.g. `10`+ seconds) typically requires the users to interact with the UI to start scanning again. This is a good choice when you want to interrupt the scanning workflow, for example when a wrong barcode is scanned and some actions need to be performed.
 
@@ -71,11 +72,9 @@ First you will need to show these buttons:
 sparkScanView.isBarcodeCountButtonVisible = true
 ```
 
-<!--
-![SparkScan Setting Toolbar](/img/sparkscan/toolbar-advanced.png)
--->
+![SparkScan Setting Toolbar](../img/toolbars.png)
 
-In addition you have to add a listener to the `scandit.datacapture.barcode.spark.ui.SparkScanView` via `scandit.datacapture.barcode.spark.ui.SparkScanView.UiListener`. You will then receive callbacks when the **FastFind** button or **Barcode Count** button is tapped from the toolbar.
+In addition you have to add a listener to the [`SDCSparkScanView`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [`SDCSparkScanView.UIDelegate`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.UiListener). You will then receive callbacks when the **FastFind** button or **Barcode Count** button is tapped from the toolbar.
 
 ```swift
 self.sparkScanView.UIDelegate = self

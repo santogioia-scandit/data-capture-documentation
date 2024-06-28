@@ -7,7 +7,7 @@ sidebar_position: 2
 In this guide you will learn step-by-step how to add MatrixScan Count to your application.
 
 :::note
-MatrixScan Count is implemented via `SDCBarcodeCount`.
+MatrixScan Count is implemented via [`SDCBarcodeCount`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count.html#class-scandit.datacapture.barcode.count.BarcodeCount).
 :::
 
 The general steps are:
@@ -32,9 +32,9 @@ self.context = DataCaptureContext(licenseKey: "-- ENTER YOUR SCANDIT LICENSE KEY
 
 ## Configure the Barcode Count Mode
 
-The main entry point for the Barcode Count Mode is the `SDCBarcodeCount` object. It is configured through `SDCBarcodeCountSettings` and allows you to register one or more listeners that are informed whenever a scan phase has finished.
+The main entry point for the Barcode Count Mode is the `SDCBarcodeCount` object. It is configured through [`SDCBarcodeCountSettings`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-settings.html#class-scandit.datacapture.barcode.count.BarcodeCountSettings) and allows you to register one or more listeners that are informed whenever a scan phase has finished.
 
-Here we will set up Barcode Count for tracking EAN13 codes, but you should change this to the correct symbologies for your use case. If you are sure that your environment will only have unique barcodes, you can also enable `SDCBarcodeCountSettings.expectsOnlyUniqueBarcodes`. This option improves scanning performance as long as you are sure that no duplicates will be present.
+Here we will set up Barcode Count for tracking EAN13 codes, but you should change this to the correct symbologies for your use case. If you are sure that your environment will only have unique barcodes, you can also enable [`SDCBarcodeCountSettings.expectsOnlyUniqueBarcodes`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-settings.html#property-scandit.datacapture.barcode.count.BarcodeCountSettings.ExpectsOnlyUniqueBarcodes). This option improves scanning performance as long as you are sure that no duplicates will be present.
 
 ```swift
 let settings = BarcodeCountSettings()
@@ -58,7 +58,7 @@ let camera = Camera.default
 camera?.apply(cameraSettings)
 ```
 
-Because the frame source is configurable the data capture context must be told which frame source to use. This is done with a call to `SDCDataCaptureContext.setFrameSource:completionHandler:`:
+Because the frame source is configurable the data capture context must be told which frame source to use. This is done with a call to [`SDCDataCaptureContext.setFrameSource:completionHandler:`](https://docs.scandit.com/data-capture-sdk/ios/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
 ```swift
 context.setFrameSource(camera)
@@ -66,18 +66,18 @@ context.setFrameSource(camera)
 
 ## Registering the Listener
 
-To keep track of the barcodes that have been scanned, implement the SDCBarcodeCountListener protocol and register the listener.
+To keep track of the barcodes that have been scanned, implement the [`SDCBarcodeCountListener`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-listener.html#interface-scandit.datacapture.barcode.count.IBarcodeCountListener) protocol and register the listener.
 
 ```swift
 // Register self as a listener to monitor the barcode count session.
 barcodeCount.add(self)
 ```
 
-`SDCBarcodeCountListener.barcodeCount:didScanInSession:frameData:` is called when the scan phase has finished and results can be retrieved from `SDCBarcodeCountSession`.
+[`SDCBarcodeCountListener.barcodeCount:didScanInSession:frameData:`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-listener.html#method-scandit.datacapture.barcode.count.IBarcodeCountListener.OnScan) is called when the scan phase has finished and results can be retrieved from [`SDCBarcodeCountSession`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-session.html#class-scandit.datacapture.barcode.count.BarcodeCountSession).
 
 ## Setting the Capture View and AR Overlays
 
-MatrixScan Count’s built-in AR user interface includes buttons and overlays that guide the user through the capturing process. By adding a `SDCBarcodeCountView` the scanning interface will be added automatically to your application.
+MatrixScan Count’s built-in AR user interface includes buttons and overlays that guide the user through the capturing process. By adding a [`SDCBarcodeCountView`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) the scanning interface will be added automatically to your application.
 
 Add a `SDCBarcodeCountView` to your view hierarchy:
 
@@ -107,9 +107,9 @@ override func viewDidDisappear(_ animated: Bool) {
 
 ## Store And Retrieve Scanned Barcodes
 
-The values captured as part of the scanning process are part of the session, and the session is not accessible outside `SDCBarcodeCountListener.barcodeCount:didScanInSession:frameData:`.
+The values captured as part of the scanning process are part of the [`session`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-session.html#class-scandit.datacapture.barcode.count.BarcodeCountSession), and the session is not accessible outside `SDCBarcodeCountListener.barcodeCount:didScanInSession:frameData:`.
 
-We recommend you store the values to present a list, for example when the user taps the list icon. To do this, make a copy of `SDCBarcodeCountSession.recognizedBarcodes`:
+We recommend you store the values to present a list, for example when the user taps the list icon. To do this, make a copy of [`SDCBarcodeCountSession.recognizedBarcodes`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count-session.html#property-scandit.datacapture.barcode.count.BarcodeCountSession.RecognizedBarcodes):
 
 ```swift
 extension ViewController: BarcodeCountListener {
@@ -132,7 +132,7 @@ extension ViewController: BarcodeCountListener {
 
 When the scanning process is over, you need to reset the mode to make it ready for the next process. This clears the list of barcodes scanned and all the AR overlays.
 
-To reset Barcode Count’s scanning process, call the `SDCBarcodeCount.reset` method:
+To reset Barcode Count’s scanning process, call the [`SDCBarcodeCount.reset`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-count.html#method-scandit.datacapture.barcode.count.BarcodeCount.Reset) method:
 
 ```swift
 barcodeCount.reset()
