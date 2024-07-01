@@ -48,7 +48,7 @@ npx cap add android
 
 ### 2a. Add the Scandit Data Capture SDK from the npm registry
 
-To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](barcode-capture/api.html)
+To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api.html)
 
 ```sh
 yarn add scandit-capacitor-datacapture-core
