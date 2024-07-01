@@ -8,15 +8,13 @@ import TabItem from '@theme/TabItem';
 
 # Installation
 
-This page describes how to integrate the Scandit Data Capture SDK into your web project.
+This page describes how to integrate the Scandit Data Capture SDK into your web project. You can add the Scandit Data Capture SDK Web packages in two ways: as an external resource from a CDN in HTML, or as a package dependency via npm.
 
 Scandit Data Capture SDKs are distributed as [npm packages](https://www.npmjs.com/search?q=scandit-web-datacapture-*).
 
-You can add the Scandit Data Capture SDK Web packages in two ways. You can either add it as an external resource from a CDN in HTML, or add it as a package dependency via npm.
+You need to add the `scandit-web-datacapture-core`, which contains the shared functionality used by the other data capture packages. 
 
-You need to add the _scandit-web-datacapture-core_, which contains the shared functionality used by the other data capture packages. If you’re using barcodecapture-related functionalities, make sure to also add the _scandit-web-datacapture-barcode_ package. In addition, depending on the data capture task, you need a add:
-
-- _scandit-web-datacapture-id_ [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/web/id-capture/overview.html) if you want to scan personal identification documents, such as identity cards, passports or visas.
+If you’re using `barcodecapture`-related functionalities, make sure to also add the `scandit-web-datacapture-barcode` package. In addition you need a add `scandit-web-datacapture-id` - the [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/web/id-capture/overview.html) - if you want to scan personal identification documents, such as identity cards, passports or visas.
 
 :::note
 
@@ -30,8 +28,8 @@ Before you begin, make sure you have the following prerequisites in place:
 - The latest stable version of Node.js and npm (required only if including and building the SDK as part of an app, instead of just including it as an external resource from a CDN in HTML).
 - Valid Scandit Data Capture SDK license key
 
-:::note
-Devices running the Scandit Data Capture SDK need to have a GPU and run a browser capable of making it available (requires WebGL - current support? and OffscreenCanvas - current support?) or the performance will drastically decrease.
+:::warning
+Devices running the Scandit Data Capture SDK need to have a GPU and run a browser capable of making it available (requires [WebGL - current support?](https://caniuse.com/#feat=webgl) and [OffscreenCanvas - current support?](https://caniuse.com/#feat=offscreencanvas)) or the performance will drastically decrease.
 :::
 
 ## CDN
@@ -40,10 +38,7 @@ You can use the [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/)
 
 ```html
 <!-- polyfill browsers not supporting import maps  -->
-<script
-	async
-	src="https://ga.jspm.io/npm:es-module-shims@1.7.3/dist/es-module-shims.js"
-></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.3/dist/es-module-shims.js"></script>
 <script type="importmap">
 	{
 		"imports": {
@@ -67,7 +62,7 @@ You can use the [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/)
 ```
 
 :::note
-The alternative link(s) for UNPKG would be https://unpkg.com/scandit-web-datacapture-core@6.x and https://unpkg.com/scandit-web-datacapture-barcode@6.x.
+The alternative link(s) for UNPKG are be [here](https://unpkg.com/scandit-web-datacapture-core@6.x) for Core and [here](https://unpkg.com/scandit-web-datacapture-barcode@6.x) for Barcode.
 :::
 
 Alternatively, you can also put the same JavaScript/TypeScript code in a separate file via:
@@ -122,6 +117,6 @@ You can easily configure the scanner to work offline making the web app progress
 
 With these settings in place and the service worker correctly configured, you will be able to have a full offline scanning experience.
 
-:::note
-On iOS there’s a persisting issue while accessing the video stream inside a progressive web app.
+:::warning
+On iOS there’s a [persisting issue](https://bugs.webkit.org/show_bug.cgi?id=252465) while accessing the video stream inside a progressive web app.
 :::

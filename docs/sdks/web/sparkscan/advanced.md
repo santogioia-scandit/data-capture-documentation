@@ -27,6 +27,24 @@ resumeCapturingDelay: 6, visualFeedbackColor: UIColor.red))
 
 **NOTE**: a high timeout (e.g. >10s) typically requires the users to interact with the UI to start scanning again. This is a good choice when you want to interrupt the scanning workflow (e.g. because a wrong barcode is scanned and some actions need to be performed). A small timeout (e.g. \<2s) could allow the user to scan again without having to interact with the app, just momentarily pausing the workflow to acknowledge that a “special” barcode has been scanned.
 
+## Reject Barcodes
+
+To prevent scanning unwanted barcodes (like those already listed or from incorrect lots), use SparkScan’s built-in error state. Setting the [`SparkScanBarcodeErrorFeedback.resumeCapturingDelay`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-barcode-feedback.html#property-scandit.datacapture.barcode.spark.feedback.Error.ResumeCapturingDelay) parameter to 0 allows the user to continue scanning immediately without pausing on rejected codes.
+
+## Add Advanced Scanning Modes to the Setting Toolbar
+
+SparkScan is our best solution for high-speed single scanning and scan-intensive workflows. Depending on your use case, you can use SparkScan scan in conjunction with other Scandit advanced scanning modes, such as MatrixScan Find or MatrixScan Count, to speed up your workflows.
+
+SparkScan offers pre-build buttons you can add to the setting toolbar to easily move to different scan modes from within the SparkScan UI.
+
+First you will need to show these buttons:
+
+```js
+// Show the MatrixScan Count and MatrixScan Find buttons
+sparkScanView.barcodeCountButtonVisible = true;
+sparkScanView.fastFindButtonVisible = true;
+```
+
 ## Customization
 
 ### Customize colors and texts
@@ -35,7 +53,14 @@ All texts (guidance inside the trigger button and hints’ messages), colors and
 
 ### Hide Controls from the Setting Toolbar
 
-The Setting Toolbar comes with default buttons included, as detailed in [Learn More About SparkScan](#learn-more-about-sparkscan). In some cases you want to avoid end users from accessing these controls, for example:
+The Setting Toolbar comes with default buttons included, but the full list of available controls includes:
+
+* Target Mode (visible by default)
+* Continuous Mode
+* Torch Control (visible by default)
+* Audio Feedback Control
+* Haptics Control
+* Left-handed Mode
 
 - to prevent them disabling audio feedback on scan, as the work environment is always noisy
 - to prevent them toggling the continuous mode, as you want them to pick items one by one
