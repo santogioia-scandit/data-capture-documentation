@@ -47,7 +47,7 @@ cd HelloScandit
 
 ### 2a. Add the Scandit Data Capture SDK from the npm registry
 
-To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](barcode-capture/api.html)
+To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api.html)
 
 ```sh
 yarn add scandit-react-native-datacapture-core
@@ -60,7 +60,7 @@ You can also specify a version `@<version>`.
 
 ### 2b. Add the Scandit Data Capture SDK manually
 
-After you download the archive containing all the plugins at [ssl.scandit.com/dashboard/downloads](https://ssl.scandit.com/dashboard/downloads), unzip the archive. It includes the available React Native plugins, including the scandit-react-native-datacapture-core plugin that all other plugins depend on.
+After you download the [archive](https://ssl.scandit.com/dashboard/downloads) containing all the plugins, unzip the archive. It includes the available React Native plugins, including the scandit-react-native-datacapture-core plugin that all other plugins depend on.
 
 First add scandit-react-native-datacapture-core plugin:
 
@@ -92,5 +92,5 @@ If not specified, **initOrder** is zero by default and you have nothing to worry
 Check [the official `<provider>` documentation](https://developer.android.com/guide/topics/manifest/provider-element).
 :::
 
-- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Android, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our samples: [Run our Sample Apps](samples/run-samples.html).
+- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Android, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our samples: [Run our Sample Apps](https://github.com/Scandit/datacapture-react-native-samples).
 - Remember that, if you want to use the camera as the frame source for barcode, text and label capture, you need to set the “Privacy - Camera Usage Description” field in the Info.plist file for iOS.

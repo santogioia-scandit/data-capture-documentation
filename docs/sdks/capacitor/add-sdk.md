@@ -61,7 +61,7 @@ You can also specify a version `@<version>`.
 
 ### 2b. Add the Scandit Data Capture SDK manually
 
-After you download the archive containing all the plugins at [ssl.scandit.com/dashboard/downloads](https://ssl.scandit.com/dashboard/downloads), unzip the archive. It includes the available Capacitor plugins, including the scandit-capacitor-datacapture-core plugin that all other plugins depend on.
+After you download the [archive](https://ssl.scandit.com/dashboard/downloads) containing all the plugins, unzip the archive. It includes the available Capacitor plugins, including the scandit-capacitor-datacapture-core plugin that all other plugins depend on.
 
 First add scandit-capacitor-datacapture-core plugin:
 
