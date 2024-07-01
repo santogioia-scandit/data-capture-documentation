@@ -42,7 +42,7 @@ ti create -t app -n <PROJECT_NAME>
 
 ### 2a. Add the Scandit Data Capture SDK from the npm registry
 
-To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](barcode-capture/api.html)
+To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/titanium/barcode-capture/api.html)
 
 ```sh
 npm install scandit-titanium-datacapture-core
@@ -75,5 +75,5 @@ After you download the archive containing all the modules at [ssl.scandit.com/da
 
 ## Additional Information
 
-- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Android, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our samples: [Run our Sample Apps](samples/run-samples.html).
+- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Android, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our [samples](https://github.com/Scandit/datacapture-titanium-samples).
 - Remember that, if you want to use the camera as the frame source for barcode capture you need to set the “Privacy - Camera Usage Description” field in the Info.plist file for iOS.
