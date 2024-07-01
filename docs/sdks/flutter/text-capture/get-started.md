@@ -7,13 +7,13 @@ sidebar_position: 2
 In this guide you will learn step by step how to add text capture to your application. The steps are:
 
 - Include the ScanditTextCapture library and its dependencies to your project, if any.
-- Create a new [data capture context](core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext) instance, initialized with your license key.
-- Create a [text capture settings](text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance.
-- Create a new [text capture mode](text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) instance and initialize it with the settings created above.
-- Register a [text capture listener](text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) to receive events when a new text is captured.
-- Obtain a [camera](core/api/camera.html#class-scandit.datacapture.core.Camera) instance and set it as the frame source on the data capture context.
-- Display the camera preview by creating a [data capture view](core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView).
-- If displaying a preview, optionally create a new [overlay](text-capture/api/ui/text-capture-overlay.html#class-scandit.datacapture.text.ui.TextCaptureOverlay) and add it to [data capture view](core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) for a better visual feedback.
+- Create a new [data capture context](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext) instance, initialized with your license key.
+- Create a [text capture settings](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance.
+- Create a new [text capture mode](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) instance and initialize it with the settings created above.
+- Register a [text capture listener](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) to receive events when a new text is captured.
+- Obtain a [camera](https://docs.scandit.com/data-capture-sdk/flutter/core/api/camera.html#class-scandit.datacapture.core.Camera) instance and set it as the frame source on the data capture context.
+- Display the camera preview by creating a [data capture view](https://docs.scandit.com/data-capture-sdk/flutter/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView).
+- If displaying a preview, optionally create a new [overlay](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/ui/text-capture-overlay.html#class-scandit.datacapture.text.ui.TextCaptureOverlay) and add it to [data capture view](https://docs.scandit.com/data-capture-sdk/flutter/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) for a better visual feedback.
 
 ## Initialize the Text plugin
 
@@ -45,7 +45,7 @@ Some of the Scandit Data Capture SDK modules depend on others to work:
 
 ## Create the Data Capture Context
 
-The first step to add capture capabilities to your application is to create a new [data capture context](core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
+The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
 ```dart
 var context = DataCaptureContext.forLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
@@ -53,17 +53,17 @@ var context = DataCaptureContext.forLicenseKey("-- ENTER YOUR SCANDIT LICENSE KE
 
 ## Configure the Text Capture Behavior
 
-Text capture is orchestrated by the [TextCapture](text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) [data capture mode](core/api/data-capture-mode.html#interface-scandit.datacapture.core.IDataCaptureMode). This class is the main entry point for capturing text. It is configured through [TextCaptureSettings](text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) and allows to register one or more [listeners](text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) that will get informed whenever a new text has been captured.
+Text capture is orchestrated by the [TextCapture](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) [data capture mode](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-mode.html#interface-scandit.datacapture.core.IDataCaptureMode). This class is the main entry point for capturing text. It is configured through [TextCaptureSettings](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) and allows to register one or more [listeners](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) that will get informed whenever a new text has been captured.
 
-For creating a [TextCaptureSettings](text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance, you need a JSON containing the necessary configuration for the text capture back-end. For details about the format of the JSON check [Text Capture Settings JSON Structure](text-capture/json-structure.html).
+For creating a [TextCaptureSettings](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance, you need a JSON containing the necessary configuration for the text capture back-end. For details about the format of the JSON check [Text Capture Settings JSON Structure](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/json-structure.html).
 
-First, create a [TextCaptureSettings](text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance:
+First, create a [TextCaptureSettings](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance:
 
 ```dart
 var textCaptureSettings = TextCaptureSettings.fromJSON(json);
 ```
 
-Next, create a [TextCapture](text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) instance with the settings from the previous step:
+Next, create a [TextCapture](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) instance with the settings from the previous step:
 
 ```dart
 var textCapture = TextCapture.forContext(context, settings);
@@ -71,9 +71,9 @@ var textCapture = TextCapture.forContext(context, settings);
 
 ## Register the Text Capture Listener
 
-To get informed whenever a new text has been captured, add a [TextCaptureListener](text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) through [TextCapture.addListener()](text-capture/api/text-capture.html#method-scandit.datacapture.text.TextCapture.AddListener) and implement the listener methods to suit your application’s needs.
+To get informed whenever a new text has been captured, add a [TextCaptureListener](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) through [TextCapture.addListener()](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture.html#method-scandit.datacapture.text.TextCapture.AddListener) and implement the listener methods to suit your application’s needs.
 
-First implement the [TextCaptureListener](text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) interface.
+First implement the [TextCaptureListener](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) interface.
 
 ## Use the Built-in Camera
 
@@ -101,13 +101,13 @@ camera.applySettings(cameraSettings);
 }
 ```
 
-Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.setFrameSource()](core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
+Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.setFrameSource()](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
 ```dart
 context.setFrameSource(camera);
 ```
 
-The camera is off by default and must be turned on. This is done by calling [FrameSource.switchToDesiredState()](core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.on](core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
+The camera is off by default and must be turned on. This is done by calling [FrameSource.switchToDesiredState()](https://docs.scandit.com/data-capture-sdk/flutter/core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.on](https://docs.scandit.com/data-capture-sdk/flutter/core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
 
 ```dart
 camera.switchToDesiredState(FrameSourceState.on);
@@ -117,14 +117,14 @@ There is a separate guide for [more advanced camera functionality](advanced-topi
 
 ## Use a Capture View to Visualize the Scan Process
 
-When using the built-in camera as frame source, you will typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
+When using the built-in camera as frame source, you will typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/flutter/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
 
 ```dart
 var dataCaptureView = DataCaptureView.forContext(dataCaptureContext);
 // Add the dataCaptureView to your widget tree
 ```
 
-To visualize the results of text capture, the following [overlay](text-capture/api/ui/text-capture-overlay.html#class-scandit.datacapture.text.ui.TextCaptureOverlay) can be added:
+To visualize the results of text capture, the following [overlay](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/ui/text-capture-overlay.html#class-scandit.datacapture.text.ui.TextCaptureOverlay) can be added:
 
 ```dart
 var overlay = TextCaptureOverlay.withTextCaptureForView(textCapture, dataCaptureView)
@@ -132,4 +132,4 @@ var overlay = TextCaptureOverlay.withTextCaptureForView(textCapture, dataCapture
 
 ## Disabling Text Capture
 
-To disable text capture, for instance as a consequence of a text being captured, set [TextCapture.isEnabled](text-capture/api/text-capture.html#property-scandit.datacapture.text.TextCapture.IsEnabled) to _false_. The effect is immediate: no more frames will be processed _after_ the change. However, if a frame is currently being processed, this frame will be completely processed and deliver any results/callbacks to the registered listeners. Note that disabling the capture mode does not stop the camera, the camera continues to stream frames until it is turned off.
+To disable text capture, for instance as a consequence of a text being captured, set [TextCapture.isEnabled](https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api/text-capture.html#property-scandit.datacapture.text.TextCapture.IsEnabled) to _false_. The effect is immediate: no more frames will be processed _after_ the change. However, if a frame is currently being processed, this frame will be completely processed and deliver any results/callbacks to the registered listeners. Note that disabling the capture mode does not stop the camera, the camera continues to stream frames until it is turned off.

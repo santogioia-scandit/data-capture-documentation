@@ -13,7 +13,7 @@ This page describes how to integrate the Scandit Data Capture SDK into your Flut
 ## Prerequisites
 
 - The latest stable version of the Flutter SDK (for example through the latest Android Studio).
-- A project with minimum iOS deployment target of 13.0 or higher. Or an Android project with target SDK version 23 (Android 6, Marshmallow) or higher, and Kotlin 1.7.21 or higher.
+- A project with minimum iOS deployment target of 13.0 or higher; Or an Android project with target SDK version 23 (Android 6, Marshmallow) or higher, and Kotlin 1.7.21 or higher.
 - A valid Scandit Data Capture SDK license key. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
 
 :::note
@@ -34,11 +34,11 @@ Currently we support adding the Scandit Data Capture SDK Flutter plugins to your
 
 ### 1. Create a new project (optional)
 
-If you do not have a Flutter project yet that you’ll use, you should create a new one (using your IDE of choice: Android Studio or IntelliJ).
+If you do not have a Flutter project yet that you’ll use, you should create a new one using your IDE of choice.
 
 ### 2a. Add the Scandit Data Capture SDK from the pub.dev registry
 
-To add our plugins from the pub.dev registry, you need to open the pubspec.yaml file located inside the app folder, and add required Scandit plugin(s) under dependencies. In the following snippet we’re adding [ScanditBarcodeCapture API](barcode-capture/api.html)
+To add our plugins from the pub.dev registry, you need to open the pubspec.yaml file located inside the app folder, and add required Scandit plugin(s) under dependencies. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api.html)
 
 ```yml
 dependencies:
@@ -51,7 +51,7 @@ dependencies:
 
 After you download the [archive](https://ssl.scandit.com/dashboard/downloads) containing all the plugins, unzip the archive. It includes the available Flutter plugins, including the scandit-flutter-datacapture-core plugin that all other plugins depend on.
 
-Move the required Scandit Data Capture SDK Flutter plugins to some subdirectory within your app folder, e.g. to libs/ and then open the pubspec.yaml file located inside the app folder, and add required Scandit plugin(s) under dependencies. In the following snippet we’re adding [ScanditBarcodeCapture API](barcode-capture/api.html)
+Move the required Scandit Data Capture SDK Flutter plugins to some subdirectory within your app folder, e.g. to libs/ and then open the pubspec.yaml file located inside the app folder, and add required Scandit plugin(s) under dependencies. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api.html)
 
 ```yml
 dependencies:

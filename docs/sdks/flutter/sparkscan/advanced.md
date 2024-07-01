@@ -102,7 +102,7 @@ void didTapFastFindButton(SparkScanView view) {
 
 All text, colors and opacity of the SparkScan UI elements (trigger button, setting toolbar, toasts) can be customized to match the desired language and color scheme.
 
-See `scandit.datacapture.barcode.spark.ui.SparkScanView` for the full list of available parameters.
+See [SparkScanView](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) for the full list of parameters.
 
 ### Add Controls to the Setting Toolbar
 
