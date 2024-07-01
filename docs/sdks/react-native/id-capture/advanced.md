@@ -39,4 +39,4 @@ The following two verifiers are available:
 - [AamvaBarcodeVerifier](id-capture/api/aamva-barcode-verifier.html#class-scandit.datacapture.id.AamvaBarcodeVerifier): Validates the authenticity of the document by scanning the barcode on the back.
 
 To enable ID Validate for your subscription, please reach out to
-[support@scandit.com](mailto:support%40scandit.com).
+[Scandit Support](mailto:support%40scandit.com).

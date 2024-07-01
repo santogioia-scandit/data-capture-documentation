@@ -24,7 +24,7 @@ The general steps are:
 Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out [this guide](add-sdk.html).
 
 :::note
-You can retrieve your Scandit Data Capture SDK license key, by signing in to your account at [ssl.scandit.com/dashboard/sign-in](https://ssl.scandit.com/dashboard/sign-in).
+You can retrieve your Scandit Data Capture SDK license key, by signing in to [your Scandit account](https://ssl.scandit.com/dashboard/sign-in).
 :::
 
 ### Internal dependencies
@@ -53,7 +53,7 @@ If you’re also scanning MRZ documents, you also need the native ScanditTextCap
 
 Alternatively, if you’re scanning both VIZ and MRZ documents, you can add the ScanditTextCapture React Native (scandit-datacapture-react-native-text) plugin, which includes the native dependencies for both VIZ and MRZ documents.
 
-Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [support@scandit.com](mailto:support%40scandit.com).
+Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [Scandit Support](mailto:support%40scandit.com).
 
 ### Show loading status with default UI
 

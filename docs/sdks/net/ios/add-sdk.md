@@ -15,7 +15,7 @@ This guide shows you how to add the Scandit Data Capture SDK to current existing
 - The latest stable version of [Visual Studio](https://visualstudio.microsoft.com/).
 - A [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
 - A .NET for iOS project with minimum iOS deployment target of 13.0 or higher. Or a .NET for Android project with target SDK version 23 (Android 6, Marshmallow) or higher.
-- A valid Scandit Data Capture SDK license key. You can sign up for a free test account at [ssl.scandit.com](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
+- A valid Scandit Data Capture SDK license key. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
 
 :::note
 Android devices running the Scandit Data Capture SDK need to have a GPU or the performance will drastically decrease.
@@ -27,7 +27,7 @@ Android devices running the Scandit Data Capture SDK need to have a GPU or the p
 2. Create a project
 3. Create a license key
 
-If you have a paid subscription, please reach out to [support@scandit.com](mailto:support%40scandit.com) if you need a new license key.
+If you have a paid subscription, please reach out to [Scandit Support](mailto:support%40scandit.com) if you need a new license key.
 
 ## Add the SDK
 

@@ -9,7 +9,7 @@ In this guide you will learn step-by-step how to add SparkScan to your applicati
 ## Prerequisites
 
 - The latest stable version of [Node.js and npm](https://nodejs.org/en/download/) (required only if including and building the SDK as part of an app, instead of just including it as an external resource from a CDN in HTML).
-- A valid Scandit Data Capture SDK license key. You can sign up for a free test account at [ssl.scandit.com](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
+- A valid Scandit Data Capture SDK license key. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
 
 :::note
 Devices running the Scandit Data Capture SDK need to have a GPU and run a browser capable of making it available (requires [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL%5FAPI) \- [current support?](https://caniuse.com/#feat=webgl) and [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) \- [current support?](https://caniuse.com/#feat=offscreencanvas)) or the performance will drastically decrease.
@@ -23,7 +23,7 @@ Devices running the Scandit Data Capture SDK need to have a GPU and run a browse
 2. Create a project
 3. Create a license key
 
-If you have a paid subscription, please reach out to [support@scandit.com](mailto:support%40scandit.com) if you need a new license key.
+If you have a paid subscription, please reach out to [Scandit Support](mailto:support%40scandit.com) if you need a new license key.
 
 ### Additional Information
 

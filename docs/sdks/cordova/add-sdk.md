@@ -13,10 +13,12 @@ This guide shows you how to add the Scandit Data Capture SDK to your existing pr
 ## Prerequisites
 
 - The latest stable version of [Cordova](https://github.com/apache/cordova-cli#installation), [Node.js and npm](https://nodejs.org/en/download/).
-- A project with minimum iOS deployment target of 11.0 or higher. Or an Android project with target SDK version 23 (Android 6, Marshmallow) or higher.
-- A valid Scandit Data Capture SDK license key. You can sign up for a free test account at [ssl.scandit.com](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
+- A project with minimum:
+	- iOS deployment target _>=11.0_, or
+	- Android project with target SDK version _>=23_ (Android 6, Marshmallow)
+- A valid Scandit Data Capture SDK license key. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
 
-:::note
+:::warning
 Android devices running the Scandit Data Capture SDK need to have a GPU or the performance will drastically decrease.
 :::
 
@@ -26,14 +28,14 @@ Android devices running the Scandit Data Capture SDK need to have a GPU or the p
 2. Create a project
 3. Create a license key
 
-If you have a paid subscription, please reach out to [support@scandit.com](mailto:support%40scandit.com) if you need a new license key.
+If you have a paid subscription, please reach out to [Scandit Support](mailto:support%40scandit.com) if you need a new license key.
 
 ## Add the SDK
 
 Currently we support adding the Scandit Data Capture SDK Cordova plugins to your project in two ways. The simplest way is to use npm, alternatively you can manually download the plugins and add them to your Cordova project.
 
 :::note
-You should first always add the scandit-cordova-datacapture-core plugin, as all other plugins depend on it.
+You should first always add the `scandit-cordova-datacapture-core` plugin, as all other plugins depend on it.
 :::
 
 ### Create a new project (optional)
@@ -54,9 +56,9 @@ The Scandit Data Capture SDK depends on WKWebView on iOS, so you’ll manually h
 > cordova plugin add cordova-plugin-wkwebview-engine
 ```
 
-### Add the Scandit Data Capture SDK via npm or GitHub repo
+### Add the SDK via npm or GitHub repo
 
-To add our plugins via npm or git repo, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](barcode-capture/api.html)
+To add our plugins via npm or git repo, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api.html)
 
 ```sh
 # npm package
@@ -74,19 +76,19 @@ For npm dependencies, you can also specify a version `@<version>`. For GitHub de
 
 ### Add the Scandit Data Capture SDK manually
 
-After you download the archive containing all the plugins at [ssl.scandit.com/dashboard/downloads](https://ssl.scandit.com/dashboard/downloads), unzip the archive. It includes the available Cordova plugins, including the scandit-cordova-datacapture-core plugin that all other plugins depend on.
+After you download the [archive containing all the plugins](https://ssl.scandit.com/dashboard/downloads), unzip the archive. It includes the available Cordova plugins, including the `scandit-cordova-datacapture-core` plugin that all other plugins depend on.
 
 ### Add the plugin to your project
 
 Use the Cordova CLI to add the plugin(s) to your already existing project.
 
-First add scandit-cordova-datacapture-core plugin:
+First add `scandit-cordova-datacapture-core` plugin:
 
 ```sh
 cordova plugin add <path to scandit-cordova-datacapture-core plugin>
 ```
 
-If your project is not yet configured to use Swift on iOS, you’ll need to add the following line to your config.xml file to specify the Swift version you’d like to use:
+If your project is not yet configured to use Swift on iOS, you’ll need to add the following line to your _config.xml_ file to specify the Swift version you’d like to use:
 
 ```jsx
 <platform name="ios">
@@ -119,4 +121,4 @@ If not specified, **initOrder** is zero by default and you have nothing to worry
 Check [the official `<provider>` documentation](https://developer.android.com/guide/topics/manifest/provider-element).
 :::
 
-- When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. The camera permissions are handled by the plugins, so you don’t need to specify anything explicitly.
+When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. The camera permissions are handled by the plugins, so you don’t need to specify anything explicitly.
