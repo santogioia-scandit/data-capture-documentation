@@ -69,10 +69,11 @@
   height: 15px;
   left: 0;
   background-color: #fff;
+}
 
-  html[data-theme="dark"] & {
-    background-color: var(--light-blue-120);
-  }
+html[data-theme="dark"] .rightArrow__styleBefore,
+html[data-theme="dark"] .rightArrow__styleAfter {
+  background-color: var(--light-blue-120);
 }
 
 .rightArrow__styleBefore {
