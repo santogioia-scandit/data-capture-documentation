@@ -161,7 +161,7 @@ To experience Scandit scanning and verification capabilities firsthand, check ou
 
 <CustomDocCard title="Xamarin Android" description="Integrate ID Scanning for Xamarin Android" link="./sdks/xamarin/android/id-capture/intro" smallIcon ><Xamarin/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate ID Scanning in Xamarin Forms" link="./sdks/xamarim/forms/id-capture/intro" smallIcon ><Xamarin/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate ID Scanning in Xamarin Forms" link="./sdks/xamarin/forms/id-capture/intro" smallIcon ><Xamarin/></CustomDocCard>
 
 <CustomDocCard title=".NET iOS" description="Integrate ID Scanning in .NET iOS" link="./sdks/net/ios/id-capture/intro" />
 
