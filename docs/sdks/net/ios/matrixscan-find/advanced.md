@@ -8,7 +8,7 @@ MatrixScan Find is optimized by default for efficiency, accuracy, and a seamless
 
 ## BarcodeFind Listener
 
-You may want more fine-grained knowledge over the different events happening during the life of the BarcodeFind mode, such as when the search starts, pauses and stops. To do this, you can directly register a [IBarcodeFindListener](barcode-capture/api/barcode-find-listener.html#interface-scandit.datacapture.barcode.find.IBarcodeFindListener) on the mode itself.
+You may want more fine-grained knowledge over the different events happening during the life of the BarcodeFind mode, such as when the search starts, pauses and stops. To do this, you can directly register a [IBarcodeFindListener](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find-listener.html#interface-scandit.datacapture.barcode.find.IBarcodeFindListener) on the mode itself.
 
 Be aware that these listeners will be called from a background thread.
 
@@ -37,7 +37,7 @@ barcodeFind.AddListener(new BarcodeFindListener())
 }
 ```
 
-Alternatively it is possible to subscribe to corresponding events [BarcodeFind.SearchPaused](barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchPaused), [BarcodeFind.SearchStarted](barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchStarted) or [BarcodeFind.SearchStopped](barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchStopped). For example:
+Alternatively it is possible to subscribe to corresponding events [BarcodeFind.SearchPaused](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchPaused), [BarcodeFind.SearchStarted](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchStarted) or [BarcodeFind.SearchStopped](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchStopped). For example:
 
 ```c#
 barcodeFind.SearchStarted += (object? sender, EventArgs args) =>
@@ -56,7 +56,7 @@ barcodeFind.SearchStopped += (object? sender, BarcodeFindEventArgs args) =>
 
 ## UI configuration
 
-The [BarcodeFindView](barcode-capture/api/ui/barcode-find-view.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindView) will by default show a set of UI elements, which can be optionally hidden:
+The [BarcodeFindView](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/barcode-find-view.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindView) will by default show a set of UI elements, which can be optionally hidden:
 
 - A play/pause button
 - A finish button

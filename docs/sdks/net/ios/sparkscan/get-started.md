@@ -13,7 +13,7 @@ In this guide you will learn step-by-step how to add SparkScan to your applicati
 
 ## 1. Create a New Data Capture Context Instance
 
-The first step to add capture capabilities to your application is to create a new [Data Capture Context](core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
+The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/dotnet.ios/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
 ```c#
 DataCaptureContext dataCaptureContext = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
@@ -79,7 +79,7 @@ SparkScan="{Binding SparkScan}" SparkScanViewSettings="{Binding ViewSettings}">
 </ContentPage>
 ```
 
-Additionally, make sure to call [SparkScanView.ViewWillAppear()](barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.ViewWillAppear) and [SparkScanView.ViewWillDisappear()](barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.ViewWillDisappear) in your UIViewController’s [ViewWillAppear](https://learn.microsoft.com/en-us/dotnet/api/uikit.uiviewcontroller.viewwillappear) and [ViewWillDisappear](https://learn.microsoft.com/en-us/dotnet/api/uikit.uiviewcontroller.viewwilldisappear)
+Additionally, make sure to call [SparkScanView.ViewWillAppear()](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.ViewWillAppear) and [SparkScanView.ViewWillDisappear()](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.ViewWillDisappear) in your UIViewController’s [ViewWillAppear](https://learn.microsoft.com/en-us/dotnet/api/uikit.uiviewcontroller.viewwillappear) and [ViewWillDisappear](https://learn.microsoft.com/en-us/dotnet/api/uikit.uiviewcontroller.viewwilldisappear)
 callbacks, to make sure that start up time is optimal and scanning is stopped when the app is going in the background.
 
 ```c#
@@ -114,16 +114,16 @@ this.SparkScanView.OnDisappearing();
 
 ## 4. Register the Listener to Be Informed When a New Barcode Is Scanned
 
-To keep track of the barcodes that have been scanned, implement the [ISparkScanListener](barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
+To keep track of the barcodes that have been scanned, implement the [ISparkScanListener](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
 
 ```c#
 // Register self as a listener to monitor the spark scan session.
 sparkScan.AddListener(this);
 ```
 
-[ISparkScanListener.OnBarcodeScanned()](barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can
+[ISparkScanListener.OnBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can
 be retrieved from the first object in the provided barcodes list:
-[SparkScanSession.NewlyRecognizedBarcodes](barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes). Please note that this list only contains one barcode entry.
+[SparkScanSession.NewlyRecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes). Please note that this list only contains one barcode entry.
 
 ```c#
 public void OnBarcodeScanned(SparkScan sparkScan, SparkScanSession session, IFrameData? data)
@@ -146,7 +146,7 @@ this.latestBarcode = barcode;
 }
 ```
 
-Alternatively to register [ISparkScanListener](barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface it is possible to subscribe to corresponding events. For example:
+Alternatively to register [ISparkScanListener](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface it is possible to subscribe to corresponding events. For example:
 
 ```c#
 sparkScan.BarcodeScanned += (object sender, SparkScanEventArgs args) =>
