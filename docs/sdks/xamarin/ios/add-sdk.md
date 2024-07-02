@@ -35,12 +35,12 @@ The Scandit Data Capture SDK is distributed as [NuGet packages](https://www.nuge
 
 You will always need to add the Scandit.DataCapture.Core.Xamarin package, which contains the core functionality used by the other data capture packages. In addition, depending on the data capture task, you will need a reference to:
 
-- Scandit.DataCapture.Barcode.Xamarin ([ScanditBarcodeCapture API](barcode-capture/api.html)) if you want to use barcode-related functionality such as barcode capture or MatrixScan.
-- Scandit.DataCapture.Parser.Xamarin ([ScanditParser API](parser/api.html)) if you want to parse data strings, e.g. as found in barcodes, into a set of key-value mappings.
-- Scandit.DataCapture.TextCapture.Xamarin ([ScanditTextCapture API](text-capture/api.html)) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
+- Scandit.DataCapture.Barcode.Xamarin ([ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api.html)) if you want to use barcode-related functionality such as barcode capture or MatrixScan.
+- Scandit.DataCapture.Parser.Xamarin ([ScanditParser API](https://docs.scandit.com/data-capture-sdk/xamarin.ios/parser/api.html)) if you want to parse data strings, e.g. as found in barcodes, into a set of key-value mappings.
+- Scandit.DataCapture.TextCapture.Xamarin ([ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/xamarin.ios/text-capture/api.html)) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
 
-You can safely remove Scandit.DataCapture.Barcode.Xamarin, Scandit.DataCapture.Parser.Xamarin, Scandit.DataCapture.TextCapture.Xamarin dependencies if you are not going to use their features.
+You can safely remove `Scandit.DataCapture.Barcode.Xamarin`, `Scandit.DataCapture.Parser.Xamarin`, `Scandit.DataCapture.TextCapture.Xamarin` dependencies if you are not going to use their features.
 
 ## Additional Information
 
-- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Xamarin.iOS, you have to set the “Privacy - Camera Usage Description” field in the Info.plist file.
+Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Xamarin.iOS, you have to set the “Privacy - Camera Usage Description” field in the Info.plist file.
