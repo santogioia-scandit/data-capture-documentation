@@ -25,6 +25,6 @@ Upon completing the scanning process, if all items have been successfully scanne
 
 ## Supported Symbologies
 
-MatrixScan Count supports all [symbologies](../../../barcode-symbologies.md) **except** DotCode, MaxiCode and postal codes (KIX, RM4SCC).
+MatrixScan Count supports all [symbologies](../../../../barcode-symbologies.md) **except** DotCode, MaxiCode and postal codes (KIX, RM4SCC).
 
 If you are not familiar with the symbologies that are relevant for your use case, you can use capture presets that are tailored for different verticals (e.g. retail, logistics, etc.).

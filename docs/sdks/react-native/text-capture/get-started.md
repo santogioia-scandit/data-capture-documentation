@@ -99,7 +99,7 @@ The camera is off by default and must be turned on. This is done by calling
 camera?.switch(toDesiredState: .on)
 ```
 
-There is a separate guide for [more advanced camera functionality](advanced-topics.html).
+
 
 ### Use a Capture View to Visualize the Scan Process
 

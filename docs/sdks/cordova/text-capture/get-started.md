@@ -125,7 +125,7 @@ The camera is off by default and must be turned on. This is done by calling [Fra
 camera.switchToDesiredState(Scandit.FrameSourceState.On);
 ```
 
-There is a separate guide for [more advanced camera functionality](advanced-topics.html).
+
 
 ## Use a Capture View to Visualize the Scan Process
 

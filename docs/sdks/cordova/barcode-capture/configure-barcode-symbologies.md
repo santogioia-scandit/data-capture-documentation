@@ -11,9 +11,9 @@ Before you start…
 
 To get the most out of this guide, we recommend that you have read the following articles:
 
-- [Add the SDK to Your App](add-sdk.html)
-- [Get Started With Barcode Capture](get-started-barcode.html)
-- [Barcode Symbologies](barcode-symbologies.html)
+- [Add the SDK to Your App](../add-sdk.md)
+- [Get Started With Barcode Capture](./get-started.md)
+- [Barcode Symbologies](../../../barcode-symbologies.md)
 
 ## Enable the Symbologies You Want to Read
 

@@ -125,7 +125,7 @@ The camera is off by default and must be turned on. This is done by calling
 camera.switchToDesiredState(FrameSourceState.on);
 ```
 
-There is a separate guide for [more advanced camera functionality](advanced-topics.html).
+
 
 ### Disabling Barcode Selection
 

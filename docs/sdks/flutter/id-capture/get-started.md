@@ -51,9 +51,9 @@ When adding ScanditIdCapture to a Flutter project, certain native dependencies n
 
 If you’re only scanning barcode based documents, you only need to add the ScanditIdCapture Flutter plugin.
 
-If you’re also scanning VIZ documents, you also need to add the ScanditOCR and ScanditTextCaptureBase native dependencies, as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/add-sdk.html) and [Android](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html) documentation.
+If you’re also scanning VIZ documents, you also need to add the ScanditOCR and ScanditTextCaptureBase native dependencies, as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/../add-sdk.md) and [Android](https://docs.scandit.com/data-capture-sdk/android/../add-sdk.md) documentation.
 
-If you’re also scanning MRZ documents, you also need the native ScanditTextCapture dependency. You can add this as well as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/add-sdk.html) and [Android](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html) documentation.
+If you’re also scanning MRZ documents, you also need the native ScanditTextCapture dependency. You can add this as well as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/../add-sdk.md) and [Android](https://docs.scandit.com/data-capture-sdk/android/../add-sdk.md) documentation.
 
 Alternatively, if you’re scanning both VIZ and MRZ documents, you can add the ScanditTextCapture Flutter (scandit-datacapture-flutter-text) plugin, which includes the native dependencies for both VIZ and MRZ documents.
 

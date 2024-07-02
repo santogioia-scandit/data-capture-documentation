@@ -122,4 +122,4 @@ This is the equivalent of pressing the “Play” button programmatically. It wi
 
 ## Samples
 
-The best way to start working with the Scandit Data Capture SDK is to run one of our sample apps. [See the full list of available samples](samples/run-samples.html).
+The best way to start working with the Scandit Data Capture SDK is to run one of our sample apps. [See the full list of available samples](https://github.com/Scandit/datacapture-dotnet-samples).

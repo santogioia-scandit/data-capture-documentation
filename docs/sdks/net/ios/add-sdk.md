@@ -36,7 +36,7 @@ The Scandit Data Capture SDK is distributed as [NuGet packages](https://www.nuge
 You will always need to add the Scandit.DataCapture.Core package, which contains the core functionality used by the other data capture packages. When developing MAUI application you will also need to add the Scandit.DataCapture.Core.Maui package. In addition, depending on the data capture task, you will need a reference to:
 
 - Scandit.DataCapture.Barcode ([ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api.html)) if you want to use barcode-related functionality such as barcode capture or MatrixScan.
-- Scandit.DataCapture.Parser ([ScanditParser API](parser/api.html)) if you want to parse data strings, e.g. as found in barcodes, into a set of key-value mappings.
+- Scandit.DataCapture.Parser ([ScanditParser API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/parser/api.html)) if you want to parse data strings, e.g. as found in barcodes, into a set of key-value mappings.
 - Scandit.DataCapture.TextCapture ([ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/text-capture/api.html)) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
 - Scandit.DataCapture.IdCapture ([ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api.html)) if you want to scan personal identification documents such as identity cards, passports or visas.
 
@@ -45,4 +45,4 @@ You can safely remove Scandit.DataCapture.Barcode, Scandit.DataCapture.Parser, S
 ## Additional Information
 
 - Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On .NET for iOS, you have to set the “Privacy - Camera Usage Description” field in the Info.plist file.
-- When using the Scandit Data Capture SDK in MAUI application additionally you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our samples: [Run our Sample Apps](samples/run-samples.html).
+- When using the Scandit Data Capture SDK in MAUI application additionally you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our [samples](https://github.com/Scandit/datacapture-dotnet-samples).

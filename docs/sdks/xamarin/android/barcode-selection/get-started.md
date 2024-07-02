@@ -161,7 +161,7 @@ The camera is off by default and must be turned on. This is done by calling [IFr
 camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 ```
 
-There is a separate guide for [more advanced camera functionality](advanced-topics.html).
+
 
 ## Disabling Barcode Selection
 

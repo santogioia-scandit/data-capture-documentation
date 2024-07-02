@@ -86,5 +86,5 @@ If not specified, **initOrder** is zero by default and you have nothing to worry
 Check [the official `<provider>` documentation](https://developer.android.com/guide/topics/manifest/provider-element).
 :::
 
-- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Android, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our samples: [Run our Sample Apps](samples/run-samples.html).
+- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On Android, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our [samples](https://github.com/Scandit/datacapture-flutter-samples).
 - Remember that, if you want to use the camera as the frame source for barcode, text and label capture, you need to set the “Privacy - Camera Usage Description” field in the Info.plist file for iOS.

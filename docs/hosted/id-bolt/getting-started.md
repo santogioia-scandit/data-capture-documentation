@@ -24,6 +24,10 @@ yarn add @scandit/web-id-bolt
 
 Once you have installed the package as a dependency, you can import the ID Bolt module and start scanning IDs.
 
+:::note
+A valid license key is required for ID Bolt. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=id-bolt).
+:::
+
 Your specific application needs and design define when the ID Bolt pop-up should opened. In this example, we open it after a click on a button present on the page:
 
 ```javascript

@@ -21,7 +21,7 @@ The general steps are:
 
 ## Prerequisites
 
-Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out [this guide](add-sdk.html).
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out [this guide](../add-sdk.md).
 
 :::note
 You can retrieve your Scandit Data Capture SDK license key, by signing in to [your Scandit account](https://ssl.scandit.com/dashboard/sign-in).
@@ -45,11 +45,11 @@ When adding ScanditIdCapture to a React Native project, certain native dependenc
 
 If you’re only scanning barcode based documents, you only need to add the ScanditIdCapture React Native plugin.
 
-If you’re also scanning VIZ documents, you also need to add the ScanditOCR and ScanditTextCaptureBase native dependencies, as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/add-sdk.html) and
-[Android](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html) documentation.
+If you’re also scanning VIZ documents, you also need to add the ScanditOCR and ScanditTextCaptureBase native dependencies, as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/../add-sdk.md) and
+[Android](https://docs.scandit.com/data-capture-sdk/android/../add-sdk.md) documentation.
 
-If you’re also scanning MRZ documents, you also need the native ScanditTextCapture dependency. You can add this as well as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/add-sdk.html) and
-[Android](https://docs.scandit.com/data-capture-sdk/android/add-sdk.html) documentation.
+If you’re also scanning MRZ documents, you also need the native ScanditTextCapture dependency. You can add this as well as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/../add-sdk.md) and
+[Android](https://docs.scandit.com/data-capture-sdk/android/../add-sdk.md) documentation.
 
 Alternatively, if you’re scanning both VIZ and MRZ documents, you can add the ScanditTextCapture React Native (scandit-datacapture-react-native-text) plugin, which includes the native dependencies for both VIZ and MRZ documents.
 

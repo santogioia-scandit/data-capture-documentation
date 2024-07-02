@@ -26,7 +26,7 @@ You can retrieve your Scandit Data Capture SDK license key, by signing in to [yo
 
 #### Enable browser multithreading
 
-You can achieve better performance by enabling multithreading in the browser that supports it. Check the [Requirements Page](requirements) to know what are the minimum versions that can take advantage of multithreading. To enable multithreading you must set your site to be [crossOriginIsolated](https://developer.mozilla.org/en-US/docs/Web/API/crossOriginIsolated/). This will enable the possibility for the sdk to use multithreading and significatively boost the performance. If the environment supports it the sdk will automatically use multithreading. You can programmatically check for multithreading supports using [BrowserHelper.checkMultithreadingSupport()](https://docs.scandit.com/data-capture-sdk/web/core/api/web/browser-compatibility.html#method-scandit.datacapture.core.BrowserHelper.CheckMultithreadingSupport)
+You can achieve better performance by enabling multithreading in the browser that supports it. Check the [Requirements Page](../../../system-requirements.md) to know what are the minimum versions that can take advantage of multithreading. To enable multithreading you must set your site to be [crossOriginIsolated](https://developer.mozilla.org/en-US/docs/Web/API/crossOriginIsolated/). This will enable the possibility for the sdk to use multithreading and significatively boost the performance. If the environment supports it the sdk will automatically use multithreading. You can programmatically check for multithreading supports using [BrowserHelper.checkMultithreadingSupport()](https://docs.scandit.com/data-capture-sdk/web/core/api/web/browser-compatibility.html#method-scandit.datacapture.core.BrowserHelper.CheckMultithreadingSupport)
 
 :::important
 Multithreading is particularly critical for MatrixScan so be sure to configure it correctly following this tutorial, [Making your website “cross-origin isolated” using COOP, COEP and CORP](https://web.dev/coop-coep/). You can also check this link [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/) and this one[Safely reviving shared memory](https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/)
@@ -68,7 +68,7 @@ Most of the times, you will not need to implement a [BarcodeTrackingListener](ht
 For this tutorial, we will setup Barcode Tracking for tracking QR codes.
 
 :::note
-If your scenario is similar to one described in [Barcode Tracking Scenarios](barcode-capture/barcode-tracking-scenarios.html), then you should consider using [BarcodeTrackingSettings.forScenario()](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
+Consider using [BarcodeTrackingSettings.forScenario()](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
 :::
 
 Next, create a [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance with the data capture context and the settings initialized in the previous steps:
@@ -108,7 +108,7 @@ The camera is off by default and must be turned on. This is done by calling
 await camera.switchToDesiredState(Scandit.FrameSourceState.On);
 ```
 
-There is a separate guide for [more advanced camera functionality](advanced-topics.html).
+
 
 ## Use a Capture View to Visualize the Scan Process
 
@@ -189,5 +189,5 @@ MatrixScan does not support the following symbologies:
 - All postal codes (KIX, RM4SCC)
 
 :::important
-Barcode Tracking needs browser multithreading to run. Check the minimum browser support in the [Requirements Page](requirements)and how to enable it [Enable Multithreading](get-started-matrixscan.html#enable-browser-multithreading)
+Barcode Tracking needs browser multithreading to run. Check the minimum browser support in the [Requirements Page](../../../system-requirements.md) and how to enable it [Enable Multithreading](#enable-browser-multithreading), above.
 :::
