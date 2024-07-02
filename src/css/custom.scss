@@ -11,6 +11,7 @@
 @use "./components/doc-admonition";
 @use "./components/footer";
 @use "./components/cards";
+@use "./components//sidebar.scss";
 
 :root {
   --light-white: #fff;

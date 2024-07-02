@@ -1,0 +1,103 @@
+:root {
+  --docusaurus-collapse-button-bg: transparent;
+  --docusaurus-collapse-button-bg-hover: rgb(0 0 0 / 10%);
+}
+
+[data-theme="dark"]:root {
+  --docusaurus-collapse-button-bg: rgb(255 255 255 / 5%);
+  --docusaurus-collapse-button-bg-hover: rgb(255 255 255 / 10%);
+}
+
+@media (min-width: 997px) {
+  .collapseSidebarButton {
+    display: block !important;
+    position: absolute;
+    top: 47%;
+    right: -26px;
+    height: 52px;
+    width: 27px;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid var(--nav-border);
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    html[data-theme="dark"] & {
+      background-color: var(--light-blue-120);
+    }
+
+    &:hover {
+      background-color: #fff !important;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(50%);
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    html[data-theme="dark"] &::after,
+    html[data-theme="dark"] &::before,
+    html[data-theme="dark"] &:hover {
+      background-color: var(--light-blue-120) !important;
+    }
+  }
+
+  .collapseSidebarButtonIcon {
+    transform: rotate(180deg);
+    margin-top: 4px;
+  }
+
+  [dir="rtl"] .collapseSidebarButtonIcon {
+    transform: rotate(0);
+  }
+
+  .collapseSidebarButton:hover,
+  .collapseSidebarButton:focus {
+    background-color: var(--docusaurus-collapse-button-bg-hover);
+  }
+}
+
+.collapseSidebarButton {
+  display: none;
+  margin: 0;
+}
+
+.arrow__styleBefore,
+.arrow__styleAfter {
+  position: absolute;
+  width: 12px;
+  height: 15px;
+}
+
+.arrow__styleBefore {
+  top: -15px;
+  border-bottom: 1px solid var(--nav-border);
+  border-left: 1px solid var(--nav-border);
+  border-bottom-left-radius: 8px;
+}
+
+.arrow__styleAfter {
+  bottom: -15px;
+  border-top: 1px solid var(--nav-border);
+  border-left: 1px solid var(--nav-border);
+  border-top-left-radius: 8px;
+  z-index: 2;
+}

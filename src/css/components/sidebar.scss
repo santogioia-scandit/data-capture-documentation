@@ -1,0 +1,33 @@
+.col {
+  padding: 0 16px 0 28px;
+}
+
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module {
+  clip-path: inset(-500px) !important;
+}
+
+.menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
+  border-right: 1px solid var(--nav-border);
+}
+
+.sidebarButtonIcon {
+  height: 14px;
+  color: var(--dark-blue-70);
+
+  html[data-theme="dark"] & {
+    fill: #fff;
+  }
+}
+
+#__docusaurus .theme-doc-sidebar-container .menu {
+  background-color: #fff;
+
+  html[data-theme="dark"] & {
+    background-color: var(--light-blue-120);
+  }
+}
+
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module {
+  position: relative;
+  z-index: 1;
+}
