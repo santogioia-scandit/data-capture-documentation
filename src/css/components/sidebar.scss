@@ -1,10 +1,12 @@
 #__docusaurus {
   .col {
-    padding: 0 16px 0 28px;
+    padding: 0 20px 0 30px;
   }
 
   .theme-doc-sidebar-container {
     clip-path: inset(-500px) !important;
+    position: relative;
+    z-index: 1;
   }
 
   .sidebarButtonIcon {
@@ -15,11 +17,6 @@
       fill: #fff;
     }
   }
-
-  .theme-doc-sidebar-container {
-    position: relative;
-    z-index: 1;
-  }
 }
 
 #__docusaurus .theme-doc-sidebar-container .menu {
@@ -28,5 +25,19 @@
 
   html[data-theme="dark"] & {
     background-color: var(--light-blue-120);
+  }
+}
+
+.theme-doc-markdown,
+.theme-doc-breadcrumbs {
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (width > 1900px) {
+    max-width: 1000px;
+  }
+
+  @media (width > 2100px) {
+    max-width: 1200px;
   }
 }
