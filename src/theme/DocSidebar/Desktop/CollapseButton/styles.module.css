@@ -13,7 +13,7 @@
     display: block !important;
     position: absolute;
     top: 47%;
-    right: -26px;
+    right: -25px;
     height: 52px;
     width: 27px;
     padding: 0;
@@ -83,6 +83,7 @@
   position: absolute;
   width: 12px;
   height: 15px;
+  left: 1px;
 }
 
 .arrow__styleBefore {
