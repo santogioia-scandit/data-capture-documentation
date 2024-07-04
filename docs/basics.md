@@ -8,15 +8,17 @@ displayed_sidebar: sdcSidebar
 title: 'Overview'
 ---
 
-The Scandit Smart Data Capture SDK is a powerful software development kit designed to enable mobile devices to capture and process a wide range of barcodes and other types of data. You can use Smart Data Capture to easily build high-performance data capture applications that leverage the latest advancements in computer vision and machine learning.
-
-The SDK provides the following features:
+Scandit Smart Data Capture is a powerful suite of solutions designed to enable mobile devices to capture and process a wide range of barcodes and other types of data, including ID scanning and validation. You can use Smart Data Capture to easily build high-performance data capture applications that leverage the latest advancements in computer vision and machine learning.
 
 ## Barcode Scanning
 
-The Scandit Smart Data Capture SDK provides a comprehensive set of APIs and UI components that enable you to quickly and easily integrate barcode scanning into your mobile application no matter the specific use case, using either Scandit's pre-built UI components or your own custom interface via our fully-customizable APIs.
+Add barcode scanning to any application, using either the pre-built UI components and the fully-customizable APIs of the Scandit Barcode Scanner SDK, or the Scandit Express application.
 
-### Pre-built UI Components
+### SDK
+
+The Scandit Smart Data Capture SDK provides a comprehensive set of APIs and UI components that enable you to quickly and easily integrate barcode scanning into your mobile application no matter the specific use case. The SDK supports a wide range of [barcode symbologies](./barcode-symbologies.md), including 1D and 2D barcodes, and is available for all major mobile platforms and frameworks.
+
+#### Pre-built UI Components
 
 The Scandit Barcode Scanner SDK provides a set of pre-built UI components that enable you to quickly and easily integrate barcode scanning into your mobile application. These include:
 
@@ -33,7 +35,7 @@ The Scandit Barcode Scanner SDK provides a set of pre-built UI components that e
 </CustomDocCardsWrapper>
 
 
-### Fully-customizable APIs
+#### Fully-customizable APIs
 
 The Scandit Barcode Scanner SDK provides a comprehensive set of APIs that enable you to fully customize the barcode scanning experience in your mobile application. These include:
 
@@ -45,7 +47,7 @@ The Scandit Barcode Scanner SDK provides a comprehensive set of APIs that enable
 
 </CustomDocCardsWrapper>
 
-### Feature Comparison
+#### Feature Comparison
 
 The table below provides an overview of the features and capabilities, and the use cases, available for the pre-built UI components and the fully-customizable APIs:
 
@@ -133,13 +135,24 @@ The table below provides an overview of the features and capabilities, and the u
   </tbody>
 </table>
 
+### Scandit Express
 
-## ID Scanning
+Scandit Express is an application that enables you to instantly add barcode scanning to any existing app or software tool on a smart device.It requires no software changes or coding effort, and is compatible with any app or system, even those that cannot be modified.
+
+<CustomDocCardsWrapper>
+
+<CustomDocCard title="Scandit Express" description="Get Started with Scandit Express" link="./hosted/express/overview" smallIcon ><Express/></CustomDocCard>
+
+</CustomDocCardsWrapper>
+
+
+## ID Scanning and Validation
 
 Scandit can capture and extract data from over 2,000 identity documents worldwide. The ID Capture API can be used to read Machine Readable Zones (MRZ) on passports, visa stickers and ID cards, and PDF417 barcodes on the back of driver’s licenses and ID cards, as well as visual inspection zones on the front of various ID documents.
 
-To experience Scandit scanning and verification capabilities firsthand, check out the ID Scanning mode on the Scandit Barcode Scanner Demo App ([iOS](https://apps.apple.com/us/app/scandit-barcode-scanner-demo/id453880584?ls=1), [Android](https://play.google.com/store/apps/details?id=com.scandit.demoapp&pli=1)), or get started using your desired framework:
+To experience Scandit scanning and verification capabilities firsthand, check out the ID Scanning mode on the Scandit Barcode Scanner Demo App ([iOS](https://apps.apple.com/us/app/scandit-barcode-scanner-demo/id453880584?ls=1), [Android](https://play.google.com/store/apps/details?id=com.scandit.demoapp&pli=1)), our [ID Bolt demo](https://id-travel.demos.scandit.com/) or get started using your desired framework below.
 
+### SDK
 
 <CustomDocCardsWrapper>
 
@@ -178,15 +191,5 @@ ID Bolt is a cloud-based identity scanning solution that can be quickly and easi
 
 <CustomDocCard title="ID Bolt" description="Get Started with ID Bolt" link="./hosted/id-bolt/overview" smallIcon ><Bolt/></CustomDocCard>
 
-
-</CustomDocCardsWrapper>
-
-## Scandit Express
-
-Scandit Express is an application that enables you to instantly add barcode scanning to any existing app or software tool on a smart device.It requires no software changes or coding effort, and is compatible with any app or system, even those that cannot be modified.
-
-<CustomDocCardsWrapper>
-
-<CustomDocCard title="Scandit Express" description="Get Started with Scandit Express" link="./hosted/express/overview" smallIcon ><Express/></CustomDocCard>
 
 </CustomDocCardsWrapper>
