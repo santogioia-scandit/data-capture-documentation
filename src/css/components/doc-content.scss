@@ -3,6 +3,11 @@
     & .container {
       padding-top: 48px !important;
       padding-left: 24px;
+      width: 100%;
+
+      @media (min-width: 1440px) {
+        min-width: 100%;
+      }
 
       & .row {
         flex-wrap: nowrap;
@@ -96,10 +101,10 @@
       max-width: 76% !important;
     }
   }
-  
+
   [class*="docsWrapper_"] {
     margin: 0 auto;
-    max-width: 1280px;
+    width: 100%;
   }
 }
 
@@ -112,6 +117,6 @@
 
 @media screen and (max-width: 1000px) {
   #__docusaurus [class*="col--3"] {
-   display: none;
+    display: none;
   }
 }

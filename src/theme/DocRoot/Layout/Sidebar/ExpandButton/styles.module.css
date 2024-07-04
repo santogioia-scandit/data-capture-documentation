@@ -1,0 +1,88 @@
+@media (min-width: 997px) {
+  .expandButton {
+    position: fixed;
+    top: 47%;
+    right: 0;
+    left: 0;
+    height: 52px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: var(--light-gray-80);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .expandButton:hover {
+    background-color: var(--light-gray-80) !important;
+  }
+
+  .expandButton::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--light-gray-80);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+  }
+
+  .expandButton::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--light-gray-80);
+    position: absolute;
+    top: -6px;
+    left: 0;
+  }
+
+  html[data-theme="dark"] .expandButton,
+  html[data-theme="dark"] .expandButton::after,
+  html[data-theme="dark"] .expandButton:hover::after,
+  html[data-theme="dark"] .expandButton::before,
+  html[data-theme="dark"] .expandButton:hover::before,
+  html[data-theme="dark"] .expandButton:hover:hover {
+    background-color: var(--dark-blue-80) !important;
+  }
+
+  .expandButton:hover,
+  .expandButton:focus {
+    background-color: var(--docusaurus-collapse-button-bg-hover);
+  }
+
+  .expandButtonIcon {
+    transform: rotate(0);
+  }
+
+  [dir="rtl"] .expandButtonIcon {
+    transform: rotate(180deg);
+  }
+}
+
+.rightArrow__styleBefore,
+.rightArrow__styleAfter {
+  position: absolute;
+  width: 22px;
+  height: 15px;
+  left: 0;
+  background-color: #fff;
+}
+
+html[data-theme="dark"] .rightArrow__styleBefore,
+html[data-theme="dark"] .rightArrow__styleAfter {
+  background-color: var(--light-blue-120);
+}
+
+.rightArrow__styleBefore {
+  top: -15px;
+  border-bottom-left-radius: 10px;
+}
+
+.rightArrow__styleAfter {
+  bottom: -15px;
+  border-top-left-radius: 11px;
+  z-index: 2;
+}

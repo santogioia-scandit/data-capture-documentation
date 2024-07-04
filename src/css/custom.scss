@@ -11,6 +11,7 @@
 @use "./components/doc-admonition";
 @use "./components/footer";
 @use "./components/cards";
+@use "./components/sidebar.scss";
 
 :root {
   --light-white: #fff;
@@ -67,6 +68,8 @@
   --font-family: "Helvetica Neue", sans-serif;
   --second-family: "Inter", sans-serif;
   --third-family: "IBM Plex Mono", sans-serif;
+
+  --ifm-transition-fast: 600ms;
 }
 
 html[data-theme="dark"] {
