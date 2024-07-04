@@ -966,7 +966,7 @@ const sidebars: SidebarsConfig = {
   xamarinIosSidebar: [
     {
       type: "category",
-      label: "Xamarin Getting Started",
+      label: "Xamarin iOS Getting Started",
       items: ["sdks/xamarin/ios/add-sdk"],
     },
     {
@@ -1091,7 +1091,7 @@ const sidebars: SidebarsConfig = {
   xamarinAndroidSidebar: [
     {
       type: "category",
-      label: "Xamarin Getting Started",
+      label: "Xamarin Android Getting Started",
       items: ["sdks/xamarin/android/add-sdk"],
     },
     {
@@ -1216,7 +1216,7 @@ const sidebars: SidebarsConfig = {
   xamarinFormsSidebar: [
     {
       type: "category",
-      label: "Xamarin Getting Started",
+      label: "Xamarin Forms Getting Started",
       items: ["sdks/xamarin/forms/add-sdk"],
     },
     {
