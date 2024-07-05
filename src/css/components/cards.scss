@@ -17,7 +17,12 @@
         padding: 0;
 
         & .img-wrap {
-          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 20px;
         }
       }
 
@@ -29,8 +34,6 @@
         background: var(--gradient-card);
       }
 
-      
-
       & .cardTitle {
         margin-bottom: 12px;
         font-family: var(--font-family);
@@ -40,7 +43,7 @@
         color: var(--light-black);
 
         &.card-icon-small {
-          margin-bottom: 0;
+          margin-bottom: 8px;
           display: flex;
           align-items: center;
           gap: 10px;
@@ -63,7 +66,8 @@
           }
           & .svg-wrap--gray {
             color: #B8C2CC;
-            margin-bottom: 8px;
+            margin-bottom: 0px;
+            width: 30px;
 
             html[data-theme="dark"] & {
              color: #fff;

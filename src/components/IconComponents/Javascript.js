@@ -2,8 +2,8 @@ export default function Javascript() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
+      width="100%"
+      height="100%"
       viewBox="0 0 519 519"
       fill="none"
       className="svg-wrap--gray"

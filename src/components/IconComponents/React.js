@@ -2,9 +2,9 @@ export default function ReactIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="21"
-      height="19"
-      viewBox="0 0 21 19"
+      width="100%"
+      height="100%"
+      viewBox="0 0 20 18"
       fill="none"
       className="svg-wrap--gray"
     >
