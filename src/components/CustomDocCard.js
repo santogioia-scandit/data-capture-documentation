@@ -15,19 +15,23 @@ export default function CustomDocCard(props) {
     'margin-bottom--sm': small,
     'custom-doc-card--small': small,
   });
+
   return (
     <article className={cardClasses}>
       <a className={linkClasses} href={link}>
+        <div
+          className={`${children || imgSrc ? "img-wrap" : ""} cardTitle ${
+            smallIcon ? "card-icon-small" : ""
+          }`}
+        >
+          {imgSrc ? <img src={imgSrc} alt="Image description" /> : children}
+        </div>
         <h2
           className={`text--truncate cardTitle ${
             smallIcon ? "card-icon-small" : ""
           }`}
           title={title}
         >
-          <div className='img-wrap'>
-            {" "}
-            {imgSrc ? <img src={imgSrc} alt="Image description" /> : children}{" "}
-          </div>{" "}
           {title}
         </h2>
         <p className="text--truncate cardDescription" title={description}>
