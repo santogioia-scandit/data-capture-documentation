@@ -92,3 +92,10 @@ html[data-theme="dark"] {
   --icon-border: #007490;
   --toc-title: #5d728e;
 }
+
+#__docusaurus {
+  & a code {
+    color: var(--ifm-link-color)!important;
+    cursor: pointer;
+  }
+}

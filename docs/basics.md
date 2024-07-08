@@ -55,8 +55,8 @@ The table below provides an overview of the features and capabilities, and the u
   <thead>
     <tr>
       <th></th>
-      <th colspan="4">Prebuilt Barcode Scanning Components</th>
-      <th colspan="2">Fully-Customizable APIs</th>
+      <th colSpan="4">Prebuilt Barcode Scanning Components</th>
+      <th colSpan="2">Fully-Customizable APIs</th>
     </tr>
   </thead>
   <tbody>

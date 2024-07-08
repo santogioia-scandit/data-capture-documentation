@@ -22,7 +22,6 @@ To enable scanning of both sides of documents in [`SDCIdCaptureSettings`](https:
 settings.supportedDocuments = [.idCardVIZ, .dlVIZ]
 settings.supportedSides = .frontAndBack
 ```
-
 Start by scanning the front side of a document. After you receive the result in [`SDCIdCaptureListener`](https://docs.scandit.com/data-capture-sdk/ios/id-capture/api/id-capture-listener.html#interface-scandit.datacapture.id.IIdCaptureListener), inspect [`SDCVizResult.isBackSideCaptureSupported`](https://docs.scandit.com/data-capture-sdk/ios/id-capture/api/viz-result.html#property-scandit.datacapture.id.VizResult.IsBackSideCaptureSupported). 
 
 If scanning of the back side of your document is supported, flip the document and capture the back side as well. The next result that you receive is a combined result that contains the information from both sides. You may verify this by checking [`SDCVizResult.capturedSides`](https://docs.scandit.com/data-capture-sdk/ios/id-capture/api/viz-result.html#property-scandit.datacapture.id.VizResult.CapturedSides). After both sides of the document are scanned, you may proceed with another document.
