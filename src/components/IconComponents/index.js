@@ -14,7 +14,11 @@ import Capacitor from "./Capacitor";
 import Xamarin from "./Xamarin";
 import Bolt from './Bolt';
 import Express from './Express';
-
+import XamarinAndroid from "./XamarinAndroid";
+import XamarinForms from "./XamarinForms";
+import XamarinIos from "./XamarinIos";
+import NetIos from "./NetIos";
+import NetAndroid from "./NetAndroid";
 
 export {
   Sparkscan,
@@ -33,4 +37,9 @@ export {
   Xamarin,
   Bolt,
   Express,
+  XamarinAndroid,
+  XamarinForms,
+  XamarinIos,
+  NetIos,
+  NetAndroid,
 };
