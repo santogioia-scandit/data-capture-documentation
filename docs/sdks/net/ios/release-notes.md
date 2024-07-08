@@ -5,6 +5,44 @@ hide_title: true
 title: Release Notes
 ---
 
+## 6.25.0
+
+**Released:** July 5, 2024
+
+### New Features
+
+#### Barcode
+
+* Added the ability to hide the progress bar when counting against a list with BarcodeCount: [`BarcodeCountView.shouldShowListProgressBar`](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/barcode-count-view.html#property-scandit.datacapture.barcode.count.ui.BarcodeCountView.ShouldShowListProgressBar).
+* Introduced smart battery management to lower the energy consumption and increase the up-time of the device. In our tests of repeatedly scanning a sequence of 5 different labels mimicking the user movement, this led to an improvement of up to 15% in battery life.
+  - This option is disabled by default, but can be enabled via [`BarcodeCaptureSettings.BatterySavingMode`](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-capture-settings.html#property-scandit.datacapture.barcode.BarcodeCaptureSettings.BatterySavingMode), deciding whether it’s automatic, always on or always off (default).
+
+#### ID
+
+* Improved the extraction of the document number from UK driver’s licenses.
+* Added [`AamvaBarcodeResult.FirstNameWithoutMiddleName`](https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api/aamva-barcode-result.html#property-scandit.datacapture.id.AamvaBarcodeResult.FirstNameWithoutMiddleName).
+* Added the following properties to [`IdCaptureOverlay`](https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api/ui/id-capture-overlay.html#class-scandit.datacapture.id.ui.IdCaptureOverlay):
+  - `IdCaptureOverlay.TextHintPosition` that allows setting of textual hint position.
+  - `IdCaptureOverlay.ShowTextHints` for showing/hiding text hints.
+  - `IdCaptureOverlay.SetFrontSideTextHint()` that allows to set custom text for textual hint displayed when scanning the front of document.
+  - `IdCaptureOverlay.SetBackSideTextHint()` that allows to set custom text for textual hint displayed when scanning the back of document.
+
+#### Core
+
+* Added multi-version .NET support. Our NuGet packages are now equipped to handle .NET 6, .NET 7, and .NET 8. This enhancement enables the use of our SDK across multiple .NET versions within a single NuGet package, simplifying the development workflow and enhancing compatibility.
+
+### Performance Improvements
+
+#### Barcode
+
+* Improved recognition rate for Composite A and Composite B barcodes, thanks to an increased robustness for small and low resolution MicroPDF417.
+* Improved recognition rate of long, thin linear 1d codes, such as those found on electronic shelf labels (ESLs).
+* Improved recognition rate of linear codes which are partially affected by damage or glare, with a particular focus on codabar barcodes.
+
+#### ID
+
+* Improved the accuracy of the AAMVA Barcode Verification.
+
 ## 6.24.0
 
 **Released**: May 8, 2024
