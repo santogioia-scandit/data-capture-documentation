@@ -384,6 +384,11 @@ const sidebars: SidebarsConfig = {
             "sdks/web/barcode-capture/configure-barcode-symbologies",
           ],
         },
+        {
+          type: "category",
+          label: "Parse Barcode Data",
+          items: ["sdks/web/parse-barcode-data/get-started"],
+        },
       ],
     },
     {

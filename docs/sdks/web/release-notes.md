@@ -5,6 +5,43 @@ hide_title: true
 title: Release Notes
 ---
 
+## 6.25.0
+
+**Released:** July 5, 2024
+
+### New Features
+
+#### Barcode
+
+* Added [Parser](https://docs.scandit.com/data-capture-sdk/web/parser/api/parser.html#class-scandit.datacapture.parser.Parser) for parsing many [data formats](https://docs.scandit.com/data-capture-sdk/web/parser/formats.html).
+
+#### ID
+
+* Added the following properties to [`SDCVizResult`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/viz-result.html#viz-result):
+  - `SDCVizResult.mothersName` to represent the mother’s name of the document owner.
+  - `SDCVizResult.fathersName` to represent the father’s name of the document owner.
+* Improved the extraction of the document number from UK driver’s licenses.
+
+### Behavioral Changes
+
+#### Core
+
+* The license key encryption algorithm for Electron has changed to support larger license keys. See Electron section in the [Installation page](./add-sdk.md#electron) for more information.
+
+### Performance Improvements
+
+#### Barcode
+
+* Improved recognition rate for Composite A and Composite B barcodes, thanks to an increased robustness for small and low resolution MicroPDF417.
+* Improved recognition rate of long, thin linear 1d codes, such as those found on electronic shelf labels (ESLs).
+* Improved recognition rate of linear codes which are partially affected by damage or glare, with a particular focus on codabar barcodes.
+
+### Bug Fixes
+
+#### ID
+
+* Fixed missing property [`AAMVABarcodeResult.barcodeDataElements`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/aamva-barcode-result.html#property-scandit.datacapture.id.AamvaBarcodeResult.BarcodeDataElements) on [`CapturedId`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/captured-id.html#class-scandit.datacapture.id.CapturedId).
+
 ## 6.24.0
 
 **Released**: May 8, 2024
