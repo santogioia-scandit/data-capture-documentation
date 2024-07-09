@@ -10,6 +10,14 @@ title: 'Overview'
 
 Scandit Smart Data Capture is a powerful suite of solutions designed to enable mobile devices to capture and process a wide range of barcodes and other types of data, including ID scanning and validation. You can use Smart Data Capture to easily build high-performance data capture applications that leverage the latest advancements in computer vision and machine learning.
 
+<CustomDocCardsWrapper>
+
+<CustomDocCard title="Barcode Scanning" description="" link="#barcode-scanning" imgSrc="./img/icons/barcode_capture.svg" smallIcon ></CustomDocCard>
+
+<CustomDocCard title="ID Scanning and Validation" description="" link="#id-scanning-and-validation" imgSrc="./img/icons/id_capture.svg" smallIcon ></CustomDocCard>
+
+</CustomDocCardsWrapper>
+
 ## Barcode Scanning
 
 Add barcode scanning to any application, using either the pre-built UI components and the fully-customizable APIs of the Scandit Barcode Scanner SDK, or the Scandit Express application.
