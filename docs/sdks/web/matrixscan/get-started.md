@@ -67,10 +67,6 @@ Most of the times, you will not need to implement a [BarcodeTrackingListener](ht
 
 For this tutorial, we will setup Barcode Tracking for tracking QR codes.
 
-:::note
-Consider using [BarcodeTrackingSettings.forScenario()](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
-:::
-
 Next, create a [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance with the data capture context and the settings initialized in the previous steps:
 
 ```js
