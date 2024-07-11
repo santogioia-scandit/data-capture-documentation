@@ -3,6 +3,7 @@ toc_max_heading_level: 3
 displayed_sidebar: webSidebar
 hide_title: true
 title: Release Notes
+pagination_prev: null
 ---
 
 ## 6.25.0
