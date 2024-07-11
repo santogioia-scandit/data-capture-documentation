@@ -3,6 +3,7 @@ toc_max_heading_level: 4
 displayed_sidebar: netIosSidebar
 hide_title: true
 title: Release Notes
+pagination_prev: null
 ---
 
 ## 6.25.0
