@@ -27,7 +27,7 @@ Android devices running the Scandit Data Capture SDK need to have a GPU or the p
 2. Create a project
 3. Create a license key
 
-If you have a paid subscription, please reach out to [Scandit Support](mailto:support%40scandit.com) if you need a new license key.
+If you have a paid subscription, please reach out to [Scandit Support](mailto:support@scandit.com) if you need a new license key.
 
 ## Add the SDK
 
@@ -37,7 +37,7 @@ Currently we support adding the Scandit Data Capture SDK Capacitor plugins to yo
 You should always make sure to add the scandit-capacitor-datacapture-core plugin, as all other plugins depend on it.
 :::
 
-### 1. Create a new project (optional)
+### Create a new project (optional)
 
 If you do not have a Capacitor project yet that you’ll use, you should create a new one.
 
@@ -47,7 +47,7 @@ npx cap add ios
 npx cap add android
 ```
 
-### 2a. Add the Scandit Data Capture SDK from the npm registry
+### Add the Scandit Data Capture SDK from the npm registry
 
 To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api.html)
 
@@ -60,7 +60,7 @@ yarn add scandit-capacitor-datacapture-barcode
 You can also specify a version `@<version>`.
 :::
 
-### 2b. Add the Scandit Data Capture SDK manually
+### Add the Scandit Data Capture SDK manually
 
 After you download the [archive](https://ssl.scandit.com/dashboard/downloads) containing all the plugins, unzip the archive. It includes the available Capacitor plugins, including the scandit-capacitor-datacapture-core plugin that all other plugins depend on.
 
@@ -76,7 +76,7 @@ Once this is done, you can continue with adding the plugin for your desired func
 yarn add <path to scandit-capacitor-datacapture-barcode plugin>
 ```
 
-### 3. Update the project
+### Update the project
 
 After adding the plugins, you’ll want to make sure they’re added to your project properly:
 
@@ -88,3 +88,15 @@ npx cap sync
 npx cap update android
 npx cap sync
 ```
+
+## Additional Information
+
+:::note
+On Android, the Scandit SDK uses content providers to initialize the scanning capabilities properly. If your own content providers depend on the Scandit SDK, choose an **initOrder** lower than 10 to make sure the SDK is ready first.
+
+If not specified, **initOrder** is zero by default and you have nothing to worry about.
+
+Check [the official `<provider>` documentation](https://developer.android.com/guide/topics/manifest/provider-element).
+:::
+
+When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. The camera permissions are handled by the plugins, so you don’t need to specify anything explicitly.
