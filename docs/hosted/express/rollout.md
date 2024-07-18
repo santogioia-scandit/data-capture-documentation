@@ -50,7 +50,7 @@ This section provides links to the relevant sections of the documentation for po
 
 Scandit Express for Android supports MDM/EMM deployment via [Android Managed Configurations](https://developer.android.com/work/managed-configurations).
 
-:::warn
+:::warning
 Please note that Scandit Express might not be compatible with some Android for Work configurations (e.g. 3rd-party keyboards such as Scandit Express can typically not be installed in a work profile).
 
 Scandit recommends setting Android devices as either ["fully managed" or "dedicated devices"](https://support.google.com/work/android/answer/7218437?hl=en&ref_topic=6151012).
