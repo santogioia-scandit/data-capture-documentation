@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
 			items: [
 				'hosted/express/overview',
 				'hosted/express/getting-started',
+        'hosted/express/rollout',
 				{
 					type: 'link',
 					label: 'FAQ',
