@@ -44,13 +44,17 @@ const sidebars: SidebarsConfig = {
 			label: 'Scandit Express',
 			items: [
 				'hosted/express/overview',
-				'hosted/express/getting-started',
-				{
-					type: 'link',
-					label: 'FAQ',
-					href: 'https://support.scandit.com/hc/en-us/categories/7348049917596-Scandit-Express',
-				},
-			],
+        {
+          type: 'category',
+          label: 'Getting Started',
+          items: ['hosted/express/getting-started/installation', 'hosted/express/getting-started/rollout'],
+        },
+        {
+          type: 'category',
+          label: 'Configuring Express',
+          items: ['hosted/express/configuration/index', 'hosted/express/configuration/express-find', 'hosted/express/configuration/inventory-count'],
+        },
+      ],
 		},
 	],
 
