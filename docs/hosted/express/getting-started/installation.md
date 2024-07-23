@@ -1,10 +1,10 @@
 ---
-sidebar_label: 'Getting Started'
+sidebar_label: 'Installation'
 displayed_sidebar: expressSidebar
 sidebar_position: 1
 ---
 
-# Getting Started
+# Installation
 
 Follow the steps below to get started with Scandit Express.
 
