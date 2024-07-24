@@ -26,7 +26,7 @@ The SparkScan Mode is configured through SparkScanSettings and allows you to reg
 
 For this tutorial, we will set up SparkScan for scanning EAN13 codes. Change this to the correct symbologies for your use case (for example, Code 128, Code 39…).
 
-```c#
+```csharp
 SparkScanSettings settings = new SparkScanSettings();
 HashSet<Symbology> symbologies = new HashSet<Symbology>()
 {
@@ -37,7 +37,7 @@ settings.EnableSymbologies(symbologies);
 
 Next, create a SparkScan instance with the settings initialized in the previous step:
 
-```c#
+```csharp
 SparkScan sparkScan = new SparkScan(settings);
 ```
 
@@ -47,7 +47,7 @@ The SparkScan built-in user interface includes the camera preview and scanning U
 
 The SparkScanView appearance can be customized through SparkScanViewSettings.
 
-```c#
+```csharp
 SparkScanViewSettings viewSettings = new SparkScanViewSettings();
 // setup the desired appearance settings by updating the fields in the object above
 ```
@@ -76,7 +76,7 @@ SparkScan="{Binding SparkScan}" SparkScanViewSettings="{Binding ViewSettings}">
 
 Additionally, make sure to call [SparkScanView.OnAppearing()](https://docs.scandit.com/data-capture-sdk/xamarin.forms/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.OnAppearing) and [SparkScanView.OnDisappearing()](https://docs.scandit.com/data-capture-sdk/xamarin.forms/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.OnDisappearing) in your [Page.OnAppearing](https://learn.microsoft.com/en-us/dotnet/api/xamarin.forms.page.onappearing) and [Page.OnDisappearing](https://learn.microsoft.com/en-us/dotnet/api/xamarin.forms.page.ondisappearing) callbacks, to make sure that start up time is optimal and scanning is stopped when the app is going in the background.
 
-```c#
+```csharp
 protected override void OnAppearing()
 {
 base.OnAppearing();
@@ -94,14 +94,14 @@ this.SparkScanView.OnDisappearing();
 
 To keep track of the barcodes that have been scanned, implement the [ISparkScanListener](https://docs.scandit.com/data-capture-sdk/xamarin.forms/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
 
-```c#
+```csharp
 // Register self as a listener to monitor the spark scan session.
 sparkScan.AddListener(this);
 ```
 
 [ISparkScanListener.OnBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/xamarin.forms/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [SparkScanSession.NewlyRecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/xamarin.forms/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes). Please note that this list only contains one barcode entry.
 
-```c#
+```csharp
 public void OnBarcodeScanned(SparkScan sparkScan, SparkScanSession session, IFrameData? data)
 {
 if (session.NewlyRecognizedBarcodes.Count == 0)
@@ -124,7 +124,7 @@ this.latestBarcode = barcode;
 
 Alternatively to register [ISparkScanListener](https://docs.scandit.com/data-capture-sdk/xamarin.forms/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface it is possible to subscribe to corresponding events. For example:
 
-```c#
+```csharp
 sparkScan.BarcodeScanned += (object sender, SparkScanEventArgs args) =>
 {
 if (args.Session.NewlyRecognizedBarcodes.Count == 0)

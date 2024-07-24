@@ -15,7 +15,7 @@ If you already know the names of the symbologies you want to scan/read, take a l
 
 The following lines of code show you how to enable scanning Code 128 codes for barcode capture:
 
-```c#
+```csharp
 BarcodeCaptureSettings settings = BarcodeCaptureSettings.Create();
 settings.EnableSymbology(Symbology.Code128, true);
 ```
@@ -26,7 +26,7 @@ Barcode symbologies such as [Code 128](https://docs.scandit.com/data-capture-sdk
 
 The below lines of code show how to change the active symbol count for Code 128 to read codes with 6, 7 and 8 symbols.
 
-```c#
+```csharp
 BarcodeCaptureSettings settings = BarcodeCaptureSettings.Create();
 SymbologySettings symbologySettings = settings.GetSymbologySettings(Symbology.Code128);
 HashSet<short> activeSymbolCounts = new HashSet<short>(new short[] { 6, 7, 8 });
@@ -41,7 +41,7 @@ Calculating the active symbol count is symbology-specific as each symbology has 
 
 Most barcodes are printed using dark ink on a bright background. Some symbologies allow the colors to be inverted and can also be printed using bright ink on a dark background. This is not possible for all symbologies as it could lead to false reads when the symbology is not designed for this use case. Which symbologies allow color inversion can be seen in the documentation on [symbology properties](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/symbology-properties.html). When you enable a symbology as described above, only dark-on-bright codes are enabled (see [SymbologySettings.Enabled](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/symbology-settings.html#property-scandit.datacapture.barcode.SymbologySettings.IsEnabled)). When you also want to read bright-on-dark codes, color-inverted reading for that symbology must also be enabled (see [SymbologySettings.ColorInvertedEnabled](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/symbology-settings.html#property-scandit.datacapture.barcode.SymbologySettings.IsColorInvertedEnabled)):
 
-```c#
+```csharp
 BarcodeCaptureSettings settings = BarcodeCaptureSettings.Create();
 SymbologySettings symbologySettings = settings.GetSymbologySettings(Symbology.Code128);
 symbologySettings.ColorInvertedEnabled = true;
@@ -51,7 +51,7 @@ symbologySettings.ColorInvertedEnabled = true;
 
 Some symbologies have a mandatory checksum that will always be enforced while others only have optional [checksums](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/checksum.html#enum-scandit.datacapture.barcode.Checksum). Enforcing an optional checksum will reduce false positives as an additional check can be performed. When enabling a checksum you have to make sure that the data of your codes contains the calculated checksum otherwise the codes will be discarded as they checksum doesn’t match. All available checksums per symbology can be found in the documentation on [symbology properties](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/symbology-properties.html). You can enforce a specific checksum by setting it through [SymbologySettings.Checksums](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/symbology-settings.html#property-scandit.datacapture.barcode.SymbologySettings.Checksums):
 
-```c#
+```csharp
 BarcodeCaptureSettings settings = BarcodeCaptureSettings.Create();
 SymbologySettings symbologySettings = settings.GetSymbologySettings(Symbology.Code39);
 symbologySettings.Checksums = Checksum.Mod43;
@@ -63,7 +63,7 @@ Some symbologies allow further configuration. These configuration options are av
 
 To enable/disable a symbology extension, use [SymbologySettings.SetExtensionEnabled()](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/symbology-settings.html#method-scandit.datacapture.barcode.SymbologySettings.SetExtensionEnabled).
 
-```c#
+```csharp
 BarcodeCaptureSettings settings = BarcodeCaptureSettings.Create();
 SymbologySettings symbologySettings = settings.GetSymbologySettings(Symbology.Code39);
 symbologySettings.SetExtensionEnabled("full_ascii", true);

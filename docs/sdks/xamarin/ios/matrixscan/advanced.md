@@ -22,7 +22,7 @@ As mentioned above, the advanced overlay combined with its [listener](https://do
 
 First of all, create a new instance of [BarcodeTrackingAdvancedOverlay](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay) and add it to the [DataCaptureView](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView).
 
-```c#
+```csharp
 BarcodeTrackingAdvancedOverlay overlay = BarcodeTrackingAdvancedOverlay.Create(barcodeTracking, dataCaptureView);
 ```
 
@@ -42,7 +42,7 @@ The second way will take priority over the first one, which means that if a view
 - [IBarcodeTrackingAdvancedOverlayListener.AnchorForTrackedBarcode()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingAdvancedOverlayListener.AnchorForTrackedBarcode) asks how to anchor the view to the barcode through [Anchor](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/anchor.html#enum-scandit.datacapture.core.Anchor). Be aware that it anchors the view’s center to the anchor point. To achieve anchoring the top of the view or the bottom etc. you will have to set an offset as explained in the next point.
 - [IBarcodeTrackingAdvancedOverlayListener.OffsetForTrackedBarcode()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingAdvancedOverlayListener.OffsetForTrackedBarcode) asks for an offset that is applied on the already anchored view. This offset is expressed through a [PointWithUnit](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/common.html#struct-scandit.datacapture.core.PointWithUnit).
 
-```c#
+```csharp
 public View ViewForTrackedBarcode(BarcodeTrackingAdvancedOverlay overlay, TrackedBarcode trackedBarcode)
 {
 // Create and return the view you want to show for this tracked barcode. You can also return null, to have no view for this barcode.
@@ -78,7 +78,7 @@ new FloatWithUnit(-1f, MeasureUnit.Fraction));
 
 The function [IBarcodeTrackingListener.OnSessionUpdated()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-tracking-listener.html#method-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener.OnSessionUpdated) gives you access to a [session](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-tracking-session.html#class-scandit.datacapture.barcode.tracking.BarcodeTrackingSession), which contains all added, updated and removed tracked barcodes. From here you can create the view you want to display, and then call [BarcodeTrackingAdvancedOverlay.SetViewForTrackedBarcode()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay.SetViewForTrackedBarcode), [BarcodeTrackingAdvancedOverlay.SetAnchorForTrackedBarcode()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay.SetAnchorForTrackedBarcode) and [BarcodeTrackingAdvancedOverlay.SetOffsetForTrackedBarcode()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay.SetOffsetForTrackedBarcode)
 
-```c#
+```csharp
 public void OnSessionUpdated(BarcodeTracking barcodeTracking, BarcodeTrackingSession session, IFrameData frameData)
 {
 // Be careful, this method is not necessarily invoked on the main thread!
@@ -122,7 +122,7 @@ Please note that there is no need to animate the change of location, the change 
 The frame coordinates from [TrackedBarcode.Location](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/tracked-barcode.html#property-scandit.datacapture.barcode.tracking.TrackedBarcode.Location) need to be mapped to view coordinates, using [DataCaptureView.MapFrameQuadrilateralToView()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/ui/data-capture-view.html#method-scandit.datacapture.core.ui.DataCaptureView.MapFrameQuadrilateralToView).
 :::
 
-```c#
+```csharp
 public void OnSessionUpdated(BarcodeTracking mode, BarcodeTrackingSession session, IFrameData frameData)
 {
 // Be careful, this function is not invoked on the main thread!

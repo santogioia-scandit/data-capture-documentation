@@ -22,7 +22,7 @@ The general steps are:
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -32,7 +32,7 @@ Barcode scanning is orchestrated by the [BarcodeCapture](https://docs.scandit.co
 
 For this tutorial, we will setup barcode scanning for a small list of different barcode types, called [symbologies](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/symbology.html#enum-scandit.datacapture.barcode.Symbology). The list of symbologies to enable is highly application specific. We recommend that you only enable the list of symbologies your application requires.
 
-```c#
+```csharp
 BarcodeCaptureSettings settings = BarcodeCaptureSettings.Create();
 HashSet<Symbology> symbologies = new HashSet<Symbology>()
 {
@@ -50,7 +50,7 @@ If you are not disabling barcode capture immediately after having scanned the fi
 
 Next, create a [BarcodeCapture](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-capture.html#class-scandit.datacapture.barcode.BarcodeCapture) instance with the settings initialized in the previous step:
 
-```c#
+```csharp
 barcodeCapture = BarcodeCapture.Create(context, settings);
 ```
 
@@ -60,7 +60,7 @@ To get informed whenever a new code has been recognized, add a [IBarcodeCaptureL
 
 First implement the [IBarcodeCaptureListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-capture-listener.html#interface-scandit.datacapture.barcode.IBarcodeCaptureListener) interface. For example:
 
-```c#
+```csharp
 public void OnBarcodeScanned(BarcodeCapture barcodeCapture, BarcodeCaptureSession session, IFrameData frameData)
 {
 IList<Barcode> barcodes = session?.NewlyRecognizedBarcodes;
@@ -70,13 +70,13 @@ IList<Barcode> barcodes = session?.NewlyRecognizedBarcodes;
 
 Then add the listener:
 
-```c#
+```csharp
 barcodeCapture.AddListener(this);
 ```
 
 Alternatively to register [IBarcodeCaptureListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-capture-listener.html#interface-scandit.datacapture.barcode.IBarcodeCaptureListener) interface it is possible to subscribe to corresponding events. For example:
 
-```c#
+```csharp
 barcodeCapture.BarcodeScanned += (object sender, BarcodeCaptureEventArgs args) =>
 {
 IList<Barcode> barcodes = args.Session?.NewlyRecognizedBarcodes;
@@ -94,20 +94,20 @@ In Android, the user must explicitly grant permission for each app to access cam
 
 When using the built-in camera there are recommended settings for each capture mode. These should be used to achieve the best performance and user experience for the respective mode. The following couple of lines show how to get the recommended settings and create the camera from it:
 
-```c#
+```csharp
 camera = Camera.GetDefaultCamera();
 camera?.ApplySettingsAsync(BarcodeCapture.RecommendedCameraSettings);
 ```
 
 Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.SetFrameSourceAsync()](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
-```c#
+```csharp
 context.SetFrameSourceAsync(camera);
 ```
 
 The camera is off by default and must be turned on. This is done by calling [IFrameSource.SwitchToDesiredStateAsync()](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.On](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
 
-```c#
+```csharp
 camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 ```
 
@@ -117,7 +117,7 @@ camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 
 When using the built-in camera as frame source, you will typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
 
-```c#
+```csharp
 DataCaptureView dataCaptureView = DataCaptureView.Create(this, dataCaptureContext);
 SetContentView(dataCaptureView);
 ```
@@ -140,7 +140,7 @@ AbsoluteLayout.LayoutFlags="All" DataCaptureContext="{Binding DataCaptureContext
 
 You can configure your view in the code behind class. For example:
 
-```c#
+```csharp
 public partial class MainPage : ContentPage
 {
 public MainPage()
@@ -162,7 +162,7 @@ For MAUI development add [Scandit.DataCapture.Core.Maui](https://www.nuget.org/p
 
 To visualize the results of barcode scanning, the following [overlay](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-capture-overlay.html#class-scandit.datacapture.barcode.ui.BarcodeCaptureOverlay) can be added:
 
-```c#
+```csharp
 BarcodeCaptureOverlay overlay = BarcodeCaptureOverlay.Create(barcodeCapture, dataCaptureView);
 ```
 

@@ -20,7 +20,7 @@ The general steps are:
 
 The first step to add find capabilities to your application is to create a new [DataCaptureContext](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext dataCaptureContext = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -32,7 +32,7 @@ For this tutorial, we will set up Barcode Find for tracking EAN13 codes. Change 
 
 First create the settings:
 
-```c#
+```csharp
 BarcodeFindSettings settings = new BarcodeFindSettings();
 settings.EnableSymbology(Symbology.Ean13Upca, true);
 ```
@@ -41,7 +41,7 @@ Then you have to create the list of items that will be actively searched for.
 
 In this tutorial, let’s look up two items based on their EAN13 codes. We will attach to the first item some optional information that can be used by the BarcodeFindView to display extra information.
 
-```c#
+```csharp
 ICollection<BarcodeFindItem> items = new HashSet<BarcodeFindItem>()
 {
     new BarcodeFindItem(
@@ -55,7 +55,7 @@ ICollection<BarcodeFindItem> items = new HashSet<BarcodeFindItem>()
 
 Create the mode with the previously created settings and set the items:
 
-```c#
+```csharp
 BarcodeFind mode = new BarcodeFind(settings);
 mode.SetItemList(items);
 ```
@@ -69,7 +69,7 @@ The BarcodeFindView appearance can be customized through [BarcodeFindViewSetting
 - Colors of dots in augmented reality overlay
 - Enable sound and haptic alerts
 
-```c#
+```csharp
 BarcodeFindViewSettings viewSettings = new BarcodeFindViewSettings();
 ```
 
@@ -77,13 +77,13 @@ Construct a new BarcodeFindView. The BarcodeFindView is automatically added to t
 
 (The parent view can be any subclass of ViewGroup, such as FrameLayout, …)
 
-```c#
+```csharp
 BarcodeFindView barcodeFindView = BarcodeFindView.Create(parentView, dataCaptureContext, barcodeFind, viewSettings);
 ```
 
 Connect the BarcodeFindView to the Android lifecycle. The view is dependent on calling onPause and onResume to set up the camera and its overlays properly.
 
-```c#
+```csharp
 public override void OnResume()
 {
 base.OnResume();
@@ -103,7 +103,7 @@ The BarcodeFindView displays next to its shutter button a handy “finish” but
 
 In this tutorial, we will then navigate back to the previous screen to finish the find session.
 
-```c#
+```csharp
 barcodeFindView.FinishButtonTapped += (object? sender, FinishButtonTappedEventArgs e) =>
 {
 RequireActivity().OnBackPressed();
@@ -114,7 +114,7 @@ RequireActivity().OnBackPressed();
 
 As soon as everything is set up, control the [BarcodeFindView](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-find-view.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindView) to start the search.
 
-```c#
+```csharp
 barcodeFindView.StartSearching();
 ```
 

@@ -49,7 +49,7 @@ The Scandit Barcode Scanner SDK provides a comprehensive set of APIs that enable
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="Barcode Capture" description="Scanning one or many barcodes" link="./sdks/android/barcode-capture/intro" smallIcon ><BarcodeCapture/></CustomDocCard>
+<CustomDocCard title="Barcode Capture" description="Scanning one or many barcodes" link="./sdks/android/barcode-capture/get-started" smallIcon ><BarcodeCapture/></CustomDocCard>
 
 <CustomDocCard title="MatrixScan + AR" description="Identify and track multiple barcodes" link="./sdks/android/matrixscan/intro" smallIcon ><MsAr/></CustomDocCard>
 

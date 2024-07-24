@@ -21,7 +21,7 @@ The general steps are:
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -33,7 +33,7 @@ Barcode selection is orchestrated by the [BarcodeSelection](https://docs.scandit
 
 For this tutorial, we will setup barcode scanning for a small list of different barcode types, called [symbologies](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/symbology.html#enum-scandit.datacapture.barcode.Symbology). The list of symbologies to enable is highly application specific. We recommend that you only enable the list of symbologies your application requires.
 
-```c#
+```csharp
 BarcodeSelectionSettings settings = BarcodeSelectionSettings.Create();
 HashSet<Symbology> symbologies = new HashSet<Symbology>()
         {
@@ -65,7 +65,7 @@ _Creating the mode_
 
 Next, create a [BarcodeSelection](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-selection.html#class-scandit.datacapture.barcode.selection.BarcodeSelection) instance with the settings initialized in the previous step:
 
-```c#
+```csharp
 barcodeSelection = BarcodeSelection.Create(context, settings);
 ```
 
@@ -75,7 +75,7 @@ To get informed whenever a new code has been recognized, add a [IBarcodeSelectio
 
 First implement the [IBarcodeSelectionListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-selection-listener.html#interface-scandit.datacapture.barcode.selection.IBarcodeSelectionListener) interface. For example:
 
-```c#
+```csharp
 public class MyBarcodeSelectionListener : Java.Lang.Object, IBarcodeSelectionListener
 {
 public void OnObservationStarted(BarcodeSelection barcodeSelection)
@@ -114,13 +114,13 @@ IList<Barcode> newlyUnselectedBarcodes = session.NewlyUnselectedBarcodes;
 
 Then add the listener:
 
-```c#
+```csharp
 barcodeSelection.AddListener(new MyBarcodeSelectionListener());
 ```
 
 Alternatively to register [IBarcodeSelectionListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-selection-listener.html#interface-scandit.datacapture.barcode.selection.IBarcodeSelectionListener) interface it is possible to subscribe to corresponding events. For example:
 
-```c#
+```csharp
 barcodeSelection.SelectionUpdated += (object sender, BarcodeSelectionEventArgs args) =>
 {
 IList<Barcode> newlySelectedBarcodes = args.Session.NewlySelectedBarcodes;
@@ -140,7 +140,7 @@ In Android, the user must explicitly grant permission for each app to access cam
 
 When using the built-in camera there are recommended settings for each capture mode. These should be used to achieve the best performance and user experience for the respective mode. The following couple of lines show how to get the recommended settings and create the camera from it:
 
-```c#
+```csharp
 var cameraSettings = BarcodeSelection.RecommendedCameraSettings;
 
 // Depending on the use case further camera settings adjustments can be made here.
@@ -151,13 +151,13 @@ camera?.ApplySettingsAsync(cameraSettings);
 
 Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.SetFrameSourceAsync()](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
-```c#
+```csharp
 context.SetFrameSourceAsync(camera);
 ```
 
 The camera is off by default and must be turned on. This is done by calling [IFrameSource.SwitchToDesiredStateAsync()](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.On](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
 
-```c#
+```csharp
 camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 ```
 
