@@ -77,9 +77,52 @@ const sidebars: SidebarsConfig = {
 
   iosSidebar: [
     {
-      type: "category",
-      label: "iOS Getting Started",
-      items: ["sdks/ios/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for iOS',
+      items: ['sdks/ios/add-sdk'],
+    },
+    {
+      type: 'category',
+      label: 'Barcode Scanning',
+      items: [
+        {
+          type: 'category',
+          label: 'Single Scanning',
+          items: [
+            {
+              type: 'category',
+              label: 'Barcode Capture',
+              items: [
+                "sdks/ios/barcode-capture/get-started",
+                "sdks/ios/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/ios/sparkscan/intro",
+                    "sdks/ios/sparkscan/get-started",
+                    "sdks/ios/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "Barcode Selection",
+                  items: [
+                    "sdks/ios/barcode-selection/intro",
+                    "sdks/ios/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
+          ],
+        }, 
+      ],
     },
     {
       type: "category",
