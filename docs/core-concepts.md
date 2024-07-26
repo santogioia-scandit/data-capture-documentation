@@ -1,6 +1,5 @@
 ---
 sidebar_position: 2
-displayed_sidebar: sdcSidebar
 ---
 
 # Core Concepts

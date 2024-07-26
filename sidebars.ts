@@ -79,11 +79,15 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Data Capture SDK for iOS',
-      items: ['sdks/ios/add-sdk'],
+      collapsed: false,
+      items: [
+        'sdks/ios/add-sdk',
+      ],
     },
     {
       type: 'category',
       label: 'Barcode Scanning',
+      collapsed: false,
       items: [
         {
           type: 'category',
@@ -91,7 +95,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: 'Barcode Capture',
+              label: 'Barcode Capture API',
               items: [
                 "sdks/ios/barcode-capture/get-started",
                 "sdks/ios/barcode-capture/configure-barcode-symbologies",
@@ -121,54 +125,51 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: 'category',
+          label: 'Multi-scanning',
+          items: [
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/ios/matrixscan/intro",
+                "sdks/ios/matrixscan/get-started",
+                "sdks/ios/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: "category",
+                  label: "MatrixScan Count",
+                  items: [
+                    "sdks/ios/matrixscan-count/intro",
+                    "sdks/ios/matrixscan-count/get-started",
+                    "sdks/ios/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "MatrixScan Find",
+                  items: [
+                    "sdks/ios/matrixscan-find/intro",
+                    "sdks/ios/matrixscan-find/get-started",
+                    "sdks/ios/matrixscan-find/advanced",
+                  ],
+                },
+              ],
+            },
+          ],
         }, 
       ],
     },
     {
       type: "category",
-      label: "Pre-built Components",
-      collapsed: false,
-      items: [
-        {
-          type: "category",
-          label: "SparkScan",
-          items: [
-            "sdks/ios/sparkscan/intro",
-            "sdks/ios/sparkscan/get-started",
-            "sdks/ios/sparkscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Count",
-          items: [
-            "sdks/ios/matrixscan-count/intro",
-            "sdks/ios/matrixscan-count/get-started",
-            "sdks/ios/matrixscan-count/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Find",
-          items: [
-            "sdks/ios/matrixscan-find/intro",
-            "sdks/ios/matrixscan-find/get-started",
-            "sdks/ios/matrixscan-find/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Selection",
-          items: [
-            "sdks/ios/barcode-selection/intro",
-            "sdks/ios/barcode-selection/get-started",
-          ],
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -178,23 +179,6 @@ const sidebars: SidebarsConfig = {
             "sdks/ios/id-capture/intro",
             "sdks/ios/id-capture/get-started",
             "sdks/ios/id-capture/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan",
-          items: [
-            "sdks/ios/matrixscan/intro",
-            "sdks/ios/matrixscan/get-started",
-            "sdks/ios/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/ios/barcode-capture/get-started",
-            "sdks/ios/barcode-capture/configure-barcode-symbologies",
           ],
         },
       ],
@@ -249,58 +233,99 @@ const sidebars: SidebarsConfig = {
 
   androidSidebar: [
     {
-      type: "category",
-      label: "Android Getting Started",
+      type: 'category',
+      label: 'Data Capture SDK for Android',
+      collapsed: false,
       items: [
-          "sdks/android/add-sdk",
-          "sdks/android/samples",
+        'sdks/android/add-sdk',
       ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "SparkScan",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/android/sparkscan/intro",
-            "sdks/android/sparkscan/get-started",
-            "sdks/android/sparkscan/advanced",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/android/barcode-capture/get-started",
+                "sdks/android/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/android/sparkscan/intro",
+                    "sdks/android/sparkscan/get-started",
+                    "sdks/android/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "Barcode Selection",
+                  items: [
+                    "sdks/android/barcode-selection/intro",
+                    "sdks/android/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/android/matrixscan-count/intro",
-            "sdks/android/matrixscan-count/get-started",
-            "sdks/android/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/android/matrixscan/intro",
+                "sdks/android/matrixscan/get-started",
+                "sdks/android/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: "category",
+                  label: "MatrixScan Count",
+                  items: [
+                    "sdks/android/matrixscan-count/intro",
+                    "sdks/android/matrixscan-count/get-started",
+                    "sdks/android/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "MatrixScan Find",
+                  items: [
+                    "sdks/android/matrixscan-find/intro",
+                    "sdks/android/matrixscan-find/get-started",
+                    "sdks/android/matrixscan-find/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Find",
-          items: [
-            "sdks/android/matrixscan-find/intro",
-            "sdks/android/matrixscan-find/get-started",
-            "sdks/android/matrixscan-find/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Selection",
-          items: [
-            "sdks/android/barcode-selection/intro",
-            "sdks/android/barcode-selection/get-started",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -310,23 +335,6 @@ const sidebars: SidebarsConfig = {
             "sdks/android/id-capture/intro",
             "sdks/android/id-capture/get-started",
             "sdks/android/id-capture/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan",
-          items: [
-            "sdks/android/matrixscan/intro",
-            "sdks/android/matrixscan/get-started",
-            "sdks/android/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/android/barcode-capture/get-started",
-            "sdks/android/barcode-capture/configure-barcode-symbologies",
           ],
         },
       ],
