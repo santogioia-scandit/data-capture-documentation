@@ -12,9 +12,11 @@ import Flutter from "./Flutter";
 import ReactIcon from "./React";
 import Capacitor from "./Capacitor";
 import Xamarin from "./Xamarin";
-import Bolt from './Bolt';
-import Express from './Express';
-
+import Bolt from "./Bolt";
+import Express from "./Express";
+import Titanium from "./Titanium";
+import Net from "./Net";
+import AntDesign from "./AntDesign";
 
 export {
   Sparkscan,
@@ -33,4 +35,7 @@ export {
   Xamarin,
   Bolt,
   Express,
+  Titanium,
+  Net,
+  AntDesign,
 };

@@ -1,0 +1,37 @@
+.dataCapture {
+  padding-top: 14px;
+  border-top: 1px solid var(--light-gray-60);
+}
+
+.dataCaptureTitle {
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 700;
+  color: var(--light-black);
+}
+
+.dataCaptureText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  max-width: 700px;
+  margin-bottom: 36px;
+}
+
+.dataCaptureList {
+  padding: 0;
+}
+
+.dataCaptureList li {
+  list-style: none;
+  text-decoration: underline;
+  color: #2961d8;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.dataCaptureLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

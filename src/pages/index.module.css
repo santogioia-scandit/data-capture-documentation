@@ -21,3 +21,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.homeWrapper {
+  padding: clamp(40px, 5vw, 72px) clamp(30px, 3.8vw, 54px);
+}

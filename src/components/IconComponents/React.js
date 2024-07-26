@@ -1,4 +1,4 @@
-export default function ReactIcon() {
+export default function ReactIcon({ iconClass = "svg-wrap--gray" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,7 @@ export default function ReactIcon() {
       height="100%"
       viewBox="0 0 20 18"
       fill="none"
-      className="svg-wrap--gray"
+      className={iconClass}
     >
       <path
         d="M10.5095 11.03C11.4953 11.03 12.2945 10.2308 12.2945 9.245C12.2945 8.25917 11.4953 7.46 10.5095 7.46C9.52365 7.46 8.72448 8.25917 8.72448 9.245C8.72448 10.2308 9.52365 11.03 10.5095 11.03Z"

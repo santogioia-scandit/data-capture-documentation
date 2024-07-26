@@ -1,0 +1,36 @@
+.text {
+  margin: 80px 0 32px;
+  color: #717375;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.iconStyle {
+  color: var(--icon-blue);
+  max-width: 27px;
+}
+
+.iconList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #b8c2cc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.iconWrapper:hover {
+  background: linear-gradient(90deg, #e0f6f8 0%, #c3e1ff 100%);
+}

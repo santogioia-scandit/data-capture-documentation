@@ -1,0 +1,11 @@
+.cardsPartWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(20px, 6.3vw, 90px);
+}
+
+@media (width < 600px) {
+  .cardsPartWrapper {
+    flex-direction: column;
+  }
+}
