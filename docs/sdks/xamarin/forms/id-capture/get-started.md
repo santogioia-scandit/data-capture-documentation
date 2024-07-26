@@ -23,7 +23,7 @@ The general steps are:
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/xamarin.forms/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -31,7 +31,7 @@ DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCA
 
 You need to also create the [Camera](https://docs.scandit.com/data-capture-sdk/xamarin.forms/core/api/camera.html#class-scandit.datacapture.core.Camera):
 
-```c#
+```csharp
 camera = Camera.GetDefaultCamera();
 
 if (camera != null)
@@ -50,7 +50,7 @@ Use [IdCaptureSettings](https://docs.scandit.com/data-capture-sdk/xamarin.forms/
 Using [IdDocumentType.DlViz](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.DlViz) or [IdDocumentType.IdCardViz](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.IdCardViz) together with any MRZ document ([IdDocumentType.IdCardMrz](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.IdCardMrz), [IdDocumentType.VisaMrz](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.VisaMrz), [IdDocumentType.PassportMrz](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.PassportMrz), [IdDocumentType.SwissDlMrz](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.SwissDlMrz)) while [SupportedSides.FrontAndBack](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-supported-document-sides.html#value-scandit.datacapture.id.SupportedSides.FrontAndBack) is enabled is currently not supported.
 :::
 
-```c#
+```csharp
 IdCaptureSettings settings = new IdCaptureSettings
 {
 SupportedDocuments = IdDocumentType.IdCardViz | IdDocumentType.DlViz | IdDocumentType.AamvaBarcode
@@ -61,7 +61,7 @@ SupportedDocuments = IdDocumentType.IdCardViz | IdDocumentType.DlViz | IdDocumen
 
 To receive scan results, implement [IIdCaptureListener](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-capture-listener.html#interface-scandit.datacapture.id.IIdCaptureListener). A result is delivered as [CapturedId](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/captured-id.html#class-scandit.datacapture.id.CapturedId). This class contains data common for all kinds of personal identification documents. For more specific information use its non-_null_ result properties (for example [CapturedId.AamvaBarcode](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/captured-id.html#property-scandit.datacapture.id.CapturedId.AamvaBarcode)).
 
-```c#
+```csharp
 public class MyListener : IIdCaptureListener
 {
 public void OnIdCaptured(IdCapture mode, IdCaptureSession session, IFrameData data)
@@ -102,7 +102,7 @@ public void OnObservationStopped(IdCapture mode)
 
 Alternatively to register [IIdCaptureListener](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/id-capture-listener.html#interface-scandit.datacapture.id.IIdCaptureListener) interface it is possible to subscribe to corresponding events. For example:
 
-```c#
+```csharp
 idCapture.IdCaptured += (object sender, IdCaptureEventArgs args) =>
 {
 CapturedId capturedId = args.Session.NewlyCapturedId;
@@ -129,7 +129,7 @@ else if (capturedId.CapturedResultType == CapturedResultType.UsUniformedServices
 
 Create a new ID Capture mode with the chosen settings. Then register the listener:
 
-```c#
+```csharp
 idCapture = IdCapture.Create(context, settings);
 idCapture.AddListener(new MyListener())
 ```
@@ -148,7 +148,7 @@ When using the built-in camera as frame source, you will typically want to displ
 
 Then create an instance of [IdCaptureOverlay](https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api/ui/id-capture-overlay.html#class-scandit.datacapture.id.ui.IdCaptureOverlay) attached to the view:
 
-```c#
+```csharp
 overlay = IdCaptureOverlay.Create(idCapture, dataCaptureView);
 ```
 
@@ -158,7 +158,7 @@ The overlay chooses the displayed UI automatically, based on the selected [IdCap
 
 Finally, turn on the camera to start scanning:
 
-```c#
+```csharp
 camera.SwitchToDesiredStateAsync(FrameSourceState.On);
 ```
 

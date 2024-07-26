@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+pagination_next: null
 ---
 
 # Get Started
@@ -66,10 +67,6 @@ The main entry point for the Barcode Tracking Mode is the [BarcodeTracking](http
 Most of the times, you will not need to implement a [BarcodeTrackingListener](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener), instead you will add a [BarcodeTrackingBasicOverlay](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/barcode-tracking-basic-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay) and implement a [BarcodeTrackingBasicOverlayListener](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener).
 
 For this tutorial, we will setup Barcode Tracking for tracking QR codes.
-
-:::note
-Consider using [BarcodeTrackingSettings.forScenario()](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
-:::
 
 Next, create a [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance with the data capture context and the settings initialized in the previous steps:
 

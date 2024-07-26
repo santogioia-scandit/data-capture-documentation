@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+pagination_next: null
 ---
 
 # Advanced Configurations
@@ -18,7 +19,7 @@ Currently the combined result contains the following information:
 
 First, enable scanning of both sides of documents in [IdCaptureSettings](https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api/id-capture-settings.html#class-scandit.datacapture.id.IdCaptureSettings):
 
-```c#
+```csharp
 settings.SupportedDocuments = IdDocumentType.IdCardViz | IdDocumentType.DlViz;
 settings.SupportedSides = SupportedSides.FrontAndBack;
 ```
@@ -27,7 +28,7 @@ Start by scanning the front side of a document. After you receive the result in 
 
 Sometimes, you may not be interested in scanning the back side of a document, after you completed the front scan. For example, your user may decide to cancel the process. Internally, _Id Capture_ maintains the state of the scan, that helps it to provide better combined results. To abandon capturing the back of a document, reset this state by calling:
 
-```c#
+```csharp
 idCapture.Reset();
 ```
 
@@ -41,4 +42,4 @@ The following verifier is available:
 
 - [AamvaVizBarcodeComparisonVerifier](https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api/aamva-viz-barcode-comparison-verifier.html#class-scandit.datacapture.id.AamvaVizBarcodeComparisonVerifier): Validates the authenticity of the document by comparing the data from the VIZ and from the barcode on the back.
 
-To enable ID Validate for your subscription, please reach out to [Scandit Support](mailto:support%40scandit.com).
+To enable ID Validate for your subscription, please reach out to [Scandit Support](mailto:support@scandit.com).

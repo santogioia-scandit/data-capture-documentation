@@ -17,6 +17,13 @@ import Express from "./Express";
 import Titanium from "./Titanium";
 import Net from "./Net";
 import AntDesign from "./AntDesign";
+import Bolt from './Bolt';
+import Express from './Express';
+import XamarinAndroid from "./XamarinAndroid";
+import XamarinForms from "./XamarinForms";
+import XamarinIos from "./XamarinIos";
+import NetIos from "./NetIos";
+import NetAndroid from "./NetAndroid";
 
 export {
   Sparkscan,
@@ -38,4 +45,9 @@ export {
   Titanium,
   Net,
   AntDesign,
+  XamarinAndroid,
+  XamarinForms,
+  XamarinIos,
+  NetIos,
+  NetAndroid,
 };

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+pagination_next: null
 ---
 
 # Advanced Configurations
@@ -12,7 +13,7 @@ There is a function to set a list of expected barcodes if you are scanning again
 
 When scanning against a list, the UI will also show red icons to mark scanned barcodes that aren’t present on the list.
 
-```c#
+```csharp
 List<TargetBarcode> targetBarcodes = new List<TargetBarcode>();
 targetBarcodes.Add(TargetBarcode.Create("data", 1));
 BarcodeCountCaptureList captureList = BarcodeCountCaptureList.Create(this, targetBarcodes);
@@ -33,7 +34,7 @@ This feature is used to provide users with more details regarding the items they
 
 It can be difficult to reach the shutter button if the smart device is attached to the user’s wrist by a strap or similar. In this instance, you can enable a floating shutter button that can be positioned by the end user in a more ergonomically suitable position.
 
-```c#
+```csharp
 barcodeCountView.ShouldShowFloatingShutterButton = true;
 ```
 
@@ -45,7 +46,7 @@ In this case, you can filter the others out. This can be done by symbology, symb
 
 For example, you might want to scan only Code 128 barcodes and no PDF417 ones.
 
-```c#
+```csharp
 BarcodeCountSettings settings = new BarcodeCountSettings();
 barcodeCountSettings.EnableSymbologies(enabledSymbologies);
 
@@ -54,7 +55,7 @@ settings.FilterSettings.ExcludedSymbologies = new[] { Symbology.Pdf417 };
 
 Or, you want to exclude all the barcodes starting with 4 numbers:
 
-```c#
+```csharp
 BarcodeCountSettings settings = new BarcodeCountSettings();
 
 settings.FilterSettings.ExcludedCodesRegex = "^1234.\*";
@@ -66,7 +67,7 @@ There are situations in which the user may find it helpful to clean up their scr
 
 If this is the case, you can enable the “Clear screen” button.
 
-```c#
+```csharp
 barcodeCountView.ShouldShowClearHighlightsButton = true;
 ```
 
@@ -74,7 +75,7 @@ barcodeCountView.ShouldShowClearHighlightsButton = true;
 
 MatrixScan Count comes with recommended and user-tested AR overlays. However, if you wish to customize the overlay colors, once the overlay has been added, you can conform to the [IBarcodeCountViewListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-count-view-listener.html#interface-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener) interface. The methods [IBarcodeCountViewListener.BrushForRecognizedBarcode()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.BrushForRecognizedBarcode) and [IBarcodeCountViewListener.BrushForUnrecognizedBarcode()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.BrushForUnrecognizedBarcode) are invoked every time a new recognized or unrecognized barcode appears. These can be used to set a brush that will be used to highlight that specific barcode in the overlay. Keep in mind that these methods are relevant only when using the style [BarcodeCountViewStyle.Dot](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-count-view.html#value-scandit.datacapture.barcode.count.ui.BarcodeCountViewStyle.Dot).
 
-```c#
+```csharp
 public Brush BrushForRecognizedBarcode(BarcodeCountView view, TrackedBarcode trackedBarcode)
 {
 // Return a custom brush
@@ -90,7 +91,7 @@ public Brush BrushForUnrecognizedBarcode(BarcodeCountView view, TrackedBarcode t
 
 If you want to be notified when a user taps on an overlay, you need to implement the [IBarcodeCountViewListener.OnRecognizedBarcodeTapped()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.OnRecognizedBarcodeTapped) and [IBarcodeCountViewListener.OnUnrecognizedBarcodeTapped()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-count-view-listener.html#method-scandit.datacapture.barcode.count.ui.IBarcodeCountViewListener.OnUnrecognizedBarcodeTapped) methods.
 
-```c#
+```csharp
 public void OnRecognizedBarcodeTapped(BarcodeCountView view, TrackedBarcode trackedBarcode)
 {
 // Do something with the tapped barcode
@@ -108,7 +109,7 @@ The UI is an integral part of MatrixScan Count and we do not recommend that you 
 
 Disable buttons:
 
-```c#
+```csharp
 barcodeCountView.ShouldShowListButton = false;
 barcodeCountView.ShouldShowExitButton = false;
 barcodeCountView.ShouldShowShutterButton = false;
@@ -116,7 +117,7 @@ barcodeCountView.ShouldShowShutterButton = false;
 
 Disable feedback and hints:
 
-```c#
+```csharp
 barcodeCountView.ShouldShowUserGuidanceView = false;
 barcodeCountView.ShouldShowHints = false;
 ```

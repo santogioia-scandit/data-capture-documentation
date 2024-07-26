@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 toc_max_heading_level: 4
+pagination_next: null
 ---
 
 import Tabs from '@theme/Tabs';
@@ -27,7 +28,7 @@ Android devices running the Scandit Data Capture SDK need to have a GPU or the p
 2. Create a project
 3. Create a license key
 
-If you have a paid subscription, please reach out to [Scandit Support](mailto:support%40scandit.com) if you need a new license key.
+If you have a paid subscription, please reach out to [Scandit Support](mailto:support@scandit.com) if you need a new license key.
 
 ## Add the SDK
 

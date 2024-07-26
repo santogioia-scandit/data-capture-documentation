@@ -10,6 +10,14 @@ title: 'Overview'
 
 Scandit Smart Data Capture is a powerful suite of solutions designed to enable mobile devices to capture and process a wide range of barcodes and other types of data, including ID scanning and validation. You can use Smart Data Capture to easily build high-performance data capture applications that leverage the latest advancements in computer vision and machine learning.
 
+<CustomDocCardsWrapper>
+
+<CustomDocCard title="Barcode Scanning" description="" link="#barcode-scanning" imgSrc="./img/icons/barcode_capture.svg" smallIcon ></CustomDocCard>
+
+<CustomDocCard title="ID Scanning and Validation" description="" link="#id-scanning-and-validation" imgSrc="./img/icons/id_capture.svg" smallIcon ></CustomDocCard>
+
+</CustomDocCardsWrapper>
+
 ## Barcode Scanning
 
 Add barcode scanning to any application, using either the pre-built UI components and the fully-customizable APIs of the Scandit Barcode Scanner SDK, or the Scandit Express application.
@@ -41,7 +49,7 @@ The Scandit Barcode Scanner SDK provides a comprehensive set of APIs that enable
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="Barcode Capture" description="Scanning one or many barcodes" link="./sdks/android/barcode-capture/intro" smallIcon ><BarcodeCapture/></CustomDocCard>
+<CustomDocCard title="Barcode Capture" description="Scanning one or many barcodes" link="./sdks/android/barcode-capture/get-started" smallIcon ><BarcodeCapture/></CustomDocCard>
 
 <CustomDocCard title="MatrixScan + AR" description="Identify and track multiple barcodes" link="./sdks/android/matrixscan/intro" smallIcon ><MsAr/></CustomDocCard>
 
@@ -55,8 +63,8 @@ The table below provides an overview of the features and capabilities, and the u
   <thead>
     <tr>
       <th></th>
-      <th colspan="4">Prebuilt Barcode Scanning Components</th>
-      <th colspan="2">Fully-Customizable APIs</th>
+      <th colSpan="4">Prebuilt Barcode Scanning Components</th>
+      <th colSpan="2">Fully-Customizable APIs</th>
     </tr>
   </thead>
   <tbody>
@@ -158,7 +166,7 @@ To experience Scandit scanning and verification capabilities firsthand, check ou
 
 <CustomDocCard title="iOS" description="Integrate ID Scanning in iOS" link="./sdks/ios/id-capture/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate ID Scanning in Android" link="./sdks/android/id-capture/intro" smallIcon><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate ID Scanning in Android" link="./sdks/android/id-capture/intro" smallIcon ><Android/></CustomDocCard>
 
 <CustomDocCard title="Web" description="Integrate ID Scanning for Web" link="./sdks/web/id-capture/intro" smallIcon ><Javascript/> </CustomDocCard>
 
@@ -170,15 +178,15 @@ To experience Scandit scanning and verification capabilities firsthand, check ou
 
 <CustomDocCard title="Capacitor" description="Integrate ID Scanning in Capacitor" link="./sdks/capacitor/id-capture/intro" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title="Xamarin iOS" description="Integrate ID Scanning in Xamarin iOS" link="./sdks/xamarin/ios/id-capture/intro" smallIcon><Xamarin/></CustomDocCard>
+<CustomDocCard title="Xamarin iOS" description="Integrate ID Scanning in Xamarin iOS" link="./sdks/xamarin/ios/id-capture/intro" smallIcon ><XamarinIos/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Android" description="Integrate ID Scanning for Xamarin Android" link="./sdks/xamarin/android/id-capture/intro" smallIcon ><Xamarin/></CustomDocCard>
+<CustomDocCard title="Xamarin Android" description="Integrate ID Scanning for Xamarin Android" link="./sdks/xamarin/android/id-capture/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate ID Scanning in Xamarin Forms" link="./sdks/xamarin/forms/id-capture/intro" smallIcon ><Xamarin/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate ID Scanning in Xamarin Forms" link="./sdks/xamarin/forms/id-capture/intro" smallIcon ><XamarinForms/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate ID Scanning in .NET iOS" link="./sdks/net/ios/id-capture/intro" />
+<CustomDocCard title=".NET iOS" description="Integrate ID Scanning in .NET iOS" link="./sdks/net/ios/id-capture/intro" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate ID Scanning in .NET Android" link="./sdks/net/android/id-capture/intro" />
+<CustomDocCard title=".NET Android" description="Integrate ID Scanning in .NET Android" link="./sdks/net/android/id-capture/intro" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 

@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+pagination_prev: null
+pagination_next: null
 ---
 
 # Get Started
@@ -19,7 +21,7 @@ In this guide you will learn step-by-step how to add Text Capture to your applic
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/xamarin.android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -31,13 +33,13 @@ For creating a [TextCaptureSettings](https://docs.scandit.com/data-capture-sdk/x
 
 First, create a [TextCaptureSettings](https://docs.scandit.com/data-capture-sdk/xamarin.android/text-capture/api/text-capture-settings.html#class-scandit.datacapture.text.TextCaptureSettings) instance:
 
-```c#
+```csharp
 TextCaptureSettings textCaptureSettings = TextCaptureSettings.FromJson(json);
 ```
 
 Next, create a [TextCapture](https://docs.scandit.com/data-capture-sdk/xamarin.android/text-capture/api/text-capture.html#class-scandit.datacapture.text.TextCapture) instance with the settings from the previous step:
 
-```c#
+```csharp
 textCapture = TextCapture.Create(context, textCaptureSettings);
 ```
 
@@ -47,7 +49,7 @@ To get informed whenever a new text has been captured, add a [ITextCaptureListen
 
 First implement the [ITextCaptureListener](https://docs.scandit.com/data-capture-sdk/xamarin.android/text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) interface. For example:
 
-```c#
+```csharp
 public void OnObservationStarted(TextCapture textCapture)
 {
 }
@@ -64,13 +66,13 @@ public void OnTextCaptured(TextCapture textCapture, TextCaptureSession session, 
 
 Then add the listener:
 
-```c#
+```csharp
 textCapture.AddListener(this);
 ```
 
 Alternatively to register [ITextCaptureListener](https://docs.scandit.com/data-capture-sdk/xamarin.android/text-capture/api/text-capture-listener.html#interface-scandit.datacapture.text.ITextCaptureListener) interface it is possible to subscribe to corresponding events. For example:
 
-```c#
+```csharp
 textCapture.TextCaptured += (object sender, TextCaptureEventArgs args) =>
 {
 // Do something with the captured text.
@@ -87,7 +89,7 @@ In Android, the user must explicitly grant permission for each app to access cam
 
 When using the built-in camera there are recommended settings for each capture mode. These should be used to achieve the best performance and user experience for the respective mode. The following couple of lines show how to get the recommended settings and create the camera from it:
 
-```c#
+```csharp
 CameraSettings cameraSettings = TextCapture.RecommendedCameraSettings;
 
 // Depending on the use case further camera settings adjustments can be made here.
@@ -101,13 +103,13 @@ camera.ApplySettingsAsync(cameraSettings);
 
 Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.SetFrameSourceAsync()](https://docs.scandit.com/data-capture-sdk/xamarin.android/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
-```c#
+```csharp
 context.SetFrameSourceAsync(camera);
 ```
 
 The camera is off by default and must be turned on. This is done by calling [IFrameSource.SwitchToDesiredState()](https://docs.scandit.com/data-capture-sdk/xamarin.android/core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.On](https://docs.scandit.com/data-capture-sdk/xamarin.android/core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
 
-```c#
+```csharp
 camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 ```
 
@@ -117,14 +119,14 @@ camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 
 When using the built-in camera as frame source, you will typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/xamarin.android/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
 
-```c#
+```csharp
 DataCaptureView dataCaptureView = DataCaptureView.Create(this, dataCaptureContext);
 SetContentView(dataCaptureView);
 ```
 
 To visualize the results of text capture, the following [overlay](https://docs.scandit.com/data-capture-sdk/xamarin.android/text-capture/api/ui/text-capture-overlay.html#class-scandit.datacapture.text.ui.TextCaptureOverlay) can be added:
 
-```c#
+```csharp
 TextCaptureOverlay overlay = TextCaptureOverlay.Create(textCapture, dataCaptureView);
 ```
 

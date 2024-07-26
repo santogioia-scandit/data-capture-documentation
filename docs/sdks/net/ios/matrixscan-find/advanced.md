@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+pagination_next: null
 ---
 
 # Advanced Configurations
@@ -12,7 +13,7 @@ You may want more fine-grained knowledge over the different events happening dur
 
 Be aware that these listeners will be called from a background thread.
 
-```c#
+```csharp
 public class BarcodeFindListener : IBarcodeFindListener
 {
 public void OnSearchPaused(ICollection<BarcodeFindItem> foundItems)
@@ -39,7 +40,7 @@ barcodeFind.AddListener(new BarcodeFindListener())
 
 Alternatively it is possible to subscribe to corresponding events [BarcodeFind.SearchPaused](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchPaused), [BarcodeFind.SearchStarted](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchStarted) or [BarcodeFind.SearchStopped](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-find.html#property-scandit.datacapture.barcode.find.BarcodeFind.SearchStopped). For example:
 
-```c#
+```csharp
 barcodeFind.SearchStarted += (object? sender, EventArgs args) =>
 {
 // The mode was started
@@ -67,7 +68,7 @@ There is also a progress bar but this is hidden by default.
 
 Each of these elements can be shown or hidden at will.
 
-```c#
+```csharp
 barcodeFindView.ShouldShowCarousel = false;
 barcodeFindView.ShouldShowProgressBar = true;
 // …

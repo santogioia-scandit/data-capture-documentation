@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+pagination_next: null
 ---
 
 # Advanced Configurations
@@ -44,4 +45,4 @@ The following two verifiers are available:
 * [AAMVAVizBarcodeComparisonVerifier](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/aamva-viz-barcode-comparison-verifier.html#class-scandit.datacapture.id.AamvaVizBarcodeComparisonVerifier): Validates the authenticity of the document by comparing the data from the VIZ and the barcode on the back.
 * [AAMVABarcodeVerifier](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/aamva-barcode-verifier.html#class-scandit.datacapture.id.AamvaBarcodeVerifier): Validates the authenticity of the document by scanning the barcode on the back.
 
-To enable ID Validate for your subscription, please reach out to [support@scandit.com](mailto:support@scandit.com).
+To enable ID Validate for your subscription, please reach out to [Scandit Support](mailto:support@scandit.com).

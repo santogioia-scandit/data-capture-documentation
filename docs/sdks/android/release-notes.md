@@ -3,7 +3,49 @@ toc_max_heading_level: 3
 displayed_sidebar: androidSidebar
 hide_title: true
 title: Release Notes
+pagination_prev: null
 ---
+
+## 6.25.0
+
+**Released**: July 5, 2024
+
+### New Features
+
+#### Barcode
+
+* Added torch control to BarcodePick with [`SDCBarcodePickViewSettings.showTorchButton`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-settings.html#property-scandit.datacapture.barcode.pick.ui.BarcodePickViewSettings.ShowTorchButton) to enable showing a torch button when using [`SDCBarcodePickView`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view.html#class-scandit.datacapture.barcode.pick.ui.BarcodePickView). The torch button as well as the zoom button (shown with: [`SDCBarcodePickViewSettings.showZoomButton`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-settings.html#property-scandit.datacapture.barcode.pick.ui.BarcodePickViewSettings.ShowZoomButton)) can be repositioned with [`SDCBarcodePickViewSettings.torchButtonPosition`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-settings.html#property-scandit.datacapture.barcode.pick.ui.BarcodePickViewSettings.TorchButtonPosition) and [`SDCBarcodePickViewSettings.zoomButtonPosition`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-settings.html#property-scandit.datacapture.barcode.pick.ui.BarcodePickViewSettings.ZoomButtonPosition).
+* Added ability to customize the minimum width and height of the highlights in the following styles:
+  - [`SDCBarcodePickViewHighlightStyleRectangular`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-highlight-style-rectangular.html#class-scandit.datacapture.barcode.pick.ui.Rectangular)
+  - [`SDCBarcodePickViewHighlightStyleRectangularWithIcons`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-highlight-style-rectangular-with-icons.html#class-scandit.datacapture.barcode.pick.ui.RectangularWithIcons)
+  - [`SDCBarcodePickViewHighlightStyleCustomView`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-highlight-style-custom-view.html#class-scandit.datacapture.barcode.pick.ui.CustomView)
+* Added the following properties to apply a [`SDCBarcodePickStatusIconSettings`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-status-icon-settings.html#class-scandit.datacapture.barcode.pick.ui.BarcodePickStatusIconSettings) object and customize the status icons appearance:
+  - [`SDCBarcodePickViewHighlightStyleRectangularWithIcons.statusIconSettings`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-highlight-style-rectangular-with-icons.html#property-scandit.datacapture.barcode.pick.ui.RectangularWithIcons.StatusIconSettings)
+  - [`SDCBarcodePickViewHighlightStyleCustomView.statusIconSettings`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-pick-view-highlight-style-custom-view.html#property-scandit.datacapture.barcode.pick.ui.CustomView.StatusIconSettings)
+
+#### ID
+
+* ID Capture now supports extracting information from the back side of European driver’s licenses.
+* Added the following properties to [`SDCVizResult`](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/viz-result.html#viz-result):
+  - `SDCVizResult.bloodType` to represent the blood type of the document owner.
+  - `SDCVizResult.sponsor` to represent the sponsor of the document owner.
+  - `SDCVizResult.mothersName` to represent the mother’s name of the document owner.
+  - `SDCVizResult.fathersName` to represent the father’s name of the document owner.
+
+* ID Capture now supports scanning the Visual Inspection Zone (VIZ) on the back of the European Health Insurance Card.
+* Improved the extraction of the document number from UK driver’s licenses.
+
+### Performance Improvements
+
+#### Barcode
+
+* Improved recognition rate for Composite A and Composite B barcodes, thanks to an increased robustness for small and low resolution MicroPDF417.
+* Improved recognition rate of long, thin linear 1d codes, such as those found on electronic shelf labels (ESLs).
+* Improved recognition rate of linear codes which are partially affected by damage or glare, with a particular focus on codabar barcodes.
+
+#### ID
+
+* Improved the accuracy of the AAMVA Barcode Verification.
 
 ## 6.24.0
 

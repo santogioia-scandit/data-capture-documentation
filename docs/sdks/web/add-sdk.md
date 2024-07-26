@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 toc_max_heading_level: 4
+pagination_next: null
 ---
 
 import Tabs from '@theme/Tabs';
@@ -119,4 +120,84 @@ With these settings in place and the service worker correctly configured, you wi
 
 :::warning
 On iOS there’s a [persisting issue](https://bugs.webkit.org/show_bug.cgi?id=252465) while accessing the video stream inside a progressive web app.
+:::
+
+## Electron
+
+You can easily configure the web sdk to work into an Electron app. There are some extra steps though. The register method must be called inside the main.ts file passing down some dependencies and the publicKey. The publicKey will be used to decrypt the encrypted license key file that must be placed into the [`ConfigureOptions.licenseDataPath`](https://docs.scandit.com/data-capture-sdk/web/core/api/web/configure.html#property-scandit.datacapture.core.IConfigureOptions.LicenseDataPath) option:
+
+```ts
+// electron main.ts
+import { register, unregister } from 'scandit-web-datacapture-core/build/electron/main';
+import { app, BrowserWindow, ipcMain } from 'electron';
+import fs from 'node:fs/promises';
+import crypto from 'node:crypto';
+import path from 'node:path';
+
+const mainWindow = new BrowserWindow({
+    ...,
+});
+
+register({ fs, ipcMain, app, path, crypto }, publicKey);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+    unregister()
+  }
+});
+```
+
+```ts
+// preload.ts
+import { ipcRenderer } from 'electron';
+import { preloadBindings } from 'scandit-web-datacapture-core/build/electron/preload';
+preloadBindings(ipcRenderer);
+```
+
+```ts
+// renderer.ts
+await configure({
+  // in Electron context the license will be decrypted internally.
+  // The path of the encrypted file is path.join(app.getAppPath(), licenseDataPath)
+  licenseDataPath: './out/renderer/data/sdc-license.data',
+  libraryLocation: new URL('library/engine/', document.baseURI).toString(),
+  moduleLoaders: [barcodeCaptureLoader()]
+});
+```
+
+
+You can easily encrypt your license key with this small nodejs script. Then you should copy the sdc-license.data file in the licenseDataPath in order to be correctly read at runtime in the configure phase. You can also check the related [sample](https://github.com/Scandit/datacapture-web-samples/tree/master/ElectronBarcodeCaptureSimpleSample).
+
+```js
+const crypto = require('node:crypto')
+const fs = require('node:fs/promises')
+
+;(async function createLicenseAndPublicKey() {
+
+  const data = process.env.SDC_LICENSE_KEY
+  if (data == null || data === '') {
+    throw new Error('could not encrypt empty or null string')
+  }
+
+  const key = crypto.randomBytes(32)
+  const iv = crypto.randomBytes(16)
+  const keyAndIV = `${key.toString('base64')}:${iv.toString('base64')}`
+
+  const cipher = crypto.createCipheriv('aes-256-cbc', key, iv)
+  let encryptedText = cipher.update(text, 'utf8', 'hex')
+  encryptedText += cipher.final('hex')
+
+  await fs.writeFile('sdc-license.data', Buffer.from(encryptedText), 'utf8')
+  // Save the key to a file
+  await fs.writeFile(
+    'sdc-public-key',
+    keyAndIV,
+    'utf8'
+  )
+})();
+```
+
+:::warning
+It is recommended to NOT store the public key locally. We also recommended you enable [source code protection](https://electron-vite.org/guide/source-code-protection) with [bytenode](https://github.com/bytenode/bytenode).
 :::

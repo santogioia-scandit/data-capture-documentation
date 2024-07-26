@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+pagination_next: null
 ---
 
 # Get Started
@@ -67,7 +68,7 @@ If you’re also scanning MRZ documents, you also need the native ScanditTextCap
 
 To learn more about specifying native dependencies on Cordova and the framework tag, take a look at the official [Cordova documentation](https://cordova.apache.org/docs/en/latest/plugin%5Fref/spec.html#framework).
 
-Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [Scandit Support](mailto:support%40scandit.com).
+Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [Scandit Support](mailto:support@scandit.com).
 
 ### Show loading status with default UI
 

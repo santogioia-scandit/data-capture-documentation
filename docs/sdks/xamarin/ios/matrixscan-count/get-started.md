@@ -22,7 +22,7 @@ The general steps are:
 
 The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext dataCaptureContext = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -32,7 +32,7 @@ The main entry point for the Barcode Count Mode is the [BarcodeCount](https://do
 
 For this tutorial, we will set up Barcode Count for tracking EAN13 codes. Change this to the correct symbologies for your use case (for example, Code 128, Code 39…).
 
-```c#
+```csharp
 BarcodeCountSettings settings = new BarcodeCountSettings();
 settings.SetSymbologyEnabled(Symbology.Ean13Upca, true);
 ```
@@ -40,7 +40,7 @@ settings.SetSymbologyEnabled(Symbology.Ean13Upca, true);
 If you are sure that your environment will only have unique barcodes (i.e. no duplicated values), you can also enable [BarcodeCountSettings.ExpectsOnlyUniqueBarcodes](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-count-settings.html#property-scandit.datacapture.barcode.count.BarcodeCountSettings.ExpectsOnlyUniqueBarcodes). This option improves scanning performance as long as you are sure that no duplicates will be present. Next, create a
 [BarcodeCount](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-count.html#class-scandit.datacapture.barcode.count.BarcodeCount) instance with the [Data Capture Context](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext) and the settings initialized in the previous step:
 
-```c#
+```csharp
 BarcodeCount barcodeCount = BarcodeCount.Create(dataCaptureContext, settings);
 ```
 
@@ -48,7 +48,7 @@ BarcodeCount barcodeCount = BarcodeCount.Create(dataCaptureContext, settings);
 
 Our recommended camera settings should be used to achieve the best performance and user experience. The following couple of lines show how to get the recommended settings for MatrixScan Count and create the camera from it:
 
-```c#
+```csharp
 CameraSettings cameraSettings = BarcodeCount.RecommendedCameraSettings;
 
 Camera camera = Camera.DefaultCamera;
@@ -57,7 +57,7 @@ camera.ApplySettingsAsync(cameraSettings);
 
 Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.SetFrameSourceAsync()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
-```c#
+```csharp
 dataCaptureContext.SetFrameSourceAsync(camera);
 ```
 
@@ -65,7 +65,7 @@ dataCaptureContext.SetFrameSourceAsync(camera);
 
 To keep track of the barcodes that have been scanned, implement the [IBarcodeCountListener](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-count-listener.html#interface-scandit.datacapture.barcode.count.IBarcodeCountListener) interface and register the listener.
 
-```c#
+```csharp
 // Register self as a listener to monitor the barcode count session.
 barcodeCount.AddListener(this);
 ```
@@ -74,7 +74,7 @@ barcodeCount.AddListener(this);
 
 Alternatively to register [IBarcodeCountListener](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-count-listener.html#interface-scandit.datacapture.barcode.count.IBarcodeCountListener) interface it is possible to subscribe to corresponding event. For example:
 
-```c#
+```csharp
 barcodeCount.Scanned += (object sender, BarcodeCountEventArgs args) =>
 {
 };
@@ -86,7 +86,7 @@ MatrixScan Count’s built-in AR user interface includes buttons and overlays th
 
 Add a [BarcodeCountView](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) to your view hierarchy:
 
-```c#
+```csharp
 BarcodeCountView barcodeCountView = BarcodeCountView.Create(View.Bounds, dataCaptureContext, barcodeCount);
 ```
 
@@ -94,7 +94,7 @@ BarcodeCountView barcodeCountView = BarcodeCountView.Create(View.Bounds, dataCap
 
 The camera is not automatically turned on when you are in a scanning view. You need to set up the camera so that it switches on when needed and it switches off when not needed anymore. Similarly [BarcodeCount](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-count.html#class-scandit.datacapture.barcode.count.BarcodeCount) should also be enabled and disabled. For instance, you should switch off the camera when the [BarcodeCountView](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) is not visible anymore (including when the app goes in the background), similarly you want to switch on the camera when the [BarcodeCountView](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) is visible (including when the app goes to the foreground). One way to achieve this is the following:
 
-```c#
+```csharp
 public override void ViewWillDisappear(bool animated)
 {
 camera.SwitchToDesiredStateAsync(FrameSourceState.Off);
@@ -118,7 +118,7 @@ When the scanning process is over, you need to reset the mode to make it ready f
 
 To reset Barcode Count’s scanning process, you need to call the [BarcodeCount.Reset()](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api/barcode-count.html#method-scandit.datacapture.barcode.count.BarcodeCount.Reset) method.
 
-```c#
+```csharp
 barcodeCount.Reset();
 ```
 
@@ -126,7 +126,7 @@ barcodeCount.Reset();
 
 The UI includes two icons (buttons) named “List” and “Exit”. The SDK provides events so you can add the desired action when those icons are tapped by the user.
 
-```c#
+```csharp
 barcodeCountView.ListButtonTapped += (object sender, ListButtonTappedEventArgs args) =>
 {
 // Show the current progress but the order is not completed

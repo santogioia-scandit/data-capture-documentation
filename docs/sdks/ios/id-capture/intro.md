@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 toc_max_heading_level: 4
+pagination_prev: null
 ---
 
 # About ID Capture
@@ -12,6 +13,10 @@ Scandit ID Capture software captures data from IDs using a combination of text r
 The scanning and validation results can be used to enable real-time decision making and workflow automation at scale. For example, frontline workers can be given an instant age calculation from the extracted date of birth and/or guidance on whether an ID is real or fake.
 
 ID Capture runs on any smart device with a camera, including smartphones, tablets, and dedicated scanners.
+
+:::tip
+In addition to the ID Capture capabilities of the Scandit SDK, Scandit also offers a cloud-based identity scanning solution called [ID Bolt](https://www.scandit.com/products/id-bolt/). ID Bolt can be quickly and easily integrated into any existing web-based application. See the [documentation](../../../hosted/id-bolt/overview) for more information.
+:::
 
 ## Supported ID Types
 

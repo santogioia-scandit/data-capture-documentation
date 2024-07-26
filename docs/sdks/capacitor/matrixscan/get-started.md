@@ -38,10 +38,6 @@ const settings = new Scandit.BarcodeTrackingSettings();
 settings.enableSymbology(Scandit.Symbology.QR, true);
 ```
 
-:::note
-If your scenario is similar to one described in [Barcode Tracking Scenarios](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/barcode-tracking-scenarios.html), then you should consider using [BarcodeTrackingSettings.forScenario()](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
-:::
-
 Next, create a [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance with the data capture context and the settings initialized in the previous steps:
 
 ```js

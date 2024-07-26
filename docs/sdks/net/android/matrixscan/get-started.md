@@ -19,7 +19,7 @@ The general steps are:
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
-```c#
+```csharp
 DataCaptureContext context = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
@@ -32,18 +32,14 @@ Most of the times, you will not need to implement a [IBarcodeTrackingListener](h
 
 For this tutorial, we will setup Barcode Tracking for tracking QR codes.
 
-```c#
+```csharp
 BarcodeTrackingSettings settings = BarcodeTrackingSettings.Create();
 settings.EnableSymbology(Symbology.Qr, true);
 ```
 
-:::note
-If your scenario is similar to one described in [Barcode Tracking Scenarios](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/barcode-tracking-scenarios.html), then you should consider using [BarcodeTrackingSettings.Create()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-tracking-settings.html#method-scandit.datacapture.barcode.tracking.BarcodeTrackingSettings.ForScenario) for better results.
-:::
-
 Next, create a [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance with the data capture context and the settings initialized in the previous steps:
 
-```c#
+```csharp
 BarcodeTracking barcodeTracking = BarcodeTracking.Create(context, settings);
 ```
 
@@ -57,20 +53,20 @@ In Android, the user must explicitly grant permission for each app to access cam
 
 When using the built-in camera there are recommended settings for each capture mode. These should be used to achieve the best performance and user experience for the respective mode. The following couple of lines show how to get the recommended settings and create the camera from it:
 
-```c#
+```csharp
 camera = Camera.GetDefaultCamera();
 camera?.ApplySettingsAsync(BarcodeTracking.RecommendedCameraSettings);
 ```
 
 Because the frame source is configurable, the data capture context must be told which frame source to use. This is done with a call to [DataCaptureContext.SetFrameSourceAsync()](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/data-capture-context.html#method-scandit.datacapture.core.DataCaptureContext.SetFrameSourceAsync):
 
-```c#
+```csharp
 context.SetFrameSourceAsync(camera);
 ```
 
 The camera is off by default and must be turned on. This is done by calling [IFrameSource.SwitchToDesiredStateAsync()](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/frame-source.html#method-scandit.datacapture.core.IFrameSource.SwitchToDesiredStateAsync) with a value of [FrameSourceState.On](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/frame-source.html#value-scandit.datacapture.core.FrameSourceState.On):
 
-```c#
+```csharp
 camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 ```
 
@@ -80,7 +76,7 @@ camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
 
 When using the built-in camera as frame source, you will typically want to display the camera preview on the screen together with UI elements that guide the user through the capturing process. To do that, add a [DataCaptureView](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) to your view hierarchy:
 
-```c#
+```csharp
 DataCaptureView dataCaptureView = DataCaptureView.Create(this, dataCaptureContext);
 SetContentView(dataCaptureView);
 ```
@@ -103,7 +99,7 @@ Alternatively you can use a [DataCaptureView](https://docs.scandit.com/data-capt
 
 You can configure your view in the code behind class. For example:
 
-```c#
+```csharp
 public partial class MainPage : ContentPage
 {
 public MainPage()
@@ -125,13 +121,13 @@ For MAUI development add [Scandit.DataCapture.Core.Maui](https://www.nuget.org/p
 
 To visualize the results of Barcode Tracking, first you need to add the following [overlay](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-tracking-basic-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay):
 
-```c#
+```csharp
 BarcodeTrackingBasicOverlay overlay = BarcodeTrackingBasicOverlay.Create(barcodeTracking, dataCaptureView);
 ```
 
 Once the overlay has been added, you should implement the [IBarcodeTrackingBasicOverlayListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener) interface. The method [IBarcodeTrackingBasicOverlayListener.BrushForTrackedBarcode()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener.BrushForTrackedBarcode) is invoked every time a new tracked barcode appears and it can be used to set a [brush](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/ui/brush.html#class-scandit.datacapture.core.ui.Brush) that will be used to highlight that specific barcode in the [overlay](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-tracking-basic-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay).
 
-```c#
+```csharp
 public Brush BrushForTrackedBarcode(BarcodeTrackingBasicOverlay overlay, TrackedBarcode trackedBarcode)
 {
 // Return a custom Brush based on the tracked barcode.
@@ -140,7 +136,7 @@ public Brush BrushForTrackedBarcode(BarcodeTrackingBasicOverlay overlay, Tracked
 
 If you would like to make the highlights tappable, you need to implement the [IBarcodeTrackingBasicOverlayListener.OnTrackedBarcodeTapped()](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/ui/barcode-tracking-basic-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener.OnTrackedBarcodeTapped) method.
 
-```c#
+```csharp
 public void OnTrackedBarcodeTapped(BarcodeTrackingBasicOverlay overlay, TrackedBarcode trackedBarcode)
 {
 // A tracked barcode was tapped.
@@ -152,7 +148,7 @@ public void OnTrackedBarcodeTapped(BarcodeTrackingBasicOverlay overlay, TrackedB
 Barcode Tracking, unlike Barcode Capture, doesn’t emit feedback (sound or vibration) when a new barcode is recognized. However, you may implement a
 [IBarcodeTrackingListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener) to provide a similar experience. Below, we use the default [Feedback](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/feedback.html#class-scandit.datacapture.core.Feedback), but you may configure it with your own sound or vibration if you want.
 
-```c#
+```csharp
 protected override void OnResume()
 {
 base.OnResume();
@@ -168,7 +164,7 @@ feedback.Dispose();
 
 Next, use this [feedback](https://docs.scandit.com/data-capture-sdk/dotnet.android/core/api/feedback.html#class-scandit.datacapture.core.Feedback) in a [IBarcodeTrackingListener](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-tracking-listener.html#interface-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener):
 
-```c#
+```csharp
 public class FeedbackListener : Java.Lang.Object, IBarcodeTrackingListener
 {
 public void OnObservationStarted(BarcodeTracking barcodeTracking)
@@ -197,7 +193,7 @@ this.feedback.Emit();
 
 As the last step, register the listener responsible for emitting the feedback with the [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking) instance.
 
-```c#
+```csharp
 barcodeTracking.AddListener(feedbackListener);
 ```
 

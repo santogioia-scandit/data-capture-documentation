@@ -3,7 +3,54 @@ toc_max_heading_level: 4
 displayed_sidebar: flutterSidebar
 hide_title: true
 title: Release Notes
+pagination_prev: null
 ---
+
+## 6.25.0
+
+**Released:** July 5, 2024
+
+### New Features
+
+#### Barcode
+
+* Added the possibility to scan barcodes that are using the structured append mode to encode data across multiple codes. Check [Barcode.structuredAppendData](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/barcode.html#property-scandit.datacapture.barcode.Barcode.StructuredAppendData) for more information.
+* Added the ability to hide the progress bar when counting against a list with BarcodeCount: [`BarcodeCountView.shouldShowListProgressBar`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-count-view.html#property-scandit.datacapture.barcode.count.ui.BarcodeCountView.ShouldShowListProgressBar).
+
+#### ID
+
+* Added the following properties to [`SDCVizResult`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/viz-result.html#viz-result):
+  - `SDCVizResult.bloodType` to represent the blood type of the document owner.
+  - `SDCVizResult.sponsor` to represent the sponsor of the document owner.
+  - `SDCVizResult.mothersName` to represent the mother’s name of the document owner.
+  - `SDCVizResult.fathersName` to represent the father’s name of the document owner.
+* Added [`IdCaptureSettings.rejectVoidedIds`](https://docs.scandit.com/data-capture-sdk/flutter/id-capture/api/id-capture-settings.html#property-scandit.datacapture.id.IdCaptureSettings.RejectVoidedIds). When enabled, documents voided by authorities are rejected.
+  :::warning
+  This feature currently supports 3 kinds of invalidation: Cut corners, holes punched in the document, and “VOID” perforations. Additionally, this feature currently supports only US Driver’s Licenses, and has no effect when scanning other document types.
+  :::
+* Added [`RejectedId.rejectionReason`](https://docs.scandit.com/data-capture-sdk/flutter/id-capture/api/rejected-id.html#property-scandit.datacapture.id.RejectedId.RejectionReason) which contains the reason the document was rejected.
+* Improved the extraction of the document number from UK driver’s licenses.
+* Added _scandit-flutter-datacapture-id-voided-detection_ library that must be included when activating `IdCaptureSettings.rejectVoidedIds`.
+
+### Performance Improvements
+
+#### Barcode
+
+* Improved recognition rate for Composite A and Composite B barcodes, thanks to an increased robustness for small and low resolution MicroPDF417.
+* Improved recognition rate of long, thin linear 1d codes, such as those found on electronic shelf labels (ESLs).
+* Improved recognition rate of linear codes which are partially affected by damage or glare, with a particular focus on codabar barcodes.
+
+#### ID
+
+* Improved the accuracy of the AAMVA Barcode Verification.
+
+### Bug Fixesq
+
+* Fixed a compatibility issue with Flutter version >= 3.22.0. Because of this [breaking change](https://github.com/flutter/flutter/pull/140165) we were forced to increase our minimum supported Flutter version to 3.22.0.
+
+#### Barcode
+
+* Fixed the update of the barcode capture success feedback.
 
 ## 6.24.0
 
