@@ -389,29 +389,66 @@ const sidebars: SidebarsConfig = {
 
   webSidebar: [
     {
-      type: "category",
-      label: "Web Getting Started",
-      items: ["sdks/web/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Web',
+      collapsed: false,
+      items: [
+        'sdks/web/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "SparkScan",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/web/sparkscan/intro",
-            "sdks/web/sparkscan/get-started",
-            "sdks/web/sparkscan/advanced",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/web/barcode-capture/get-started",
+                "sdks/web/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/web/sparkscan/intro",
+                    "sdks/web/sparkscan/get-started",
+                    "sdks/web/sparkscan/advanced",
+                  ],
+                },
+              ],
+            },
           ],
         },
+        {
+          type: 'category',
+          label: 'Multi-scanning',
+          items: [
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/web/matrixscan/intro",
+                "sdks/web/matrixscan/get-started",
+              ],
+            },
+          ],
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -423,26 +460,19 @@ const sidebars: SidebarsConfig = {
             "sdks/web/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/web/matrixscan/intro",
-            "sdks/web/matrixscan/get-started",
+            "sdks/web/parse-barcode-data/get-started",
           ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/web/barcode-capture/get-started",
-            "sdks/web/barcode-capture/configure-barcode-symbologies",
-          ],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/web/parse-barcode-data/get-started"],
         },
       ],
     },
