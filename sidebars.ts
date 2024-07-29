@@ -511,37 +511,75 @@ const sidebars: SidebarsConfig = {
 
   cordovaSidebar: [
     {
-      type: "category",
-      label: "Cordova Getting Started",
-      items: ["sdks/cordova/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Cordova',
+      collapsed: false,
+      items: [
+        'sdks/cordova/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "SparkScan",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/cordova/sparkscan/intro",
-            "sdks/cordova/sparkscan/get-started",
-            "sdks/cordova/sparkscan/advanced",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/cordova/barcode-capture/get-started",
+                "sdks/cordova/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/cordova/sparkscan/intro",
+                    "sdks/cordova/sparkscan/get-started",
+                    "sdks/cordova/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/cordova/barcode-selection/intro",
+                    "sdks/cordova/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/cordova/barcode-selection/intro",
-            "sdks/cordova/barcode-selection/get-started",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/cordova/matrixscan/intro",
+                "sdks/cordova/matrixscan/get-started",
+                "sdks/cordova/matrixscan/advanced",
+              ],
+            },
           ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -552,32 +590,26 @@ const sidebars: SidebarsConfig = {
             "sdks/cordova/id-capture/get-started",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/cordova/matrixscan/intro",
-            "sdks/cordova/matrixscan/get-started",
-            "sdks/cordova/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/cordova/barcode-capture/get-started",
-            "sdks/cordova/barcode-capture/configure-barcode-symbologies",
+            "sdks/cordova/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/cordova/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/cordova/parse-barcode-data/get-started"],
+          items: [
+            "sdks/cordova/text-capture/get-started",
+          ],
         },
       ],
     },
