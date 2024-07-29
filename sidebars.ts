@@ -759,6 +759,7 @@ const sidebars: SidebarsConfig = {
           items: [
             "sdks/react-native/id-capture/intro",
             "sdks/react-native/id-capture/get-started",
+            "sdks/react-native/id-capture/advanced",
           ],
         },
       ],
@@ -935,6 +936,7 @@ const sidebars: SidebarsConfig = {
           items: [
             "sdks/flutter/id-capture/intro",
             "sdks/flutter/id-capture/get-started",
+            "sdks/flutter/id-capture/advanced",
           ],
         },
       ],
@@ -1005,29 +1007,67 @@ const sidebars: SidebarsConfig = {
 
   capacitorSidebar: [
     {
-      type: "category",
-      label: "Capacitor Getting Started",
-      items: ["sdks/capacitor/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Capacitor',
+      collapsed: false,
+      items: [
+        'sdks/capacitor/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "SparkScan",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/capacitor/sparkscan/intro",
-            "sdks/capacitor/sparkscan/get-started",
-            "sdks/capacitor/sparkscan/advanced",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/capacitor/barcode-capture/get-started",
+                "sdks/capacitor/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/capacitor/sparkscan/intro",
+                    "sdks/capacitor/sparkscan/get-started",
+                    "sdks/capacitor/sparkscan/advanced",
+                  ],
+                },
+              ],
+            },
           ],
         },
+        {
+          type: 'category',
+          label: 'Multi-scanning',
+          items: [
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/capacitor/matrixscan/intro",
+                "sdks/capacitor/matrixscan/get-started",
+                "sdks/capacitor/matrixscan/advanced",
+              ],
+            },
+          ],
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -1039,32 +1079,26 @@ const sidebars: SidebarsConfig = {
             "sdks/capacitor/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/capacitor/matrixscan/intro",
-            "sdks/capacitor/matrixscan/get-started",
-            "sdks/capacitor/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/capacitor/barcode-capture/get-started",
-            "sdks/capacitor/barcode-capture/configure-barcode-symbologies",
+            "sdks/capacitor/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/capacitor/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/capacitor/parse-barcode-data/get-started"],
+          items: [
+            "sdks/capacitor/text-capture/get-started",
+          ],
         },
       ],
     },
@@ -1113,21 +1147,30 @@ const sidebars: SidebarsConfig = {
 
   titaniumSidebar: [
     {
-      type: "category",
-      label: "Titanium Getting Started",
-      items: ["sdks/titanium/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Titanium',
+      collapsed: false,
+      items: [
+        'sdks/titanium/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Fully-customizable API",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "Barcode Capture",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/titanium/barcode-capture/get-started",
-            "sdks/titanium/barcode-capture/configure-barcode-symbologies",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/titanium/barcode-capture/get-started",
+                "sdks/titanium/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
           ],
         },
       ],
@@ -1162,46 +1205,90 @@ const sidebars: SidebarsConfig = {
 
   xamarinIosSidebar: [
     {
-      type: "category",
-      label: "Xamarin iOS Getting Started",
-      items: ["sdks/xamarin/ios/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Xamarin iOS',
+      collapsed: false,
+      items: [
+        'sdks/xamarin/ios/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/xamarin/ios/barcode-selection/intro",
-            "sdks/xamarin/ios/barcode-selection/get-started",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/xamarin/ios/barcode-capture/get-started",
+                "sdks/xamarin/ios/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/xamarin/ios/sparkscan/intro",
+                    "sdks/xamarin/ios/sparkscan/get-started",
+                    "sdks/xamarin/ios/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/xamarin/ios/barcode-selection/intro",
+                    "sdks/xamarin/ios/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/xamarin/ios/matrixscan-count/intro",
-            "sdks/xamarin/ios/matrixscan-count/get-started",
-            "sdks/xamarin/ios/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/xamarin/ios/matrixscan/intro",
+                "sdks/xamarin/ios/matrixscan/get-started",
+                "sdks/xamarin/ios/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/xamarin/ios/matrixscan-count/intro",
+                    "sdks/xamarin/ios/matrixscan-count/get-started",
+                    "sdks/xamarin/ios/matrixscan-count/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "SparkScan",
-          items: [
-            "sdks/xamarin/ios/sparkscan/intro",
-            "sdks/xamarin/ios/sparkscan/get-started",
-            "sdks/xamarin/ios/sparkscan/advanced",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -1213,32 +1300,26 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/ios/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/xamarin/ios/matrixscan/intro",
-            "sdks/xamarin/ios/matrixscan/get-started",
-            "sdks/xamarin/ios/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/xamarin/ios/barcode-capture/get-started",
-            "sdks/xamarin/ios/barcode-capture/configure-barcode-symbologies",
+            "sdks/xamarin/ios/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/xamarin/ios/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/xamarin/ios/parse-barcode-data/get-started"],
+          items: [
+            "sdks/xamarin/ios/text-capture/get-started",
+          ],
         },
       ],
     },
@@ -1287,46 +1368,90 @@ const sidebars: SidebarsConfig = {
 
   xamarinAndroidSidebar: [
     {
-      type: "category",
-      label: "Xamarin Android Getting Started",
-      items: ["sdks/xamarin/android/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Xamarin Android',
+      collapsed: false,
+      items: [
+        'sdks/xamarin/android/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/xamarin/android/barcode-selection/intro",
-            "sdks/xamarin/android/barcode-selection/get-started",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/xamarin/android/barcode-capture/get-started",
+                "sdks/xamarin/android/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/xamarin/android/sparkscan/intro",
+                    "sdks/xamarin/android/sparkscan/get-started",
+                    "sdks/xamarin/android/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/xamarin/android/barcode-selection/intro",
+                    "sdks/xamarin/android/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/xamarin/android/matrixscan-count/intro",
-            "sdks/xamarin/android/matrixscan-count/get-started",
-            "sdks/xamarin/android/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/xamarin/android/matrixscan/intro",
+                "sdks/xamarin/android/matrixscan/get-started",
+                "sdks/xamarin/android/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/xamarin/android/matrixscan-count/intro",
+                    "sdks/xamarin/android/matrixscan-count/get-started",
+                    "sdks/xamarin/android/matrixscan-count/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "SparkScan",
-          items: [
-            "sdks/xamarin/android/sparkscan/intro",
-            "sdks/xamarin/android/sparkscan/get-started",
-            "sdks/xamarin/android/sparkscan/advanced",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -1338,32 +1463,26 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/android/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/xamarin/android/matrixscan/intro",
-            "sdks/xamarin/android/matrixscan/get-started",
-            "sdks/xamarin/android/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/xamarin/android/barcode-capture/get-started",
-            "sdks/xamarin/android/barcode-capture/configure-barcode-symbologies",
+            "sdks/xamarin/android/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/xamarin/android/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/xamarin/android/parse-barcode-data/get-started"],
+          items: [
+            "sdks/xamarin/android/text-capture/get-started",
+          ],
         },
       ],
     },
@@ -1412,46 +1531,90 @@ const sidebars: SidebarsConfig = {
 
   xamarinFormsSidebar: [
     {
-      type: "category",
-      label: "Xamarin Forms Getting Started",
-      items: ["sdks/xamarin/forms/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Xamarin Forms',
+      collapsed: false,
+      items: [
+        'sdks/xamarin/forms/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/xamarin/forms/barcode-selection/intro",
-            "sdks/xamarin/forms/barcode-selection/get-started",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/xamarin/forms/barcode-capture/get-started",
+                "sdks/xamarin/forms/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/xamarin/forms/sparkscan/intro",
+                    "sdks/xamarin/forms/sparkscan/get-started",
+                    "sdks/xamarin/forms/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/xamarin/forms/barcode-selection/intro",
+                    "sdks/xamarin/forms/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/xamarin/forms/matrixscan-count/intro",
-            "sdks/xamarin/forms/matrixscan-count/get-started",
-            "sdks/xamarin/forms/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/xamarin/forms/matrixscan/intro",
+                "sdks/xamarin/forms/matrixscan/get-started",
+                "sdks/xamarin/forms/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/xamarin/forms/matrixscan-count/intro",
+                    "sdks/xamarin/forms/matrixscan-count/get-started",
+                    "sdks/xamarin/forms/matrixscan-count/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "SparkScan",
-          items: [
-            "sdks/xamarin/forms/sparkscan/intro",
-            "sdks/xamarin/forms/sparkscan/get-started",
-            "sdks/xamarin/forms/sparkscan/advanced",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -1463,32 +1626,26 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/forms/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/xamarin/forms/matrixscan/intro",
-            "sdks/xamarin/forms/matrixscan/get-started",
-            "sdks/xamarin/forms/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/xamarin/forms/barcode-capture/get-started",
-            "sdks/xamarin/forms/barcode-capture/configure-barcode-symbologies",
+            "sdks/xamarin/forms/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/xamarin/forms/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/xamarin/forms/parse-barcode-data/get-started"],
+          items: [
+            "sdks/xamarin/forms/text-capture/get-started",
+          ],
         },
       ],
     },
@@ -1537,46 +1694,99 @@ const sidebars: SidebarsConfig = {
 
   netIosSidebar: [
     {
-      type: "category",
-      label: ".NET Getting Started",
-      items: ["sdks/net/ios/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for .NET iOS',
+      collapsed: false,
+      items: [
+        'sdks/net/ios/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/net/ios/barcode-selection/intro",
-            "sdks/net/ios/barcode-selection/get-started",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/net/ios/barcode-capture/get-started",
+                "sdks/net/ios/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/net/ios/sparkscan/intro",
+                    "sdks/net/ios/sparkscan/get-started",
+                    "sdks/net/ios/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/net/ios/barcode-selection/intro",
+                    "sdks/net/ios/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/net/ios/matrixscan-count/intro",
-            "sdks/net/ios/matrixscan-count/get-started",
-            "sdks/net/ios/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/net/ios/matrixscan/intro",
+                "sdks/net/ios/matrixscan/get-started",
+                "sdks/net/ios/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/net/ios/matrixscan-count/intro",
+                    "sdks/net/ios/matrixscan-count/get-started",
+                    "sdks/net/ios/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'MatrixScan Find',
+                  items: [
+                    "sdks/net/ios/matrixscan-find/intro",
+                    "sdks/net/ios/matrixscan-find/get-started",
+                    "sdks/net/ios/matrixscan-find/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Find",
-          items: [
-            "sdks/net/ios/matrixscan-find/intro",
-            "sdks/net/ios/matrixscan-find/get-started",
-            "sdks/net/ios/matrixscan-find/advanced",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -1588,32 +1798,26 @@ const sidebars: SidebarsConfig = {
             "sdks/net/ios/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/net/ios/matrixscan/intro",
-            "sdks/net/ios/matrixscan/get-started",
-            "sdks/net/ios/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/net/ios/barcode-capture/get-started",
-            "sdks/net/ios/barcode-capture/configure-barcode-symbologies",
+            "sdks/net/ios/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/net/ios/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/net/ios/parse-barcode-data/get-started"],
+          items: [
+            "sdks/net/ios/text-capture/get-started",
+          ],
         },
       ],
     },
@@ -1662,46 +1866,99 @@ const sidebars: SidebarsConfig = {
 
   netAndroidSidebar: [
     {
-      type: "category",
-      label: ".NET Getting Started",
-      items: ["sdks/net/android/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for .NET Android',
+      collapsed: false,
+      items: [
+        'sdks/net/android/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/net/android/barcode-selection/intro",
-            "sdks/net/android/barcode-selection/get-started",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/net/android/barcode-capture/get-started",
+                "sdks/net/android/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/net/android/sparkscan/intro",
+                    "sdks/net/android/sparkscan/get-started",
+                    "sdks/net/android/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/net/android/barcode-selection/intro",
+                    "sdks/net/android/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/net/android/matrixscan-count/intro",
-            "sdks/net/android/matrixscan-count/get-started",
-            "sdks/net/android/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/net/android/matrixscan/intro",
+                "sdks/net/android/matrixscan/get-started",
+                "sdks/net/android/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/net/android/matrixscan-count/intro",
+                    "sdks/net/android/matrixscan-count/get-started",
+                    "sdks/net/android/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'MatrixScan Find',
+                  items: [
+                    "sdks/net/android/matrixscan-find/intro",
+                    "sdks/net/android/matrixscan-find/get-started",
+                    "sdks/net/android/matrixscan-find/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Find",
-          items: [
-            "sdks/net/android/matrixscan-find/intro",
-            "sdks/net/android/matrixscan-find/get-started",
-            "sdks/net/android/matrixscan-find/advanced",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -1713,32 +1970,26 @@ const sidebars: SidebarsConfig = {
             "sdks/net/android/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/net/android/matrixscan/intro",
-            "sdks/net/android/matrixscan/get-started",
-            "sdks/net/android/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/net/android/barcode-capture/get-started",
-            "sdks/net/android/barcode-capture/configure-barcode-symbologies",
+            "sdks/net/android/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/net/android/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/net/android/parse-barcode-data/get-started"],
+          items: [
+            "sdks/net/android/text-capture/get-started",
+          ],
         },
       ],
     },
