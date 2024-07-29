@@ -658,55 +658,99 @@ const sidebars: SidebarsConfig = {
 
   reactnativeSidebar: [
     {
-      type: "category",
-      label: "React Native Getting Started",
-      items: ["sdks/react-native/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for React Native',
+      collapsed: false,
+      items: [
+        'sdks/react-native/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "SparkScan",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/react-native/sparkscan/intro",
-            "sdks/react-native/sparkscan/get-started",
-            "sdks/react-native/sparkscan/advanced",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/react-native/barcode-capture/get-started",
+                "sdks/react-native/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/react-native/sparkscan/intro",
+                    "sdks/react-native/sparkscan/get-started",
+                    "sdks/react-native/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/react-native/barcode-selection/intro",
+                    "sdks/react-native/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "MatrixScan Count",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/react-native/matrixscan-count/intro",
-            "sdks/react-native/matrixscan-count/get-started",
-            "sdks/react-native/matrixscan-count/advanced",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/react-native/matrixscan/intro",
+                "sdks/react-native/matrixscan/get-started",
+                "sdks/react-native/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/react-native/matrixscan-count/intro",
+                    "sdks/react-native/matrixscan-count/get-started",
+                    "sdks/react-native/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'MatrixScan Find',
+                  items: [
+                    "sdks/react-native/matrixscan-find/intro",
+                    "sdks/react-native/matrixscan-find/get-started",
+                    "sdks/react-native/matrixscan-find/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Find",
-          items: [
-            "sdks/react-native/matrixscan-find/intro",
-            "sdks/react-native/matrixscan-find/get-started",
-            "sdks/react-native/matrixscan-find/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Selection",
-          items: [
-            "sdks/react-native/barcode-selection/intro",
-            "sdks/react-native/barcode-selection/get-started",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -717,32 +761,26 @@ const sidebars: SidebarsConfig = {
             "sdks/react-native/id-capture/get-started",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/react-native/matrixscan/intro",
-            "sdks/react-native/matrixscan/get-started",
-            "sdks/react-native/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/react-native/barcode-capture/get-started",
-            "sdks/react-native/barcode-capture/configure-barcode-symbologies",
+            "sdks/react-native/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/react-native/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/react-native/parse-barcode-data/get-started"],
+          items: [
+            "sdks/react-native/text-capture/get-started",
+          ],
         },
       ],
     },
@@ -796,55 +834,99 @@ const sidebars: SidebarsConfig = {
 
   flutterSidebar: [
     {
-      type: "category",
-      label: "Flutter Getting Started",
-      items: ["sdks/flutter/add-sdk"],
+      type: 'category',
+      label: 'Data Capture SDK for Flutter',
+      collapsed: false,
+      items: [
+        'sdks/flutter/add-sdk',
+      ],
     },
     {
-      type: "category",
-      label: "Pre-built Components",
+      type: 'category',
+      label: 'Barcode Scanning',
       collapsed: false,
       items: [
         {
-          type: "category",
-          label: "SparkScan",
+          type: 'category',
+          label: 'Single Scanning',
           items: [
-            "sdks/flutter/sparkscan/intro",
-            "sdks/flutter/sparkscan/get-started",
-            "sdks/flutter/sparkscan/advanced",
+            {
+              type: 'category',
+              label: 'Barcode Capture API',
+              items: [
+                "sdks/flutter/barcode-capture/get-started",
+                "sdks/flutter/barcode-capture/configure-barcode-symbologies",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'SparkScan',
+                  items: [
+                    "sdks/flutter/sparkscan/intro",
+                    "sdks/flutter/sparkscan/get-started",
+                    "sdks/flutter/sparkscan/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/flutter/barcode-selection/intro",
+                    "sdks/flutter/barcode-selection/get-started",
+                  ],
+                },
+              ],
+            },
           ],
         },
         {
-          type: "category",
-          label: "Barcode Selection",
+          type: 'category',
+          label: 'Multi-scanning',
           items: [
-            "sdks/flutter/barcode-selection/intro",
-            "sdks/flutter/barcode-selection/get-started",
+            {
+              type: "category",
+              label: "MatrixScan API",
+              items: [
+                "sdks/flutter/matrixscan/intro",
+                "sdks/flutter/matrixscan/get-started",
+                "sdks/flutter/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/flutter/matrixscan-count/intro",
+                    "sdks/flutter/matrixscan-count/get-started",
+                    "sdks/flutter/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'MatrixScan Find',
+                  items: [
+                    "sdks/flutter/matrixscan-find/intro",
+                    "sdks/flutter/matrixscan-find/get-started",
+                    "sdks/flutter/matrixscan-find/advanced",
+                  ],
+                },
+              ],
+            },
           ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Count",
-          items: [
-            "sdks/flutter/matrixscan-count/intro",
-            "sdks/flutter/matrixscan-count/get-started",
-            "sdks/flutter/matrixscan-count/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "MatrixScan Find",
-          items: [
-            "sdks/flutter/matrixscan-find/intro",
-            "sdks/flutter/matrixscan-find/get-started",
-            "sdks/flutter/matrixscan-find/advanced",
-          ],
-        },
+        }, 
       ],
     },
     {
       type: "category",
-      label: "Fully-customizable API",
+      label: "ID Scanning",
       collapsed: false,
       items: [
         {
@@ -853,35 +935,28 @@ const sidebars: SidebarsConfig = {
           items: [
             "sdks/flutter/id-capture/intro",
             "sdks/flutter/id-capture/get-started",
-            "sdks/flutter/id-capture/advanced",
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
         {
           type: "category",
-          label: "MatrixScan",
+          label: "Parser",
           items: [
-            "sdks/flutter/matrixscan/intro",
-            "sdks/flutter/matrixscan/get-started",
-            "sdks/flutter/matrixscan/advanced",
-          ],
-        },
-        {
-          type: "category",
-          label: "Barcode Capture",
-          items: [
-            "sdks/flutter/barcode-capture/get-started",
-            "sdks/flutter/barcode-capture/configure-barcode-symbologies",
+            "sdks/flutter/parse-barcode-data/get-started",
           ],
         },
         {
           type: "category",
           label: "Text Capture",
-          items: ["sdks/flutter/text-capture/get-started"],
-        },
-        {
-          type: "category",
-          label: "Parse Barcode Data",
-          items: ["sdks/flutter/parse-barcode-data/get-started"],
+          items: [
+            "sdks/flutter/text-capture/get-started",
+          ],
         },
       ],
     },
