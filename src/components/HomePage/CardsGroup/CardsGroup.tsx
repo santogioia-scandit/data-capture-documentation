@@ -17,7 +17,7 @@ export default function CardsGroup({ title, mainColor, content, cardColor }) {
         </button>
       </div>
       <ul>
-        {content.map((cardsGroup, index) => {
+        {content.map((cardsGroup, index:number) => {
           return (
             <li className={style.cardsGroup} key={index}>
               <h4 className={style.cardsGroupSubTitle}>{cardsGroup.groupName}</h4>

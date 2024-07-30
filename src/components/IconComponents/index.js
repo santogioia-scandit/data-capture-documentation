@@ -17,13 +17,18 @@ import Express from "./Express";
 import Titanium from "./Titanium";
 import Net from "./Net";
 import AntDesign from "./AntDesign";
-import Bolt from './Bolt';
-import Express from './Express';
 import XamarinAndroid from "./XamarinAndroid";
 import XamarinForms from "./XamarinForms";
 import XamarinIos from "./XamarinIos";
 import NetIos from "./NetIos";
 import NetAndroid from "./NetAndroid";
+import ScanditAndroid from './ScanditAndroid';
+import ScanditCapacitor from './ScanditCapacitor';
+import ScanditCordova from './ScanditCordova';
+import ScanditFlutter from './ScanditFlutter';
+import ScanditISO from './ScanditISO';
+import ScanditReact from './ScanditReact';
+import Logo from './Logo';
 
 export {
   Sparkscan,
@@ -50,4 +55,11 @@ export {
   XamarinIos,
   NetIos,
   NetAndroid,
+  ScanditAndroid,
+  ScanditCapacitor,
+  ScanditCordova,
+  ScanditFlutter,
+  ScanditISO,
+  ScanditReact,
+  Logo,
 };

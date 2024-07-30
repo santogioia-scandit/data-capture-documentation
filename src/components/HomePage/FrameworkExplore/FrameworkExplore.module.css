@@ -1,0 +1,25 @@
+.frameworkExplore {
+  padding: 56px 0 20px;
+}
+
+.frameworkExploreTitle {
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 700;
+  color: var(--light-black);
+}
+
+.frameworkExploreList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.frameworkExploreText {
+  margin-bottom: 32px;
+  max-width: 550px;
+  font-size: 16px;
+  font-weight: 400;
+}

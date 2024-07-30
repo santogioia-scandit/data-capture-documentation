@@ -8,6 +8,12 @@ import {
   Javascript,
   Net,
   ReactIcon,
+  ScanditAndroid,
+  ScanditCapacitor,
+  ScanditCordova,
+  ScanditFlutter,
+  ScanditISO,
+  ScanditReact,
   Titanium,
   Xamarin,
 } from "../../IconComponents";
@@ -16,11 +22,11 @@ import style from "./Frameworks.module.css";
 export const frameworksArr = [
   {
     name: "iso",
-    icon: <Ios iconClass={style.iconStyle} />,
+    icon: <ScanditISO iconClass={style.iconStyle} />,
   },
   {
     name: "android",
-    icon: <Android iconClass={style.iconStyle} />,
+    icon: <ScanditAndroid iconClass={style.iconStyle} />,
   },
   {
     name: "javascript",
@@ -28,11 +34,11 @@ export const frameworksArr = [
   },
   {
     name: "react",
-    icon: <ReactIcon iconClass={style.iconStyle} />,
+    icon: <ScanditReact iconClass={style.iconStyle} />,
   },
   {
     name: "cordova",
-    icon: <Cordova iconClass={style.iconStyle} />,
+    icon: <ScanditCordova iconClass={style.iconStyle} />,
   },
   {
     name: "xamarin",
@@ -40,7 +46,7 @@ export const frameworksArr = [
   },
   {
     name: "flutter",
-    icon: <Flutter iconClass={style.iconStyle} />,
+    icon: <ScanditFlutter iconClass={style.iconStyle} />,
   },
   {
     name: "net",
@@ -48,7 +54,7 @@ export const frameworksArr = [
   },
   {
     name: "capacitor",
-    icon: <Capacitor iconClass={style.iconStyle} />,
+    icon: <ScanditCapacitor iconClass={style.iconStyle} />,
   },
   {
     name: "titanium",

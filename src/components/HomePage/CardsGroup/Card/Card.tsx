@@ -3,7 +3,6 @@ import Arrow from "../../../IconComponents/Arrow";
 import style from "./Card.module.css";
 
 export default function Card({ card, cardColor, mainColor }) {
-  console.log(card.isActive);
 
   return (
     <li

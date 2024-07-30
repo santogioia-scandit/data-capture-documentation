@@ -2,8 +2,8 @@ export default function Titanium({iconClass}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="100%"
-      height="100%"
+      width="18"
+      height="18"
       viewBox="0 0 21 22"
       fill="none"
       className={iconClass}

@@ -10,19 +10,19 @@ export default function Ms() {
       <path
         d="M8.99805 4.99365L4.99805 4.99365L4.99805 8.99365"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M31 4.99365L35 4.99365L35 8.99365"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M8.99805 35L4.99805 35L4.99805 31"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
-      <path d="M31 35L35 35L35 31" stroke="currentColor" stroke-width="2" />
+      <path d="M31 35L35 35L35 31" stroke="currentColor" strokeWidth="2" />
       <mask id="path-5-inside-1_228_1595" fill="white">
         <rect x="8" y="8" width="24" height="24" rx="1" />
       </mask>
@@ -33,18 +33,18 @@ export default function Ms() {
         height="24"
         rx="1"
         stroke="currentColor"
-        stroke-width="4"
+        strokeWidth="4"
         mask="url(#path-5-inside-1_228_1595)"
       />
-      <path d="M20 8.24146V31.9199" stroke="currentColor" stroke-width="2" />
-      <path d="M31.8398 20L8.16138 20" stroke="currentColor" stroke-width="2" />
+      <path d="M20 8.24146V31.9199" stroke="currentColor" strokeWidth="2" />
+      <path d="M31.8398 20L8.16138 20" stroke="currentColor" strokeWidth="2" />
       <rect
         x="12.5"
         y="9"
         width="4"
         height="3"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <rect
         x="23.5"
@@ -52,7 +52,7 @@ export default function Ms() {
         width="4"
         height="3"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <rect
         x="12.5"
@@ -60,7 +60,7 @@ export default function Ms() {
         width="4"
         height="3"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <rect
         x="23.5"
@@ -68,7 +68,7 @@ export default function Ms() {
         width="4"
         height="3"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   );

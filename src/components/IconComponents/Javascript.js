@@ -1,8 +1,8 @@
 export default function Javascript({ iconClass = "svg-wrap--gray" }) {
   return (
     <svg
-      width="100%"
-      height="100%"
+      width="18"
+      height="18"
       viewBox="0 0 28 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,8 @@
 export default function Net({iconClass}) {
   return (
     <svg
-      width="100%"
-      height="100%"
+      width="19"
+      height="19"
       viewBox="0 0 28 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -30,13 +30,13 @@ export default function MsPick() {
       <path d="M20 28L20 32" stroke="currentColor" strokeWidth="2" />
       <path
         fillRule="evenodd"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="M31.8389 19H27.9805V21H31.8389V19Z"
         fill="currentColor"
       />
       <path
         fillRule="evenodd"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="M8 28V31C8 31.5523 8.44772 32 9 32H31C31.5523 32 32 31.5523 32 31V9C32 8.44772 31.5523 8 31 8H27.981V10H30V30H10V28H8Z"
         fill="currentColor"
       />
@@ -47,7 +47,7 @@ export default function MsPick() {
         height="12"
         stroke="currentColor"
         strokeWidth="2"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path d="M15.0039 12.0063V18.0063" stroke="currentColor" strokeWidth="2" />
       <path d="M18 15.0063L12 15.0063" stroke="currentColor" strokeWidth="2" />

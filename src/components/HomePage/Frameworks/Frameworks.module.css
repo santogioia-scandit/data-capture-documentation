@@ -1,18 +1,23 @@
 .text {
-  margin: 80px 0 32px;
+  margin: 56px 0 24px;
+  text-align: center;
   color: #717375;
   font-weight: 700;
   font-size: 16px;
 }
 
 .iconStyle {
-  color: var(--icon-blue);
+  color: var(--icon-base);
   max-width: 27px;
+}
+
+.iconWrapper:hover .iconStyle {
+  color: var(--icon-hover);
 }
 
 .iconList {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 35px;
   padding: 0;
@@ -24,13 +29,14 @@
   align-items: center;
   justify-content: center;
   list-style: none;
-  width: 75px;
-  height: 75px;
+  width: 48px;
+  height: 48px;
   border: 1px solid #b8c2cc;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 250ms linear;
 }
 
 .iconWrapper:hover {
-  background: linear-gradient(90deg, #e0f6f8 0%, #c3e1ff 100%);
+  background-color: var(--light-black);
 }
