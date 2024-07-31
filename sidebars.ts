@@ -519,6 +519,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/cordova/add-sdk',
+        'sdks/cordova/samples',
       ],
     },
     {
