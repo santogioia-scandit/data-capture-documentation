@@ -845,6 +845,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/flutter/add-sdk',
+        'sdks/flutter/samples',
       ],
     },
     {
@@ -1017,6 +1018,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/capacitor/add-sdk',
+        'sdks/capacitor/samples',
       ],
     },
     {
@@ -1157,6 +1159,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/titanium/add-sdk',
+        'sdks/titanium/samples',
       ],
     },
     {
@@ -1215,6 +1218,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/xamarin/ios/add-sdk',
+        'sdks/xamarin/ios/samples',
       ],
     },
     {
@@ -1378,6 +1382,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/xamarin/android/add-sdk',
+        'sdks/xamarin/android/samples',
       ],
     },
     {
@@ -1541,6 +1546,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/xamarin/forms/add-sdk',
+        'sdks/xamarin/forms/samples',
       ],
     },
     {
@@ -1704,6 +1710,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/net/ios/add-sdk',
+        'sdks/net/ios/samples',
       ],
     },
     {
@@ -1876,6 +1883,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/net/android/add-sdk',
+        'sdks/net/android/samples',
       ],
     },
     {
