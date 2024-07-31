@@ -5,11 +5,11 @@ sidebar_label: 'Samples'
 pagination_next: null
 ---
 
-# Android SDK Samples
+# iOS SDK Samples
 
 This page provides a list of samples available for the Scandit Data Capture SDK for Android. Each sample demonstrates a specific feature or use case of the SDK.
 
-The repository with all the samples can be found [here](https://github.com/Scandit/datacapture-android-samples/tree/master), and each individual sample is linked below.
+The repository with all the samples can be found [here](https://github.com/Scandit/datacapture-ios-samples/tree/master), and each individual sample is linked below.
 
 ## Barcode Scanning
 
@@ -18,19 +18,23 @@ The repository with all the samples can be found [here](https://github.com/Scand
 #### Barcode Capture
 
 
-##### [Single Scan](https://github.com/Scandit/datacapture-android-samples/tree/master/BarcodeCaptureSimpleSample)
+##### [Single Scan](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureSimpleSampleSwift)
 
 Simple sample showing how to use the Barcode Capture mode to scan a single barcode.
 
-##### [Capture Views](https://github.com/Scandit/datacapture-android-samples/tree/master/BarcodeCaptureViewsSample)
+:::tip
+This sample is written in Swift. If you prefer Objective-C, you can find the equivalent sample [here](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureSimpleSampleObjC).
+:::
+
+##### [Capture Views](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureViewsSample)
 
 Demonstrates the various ways to best integrate the scanner into the UI of your app.
 
-##### [Capture Settings](https://github.com/Scandit/datacapture-android-samples/tree/master/BarcodeCaptureSettingsSample)
+##### [Capture Settings](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureSettingsSample)
 
 Demonstrates how you can adapt the barcode capture settings best to your needs and experiment with all the options.
 
-##### [Rejection](https://github.com/Scandit/datacapture-android-samples/tree/master/BarcodeCaptureRejectSample)
+##### [Rejection](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureRejectSample)
 
 Sample that uses the camera to read a single QR code that starts with “09:” but ignores/rejects all other codes.
 
@@ -40,11 +44,11 @@ Sample that uses the camera to read a single QR code that starts with “09:” 
 
 ![SparkScan List Building](/img/samples/sparkscan_list_building.png)
 
-###### [List Building](https://github.com/Scandit/datacapture-android-samples/tree/master/ListBuildingSample)
+###### [List Building](https://github.com/Scandit/datacapture-ios-samples/tree/master/ListBuildingSample)
 
 Use SparkScan to populate a list of scanned barcodes.
 
-###### [Receiving](https://github.com/Scandit/datacapture-android-samples/tree/master/ReceivingSample)
+###### [Receiving](https://github.com/Scandit/datacapture-ios-samples/tree/master/ReceivingSample)
 
 Use a combination of SparkScan and [MatrixScan Count](#matrixscan-count) for a receiving use case.
 
@@ -52,11 +56,11 @@ Use a combination of SparkScan and [MatrixScan Count](#matrixscan-count) for a r
 
 ![Barcode Selection](/img/samples/barcode_selection.png)
 
-###### [Selection Settings](https://github.com/Scandit/datacapture-android-samples/tree/master/BarcodeSelectionSettingsSample)
+###### [Selection Settings](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeSelectionSettingsSample)
 
 Demonstrates how you can adapt the barcode selection settings best to your needs and experiment with all the options.
 
-###### [Reorder from Catalog](https://github.com/Scandit/datacapture-android-samples/tree/master/ReorderFromCatalogSample)
+###### [Reorder from Catalog](https://github.com/Scandit/datacapture-ios-samples/tree/master/ReorderFromCatalogSample)
 
 Sample showing how Barcode Selection can be used to reorder items from a catalog, enabling the user to tap the products that need to be reordered.
 
@@ -66,15 +70,15 @@ Sample showing how Barcode Selection can be used to reorder items from a catalog
 
 Examples utilizing the low-level `BarcodeTracking` API.
 
-##### [Simple Highlight](https://github.com/Scandit/datacapture-android-samples/tree/master/MatrixScanSimpleSample)
+##### [Simple Highlight](https://github.com/Scandit/datacapture-ios-samples/tree/master/MatrixScanSimpleSample)
 
 Simple sample showing how to use MatrixScan to highlight barcodes in a frame.
 
-##### [AR Bubbles](https://github.com/Scandit/datacapture-android-samples/tree/master/MatrixScanBubblesSample)
+##### [AR Bubbles](https://github.com/Scandit/datacapture-ios-samples/tree/master/MatrixScanBubblesSample)
 
 Demonstrates more advanced use of MatrixScan by showing AR bubbles above the barcodes with the barcode data.
 
-##### [Rejection](https://github.com/Scandit/datacapture-android-samples/tree/master/MatrixScanRejectSample)
+##### [Rejection](https://github.com/Scandit/datacapture-ios-samples/tree/master/MatrixScanRejectSample)
 
 Use custom conditions to highlight and scan only the barcodes that meet the specified criteria.
 
@@ -84,23 +88,23 @@ Use custom conditions to highlight and scan only the barcodes that meet the spec
 
 ![MatrixScan Count](/img/samples/ms_count.png)
 
-###### [Batch Scanning](https://github.com/Scandit/datacapture-android-samples/tree/master/MatrixScanCountSimpleSample)
+###### [Batch Scanning](https://github.com/Scandit/datacapture-ios-samples/tree/master/MatrixScanCountSimpleSample)
 
 Use MatrixScan to batch scan and count the number of barcodes in a frame.
 
-###### [Receiving](https://github.com/Scandit/datacapture-android-samples/tree/master/ReceivingSample)
+###### [Receiving](https://github.com/Scandit/datacapture-ios-samples/tree/master/ReceivingSample)
 
 Use a combination of SparkScan and [MatrixScan Count](#matrixscan-count) for a receiving use case.
 
-###### [Expiry Management](https://github.com/Scandit/datacapture-android-samples/tree/master/ExpiryManagementSample)
+###### [Expiry Management](https://github.com/Scandit/datacapture-ios-samples/tree/master/ExpiryManagementSample)
 
 Share scan data between MatrixScan Count and Spark Scan to show the expiration status of scanned items.
 
 ##### MatrixScan Find
 
-![MatrixScan Find](/img/samples/ms_find_android.png)
+![MatrixScan Find](/img/samples/ms_find_ios.png)
 
-###### [Search and Find](https://github.com/Scandit/datacapture-android-samples/tree/master/SearchAndFindSample)
+###### [Search and Find](https://github.com/Scandit/datacapture-ios-samples/tree/master/SearchAndFindSample)
 
 Use barcode capture to define search criteria by scanning items, and MatrixScan Find can then be launched to find the pre-defined item.
 
@@ -110,24 +114,24 @@ Use barcode capture to define search criteria by scanning items, and MatrixScan 
 
 ### ID Capture
 
-#### [Simple ID Capture](https://github.com/Scandit/datacapture-android-samples/tree/master/IdCaptureSimpleSample)
+#### [Simple ID Capture](https://github.com/Scandit/datacapture-ios-samples/tree/master/IdCaptureSimpleSample)
 
 Simple sample showing how to use the ID Capture mode to scan an ID card.
 
-#### [Extended ID Capture](https://github.com/Scandit/datacapture-android-samples/tree/master/IdCaptureExtendedSample)
+#### [Extended ID Capture](https://github.com/Scandit/datacapture-ios-samples/tree/master/IdCaptureExtendedSample)
 
 Sample showing how to use the ID Capture mode to scan an ID card with additional fields.
 
-#### [Settings](https://github.com/Scandit/datacapture-android-samples/tree/master/IdCaptureSettingsSample)
+#### [Settings](https://github.com/Scandit/datacapture-ios-samples/tree/master/IdCaptureSettingsSample)
 
 Demonstrates how you can adapt the ID capture settings best to your needs and experiment with all the options.
 
 ### ID Verification
 
-#### [Age Verification](https://github.com/Scandit/datacapture-android-samples/tree/master/AgeVerifiedDeliverySample)
+#### [Age Verification](https://github.com/Scandit/datacapture-ios-samples/tree/master/AgeVerifiedDeliverySample)
 
 Sample showing how to use the ID Capture mode to verify age for a delivery.
 
-#### [US Driver's License](https://github.com/Scandit/datacapture-android-samples/tree/master/USDLVerificationSample)
+#### [US Driver's License](https://github.com/Scandit/datacapture-ios-samples/tree/master/USDLVerificationSample)
 
 Sample showing how to use the ID Capture mode to verify a US driver's license.

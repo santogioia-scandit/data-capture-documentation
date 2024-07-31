@@ -82,6 +82,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/ios/add-sdk',
+        'sdks/ios/samples',
       ],
     },
     {
@@ -238,6 +239,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/android/add-sdk',
+        'sdks/android/samples',
       ],
     },
     {
@@ -394,6 +396,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/web/add-sdk',
+        'sdks/web/samples',
       ],
     },
     {
