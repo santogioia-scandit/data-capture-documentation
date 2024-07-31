@@ -667,6 +667,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'sdks/react-native/add-sdk',
+        'sdks/react-native/samples',
       ],
     },
     {
