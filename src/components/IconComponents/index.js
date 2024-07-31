@@ -29,6 +29,11 @@ import ScanditFlutter from './ScanditFlutter';
 import ScanditISO from './ScanditISO';
 import ScanditReact from './ScanditReact';
 import Logo from './Logo';
+import LabelCapture from './LabelCapture';
+import Parser from './Parser';
+import Ms from './Ms';
+import IDValidate from './IDValidate';
+import IdCapture from './IdCapture';
 
 export {
   Sparkscan,
@@ -62,4 +67,9 @@ export {
   ScanditISO,
   ScanditReact,
   Logo,
+  LabelCapture,
+  Parser,
+  Ms,
+  IDValidate,
+  IdCapture,
 };

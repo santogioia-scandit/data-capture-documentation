@@ -1,4 +1,4 @@
-export default function AntDesign({iconClass}) {
+export default function AntDesign({iconClass=''}) {
   return (
     <svg
       width="100%"

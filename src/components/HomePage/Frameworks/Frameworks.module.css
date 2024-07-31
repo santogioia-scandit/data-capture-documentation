@@ -7,12 +7,7 @@
 }
 
 .iconStyle {
-  color: var(--icon-base);
   max-width: 27px;
-}
-
-.iconWrapper:hover .iconStyle {
-  color: var(--icon-hover);
 }
 
 .iconList {
@@ -35,8 +30,39 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 250ms linear;
+  position: relative;
 }
 
 .iconWrapper:hover {
   background-color: var(--light-black);
+  color: var(--icon-hover);
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .iconWrapper .iconStyle {
+  color: white;
+}
+
+.input:checked + .iconWrapper {
+  background-color: black;
+}
+
+.titleLabelHover {
+  display: none;
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  background-color: #f4f7f9;
+  border-radius: 20px;
+  font-size: 10px;
+  color: #717375;
+}
+
+.iconWrapper:hover .titleLabelHover {
+  display: block;
 }

@@ -11,6 +11,7 @@
 .cardNotActive {
   background: transparent;
   border: 1px solid #bcebf0;
+  cursor: default;
 }
 
 .cardNotActiveLink {

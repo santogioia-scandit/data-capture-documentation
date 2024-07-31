@@ -1,6 +1,7 @@
+import { FrameworksName } from "../../constants/frameworksName";
+import { frameworkCards } from "../data/frameworkCardsArr";
 import style from "./FrameworkExplore.module.css";
 import FrameworkExploreCard from "./FrameworkExploreCard";
-import { frameworkExploreArr } from "./frameworkExploreArr";
 
 export default function FrameworkExplore() {
   return (
@@ -11,9 +12,9 @@ export default function FrameworkExplore() {
         kit designed to enable mobile devices to capture{" "}
       </p>
       <ul className={style.frameworkExploreList}>
-        {frameworkExploreArr.map((item, index) => (
+        {frameworkCards.map((item, index) => (
           <FrameworkExploreCard icon={item.icon} key={index}>
-            {item.title}
+            {FrameworksName[item.framework as keyof typeof FrameworksName]}
           </FrameworkExploreCard>
         ))}
       </ul>

@@ -1,4 +1,4 @@
-export default function ScanditCapacitor({ iconClass }) {
+export default function ScanditCapacitor({ iconClass='' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

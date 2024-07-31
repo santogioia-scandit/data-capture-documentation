@@ -1,9 +1,15 @@
 import Link from "@docusaurus/Link";
 import Arrow from "../../../IconComponents/Arrow";
 import style from "./Card.module.css";
+import { CardType } from "../../../constants/types";
 
-export default function Card({ card, cardColor, mainColor }) {
+interface CardProps {
+  card: CardType;
+  cardColor: string;
+  mainColor: string;
+}
 
+export default function Card({ card, cardColor, mainColor }: CardProps) {
   return (
     <li
       className={`${style.card} ${!card.isActive ? style.cardNotActive : ""}`}
@@ -25,7 +31,7 @@ export default function Card({ card, cardColor, mainColor }) {
         <p className={style.cardTitle}>
           {card.name} <Arrow iconClass={style.cardsGroupIcon} />
         </p>
-        <p className={style.cardApi}>{card.api}</p>
+        <p className={style.cardApi}>{card.text}</p>
       </Link>
     </li>
   );

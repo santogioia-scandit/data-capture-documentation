@@ -1,4 +1,4 @@
-export default function Net({iconClass}) {
+export default function Net({iconClass=''}) {
   return (
     <svg
       width="19"

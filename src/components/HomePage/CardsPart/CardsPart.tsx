@@ -1,10 +1,15 @@
 import CardsGroup from "../CardsGroup/CardsGroup";
 import style from "./CardsPart.module.css";
-import { barcodeScanning } from "./barcodeScanningArr";
-import { idScanning } from "./idScanning";
+import { createBarcodeScanningArr } from "../data/createBarcodeScanningArr";
+import { createIdScanningArr } from "../data/createIdScanningArr";
 
+interface CardsPartProps {
+  selectedFramework: string;
+}
 
-export default function CardsPart() {
+export default function CardsPart({ selectedFramework }: CardsPartProps) {    
+  const barcodeScanning = createBarcodeScanningArr(selectedFramework);
+  const idScanning = createIdScanningArr(selectedFramework)
 
   return (
     <div className={style.cardsPartWrapper}>

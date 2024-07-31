@@ -1,4 +1,4 @@
-export default function Titanium({iconClass}) {
+export default function Titanium({iconClass=''}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
