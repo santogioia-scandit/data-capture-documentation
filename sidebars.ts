@@ -186,6 +186,27 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
+        {
+          type: "category",
+          label: "Parser",
+          items: [
+            "sdks/ios/parser/get-started",
+          ],
+        },
+        {
+          type: "category",
+          label: "Label Capture",
+          items: [
+            "sdks/ios/label-capture/get-started",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "API Reference",
       items: [
         {
@@ -343,6 +364,27 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Additional Functionalities",
+      collapsed: false,
+      items: [
+        {
+          type: "category",
+          label: "Parser",
+          items: [
+            "sdks/android/parser/get-started",
+          ],
+        },
+        {
+          type: "category",
+          label: "Label Capture",
+          items: [
+            "sdks/android/label-capture/get-started",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "API Reference",
       items: [
         {
@@ -474,7 +516,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/web/parse-barcode-data/get-started",
+            "sdks/web/parser/get-started",
           ],
         },
       ],
@@ -497,6 +539,11 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/web/id-capture/api.html",
+        },
+        {
+          type: "link",
+          label: "ScanditParser",
+          href: "https://docs.scandit.com/data-capture-sdk/web/parser/api.html",
         },
         {
           type: "link",
@@ -605,7 +652,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/cordova/parse-barcode-data/get-started",
+            "sdks/cordova/parser/get-started",
           ],
         },
         {
@@ -778,7 +825,14 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/react-native/parse-barcode-data/get-started",
+            "sdks/react-native/parser/get-started",
+          ],
+        },
+        {
+          type: "category",
+          label: "Label Capture",
+          items: [
+            "sdks/react-native/label-capture/get-started",
           ],
         },
         {
@@ -956,7 +1010,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/flutter/parse-barcode-data/get-started",
+            "sdks/flutter/parser/get-started",
           ],
         },
         {
@@ -1097,7 +1151,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/capacitor/parse-barcode-data/get-started",
+            "sdks/capacitor/parser/get-started",
           ],
         },
         {
@@ -1320,7 +1374,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/xamarin/ios/parse-barcode-data/get-started",
+            "sdks/xamarin/ios/parser/get-started",
           ],
         },
         {
@@ -1484,7 +1538,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/xamarin/android/parse-barcode-data/get-started",
+            "sdks/xamarin/android/parser/get-started",
           ],
         },
         {
@@ -1648,7 +1702,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/xamarin/forms/parse-barcode-data/get-started",
+            "sdks/xamarin/forms/parser/get-started",
           ],
         },
         {
@@ -1821,7 +1875,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/net/ios/parse-barcode-data/get-started",
+            "sdks/net/ios/parser/get-started",
           ],
         },
         {
@@ -1994,7 +2048,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Parser",
           items: [
-            "sdks/net/android/parse-barcode-data/get-started",
+            "sdks/net/android/parser/get-started",
           ],
         },
         {
