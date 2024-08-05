@@ -34,23 +34,32 @@ If you have a paid subscription, please reach out to [Scandit Support](mailto:su
 
 The Scandit Data Capture SDK is distributed as [NuGet packages](https://www.nuget.org/packages?q=scandit).
 
-You will always need to add the Scandit.DataCapture.Core package, which contains the core functionality used by the other data capture packages. When developing MAUI application you will also need to add the Scandit.DataCapture.Core.Maui package. In addition, depending on the data capture task, you will need a reference to:
+You will always need to add the `Scandit.DataCapture.Core` package, which contains the core functionality used by the other data capture packages. When developing MAUI applications you will also need to add the `Scandit.DataCapture.Core.Maui` package. 
 
-- Scandit.DataCapture.Barcode ([ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api.html)) if you want to use barcode-related functionality such as barcode capture or MatrixScan.
-- Scandit.DataCapture.Parser ([ScanditParser API](https://docs.scandit.com/data-capture-sdk/dotnet.android/parser/api.html)) if you want to parse data strings, e.g. as found in barcodes, into a set of key-value mappings.
-- Scandit.DataCapture.TextCapture ([ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.android/text-capture/api.html)) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
-- Scandit.DataCapture.IdCapture ([ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.android/id-capture/api.html)) if you want to scan personal identification documents such as identity cards, passports or visas.
+In addition, depending on the data capture task, you will need a reference to:
 
-You can safely remove Scandit.DataCapture.Barcode, Scandit.DataCapture.Parser, Scandit.DataCapture.TextCapture o Scandit.DataCapture.IdCapture dependencies if you are not going to use their features.
+| Functionality | Description | Required Module(s) |
+| --- | --- | --- |
+| Barcode Capture | [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan. | _com.scandit.datacapture:barcode_ |
+| Parser | [ScanditParser API](https://docs.scandit.com/data-capture-sdk/dotnet.android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings. | _com.scandit.datacapture:parser_ |
+| Text Capture | [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.android/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture. | _com.scandit.datacapture:text_ <br></br>_com.scandit.datacapture:text-base_ |
+| ID Capture | [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas. | _com.scandit.datacapture:id_ |
+
+:::tip
+You can safely remove `Scandit.DataCapture.Barcode`, `Scandit.DataCapture.Parser`, `Scandit.DataCapture.TextCapture` or `Scandit.DataCapture.IdCapture` dependencies if you are not going to use their features.
+:::
+
 
 ## Additional Information
 
 :::note
 On Android, the Scandit SDK uses content providers to initialize the scanning capabilities properly. If your own content providers depend on the Scandit SDK, choose an **initOrder** lower than 10 to make sure the SDK is ready first.
-:::
 
 If not specified, **initOrder** is zero by default and you have nothing to worry about.
 
 Check [the official `<provider>` documentation](https://developer.android.com/guide/topics/manifest/provider-element).
+:::
 
-- Camera Permissions: When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On .NET for Android or MAUI, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our [samples](https://github.com/Scandit/datacapture-dotnet-samples).
+### Camera Permissions
+
+When using the Scandit Data Capture SDK you will want to set the camera as the frame source for various capture modes. On .NET for Android or MAUI, you have to request camera permissions in your own application before starting scanning. To see how you can achieve this, take a look at our [samples](./samples.md).

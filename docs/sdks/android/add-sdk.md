@@ -11,18 +11,22 @@ import TabItem from '@theme/TabItem';
 
 This page describes how to integrate the Scandit Data Capture SDK into your Android project.
 
-Scandit Data Capture SDK is distributed as [AAR libraries](https://developer.android.com/studio/projects/android-library#aar-contents) in the [official Scandit maven repository](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
+The Scandit Data Capture SDK is distributed as [AAR libraries](https://developer.android.com/studio/projects/android-library#aar-contents) in the [official Scandit maven repository](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
 
+:::warning
 You need to add a reference to _com.scandit.datacapture:core_, which contains the shared functionality used by the other data capture modules.
+::: 
 
-If youe are using text capture-related functionalities, make sure to also add a reference to _com.scandit.datacapture:text-base_. In addition, depending on the data capture task, you need a reference to:
+Depending on the data capture task, you need a reference to:
 
-- _com.scandit.datacapture:barcode_ [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan.
-- _com.scandit.datacapture:parser_ [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings.
-- _com.scandit.datacapture:text_ [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/android/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
-- _com.scandit.datacapture:id_ [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas.
+| Functionality | Description | Required Module(s) |
+| --- | --- | --- |
+| Barcode Capture | [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan. | _com.scandit.datacapture:barcode_ |
+| Parser | [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings. | _com.scandit.datacapture:parser_ |
+| Text Capture | [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/android/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture. | _com.scandit.datacapture:text_ <br></br>_com.scandit.datacapture:text-base_ |
+| ID Capture | [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas. | _com.scandit.datacapture:id_ |
 
-:::note
+:::tip
 You can safely remove _barcode_, _parser_, _text_ or _id_ dependencies if you are not going to use their features.
 :::
 

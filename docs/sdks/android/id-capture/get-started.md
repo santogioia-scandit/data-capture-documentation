@@ -29,7 +29,9 @@ You can retrieve your Scandit Data Capture SDK license key, by signing in to you
 
 ### External Dependencies
 
-The Scandit Data Capture SDK modules depend on a few standard libraries that you can find listed below. If you are including the Scandit Data Capture SDK through **Gradle** or **Maven**, all of these dependencies are automatically pulled in and there is no need for you to do anything further. On the other hand, if you directly add the AAR files to the project, you need to add these dependencies yourself.
+The Scandit Data Capture SDK modules depend on a few standard libraries that you can find listed below. If you are including the Scandit Data Capture SDK through **Gradle** or **Maven**, all of these dependencies are automatically pulled in and there is no need for you to do anything further.
+
+If you directly add the AAR files to the project, you need to add these dependencies yourself.
 
 | Module      | Dependencies |
 | ----------- | ----------- |

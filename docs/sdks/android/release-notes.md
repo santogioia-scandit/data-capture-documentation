@@ -253,7 +253,7 @@ SparkScan received a number of updates and improvements:
 
 #### ID
 
-- Added `AamvaVizBarcodeComparisonResult.frontMismatchImage` that visualizes the document data printed on the front side that differs from what is encoded in the barcode. Please contact [support@scandit.com](mailto:support@scandit.com) if you want to use this feature.
+- Added `AamvaVizBarcodeComparisonResult.frontMismatchImage` that visualizes the document data printed on the front side that differs from what is encoded in the barcode. Please contact [Scandit Support](mailto:support@scandit.com) if you want to use this feature.
 - Improved the accuracy of `AamvaVizBarcodeComparisonVerifier`.
 - Improved the accuracy of `VizMrzComparisonVerifier`.
 - Added `IdCaptureOverlay.textHintPosition` that allows setting of the textual hint position.

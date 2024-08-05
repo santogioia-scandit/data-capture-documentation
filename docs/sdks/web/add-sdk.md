@@ -4,9 +4,6 @@ toc_max_heading_level: 4
 pagination_next: null
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Installation
 
 This page describes how to integrate the Scandit Data Capture SDK into your web project. You can add the Scandit Data Capture SDK Web packages in two ways: as an external resource from a CDN in HTML, or as a package dependency via npm.

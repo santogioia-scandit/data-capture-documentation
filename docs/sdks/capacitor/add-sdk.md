@@ -47,33 +47,39 @@ npx cap add ios
 npx cap add android
 ```
 
-### Add the Scandit Data Capture SDK from the npm registry
+### Add the SDK from npm
 
-To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api.html)
+To add our plugins from the npm registry, you can run these commands from your project’s root folder. In the following snippet we’re adding multiple plugins for different functionalities, but you can add only the ones you need.
 
 ```sh
 yarn add scandit-capacitor-datacapture-core
 yarn add scandit-capacitor-datacapture-barcode
+yarn add scandit-capacitor-datacapture-text
+yarn add scandit-capacitor-datacapture-parser
+yarn add scandit-capacitor-datacapture-id
 ```
 
 :::note
 You can also specify a version `@<version>`.
 :::
 
-### Add the Scandit Data Capture SDK manually
+### Add the SDK manually
 
-After you download the [archive](https://ssl.scandit.com/dashboard/downloads) containing all the plugins, unzip the archive. It includes the available Capacitor plugins, including the scandit-capacitor-datacapture-core plugin that all other plugins depend on.
+After you download the [archive](https://ssl.scandit.com/dashboard/downloads) containing all the plugins, unzip the archive. It includes the available Capacitor plugins, including the `scandit-capacitor-datacapture-core` plugin that all other plugins depend on.
 
-First add scandit-capacitor-datacapture-core plugin:
+First add the `scandit-capacitor-datacapture-core` plugin:
 
 ```sh
 yarn add <path to scandit-capacitor-datacapture-core plugin>
 ```
 
-Once this is done, you can continue with adding the plugin for your desired functionality, e.g. for barcode capture, add the scandit-capacitor-datacapture-barcode plugin:
+Once this is done, you can continue with adding the plugin(s) for your desired functionality:
 
 ```sh
 yarn add <path to scandit-capacitor-datacapture-barcode plugin>
+yarn add <path to scandit-capacitor-datacapture-text plugin>
+yarn add <path to scandit-capacitor-datacapture-parser plugin>
+yarn add <path to scandit-capacitor-datacapture-id plugin>
 ```
 
 ### Update the project
