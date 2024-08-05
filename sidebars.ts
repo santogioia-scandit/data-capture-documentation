@@ -182,6 +182,14 @@ const sidebars: SidebarsConfig = {
             "sdks/ios/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/ios/id-validate/intro",
+            "sdks/ios/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -360,6 +368,14 @@ const sidebars: SidebarsConfig = {
             "sdks/android/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/android/id-validate/intro",
+            "sdks/android/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -505,6 +521,14 @@ const sidebars: SidebarsConfig = {
             "sdks/web/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/web/id-validate/intro",
+            "sdks/web/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -639,6 +663,14 @@ const sidebars: SidebarsConfig = {
           items: [
             "sdks/cordova/id-capture/intro",
             "sdks/cordova/id-capture/get-started",
+          ],
+        },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/cordova/id-validate/intro",
+            "sdks/cordova/id-validate/get-started",
           ],
         },
       ],
@@ -812,6 +844,14 @@ const sidebars: SidebarsConfig = {
             "sdks/react-native/id-capture/intro",
             "sdks/react-native/id-capture/get-started",
             "sdks/react-native/id-capture/advanced",
+          ],
+        },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/react-native/id-validate/intro",
+            "sdks/react-native/id-validate/get-started",
           ],
         },
       ],
@@ -999,6 +1039,14 @@ const sidebars: SidebarsConfig = {
             "sdks/flutter/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/flutter/id-validate/intro",
+            "sdks/flutter/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -1138,6 +1186,14 @@ const sidebars: SidebarsConfig = {
             "sdks/capacitor/id-capture/intro",
             "sdks/capacitor/id-capture/get-started",
             "sdks/capacitor/id-capture/advanced",
+          ],
+        },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/capacitor/id-validate/intro",
+            "sdks/capacitor/id-validate/get-started",
           ],
         },
       ],
@@ -1363,6 +1419,14 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/ios/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/xamarin/ios/id-validate/intro",
+            "sdks/xamarin/ios/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -1527,6 +1591,14 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/android/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/xamarin/android/id-validate/intro",
+            "sdks/xamarin/android/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -1689,6 +1761,14 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/forms/id-capture/intro",
             "sdks/xamarin/forms/id-capture/get-started",
             "sdks/xamarin/forms/id-capture/advanced",
+          ],
+        },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/xamarin/forms/id-validate/intro",
+            "sdks/xamarin/forms/id-validate/get-started",
           ],
         },
       ],
@@ -1864,6 +1944,14 @@ const sidebars: SidebarsConfig = {
             "sdks/net/ios/id-capture/advanced",
           ],
         },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/net/ios/id-validate/intro",
+            "sdks/net/ios/id-validate/get-started",
+          ],
+        },
       ],
     },
     {
@@ -2035,6 +2123,14 @@ const sidebars: SidebarsConfig = {
             "sdks/net/android/id-capture/intro",
             "sdks/net/android/id-capture/get-started",
             "sdks/net/android/id-capture/advanced",
+          ],
+        },
+        {
+          type: "category",
+          label: "ID Validate",
+          items: [
+            "sdks/net/android/id-validate/intro",
+            "sdks/net/android/id-validate/get-started",
           ],
         },
       ],
