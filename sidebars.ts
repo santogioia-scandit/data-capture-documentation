@@ -211,6 +211,11 @@ const sidebars: SidebarsConfig = {
             "sdks/ios/label-capture/get-started",
           ],
         },
+        {
+          type: "doc",
+          id: "sdks/ios/barcode-generator/index",
+          label: "Barcode Generator",
+        },
       ],
     },
     {
@@ -396,6 +401,11 @@ const sidebars: SidebarsConfig = {
           items: [
             "sdks/android/label-capture/get-started",
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/android/barcode-generator/index",
+          label: "Barcode Generator",
         },
       ],
     },
