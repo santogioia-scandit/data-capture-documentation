@@ -241,7 +241,7 @@ const config: Config = {
            items: [
              {
                label: "Blog",
-               to: "https://www.scandit.com/blog/",
+               to: "https://www.scandit.com/blog/?_blog_categories=developers",
              },
              {
                label: "GitHub",

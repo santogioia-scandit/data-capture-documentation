@@ -27,12 +27,21 @@ const sidebars: SidebarsConfig = {
 				// 'best-practices-for-usability',
 				{
 					type: 'category',
-					label: 'Barcode Symbologies',
-					link: {
-						type: 'doc',
-						id: 'barcode-symbologies',
-					},
-					items: ['symbology-properties','extension-codes', 'scanning-composite-codes'],
+					label: 'Supported Symbologies and IDs',
+          collapsed: false,
+					items: [
+            {
+              type: 'category',
+              label: 'Barcode Symbologies',
+              collapsed: false,
+              link: {
+                type: 'doc',
+                id: 'barcode-symbologies',
+              },
+              items: ['symbology-properties','extension-codes', 'scanning-composite-codes'],
+            },
+            'id-documents',
+          ]
 				},
 			],
 		},
