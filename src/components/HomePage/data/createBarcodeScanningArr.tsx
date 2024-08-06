@@ -13,12 +13,36 @@ import {
   Sparkscan,
 } from "../../IconComponents";
 
-export function createBarcodeScanningArr(framework: string) {
-  const frameworkData = frameworkCards.find(
-    (item) => item.framework === framework
-  );
+export function createBarcodeScanningArr(framework: string, allCards: boolean) {
+  function findFrameworkData() {
+    const frameworkData = frameworkCards.find(
+      (item) => item.framework === framework
+    );
 
-  return [
+    if (frameworkData) {
+      return frameworkData;
+    }
+
+    const additionalFrameworkData = frameworkCards
+      .filter((item) => item.additional && Array.isArray(item.additional))
+      .flatMap((item) => item.additional)
+      .find((additionalItem) => additionalItem.framework === framework);
+
+    return additionalFrameworkData || null;
+  }
+
+  const frameworkData = findFrameworkData();
+
+  const hiddenList = [
+    BarcodeScanning.ScanditExpress,
+    BarcodeScanning.Parser,
+    BarcodeScanning.LabelCapture,
+    BarcodeScanning.TextCapture,
+    BarcodeScanning.BarcodeGenerator,
+    BarcodeScanning.BarcodeSelection,
+  ];
+
+  const allCardsArray = [
     {
       groupName: "Low-level APIs",
       cards: [
@@ -26,7 +50,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.BarcodeCapture,
           text: "BarcodeCapture API",
           icon: <BarcodeCapture />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeCapture
           ),
           link: `/sdks/${framework}/barcode-capture/get-started`,
@@ -35,7 +59,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.MatrixScan,
           text: "BarcodeTracking API",
           icon: <Ms />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScan
           ),
           link: `/sdks/${framework}/matrixscan/intro`,
@@ -44,7 +68,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.Parser,
           text: "BarcodeTracking API",
           icon: <Parser />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.Parser
           ),
           link: `/`,
@@ -53,17 +77,16 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.LabelCapture,
           text: "BarcodeTracking API",
           icon: <LabelCapture />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.LabelCapture
           ),
-
           link: `/`,
         },
         {
           name: BarcodeScanning.TextCapture,
           text: "BarcodeTracking API",
           icon: <IdCapture />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.TextCapture
           ),
           link: `/`,
@@ -72,7 +95,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.BarcodeGenerator,
           text: "BarcodeTracking API",
           icon: <Parser />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeGenerator
           ),
           link: `/`,
@@ -86,7 +109,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.SparkScan,
           text: "BarcodeTracking API",
           icon: <Sparkscan />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.SparkScan
           ),
           link: `/sdks/${framework}/sparkscan/intro`,
@@ -95,7 +118,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.MatrixScanFind,
           text: "BarcodeTracking API",
           icon: <MsFind />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScanFind
           ),
           link: `/sdks/${framework}/matrixscan-find/intro`,
@@ -104,7 +127,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.MatrixScanCount,
           text: "BarcodeTracking API",
           icon: <MsCount />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScanCount
           ),
           link: `/sdks/${framework}/matrixscan-count/intro`,
@@ -113,7 +136,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.BarcodeSelection,
           text: "BarcodeTracking API",
           icon: <BarcodeSelection />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeSelection
           ),
           link: `/sdks/${framework}/barcode-selection/intro`,
@@ -127,7 +150,7 @@ export function createBarcodeScanningArr(framework: string) {
           name: BarcodeScanning.ScanditExpress,
           text: "BarcodeTracking API",
           icon: <Express />,
-          isActive: frameworkData.barcodeScanning.includes(
+          isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.ScanditExpress
           ),
           link: `/hosted/express/overview`,
@@ -135,4 +158,13 @@ export function createBarcodeScanningArr(framework: string) {
       ],
     },
   ];
+
+  if (allCards) {
+    return allCardsArray;
+  }
+
+  return allCardsArray.map(group => ({
+    ...group,
+    cards: group.cards.filter(card => !hiddenList.includes(card.name)),
+  }));
 }

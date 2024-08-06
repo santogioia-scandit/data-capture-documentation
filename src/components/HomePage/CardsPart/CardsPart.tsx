@@ -2,29 +2,43 @@ import CardsGroup from "../CardsGroup/CardsGroup";
 import style from "./CardsPart.module.css";
 import { createBarcodeScanningArr } from "../data/createBarcodeScanningArr";
 import { createIdScanningArr } from "../data/createIdScanningArr";
+import { ArrowDropDown } from "../../IconComponents";
+import { useState } from "react";
 
 interface CardsPartProps {
   selectedFramework: string;
 }
 
-export default function CardsPart({ selectedFramework }: CardsPartProps) {    
-  const barcodeScanning = createBarcodeScanningArr(selectedFramework);
-  const idScanning = createIdScanningArr(selectedFramework)
+export default function CardsPart({ selectedFramework }: CardsPartProps) {
+  const [allCards, setAllCards] = useState(true);
+  const barcodeScanning = createBarcodeScanningArr(selectedFramework, allCards);
+  const idScanning = createIdScanningArr(selectedFramework);
 
   return (
     <div className={style.cardsPartWrapper}>
-      <CardsGroup
-        title="Barcode scanning"
-        content={barcodeScanning}
-        mainColor="#065DB8"
-        cardColor="#C3E1FF"
-      ></CardsGroup>
-      <CardsGroup
-        title="ID scanning"
-        content={idScanning}
-        mainColor="#2EC1CE"
-        cardColor="#2EC1CE"
-      ></CardsGroup>
+      <div className={style.cardsGroupWrapper}>
+        <CardsGroup
+          title="Barcode scanning"
+          content={barcodeScanning}
+          mainColor="#065DB8"
+          cardColor="#C3E1FF"
+        ></CardsGroup>
+        <button
+          className={style.hiddenBtn}
+          onClick={() => setAllCards(!allCards)}
+        >
+          {allCards ? "Hide all functionality" : "See all functionality"}
+          <ArrowDropDown iconClass={allCards ? style.reversIcon : style.icon} />
+        </button>
+      </div>
+      <div className={style.cardsGroupWrapper}>
+        <CardsGroup
+          title="ID scanning"
+          content={idScanning}
+          mainColor="var(--IDScanningColor)"
+          cardColor="var(--IDScanningColor)"
+        ></CardsGroup>
+      </div>
     </div>
   );
 }

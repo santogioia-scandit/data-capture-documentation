@@ -57,7 +57,13 @@
   --toc-title: #b2c1cd;
   --icon-base: #121619;
   --icon-hover: #fff;
-  --border-light: #E0E9F4;
+  --border-light: #e0e9f4;
+  --frameworksBg: #121619;
+  --frameworksBgLight: #f1f6ff;
+  --frameworksIcon: #065db8;
+  --frameworksBgHover: #f4f7f9;
+  --gradient: #e0f6f8;
+  --IDScanningColor: #2EC1CE;
 
   --ifm-code-background: var(--light-gray-40);
   --ifm-code-padding-vertical: 4px;
@@ -86,6 +92,13 @@ html[data-theme="dark"] {
   --light-yellow-80: #282521;
   --light-yellow-120: #d6c8b4;
   --light-gray-100: #8194ad;
+  --icon-hover: #f0f0f0;
+  --frameworksBg: #0c1118;
+  --frameworksBgHover: #0c1118;
+  --gradient: #82d7dd;
+  --frameworksBgLight: #303d55;
+  --frameworksIcon: #f0f0f0;
+  --IDScanningColor: #27868f;
 
   --gradient-100: linear-gradient(to left, #013e7c, #03708c);
   --gradient-card: linear-gradient(326deg, #013e7c 0%, #03708c 100%);

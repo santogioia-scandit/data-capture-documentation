@@ -3,10 +3,22 @@ import { frameworkCards } from "./frameworkCardsArr";
 import { IDScanning } from "../../constants/scanningEnums";
 
 export function createIdScanningArr(framework: string) {
-  const frameworkData = frameworkCards.find(
-    (item) => item.framework === framework
-  );
+  function findFrameworkData() {
+    const frameworkData = frameworkCards.find(
+      (item) => item.framework === framework
+    );
+    if (frameworkData) {
+      return frameworkData;
+    }
 
+    const additionalFrameworkData = frameworkCards
+      .filter((item) => item.additional && Array.isArray(item.additional))
+      .flatMap((item) => item.additional)
+      .find((additionalItem) => additionalItem.framework === framework);
+
+    return additionalFrameworkData || null;
+  }
+  const frameworkData = findFrameworkData();
   return [
     {
       groupName: "Low-level APIs",

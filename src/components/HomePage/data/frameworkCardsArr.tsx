@@ -2,6 +2,8 @@ import {
   AntDesign,
   Javascript,
   Net,
+  NetAndroid,
+  NetIos,
   ScanditAndroid,
   ScanditCapacitor,
   ScanditCordova,
@@ -10,11 +12,14 @@ import {
   ScanditReact,
   Titanium,
   Xamarin,
+  XamarinAndroid,
+  XamarinIos,
 } from "../../IconComponents";
-import style from "../Frameworks/Frameworks.module.css";
+import style from "../Frameworks/FrameworkCard.module.css";
 import { BarcodeScanning, IDScanning } from "../../constants/scanningEnums";
 
-//the framework name in this array is used exactly as it appears in the FrameworksName enum.
+//the framework name in this array is used exactly as it appears in the FrameworksName enum
+//The framework key of the object in the frameworkCards array is also used to form the link.
 
 export const frameworkCards = [
   {
@@ -101,7 +106,8 @@ export const frameworkCards = [
     IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
   },
   {
-    framework: "xamarin",
+    framework: "xamarinParent",
+    hasChildren: true,
     icon: <Xamarin iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
@@ -114,6 +120,53 @@ export const frameworkCards = [
       BarcodeScanning.ScanditExpress,
     ],
     IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+    additional: [
+      {
+        framework: "xamarinIos",
+        icon: <XamarinIos iconClass={style.iconStyle} />,
+        barcodeScanning: [
+          BarcodeScanning.BarcodeCapture,
+          BarcodeScanning.MatrixScan,
+          BarcodeScanning.Parser,
+          BarcodeScanning.TextCapture,
+          BarcodeScanning.SparkScan,
+          BarcodeScanning.MatrixScanCount,
+          BarcodeScanning.BarcodeSelection,
+          BarcodeScanning.ScanditExpress,
+        ],
+        IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+      },
+      {
+        framework: "xamarinAndroid",
+        icon: <XamarinAndroid iconClass={style.iconStyle} />,
+        barcodeScanning: [
+          BarcodeScanning.BarcodeCapture,
+          BarcodeScanning.MatrixScan,
+          BarcodeScanning.Parser,
+          BarcodeScanning.TextCapture,
+          BarcodeScanning.SparkScan,
+          BarcodeScanning.MatrixScanCount,
+          BarcodeScanning.BarcodeSelection,
+          BarcodeScanning.ScanditExpress,
+        ],
+        IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+      },
+      {
+        framework: "xamarin",
+        icon: <Xamarin iconClass={style.iconStyle} />,
+        barcodeScanning: [
+          BarcodeScanning.BarcodeCapture,
+          BarcodeScanning.MatrixScan,
+          BarcodeScanning.Parser,
+          BarcodeScanning.TextCapture,
+          BarcodeScanning.SparkScan,
+          BarcodeScanning.MatrixScanCount,
+          BarcodeScanning.BarcodeSelection,
+          BarcodeScanning.ScanditExpress,
+        ],
+        IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+      },
+    ],
   },
   {
     framework: "flutter",
@@ -132,7 +185,8 @@ export const frameworkCards = [
     IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
   },
   {
-    framework: "net",
+    framework: "netParent",
+    hasChildren: true,
     icon: <Net iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
@@ -146,6 +200,38 @@ export const frameworkCards = [
       BarcodeScanning.ScanditExpress,
     ],
     IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+    additional: [
+      {
+        framework: "netIos",
+        icon: <NetIos iconClass={style.iconStyle} />,
+        barcodeScanning: [
+          BarcodeScanning.BarcodeCapture,
+          BarcodeScanning.MatrixScan,
+          BarcodeScanning.Parser,
+          BarcodeScanning.TextCapture,
+          BarcodeScanning.SparkScan,
+          BarcodeScanning.MatrixScanCount,
+          BarcodeScanning.BarcodeSelection,
+          BarcodeScanning.ScanditExpress,
+        ],
+        IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+      },
+      {
+        framework: "netAndroid",
+        icon: <NetAndroid iconClass={style.iconStyle} />,
+        barcodeScanning: [
+          BarcodeScanning.BarcodeCapture,
+          BarcodeScanning.MatrixScan,
+          BarcodeScanning.Parser,
+          BarcodeScanning.TextCapture,
+          BarcodeScanning.SparkScan,
+          BarcodeScanning.MatrixScanCount,
+          BarcodeScanning.BarcodeSelection,
+          BarcodeScanning.ScanditExpress,
+        ],
+        IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+      },
+    ],
   },
   {
     framework: "capacitor",
@@ -178,21 +264,17 @@ export const frameworkCards = [
     icon: <AntDesign iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
-      BarcodeScanning.MatrixScan,
-      BarcodeScanning.Parser,
-      BarcodeScanning.LabelCapture,
-      BarcodeScanning.TextCapture,
       BarcodeScanning.BarcodeGenerator,
-      BarcodeScanning.SparkScan,
-      BarcodeScanning.MatrixScanFind,
-      BarcodeScanning.MatrixScanCount,
-      BarcodeScanning.BarcodeSelection,
-      BarcodeScanning.ScanditExpress,
     ],
-    IDScanning: [
-      IDScanning.IdCapture,
-      IDScanning.IdValidate,
-      IDScanning.IdBolt,
-    ],
+    IDScanning: [],
   },
 ];
+
+function frameworksEmbedded() {
+  const embeddedFrameworks = frameworkCards
+    .filter((framework) => framework?.additional)
+    .map((framework) => framework.framework);
+
+  return embeddedFrameworks.length > 0 ? embeddedFrameworks : [];
+}
+export const embeddedFrameworks = frameworksEmbedded();

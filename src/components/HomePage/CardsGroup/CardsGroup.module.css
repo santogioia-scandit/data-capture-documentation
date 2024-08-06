@@ -1,13 +1,9 @@
-.cardsGroupWrapper {
-  width: 50%;
-}
-
 .cardsGroupWrapper ul {
   padding: 0;
 }
 
 .cardsGroupHeader {
-  border-bottom: 1px solid #bed7ef;
+  border-bottom: 1px solid var(--nav-border);
   padding-bottom: 20px;
 }
 
@@ -56,10 +52,4 @@
   flex-wrap: wrap;
   gap: 35px 40px;
   margin-top: 30px;
-}
-
-@media (width < 600px) {
-  .cardsGroupWrapper {
-    width: 100%;
-  }
 }

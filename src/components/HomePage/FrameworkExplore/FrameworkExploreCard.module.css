@@ -1,6 +1,6 @@
 .frameworkExploreCard {
   padding: 16px;
-  border: 1px solid #e0e9f4;
+  border: 1px solid var(--nav-border);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -14,9 +14,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f1f6ff;
+  background-color: var(--frameworksBgLight);
   border-radius: 8px;
-  color: #065db8;
+  color: var(--frameworksIcon);
 }
 
 .frameworkExploreCardText {

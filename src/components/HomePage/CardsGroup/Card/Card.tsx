@@ -15,7 +15,7 @@ export default function Card({ card, cardColor, mainColor }: CardProps) {
       className={`${style.card} ${!card.isActive ? style.cardNotActive : ""}`}
       style={{
         background: card.isActive
-          ? `linear-gradient(90deg, #e0f6f8 0%, ${cardColor} 100%)`
+          ? `linear-gradient(90deg, var(--gradient) 0%, ${cardColor} 100%)`
           : "transparent",
       }}
     >

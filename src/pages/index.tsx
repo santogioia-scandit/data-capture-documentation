@@ -8,27 +8,53 @@ import Header from "../components/HomePage/Header/Header";
 import Slogan from "../components/HomePage/Slogan/Slogan";
 import style from "./index.module.css";
 import localStorageUtil from "../components/utils/localStorageUtil";
+import FrameworksMobile from "../components/HomePage/Frameworks/FrameworksMobile";
+
+export interface Framework {
+  frameworkParent: string;
+  framework: string;
+}
 
 export default function HomePage() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const framework = localStorageUtil.getItem("selectedFramework");
-  const [selectedFramework, setSelectedFramework] = useState(
-    framework || "iso"
-  );
+  const [selectedFramework, setSelectedFramework] = useState<Framework>({
+    frameworkParent: framework?.frameworkParent || "iso",
+    framework: framework?.framework || "iso",
+  });
 
   useEffect(() => {
-    localStorageUtil.setItem("selectedFramework", selectedFramework);
-  }, [selectedFramework]);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className={style.homeWrapper}>
       <Header></Header>
       <div className={style.body}>
         <Slogan></Slogan>
-        <Frameworks
-          setSelectedFramework={setSelectedFramework}
-          selectedFramework={selectedFramework}
-        ></Frameworks>
-        <CardsPart selectedFramework={selectedFramework}></CardsPart>
+
+        {isMobile ? (
+          <FrameworksMobile
+            setSelectedFramework={setSelectedFramework}
+            selectedFramework={selectedFramework}
+          ></FrameworksMobile>
+        ) : (
+          <Frameworks
+            setSelectedFramework={setSelectedFramework}
+            selectedFramework={selectedFramework}
+          ></Frameworks>
+        )}
+        <CardsPart
+          selectedFramework={selectedFramework.frameworkParent}
+        ></CardsPart>
         <DataCapture></DataCapture>
         <FrameworkExplore></FrameworkExplore>
       </div>

@@ -15,7 +15,7 @@
   justify-content: space-between;
   padding: 10px clamp(20px, 7.6vw, 80px);
   height: clamp(50px, 7.6vw, 76px);
-  border-bottom: 1px solid var(--light-gray-60);
+  border-bottom: 1px solid var(--nav-border);
 }
 
 .logo {
@@ -32,7 +32,7 @@
 .logoText {
   margin: 0;
   padding: 0 12px;
-  border-left: 1px solid var(--light-gray-60);
+  border-left: 1px solid var(--nav-border);
   font-size: clamp(14px, 2vw, 20px);
   font-weight: 400;
   line-height: 23px;

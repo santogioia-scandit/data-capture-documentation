@@ -1,0 +1,69 @@
+.iconStyle {
+  max-width: 27px;
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: clamp(38px, 4vw, 48px);
+  height: clamp(38px, 4vw, 48px);
+  border: 1px solid var(--nav-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.iconWrapper:hover {
+  background-color: var(--frameworksBg);
+  color: var(--icon-hover);
+}
+
+.iconStyle {
+  max-width: 27px;
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .iconWrapper .iconStyle {
+  color: white;
+}
+
+.input:checked + .iconWrapper {
+  background-color: var(--frameworksBg);
+}
+
+.titleLabelHover {
+  display: none;
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  background-color: var(--frameworksBgHover);
+  border-radius: 20px;
+  font-size: 10px;
+  color: #717375;
+  text-wrap: nowrap;
+}
+
+.iconDropDown {
+  display: none;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--light-black);
+}
+
+.iconWrapper:hover .titleLabelHover {
+  display: block;
+}
+
+.input:checked ~ .iconWrapper .iconDropDown {
+  display: block;
+}

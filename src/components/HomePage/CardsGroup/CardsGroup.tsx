@@ -33,9 +33,12 @@ export default function CardsGroup({
         {content.map((cardsGroup, index: number) => {
           return (
             <li className={style.cardsGroup} key={index}>
-              <h4 className={style.cardsGroupSubTitle}>
-                {cardsGroup.groupName}
-              </h4>
+              {cardsGroup.cards.length !== 0 && (
+                <h4 className={style.cardsGroupSubTitle}>
+                  {cardsGroup.groupName}
+                </h4>
+              )}
+
               <ul className={style.cardsList}>
                 {cardsGroup.cards.map((card, index) => {
                   return (

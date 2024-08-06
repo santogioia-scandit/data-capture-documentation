@@ -1,0 +1,27 @@
+.input {
+  display: none;
+}
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: clamp(30px, 3vw, 42px);
+  padding: 0 10px;
+  border: 1px solid var(--nav-border);
+  border-radius: 8px;
+  font-size: clamp(10px, 1.4vw, 14px);
+  line-height: 18px;
+  font-weight: 400;
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+
+.iconWrapper:hover {
+  background-color: var(--frameworksBg);
+  color: var(--icon-hover);
+}
+
+.checkedFramework {
+  background-color: var(--frameworksBg);
+  color: var(--icon-hover);
+}

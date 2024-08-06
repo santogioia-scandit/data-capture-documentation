@@ -22,18 +22,21 @@ import XamarinForms from "./XamarinForms";
 import XamarinIos from "./XamarinIos";
 import NetIos from "./NetIos";
 import NetAndroid from "./NetAndroid";
-import ScanditAndroid from './ScanditAndroid';
-import ScanditCapacitor from './ScanditCapacitor';
-import ScanditCordova from './ScanditCordova';
-import ScanditFlutter from './ScanditFlutter';
-import ScanditISO from './ScanditISO';
-import ScanditReact from './ScanditReact';
-import Logo from './Logo';
-import LabelCapture from './LabelCapture';
-import Parser from './Parser';
-import Ms from './Ms';
-import IDValidate from './IDValidate';
-import IdCapture from './IdCapture';
+import ScanditAndroid from "./ScanditAndroid";
+import ScanditCapacitor from "./ScanditCapacitor";
+import ScanditCordova from "./ScanditCordova";
+import ScanditFlutter from "./ScanditFlutter";
+import ScanditISO from "./ScanditISO";
+import ScanditReact from "./ScanditReact";
+import Logo from "./Logo";
+import LabelCapture from "./LabelCapture";
+import Parser from "./Parser";
+import Ms from "./Ms";
+import IDValidate from "./IDValidate";
+import IdCapture from "./IdCapture";
+import Moon from "./Moon";
+import Sun from "./Sun";
+import ArrowDropDown from "./ArrowDropDown";
 
 export {
   Sparkscan,
@@ -72,4 +75,7 @@ export {
   Ms,
   IDValidate,
   IdCapture,
+  Moon,
+  Sun,
+  ArrowDropDown,
 };
