@@ -37,7 +37,6 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
     BarcodeScanning.ScanditExpress,
     BarcodeScanning.Parser,
     BarcodeScanning.LabelCapture,
-    BarcodeScanning.TextCapture,
     BarcodeScanning.BarcodeGenerator,
     BarcodeScanning.BarcodeSelection,
   ];
@@ -79,15 +78,6 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           icon: <LabelCapture />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.LabelCapture
-          ),
-          link: `/`,
-        },
-        {
-          name: BarcodeScanning.TextCapture,
-          text: "BarcodeTracking API",
-          icon: <IdCapture />,
-          isActive: frameworkData?.barcodeScanning.includes(
-            BarcodeScanning.TextCapture
           ),
           link: `/`,
         },
