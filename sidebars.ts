@@ -248,11 +248,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/ios/text-capture/api.html",
-        },
-        {
-          type: "link",
           label: "ScanditLabelCapture",
           href: "https://docs.scandit.com/data-capture-sdk/ios/label-capture/api.html",
         },
@@ -436,11 +431,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/android/text-capture/api.html",
         },
         {
           type: "link",
@@ -706,13 +696,6 @@ const sidebars: SidebarsConfig = {
             "sdks/cordova/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/cordova/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -733,11 +716,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/cordova/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/cordova/text-capture/api.html",
         },
         {
           type: "link",
@@ -894,13 +872,6 @@ const sidebars: SidebarsConfig = {
             "sdks/react-native/label-capture/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/react-native/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -921,11 +892,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/react-native/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/react-native/text-capture/api.html",
         },
         {
           type: "link",
@@ -1080,13 +1046,6 @@ const sidebars: SidebarsConfig = {
             "sdks/flutter/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/flutter/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -1107,11 +1066,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/flutter/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/flutter/text-capture/api.html",
         },
         {
           type: "link",
@@ -1229,13 +1183,6 @@ const sidebars: SidebarsConfig = {
             "sdks/capacitor/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/capacitor/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -1256,11 +1203,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/capacitor/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/capacitor/text-capture/api.html",
         },
         {
           type: "link",
@@ -1460,13 +1402,6 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/ios/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/xamarin/ios/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -1487,11 +1422,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/xamarin.ios/text-capture/api.html",
         },
         {
           type: "link",
@@ -1632,13 +1562,6 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/android/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/xamarin/android/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -1659,11 +1582,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/xamarin.android/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/xamarin.android/text-capture/api.html",
         },
         {
           type: "link",
@@ -1804,13 +1722,6 @@ const sidebars: SidebarsConfig = {
             "sdks/xamarin/forms/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/xamarin/forms/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -1831,11 +1742,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/xamarin.forms/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/xamarin.forms/text-capture/api.html",
         },
         {
           type: "link",
@@ -1985,13 +1891,6 @@ const sidebars: SidebarsConfig = {
             "sdks/net/ios/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/net/ios/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -2012,11 +1911,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/dotnet.ios/text-capture/api.html",
         },
         {
           type: "link",
@@ -2166,13 +2060,6 @@ const sidebars: SidebarsConfig = {
             "sdks/net/android/parser/get-started",
           ],
         },
-        {
-          type: "category",
-          label: "Text Capture",
-          items: [
-            "sdks/net/android/text-capture/get-started",
-          ],
-        },
       ],
     },
     {
@@ -2193,11 +2080,6 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "ScanditIdCapture",
           href: "https://docs.scandit.com/data-capture-sdk/dotnet.android/id-capture/api.html",
-        },
-        {
-          type: "link",
-          label: "ScanditTextCapture",
-          href: "https://docs.scandit.com/data-capture-sdk/dotnet.android/text-capture/api.html",
         },
         {
           type: "link",

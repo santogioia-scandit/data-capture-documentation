@@ -95,9 +95,3 @@ Sample showing how to use the ID Capture mode to scan an ID card with additional
 #### [US Driver's License](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/USDLVerificationSample)
 
 Sample showing how to use the ID Capture mode to verify a US driver's license.
-
-## Text Capture
-
-### [Simple Text Capture](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/TextCaptureSample)
-
-Simple sample showing how to use the Text Capture mode to scan text.

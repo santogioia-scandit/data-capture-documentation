@@ -30,7 +30,6 @@ pod 'ScanditBarcodeCapture', '~> |shortversion|'
 # Add the following pods if you want to use additional features
 pod 'ScanditIdCapture', '~> |shortversion|'
 pod 'ScanditParser', '~> |shortversion|'
-pod 'ScanditTextCapture', '~> |shortversion|'
 ```
 
 :::note
@@ -60,7 +59,6 @@ If applicable for your use case, you can also add the following Carthage binarie
 ```ruby
 binary "https://ssl.scandit.com/sdk/download/carthage/ScanditIdCapture.json"
 binary "https://ssl.scandit.com/sdk/download/carthage/ScanditParser.json"
-binary "https://ssl.scandit.com/sdk/download/carthage/ScanditTextCapture.json"
 ```
 
 ## Swift Package Manager
@@ -83,7 +81,6 @@ You also need to add [`ScanditCaptureCore`](https://docs.scandit.com/data-captur
 
 - `ScanditIdCapture`
 - `ScanditParser`
-- `ScanditTextCapture`
 
 ## Add the Frameworks Manually
 
@@ -113,7 +110,6 @@ import ScanditCaptureCore
 import ScanditBarcodeCapture
 import ScanditIdCapture
 import ScanditParser
-import ScanditTextCapture
 ```
 
 </TabItem>
@@ -124,7 +120,6 @@ import ScanditTextCapture
 @import ScanditBarcodeCapture;
 @import ScanditIdCapture;
 @import ScanditParser;
-@import ScanditTextCapture;
 ```
 
 </TabItem>
