@@ -16,24 +16,12 @@ export interface Framework {
 }
 
 export default function HomePage() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const framework = localStorageUtil.getItem("selectedFramework");
   const [selectedFramework, setSelectedFramework] = useState<Framework>({
     frameworkParent: framework?.frameworkParent || "iso",
     framework: framework?.framework || "iso",
   });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className={style.homeWrapper}>
@@ -41,20 +29,21 @@ export default function HomePage() {
       <div className={style.body}>
         <Slogan></Slogan>
 
-        {isMobile ? (
+        <div className={style.frameworksMobile}>
           <FrameworksMobile
             setSelectedFramework={setSelectedFramework}
             selectedFramework={selectedFramework}
           ></FrameworksMobile>
-        ) : (
+        </div>
+
+        <div className={style.frameworksDesktop}>
           <Frameworks
             setSelectedFramework={setSelectedFramework}
             selectedFramework={selectedFramework}
           ></Frameworks>
-        )}
-        <CardsPart
-          selectedFramework={selectedFramework.frameworkParent}
-        ></CardsPart>
+        </div>
+
+        <CardsPart selectedFramework={selectedFramework.framework}></CardsPart>
         <DataCapture></DataCapture>
         <FrameworkExplore></FrameworkExplore>
       </div>

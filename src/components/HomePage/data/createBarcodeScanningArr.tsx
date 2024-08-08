@@ -52,7 +52,10 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeCapture
           ),
-          link: `/sdks/${framework}/barcode-capture/get-started`,
+          link:
+            framework === "linux"
+              ? "https://docs.scandit.com/stable/c_api/index.html "
+              : `/sdks/${framework}/barcode-capture/get-started`,
         },
         {
           name: BarcodeScanning.MatrixScan,
@@ -70,7 +73,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.Parser
           ),
-          link: `/`,
+          link: `/sdks/net/${framework}/parser/get-started`,
         },
         {
           name: BarcodeScanning.LabelCapture,
@@ -79,7 +82,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.LabelCapture
           ),
-          link: `/`,
+          link: `/sdks/${framework}/label-capture/get-started`,
         },
         {
           name: BarcodeScanning.BarcodeGenerator,
@@ -88,7 +91,9 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeGenerator
           ),
-          link: `/`,
+          link:  framework === "linux"
+          ? "https://docs.scandit.com/stable/c_api/generator-settings-json.html"
+          : `/sdks/${framework}/barcode-generator/`, 
         },
       ],
     },
@@ -153,8 +158,8 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
     return allCardsArray;
   }
 
-  return allCardsArray.map(group => ({
+  return allCardsArray.map((group) => ({
     ...group,
-    cards: group.cards.filter(card => !hiddenList.includes(card.name)),
+    cards: group.cards.filter((card) => !hiddenList.includes(card.name)),
   }));
 }

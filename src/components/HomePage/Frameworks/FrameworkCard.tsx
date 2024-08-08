@@ -13,7 +13,8 @@ export function FrameworkCard({
     const frameworkValue = formData.get("framework");
     setSelectedFramework((prevState) => ({
       ...prevState,
-      frameworkParent: frameworkValue.toString(),
+      framework: hasAdditional ? prevState.framework : frameworkValue,
+      frameworkParent: frameworkValue,
     }));
   }
 
@@ -26,9 +27,7 @@ export function FrameworkCard({
         name="framework"
         id={framework.framework}
         onChange={selectFramework}
-        checked={
-          framework.framework === selectedFramework.frameworkParent
-        }
+        checked={framework.framework === selectedFramework.frameworkParent}
       />
       <label
         htmlFor={framework.framework}

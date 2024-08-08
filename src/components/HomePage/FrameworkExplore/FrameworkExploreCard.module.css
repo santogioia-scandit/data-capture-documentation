@@ -1,6 +1,7 @@
 .frameworkExploreCard {
   padding: 16px;
   border: 1px solid var(--nav-border);
+  color: var(--light-black);
   border-radius: 8px;
   display: flex;
   align-items: center;
