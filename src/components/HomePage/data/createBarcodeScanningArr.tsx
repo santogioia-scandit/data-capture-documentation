@@ -76,7 +76,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.Parser
           ),
-          link: `/sdks/net/${getFrameworkPath(frameworkData)}/parser/get-started`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/parser/get-started`,
         },
         {
           name: BarcodeScanning.LabelCapture,
