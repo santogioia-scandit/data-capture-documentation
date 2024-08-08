@@ -46,8 +46,6 @@ export default function FrameworksMobile({
     });
   }
 
-  console.log(frameworkCards);
-
   return (
     <div className={style.frameworksMobile}>
       <div

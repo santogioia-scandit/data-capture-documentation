@@ -2,11 +2,15 @@
   display: none;
 }
 .iconWrapper {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   height: clamp(30px, 3vw, 42px);
   padding: 0 10px;
+  width: clamp(38px, 4vw, 48px);
+  height: clamp(38px, 4vw, 48px);
   border: 1px solid var(--nav-border);
   border-radius: 8px;
   font-size: clamp(10px, 1.4vw, 14px);
@@ -24,4 +28,22 @@
 .checkedFramework {
   background-color: var(--frameworksBg);
   color: var(--icon-hover);
+}
+
+.titleLabelHover {
+  display: none;
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  background-color: var(--frameworksBgHover);
+  border-radius: 20px;
+  font-size: 10px;
+  color: #717375;
+  text-wrap: nowrap;
+}
+
+.iconWrapper:hover .titleLabelHover {
+  display: block;
 }
