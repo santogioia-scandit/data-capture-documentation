@@ -47,7 +47,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
       cards: [
         {
           name: BarcodeScanning.BarcodeCapture,
-          text: "BarcodeCapture API",
+          text: "Single Scanning",
           icon: <BarcodeCapture />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeCapture
@@ -56,7 +56,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.MatrixScan,
-          text: "BarcodeTracking API",
+          text: "Multi-Scanning and Tracking",
           icon: <Ms />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScan
@@ -65,7 +65,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.Parser,
-          text: "BarcodeTracking API",
+          text: "Parse Barcode Data",
           icon: <Parser />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.Parser
@@ -74,7 +74,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.LabelCapture,
-          text: "BarcodeTracking API",
+          text: "Scan Barcodes and Text",
           icon: <LabelCapture />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.LabelCapture
@@ -83,7 +83,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.BarcodeGenerator,
-          text: "BarcodeTracking API",
+          text: "Generate Supported Symbologies",
           icon: <Parser />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeGenerator
@@ -97,7 +97,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
       cards: [
         {
           name: BarcodeScanning.SparkScan,
-          text: "BarcodeTracking API",
+          text: "High-speed Single Scanning",
           icon: <Sparkscan />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.SparkScan
@@ -106,7 +106,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.MatrixScanFind,
-          text: "BarcodeTracking API",
+          text: "AR-Enabled Search and Find",
           icon: <MsFind />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScanFind
@@ -115,7 +115,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.MatrixScanCount,
-          text: "BarcodeTracking API",
+          text: "Batch Scan and Count",
           icon: <MsCount />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScanCount
@@ -124,7 +124,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         },
         {
           name: BarcodeScanning.BarcodeSelection,
-          text: "BarcodeTracking API",
+          text: "Scan One-of-Many",
           icon: <BarcodeSelection />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeSelection
@@ -138,7 +138,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
       cards: [
         {
           name: BarcodeScanning.ScanditExpress,
-          text: "BarcodeTracking API",
+          text: "No-Code Scanning in Any App",
           icon: <Express />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.ScanditExpress

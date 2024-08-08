@@ -24,7 +24,7 @@ export default function Frameworks({
   return (
     <div>
       <h4 className={style.text}>
-        Select your framework to view supported products and features
+        Select Your Framework to View Supported Products and Features
       </h4>
       <form className={style.iconList}>
         {frameworkCards.map((item) => (

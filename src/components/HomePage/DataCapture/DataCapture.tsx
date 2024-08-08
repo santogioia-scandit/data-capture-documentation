@@ -6,10 +6,7 @@ export default function DataCapture() {
   return (
     <div className={style.dataCapture}>
       <h2 className={style.dataCaptureTitle}>Data Capture Basics</h2>
-      <p className={style.dataCaptureText}>
-        The Scandit Smart Data Capture SDK is a powerful software development
-        kit designed to enable mobile devices to capture and process a wide
-        range of barcodes and other types of data.
+      <p className={style.dataCaptureText}>Learn about the core concepts used throughout the Scandit Data Capture SDK and the full suite of available features amd functionalities.
       </p>
       <ul className={style.dataCaptureList}>
         {dataCaptureArr.map((item, index) => (

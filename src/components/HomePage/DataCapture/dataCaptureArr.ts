@@ -1,10 +1,10 @@
 export const dataCaptureArr = [
   {
-    title: "Core concepts",
+    title: "Core Concepts",
     link: "/core-concepts",
   },
   {
-    title: "System requirements",
+    title: "System Requirements",
     link: "/system-requirements",
   },
   {
@@ -16,7 +16,7 @@ export const dataCaptureArr = [
     link: "/barcode-symbologies",
   },
   {
-    title: "Supported documents",
-    link: "/",
+    title: "Supported Documents",
+    link: "/id-documents",
   },
 ];

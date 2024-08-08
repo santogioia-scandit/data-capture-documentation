@@ -6,10 +6,9 @@ import FrameworkExploreCard from "./FrameworkExploreCard";
 export default function FrameworkExplore() {
   return (
     <div className={style.frameworkExplore}>
-      <h2 className={style.frameworkExploreTitle}>Explore by framework</h2>
+      <h2 className={style.frameworkExploreTitle}>Explore by Framework</h2>
       <p className={style.frameworkExploreText}>
-        The Scandit Smart Data Capture SDK is a powerful software development
-        kit designed to enable mobile devices to capture{" "}
+        Get started with the Scandit Data Capture SDK using your preferred framework.{" "}
       </p>
       <ul className={style.frameworkExploreList}>
         {frameworkCards.map((item, index) => (

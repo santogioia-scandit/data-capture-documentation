@@ -25,14 +25,14 @@ export function createIdScanningArr(framework: string) {
       cards: [
         {
           name: IDScanning.IdCapture,
-          text: "IDCapture API",
+          text: "Scan and Extract ID Data",
           icon: <IdCapture />,
           isActive: frameworkData.IDScanning.includes(IDScanning.IdCapture),
           link: `/`,
         },
         {
           name: IDScanning.IdValidate,
-          text: "IDCapture API",
+          text: "Verify ID Validity",
           icon: <IDValidate />,
           isActive: frameworkData.IDScanning.includes(IDScanning.IdValidate),
           link: `/`,
@@ -44,7 +44,7 @@ export function createIdScanningArr(framework: string) {
       cards: [
         {
           name: IDScanning.IdBolt,
-          text: "IDCapture API",
+          text: "Add ID Scanning to Any Site",
           icon: <Bolt />,
           isActive: frameworkData.IDScanning.includes(IDScanning.IdBolt),
           link: `/hosted/id-bolt/overview`,
