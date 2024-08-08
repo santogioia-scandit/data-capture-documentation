@@ -1,6 +1,7 @@
 import { Bolt, IDValidate, IdCapture } from "../../IconComponents";
 import { frameworkCards } from "./frameworkCardsArr";
 import { IDScanning } from "../../constants/scanningEnums";
+import { FrameworkCard } from "../../constants/types";
 
 export function createIdScanningArr(framework: string) {
   function findFrameworkData() {
@@ -19,6 +20,11 @@ export function createIdScanningArr(framework: string) {
     return additionalFrameworkData || null;
   }
   const frameworkData = findFrameworkData();
+
+  function getFrameworkPath(frameworkData: FrameworkCard): string {
+    return frameworkData?.link ? frameworkData.link : framework;
+  }
+
   return [
     {
       groupName: "Low-level APIs",
@@ -28,14 +34,14 @@ export function createIdScanningArr(framework: string) {
           text: "Scan and Extract ID Data",
           icon: <IdCapture />,
           isActive: frameworkData.IDScanning.includes(IDScanning.IdCapture),
-          link: `/sdks/${framework}/id-capture/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/id-capture/intro`,
         },
         {
           name: IDScanning.IdValidate,
           text: "Verify ID Validity",
           icon: <IDValidate />,
           isActive: frameworkData.IDScanning.includes(IDScanning.IdValidate),
-          link: `/sdks/${framework}/id-validate/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/id-validate/intro`,
         },
       ],
     },

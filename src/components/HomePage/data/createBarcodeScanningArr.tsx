@@ -1,4 +1,3 @@
-import IdCapture from "../../IconComponents/IdCapture";
 import { BarcodeScanning } from "../../constants/scanningEnums";
 import { frameworkCards } from "./frameworkCardsArr";
 import {
@@ -12,10 +11,11 @@ import {
   Parser,
   Sparkscan,
 } from "../../IconComponents";
+import { FrameworkCard } from "../../constants/types";
 
 export function createBarcodeScanningArr(framework: string, allCards: boolean) {
   function findFrameworkData() {
-    const frameworkData = frameworkCards.find(
+    const frameworkData: FrameworkCard = frameworkCards.find(
       (item) => item.framework === framework
     );
 
@@ -27,7 +27,6 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
       .filter((item) => item.additional && Array.isArray(item.additional))
       .flatMap((item) => item.additional)
       .find((additionalItem) => additionalItem.framework === framework);
-
     return additionalFrameworkData || null;
   }
 
@@ -40,6 +39,10 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
     BarcodeScanning.BarcodeGenerator,
     BarcodeScanning.BarcodeSelection,
   ];
+
+  function getFrameworkPath(frameworkData: FrameworkCard): string {
+    return frameworkData?.link ? frameworkData.link : framework;
+  }
 
   const allCardsArray = [
     {
@@ -55,7 +58,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           link:
             framework === "linux"
               ? "https://docs.scandit.com/stable/c_api/index.html "
-              : `/sdks/${framework}/barcode-capture/get-started`,
+              : `/sdks/${getFrameworkPath(frameworkData)}/barcode-capture/get-started`,
         },
         {
           name: BarcodeScanning.MatrixScan,
@@ -64,7 +67,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScan
           ),
-          link: `/sdks/${framework}/matrixscan/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/matrixscan/intro`,
         },
         {
           name: BarcodeScanning.Parser,
@@ -73,7 +76,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.Parser
           ),
-          link: `/sdks/net/${framework}/parser/get-started`,
+          link: `/sdks/net/${getFrameworkPath(frameworkData)}/parser/get-started`,
         },
         {
           name: BarcodeScanning.LabelCapture,
@@ -82,7 +85,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.LabelCapture
           ),
-          link: `/sdks/${framework}/label-capture/get-started`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/label-capture/get-started`,
         },
         {
           name: BarcodeScanning.BarcodeGenerator,
@@ -91,9 +94,10 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeGenerator
           ),
-          link:  framework === "linux"
-          ? "https://docs.scandit.com/stable/c_api/generator-settings-json.html"
-          : `/sdks/${framework}/barcode-generator/`, 
+          link:
+            framework === "linux"
+              ? "https://docs.scandit.com/stable/c_api/generator-settings-json.html"
+              : `/sdks/${getFrameworkPath(frameworkData)}/barcode-generator/`,
         },
       ],
     },
@@ -107,7 +111,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.SparkScan
           ),
-          link: `/sdks/${framework}/sparkscan/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/sparkscan/intro`,
         },
         {
           name: BarcodeScanning.MatrixScanFind,
@@ -116,7 +120,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScanFind
           ),
-          link: `/sdks/${framework}/matrixscan-find/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/matrixscan-find/intro`,
         },
         {
           name: BarcodeScanning.MatrixScanCount,
@@ -125,7 +129,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.MatrixScanCount
           ),
-          link: `/sdks/${framework}/matrixscan-count/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/matrixscan-count/intro`,
         },
         {
           name: BarcodeScanning.BarcodeSelection,
@@ -134,7 +138,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeSelection
           ),
-          link: `/sdks/${framework}/barcode-selection/intro`,
+          link: `/sdks/${getFrameworkPath(frameworkData)}/barcode-selection/intro`,
         },
       ],
     },

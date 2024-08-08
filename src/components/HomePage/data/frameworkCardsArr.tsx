@@ -119,6 +119,7 @@ export const frameworkCards = [
       {
         framework: "xamarinIos",
         icon: <XamarinIos iconClass={style.iconStyle} />,
+        link: 'xamarin/ios',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
           BarcodeScanning.MatrixScan,
@@ -133,6 +134,7 @@ export const frameworkCards = [
       {
         framework: "xamarinAndroid",
         icon: <XamarinAndroid iconClass={style.iconStyle} />,
+        link: 'xamarin/android',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
           BarcodeScanning.MatrixScan,
@@ -147,6 +149,7 @@ export const frameworkCards = [
       {
         framework: "xamarin",
         icon: <Xamarin iconClass={style.iconStyle} />,
+        link: 'xamarin/forms',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
           BarcodeScanning.MatrixScan,
@@ -194,6 +197,7 @@ export const frameworkCards = [
       {
         framework: "netIos",
         icon: <NetIos iconClass={style.iconStyle} />,
+        link: 'net/ios',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
           BarcodeScanning.MatrixScan,
@@ -208,6 +212,7 @@ export const frameworkCards = [
       {
         framework: "netAndroid",
         icon: <NetAndroid iconClass={style.iconStyle} />,
+        link: 'net/android',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
           BarcodeScanning.MatrixScan,

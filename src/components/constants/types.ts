@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { BarcodeScanning, IDScanning } from "./scanningEnums";
 
 export interface CardType {
   isActive: boolean;
@@ -11,4 +12,14 @@ export interface CardType {
 export interface CardGroupType {
   cards: CardType[];
   groupName: string;
+}
+
+export interface FrameworkCard {
+  framework: string;
+  icon: JSX.Element;
+  barcodeScanning: BarcodeScanning[];
+  IDScanning?: IDScanning[];
+  hasChildren?: boolean;
+  additional?: FrameworkCard[];
+  link?: string;
 }
