@@ -79,9 +79,3 @@ Simple sample showing how to use the ID Capture mode to scan an ID card.
 #### [Extended ID Capture](https://github.com/Scandit/datacapture-cordova-samples/tree/master/IdCaptureExtendedSample)
 
 Sample showing how to use the ID Capture mode to scan an ID card with additional fields.
-
-## Text Capture
-
-### [Simple Text Capture](https://github.com/Scandit/datacapture-cordova-samples/tree/master/TextCaptureSample)
-
-Simple sample showing how to use the Text Capture mode to scan text.

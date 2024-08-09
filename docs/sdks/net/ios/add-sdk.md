@@ -42,11 +42,10 @@ In addition, depending on the data capture task, you will need a reference to:
 | --- | --- | --- |
 | Barcode Capture | [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan. | _com.scandit.datacapture:barcode_ |
 | Parser | [ScanditParser API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings. | _com.scandit.datacapture:parser_ |
-| Text Capture | [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture. | _com.scandit.datacapture:text_ <br></br>_com.scandit.datacapture:text-base_ |
 | ID Capture | [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/dotnet.ios/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas. | _com.scandit.datacapture:id_ |
 
 :::tip
-You can safely remove `Scandit.DataCapture.Barcode`, `Scandit.DataCapture.Parser`, `Scandit.DataCapture.TextCapture` or `Scandit.DataCapture.IdCapture` dependencies if you are not going to use their features.
+You can safely remove `Scandit.DataCapture.Barcode`, `Scandit.DataCapture.Parser`, or `Scandit.DataCapture.IdCapture` dependencies if you are not going to use their features.
 :::
 
 ## Additional Information

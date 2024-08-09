@@ -38,9 +38,7 @@ If you directly add the AAR files to the project, you need to add these dependen
 | *ScanditCaptureCore.aar*      | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]; com.squareup.okhttp3:okhttp:4.9.2       |
 | *ScanditBarcodeCapture.aar*   | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]        |
 | *ScanditParser.aar*      | No dependencies       |
-| *ScanditTextCapture.aar*   | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]        |
 | *ScanditIdCapture.aar*      | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]       |
-------------------
 
 ### Internal Dependencies
 
@@ -51,11 +49,8 @@ Some of the Scandit Data Capture SDK modules depend on others to work:
 | *ScanditCaptureCore*      | No dependencies       |
 | *ScanditBarcodeCapture*   | *ScanditCaptureCore*        |
 | *ScanditParser*      | No dependencies       |
-| *ScanditTextCapture*   | *ScanditCaptureCore*; *ScanditTextCaptureBackend*        |
 | *ScanditIdCapture*      | *ScanditCaptureCore*; *ScanditIdCaptureBackend (VIZ documents)*       |
 | *ScanditIdCaptureBackend*      | No dependencies       |
-| *ScanditTextCaptureBackend*   | No dependencies        |
-------------------
 
 :::note
 Note that your license may support only a subset of ID Capture features. If you need to use additional features, [contact us](mailto:support@scandit.com).
