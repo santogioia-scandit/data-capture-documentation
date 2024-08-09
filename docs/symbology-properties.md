@@ -46,7 +46,7 @@ Symbologies often have different properties, such as symbol count (length of the
 | Symbology      | Supports Color-Inversion | Extensions                               |
 |----------------|--------------------------|------------------------------------------|
 | Aztec Code     | yes                      |                                          |
-| Data Matrix    | yes                      | strip_leading_fnc1 ⁶, direct_part_marking_mode |
+| Data Matrix    | yes                      | strip_leading_fnc1 (enabled by default)<br></br> direct_part_marking_mode |
 | DotCode        | yes                      |                                          |
 | MaxiCode       | no                       |                                          |
 | MicroPDF417    | no                       |                                          |
@@ -118,4 +118,8 @@ The number of symbols corresponds to the number of characters in the code, inclu
 The number of symbols corresponds to the number of characters in the code.
 
 Australian Post 4-State
+The number of symbol corresponds to 10 digit FCC and DPID codes, and up to 31 characters representing the customer information bar states.
+
+## Australian Post 4-State
+
 The number of symbol corresponds to 10 digit FCC and DPID codes, and up to 31 characters representing the customer information bar states.

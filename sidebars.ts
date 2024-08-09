@@ -520,6 +520,7 @@ const sidebars: SidebarsConfig = {
               items: [
                 "sdks/web/matrixscan/intro",
                 "sdks/web/matrixscan/get-started",
+                "sdks/web/matrixscan/advanced",
               ],
             },
           ],

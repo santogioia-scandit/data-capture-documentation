@@ -484,3 +484,13 @@ The same data parsed into its application identifiers by the Scandit parser:
     }
 ]
 ```
+
+## Symbology Specific Notes
+
+* **Code128** uses a leading FNC1 character (ASCII 21) to signal GS1 data. The FNC1 character is encoded but will not be returned in the barcode result.
+* **GS1 DataBar** always contains GS1 data.
+* **DataMatrix** and **QR Code** use an internal symbology specific FNC1 symbol to signal GS1 data carrier mode. The internal symbol is not returned as part of the result. The common mistake of adding a leading group separator character in raw byte mode does not turn the code into a GS1 data carrier.
+
+There are many incorrectly encoded GS1 codes in the wild. The following image depicts two common error cases: The first incorrect code uses a leading group separator instead of the DataMatrix specific encoding scheme. The second error case encodes the human readable GS1 data representation in a normal DataMatrix code.
+
+![GS1 Codes](/img/symbologies/gs1_data_matrix_examples.png)
