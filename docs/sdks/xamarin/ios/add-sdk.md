@@ -38,9 +38,8 @@ You will always need to add the Scandit.DataCapture.Core.Xamarin package, which 
 
 - Scandit.DataCapture.Barcode.Xamarin ([ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/xamarin.ios/barcode-capture/api.html)) if you want to use barcode-related functionality such as barcode capture or MatrixScan.
 - Scandit.DataCapture.Parser.Xamarin ([ScanditParser API](https://docs.scandit.com/data-capture-sdk/xamarin.ios/parser/api.html)) if you want to parse data strings, e.g. as found in barcodes, into a set of key-value mappings.
-- Scandit.DataCapture.TextCapture.Xamarin ([ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/xamarin.ios/text-capture/api.html)) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
 
-You can safely remove `Scandit.DataCapture.Barcode.Xamarin`, `Scandit.DataCapture.Parser.Xamarin`, `Scandit.DataCapture.TextCapture.Xamarin` dependencies if you are not going to use their features.
+You can safely remove `Scandit.DataCapture.Barcode.Xamarin`, `Scandit.DataCapture.Parser.Xamarin` dependencies if you are not going to use their features.
 
 ## Additional Information
 
