@@ -15,18 +15,47 @@ You may want to introduce logic in your app to show an error message when scanni
 
 - The text message
 - The timeout of the error message: the scanner will be paused for the specified amount of time, but the user can quickly restart the scanning process by tapping the trigger button
+
+    :::tip
+    A high timeout (>10s) typically requires the users to interact with the UI to start scanning again. This is a good choice when you want to interrupt the scanning workflow (e.g. because a wrong barcode is scanned and some actions need to be performed). A small timeout (\<2s) could allow the user to scan again without having to interact with the app, just momentarily pausing the workflow to acknowledge that a “special” barcode has been scanned.
+    :::
+
 - The color of the flashing screen upon scan. You can enable or disable the visual feedback via [SparkScanViewSettings.visualFeedbackEnabled](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-view-settings.html#property-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.VisualFeedbackEnabled) and you can control the color via [SparkScanViewSuccessFeedback](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-view-feedback.html#class-scandit.datacapture.barcode.spark.ui.SparkScanViewSuccessFeedback) and [SparkScanViewErrorFeedback](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-view-feedback.html#class-scandit.datacapture.barcode.spark.ui.SparkScanViewErrorFeedback).
 
-An error example is here reported:
+To emit an error, you have to implement a [`SparkScanFeedbackDelegate`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-feedback-delegate.html#interface-scandit.datacapture.barcode.spark.feedback.ISparkScanFeedbackDelegate) and set it to the `SparkScanView`:
 
 ```js
-self.sparkScanView.emitFeedback(SparkScanViewErrorFeedback(message: "This code should not have been scanned",
-resumeCapturingDelay: 6, visualFeedbackColor: UIColor.red))
+sparkScanView.feedbackDelegate  = sparkScanFeedbackDelegate;
 ```
 
-**NOTE**: you can have different error states triggered by different logic conditions. For example you can trigger an error state when a wrong barcode is scanned, and another one when a duplicate barcode is scanned. These errors can show different colors and have different timeouts.
+In the [`SparkScanFeedbackDelegate.getFeedbackForBarcode()`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-feedback-delegate.html#method-scandit.datacapture.barcode.spark.feedback.ISparkScanFeedbackDelegate.GetFeedbackForBarcode) you can then return an error or a success feedback:
 
-**NOTE**: a high timeout (e.g. >10s) typically requires the users to interact with the UI to start scanning again. This is a good choice when you want to interrupt the scanning workflow (e.g. because a wrong barcode is scanned and some actions need to be performed). A small timeout (e.g. \<2s) could allow the user to scan again without having to interact with the app, just momentarily pausing the workflow to acknowledge that a “special” barcode has been scanned.
+```js
+const sparkScanFeedbackDelegate = {
+      feedbackForBarcode: (barcode: Barcode) => {
+          if (isValidBarcode(barcode)) {
+              return new SparkScanBarcodeSuccessFeedback();
+          } else {
+              return new SparkScanBarcodeErrorFeedback(
+                  'This code should not have been scanned',
+                  60 * 1000,
+                  Color.fromHex('#FF0000'),
+                  new Brush(Color.fromHex('#FF0000'), Color.fromHex('#FF0000'), 1),
+              );
+          }
+      },
+};
+```
+
+You can have different error states triggered by different logic conditions. These errors can show different colors and have different timeouts. For example:
+
+<p align="center">
+  <img src="/img/sparkscan/error-wrong.png" alt="Wrong scan error" /><br></br>This error state for a code that should not have been scanned.
+</p>
+
+<p align="center">
+  <img src="/img/sparkscan/error-duplicate.png" alt="Duplicate scan error" /><br></br>This error state for a code that has been scanned more than once.
+</p>
 
 ## Reject Barcodes
 
