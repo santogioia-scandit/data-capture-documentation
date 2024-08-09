@@ -31,27 +31,23 @@ You can retrieve your Scandit Data Capture SDK license key, by signing in to [yo
 
 Some of the Scandit Data Capture SDK modules depend on others to work:
 
-| Module                                                                                     | Dependencies                                                                    |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
-| ------------------------------------------------------------------------------------------ |
+| Module      | Dependencies     |
+| --------------------------- | --------------------------------- |
 | scandit-react-native-datacapture-core                                                      | No dependencies                                                                 |
 | scandit-react-native-datacapture-barcode                                                   | scandit-react-native-datacapture-core                                           |
 | scandit-react-native-datacapture-parser                                                    | scandit-react-native-datacapture-core                                           |
 | scandit-react-native-datacapture-text                                                      | scandit-react-native-datacapture-core                                           |
-| scandit-react-native-datacapture-id                                                        | scandit-react-native-datacapture-core scandit-react-native-datacapture-text(VIZ |
-| documents)                                                                                 |
+| scandit-react-native-datacapture-id                                                        | scandit-react-native-datacapture-core scandit-react-native-datacapture-text(VIZ documents)     |
 
-When adding ScanditIdCapture to a React Native project, certain native dependencies need to be added manually to your project, depending on the documents you want to scan.
+When adding `ScanditIdCapture` to a React Native project, certain native dependencies need to be added manually to your project, depending on the documents you want to scan:
 
-If you’re only scanning barcode based documents, you only need to add the ScanditIdCapture React Native plugin.
+* If you’re only scanning barcode based documents, you only need to add the `ScanditIdCapture` React Native plugin.
+* If you’re scanning VIZ documents, you also need to add the `ScanditOCR` and `ScanditTextCaptureBase` native dependencies.
+* If you’re scanning MRZ documents, you also need the native `ScanditTextCapture` dependency.
 
-If you’re also scanning VIZ documents, you also need to add the ScanditOCR and ScanditTextCaptureBase native dependencies, as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/../add-sdk.md) and
-[Android](https://docs.scandit.com/data-capture-sdk/android/../add-sdk.md) documentation.
-
-If you’re also scanning MRZ documents, you also need the native ScanditTextCapture dependency. You can add this as well as described in our [iOS](https://docs.scandit.com/data-capture-sdk/ios/../add-sdk.md) and
-[Android](https://docs.scandit.com/data-capture-sdk/android/../add-sdk.md) documentation.
-
-Alternatively, if you’re scanning both VIZ and MRZ documents, you can add the ScanditTextCapture React Native (scandit-datacapture-react-native-text) plugin, which includes the native dependencies for both VIZ and MRZ documents.
+:::tip
+If you’re scanning both VIZ and MRZ documents you can add the `ScanditTextCapture` React Native (`scandit-datacapture-react-native-text`) plugin, which includes the native dependencies for both VIZ and MRZ documents.
+:::
 
 Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [Scandit Support](mailto:support@scandit.com).
 

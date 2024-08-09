@@ -8,7 +8,7 @@ import {
   ScanditCapacitor,
   ScanditCordova,
   ScanditFlutter,
-  ScanditISO,
+  ScanditIOS,
   ScanditReact,
   Titanium,
   Xamarin,
@@ -23,8 +23,8 @@ import { BarcodeScanning, IDScanning } from "../../constants/scanningEnums";
 
 export const frameworkCards = [
   {
-    framework: "iso",
-    icon: <ScanditISO iconClass={style.iconStyle} />,
+    framework: "ios",
+    icon: <ScanditIOS iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
       BarcodeScanning.BarcodeCapture,
@@ -58,7 +58,7 @@ export const frameworkCards = [
     IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
   },
   {
-    framework: "javascript",
+    framework: "web",
     icon: <Javascript iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
@@ -249,7 +249,7 @@ export const frameworkCards = [
       BarcodeScanning.MatrixScan,
       BarcodeScanning.ScanditExpress,
     ],
-    IDScanning: [IDScanning.IdCapture, IDScanning.IdValidate],
+    IDScanning: [],
   },
   {
     framework: "linux",

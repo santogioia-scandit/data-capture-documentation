@@ -9,6 +9,7 @@ export enum BarcodeScanning {
   MatrixScanCount = "MatrixScan Count",
   BarcodeSelection = "Barcode Selection",
   ScanditExpress = "Scandit Express",
+  
 }
 
 export enum IDScanning {

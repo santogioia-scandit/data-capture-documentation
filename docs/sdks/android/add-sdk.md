@@ -11,19 +11,22 @@ import TabItem from '@theme/TabItem';
 
 This page describes how to integrate the Scandit Data Capture SDK into your Android project.
 
-Scandit Data Capture SDK is distributed as [AAR libraries](https://developer.android.com/studio/projects/android-library#aar-contents) in the [official Scandit maven repository](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
+The Scandit Data Capture SDK is distributed as [AAR libraries](https://developer.android.com/studio/projects/android-library#aar-contents) in the [official Scandit maven repository](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
 
+:::warning
 You need to add a reference to _com.scandit.datacapture:core_, which contains the shared functionality used by the other data capture modules.
+::: 
 
-If youe are using text capture-related functionalities, make sure to also add a reference to _com.scandit.datacapture:text-base_. In addition, depending on the data capture task, you need a reference to:
+Depending on the data capture task, you need a reference to:
 
-- _com.scandit.datacapture:barcode_ [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan.
-- _com.scandit.datacapture:parser_ [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings.
-- _com.scandit.datacapture:text_ [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/android/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture.
-- _com.scandit.datacapture:id_ [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas.
+| Functionality | Description | Required Module(s) |
+| --- | --- | --- |
+| Barcode Capture | [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan. | _com.scandit.datacapture:barcode_ |
+| Parser | [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings. | _com.scandit.datacapture:parser_ |
+| ID Capture | [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas. | _com.scandit.datacapture:id_ |
 
-:::note
-You can safely remove _barcode_, _parser_, _text_ or _id_ dependencies if you are not going to use their features.
+:::tip
+You can safely remove _barcode_, _parser_, or _id_ dependencies if you are not going to use their features.
 :::
 
 ## Prerequisites
@@ -137,7 +140,6 @@ You need to add a reference to `ScanditCaptureCore.aar`, which contains the shar
 
 - [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api.html) if you want to use barcode-related functionality, such as barcode capture or MatrixScan
 - [ScanditParser API](https://docs.scandit.com/data-capture-sdk/android/parser/api.html) if you want to parse data strings, for instance, as found in barcodes, into a set of key-value mappings
-- [ScanditTextCapture API](https://docs.scandit.com/data-capture-sdk/android/text-capture/api.html) if you want to use text recognition (OCR) functionality, often combined with barcode scanning to deliver simultaneous barcode and text capture
 - [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/android/id-capture/api.html) if you want to scan personal identification documents, such as identity cards, passports or visas
 
 If your project already has a local `flatDir` repository, add the AAR files to that folder. If you do not have a `flatDir` repository yet, create a new one in your _build.gradle_ file as illustrated below:
@@ -150,13 +152,11 @@ repositories {
 }
 ```
 
-Add the .aar libraries as dependencies to your build.gradle file (below an example with BarcodeCapture and TextCapture)
+Add the .aar libraries as dependencies to your `build.gradle` file:
 
 ```java
 dependencies {
   api(name:'ScanditBarcodeCapture', ext:'aar')
-  api(name:'ScanditTextCaptureBackend', ext:'aar')
-  api(name:'ScanditTextCapture', ext:'aar')
 }
 ```
 
@@ -164,12 +164,11 @@ dependencies {
 
 The Scandit Data Capture SDK modules depend on the following few standard libraries. If you include the Scandit Data Capture SDK through Gradle or Maven, all of these dependencies are automatically pulled in and there is no further action items for you. On the other hand, if you directly ad the AAR files to the project, you need to add these dependencies yourself.
 
-| Module                    | Dependencies                                                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Module | Dependencies  |
+| ------------------------- | ----------------------------------------- |
 | ScanditCaptureCore.aar    | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]; com.squareup.okhttp3:okhttp:4.9.2 |
 | ScanditBarcodeCapture.aar | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]                                    |
-| ScanditParser.aar         | No dependencies                                                                                                           |
-| ScanditTextCapture.aar    | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]                                    |
+| ScanditParser.aar   | No dependencies      |
 | ScanditIdCapture.aar      | org.jetbrains.kotlin:kotlin-stdlib:[version]; androidx.annotation:annotation:[version]                                    |
 
 ---

@@ -289,7 +289,7 @@ pagination_prev: null
 #### ID
 
 - **New Features and Improvements**:
-  - Added `SDCAAMVAVizBarcodeComparisonResult.frontMismatchImage` to visualize document data printed on the front side that differs from the barcode. Contact [support@scandit.com](mailto:support@scandit.com) to use this feature.
+  - Added `SDCAAMVAVizBarcodeComparisonResult.frontMismatchImage` to visualize document data printed on the front side that differs from the barcode. Contact [Scandit Support](mailto:support@scandit.com) to use this feature.
   - Improved the accuracy of `SDCAAMVAVizBarcodeComparisonVerifier`.
   - Improved the accuracy of `SDCVizMrzComparisonVerifier`.
   - Added `SDCIdCaptureOverlay.textHintPosition` to set the position of textual hints.

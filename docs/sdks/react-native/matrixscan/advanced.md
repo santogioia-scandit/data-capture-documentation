@@ -9,8 +9,8 @@ In the previous section we covered how to vizualize the scan process using the `
 
 There are two ways to add custom AR overlays to your application:
 
-- Using the `BarcodeTrackingAdvancedOverlay` class, our ready-to-use implementation for view-based AR overlays.
-- Provide your own fully custom implementation by using the `SDCBarcodeTrackingListener.barcodeTracking:didUpdate:frameData:` function to retrieve the tracking information and implement your own AR overlay.
+- Using the [`BarcodeTrackingAdvancedOverlay`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay) class, our ready-to-use implementation for view-based AR overlays.
+- Provide your own fully custom implementation by using the [`BarcodeTrackingListener.didUpdateSession()`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/barcode-tracking-listener.html#method-scandit.datacapture.barcode.tracking.IBarcodeTrackingListener.OnSessionUpdated) function to retrieve the tracking information and implement your own AR overlay.
 
 The first option is the easiest and recommended approach for most applications. It covers adding, removing, and animating the overlay’s views whenever needed and is also flexible enough to cover the majority of use cases.
 

@@ -18,8 +18,8 @@ export interface Framework {
 export default function HomePage() {
   const framework = localStorageUtil.getItem("selectedFramework");
   const [selectedFramework, setSelectedFramework] = useState<Framework>({
-    frameworkParent: framework?.frameworkParent || "iso",
-    framework: framework?.framework || "iso",
+    frameworkParent: framework?.frameworkParent || "ios",
+    framework: framework?.framework || "ios",
   });
 
 

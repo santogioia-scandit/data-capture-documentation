@@ -48,6 +48,43 @@
         color: var(--light-black);
       }
     }
+
+    & .theme-doc-sidebar-item-category-level-3 {
+      & .menu__link.menu__link--sublist {
+        margin-left: 12px;
+      }
+    }
+
+    & .theme-doc-sidebar-item-category-level-3 {
+      & .menu__list .menu__link {
+        margin-left: 12px;
+      }
+    }
+
+
+    & .theme-doc-sidebar-item-category-level-4 {
+      & .menu__link.menu__link--sublist {
+        margin-left: 24px;
+      }
+    }
+
+    & .theme-doc-sidebar-item-category-level-4 {
+      & .menu__list .menu__link {
+        margin-left: 24px;
+      }
+    }
+
+    & .theme-doc-sidebar-item-category-level-5 {
+      & .menu__link.menu__link--sublist {
+        margin-left: 36px;
+      }
+    }
+
+    & .theme-doc-sidebar-item-category-level-5 {
+      & .menu__list .menu__link {
+        margin-left: 36px;
+      }
+    }
   }
 }
 

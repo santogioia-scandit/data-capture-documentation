@@ -3,7 +3,7 @@ sidebar_position: 3
 pagination_next: null
 ---
 
-# Configure Which Barcodes Are Read
+# Configure Barcode Symbologies
 
 In this guide you will learn how to configure a barcode based capture mode
 [BarcodeCapture](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-capture.html#class-scandit.datacapture.barcode.BarcodeCapture) to read the barcodes that you need it to read. The available symbol count range, checksum extensions, etc. for all symbologies are listed in [Symbology Properties](../../../symbology-properties.md).

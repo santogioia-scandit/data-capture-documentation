@@ -32,17 +32,16 @@ You can retrieve your Scandit Data Capture SDK license key, by signing in to [yo
 
 Some of the Scandit Data Capture SDK modules depend on others to work:
 
-| Module                              | Dependencies                                                                     |
-| ----------------------------------- | -------------------------------------------------------------------------------- |
-| scandit-cordova-datacapture-core    | No dependencies                                                                  |
-| scandit-cordova-datacapture-barcode | scandit-cordova-datacapture-core                                                 |
-| scandit-cordova-datacapture-parser  | scandit-cordova-datacapture-core                                                 |
-| scandit-cordova-datacapture-text    | scandit-cordova-datacapture-core                                                 |
+| Module  | Dependencies     |
+| ----------------------------------- | ------------------------- |
+| scandit-cordova-datacapture-core    | No dependencies     |
+| scandit-cordova-datacapture-barcode | scandit-cordova-datacapture-core          |
+| scandit-cordova-datacapture-parser  | scandit-cordova-datacapture-core        |
 | scandit-cordova-datacapture-id      | scandit-cordova-datacapture-core scandit-cordova-datacapture-text(VIZ documents) |
 
-When adding ScanditIdCapture to a Cordova project, certain native dependencies need to be added manually to your project, depending on the documents you want to scan.
+When adding `ScanditIdCapture` to a Cordova project, certain native dependencies need to be added manually to your project, depending on the documents you want to scan.
 
-If you’re only scanning barcode based documents, you only need to add the ScanditIdCapture Cordova plugin.
+If you’re only scanning barcode based documents, you only need to add the `ScanditIdCapture` Cordova plugin.
 
 If you’re also scanning VIZ documents, you also need to add the ScanditOCR and ScanditTextCaptureBase native dependencies through CocoaPods and Gradle references in your app’s config.xml file, as shown below, specifying the version you’re using:
 

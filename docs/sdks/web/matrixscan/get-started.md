@@ -25,22 +25,24 @@ Before starting with adding a capture mode, make sure that you have a valid Scan
 You can retrieve your Scandit Data Capture SDK license key, by signing in to [your Scandit account](https://ssl.scandit.com/dashboard/sign-in).
 :::
 
-#### Enable browser multithreading
+### Enable browser multithreading
 
-You can achieve better performance by enabling multithreading in the browser that supports it. Check the [Requirements Page](../../../system-requirements.md) to know what are the minimum versions that can take advantage of multithreading. To enable multithreading you must set your site to be [crossOriginIsolated](https://developer.mozilla.org/en-US/docs/Web/API/crossOriginIsolated/). This will enable the possibility for the sdk to use multithreading and significatively boost the performance. If the environment supports it the sdk will automatically use multithreading. You can programmatically check for multithreading supports using [BrowserHelper.checkMultithreadingSupport()](https://docs.scandit.com/data-capture-sdk/web/core/api/web/browser-compatibility.html#method-scandit.datacapture.core.BrowserHelper.CheckMultithreadingSupport)
+You can achieve better performance by enabling multithreading in any browser that supports it. Check the [Requirements Page](../../../system-requirements.md) to know the minimum versions that can take advantage of multithreading.
+
+To enable multithreading you must set your site to be [crossOriginIsolated](https://developer.mozilla.org/en-US/docs/Web/API/crossOriginIsolated/). This will enable the SDK to use multithreading and significantly boost performance. If the environment supports it the sdk will automatically use multithreading. You can programmatically check for multithreading supports using [BrowserHelper.checkMultithreadingSupport()](https://docs.scandit.com/data-capture-sdk/web/core/api/web/browser-compatibility.html#method-scandit.datacapture.core.BrowserHelper.CheckMultithreadingSupport).
 
 :::important
-Multithreading is particularly critical for MatrixScan so be sure to configure it correctly following this tutorial, [Making your website “cross-origin isolated” using COOP, COEP and CORP](https://web.dev/coop-coep/). You can also check this link [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/) and this one[Safely reviving shared memory](https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/)
+Multithreading is particularly critical for MatrixScan so be sure to configure it correctly following this [tutorial](https://web.dev/coop-coep/). You can also check this [guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/) and [safely reviving shared memory](https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/).
+:::
+
+An example of how headers could be set:
 
 ```sh
-# An example of how headers could be set.
 Cross-Origin-Embedder-Policy: require-corp;
 Cross-Origin-Opener-Policy: same-origin;
 Cross-Origin-Resource-Policy: cross-origin allow-credentials; require-corp origin https://example.com
 https://example.net;
 ```
-
-:::
 
 ### Internal dependencies
 

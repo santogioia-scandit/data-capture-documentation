@@ -1,7 +1,7 @@
 export enum FrameworksName {
-  iso = "iOS",
+  ios = "iOS",
   android = "Android",
-  javascript = "JavaScript",
+  web = "JavaScript",
   react = "React",
   cordova = "Cordova",
   xamarin = "Xamarin Forms",

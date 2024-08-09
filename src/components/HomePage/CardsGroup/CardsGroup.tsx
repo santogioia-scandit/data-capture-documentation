@@ -1,3 +1,4 @@
+import Link from "@docusaurus/Link";
 import Arrow from "../../IconComponents/Arrow";
 import { CardGroupType } from "../../constants/types";
 import Card from "./Card/Card";
@@ -8,6 +9,7 @@ interface CardsGroupProps {
   mainColor: string;
   content: CardGroupType[];
   cardColor: string;
+  linkStarted: string;
 }
 
 export default function CardsGroup({
@@ -15,19 +17,21 @@ export default function CardsGroup({
   mainColor,
   content,
   cardColor,
+  linkStarted,
 }: CardsGroupProps) {
   return (
     <div className={style.cardsGroupWrapper}>
       <div className={style.cardsGroupHeader}>
         <h2 className={style.cardsGroupTitle}>{title}</h2>
-        <button
+        <Link
           className={style.cardsGroupBtn}
           style={{ color: mainColor }}
           type="button"
+          to={linkStarted}
         >
           Get started
           <Arrow iconClass={style.cardsGroupIcon} />
-        </button>
+        </Link>
       </div>
       <ul>
         {content.map((cardsGroup, index: number) => {

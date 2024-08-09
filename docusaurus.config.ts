@@ -38,7 +38,7 @@ const config: Config = {
           sidebarPath: require.resolve("./sidebars.ts"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/Scandit/data-capture-documentation",
+          editUrl: "https://github.com/Scandit/data-capture-documentation/edit/main",
           breadcrumbs: true,
           admonitions: {
             keywords: [
@@ -241,7 +241,7 @@ const config: Config = {
            items: [
              {
                label: "Blog",
-               to: "https://www.scandit.com/blog/",
+               to: "https://www.scandit.com/blog/?_blog_categories=developers",
              },
              {
                label: "GitHub",

@@ -4,9 +4,6 @@ toc_max_heading_level: 4
 pagination_next: null
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Installation
 
 This guide shows you how to add the Scandit Data Capture SDK to your existing project.
@@ -35,7 +32,7 @@ If you have a paid subscription, please reach out to [Scandit Support](mailto:su
 
 Currently we support adding the Scandit Data Capture SDK Cordova plugins to your project in two ways. The simplest way is to use npm, alternatively you can manually download the plugins and add them to your Cordova project.
 
-:::note
+:::tip
 You should first always add the `scandit-cordova-datacapture-core` plugin, as all other plugins depend on it.
 :::
 
@@ -59,16 +56,22 @@ The Scandit Data Capture SDK depends on WKWebView on iOS, so you’ll manually h
 
 ### Add the SDK via npm or GitHub repo
 
-To add our plugins via npm or git repo, you can run these commands from your project’s root folder. In the following snippet we’re adding [ScanditBarcodeCapture API](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api.html)
+To add our plugins via npm or git repo, you can run these commands from your project’s root folder. In the following snippet we’re adding multiple plugins for different functionalities, but you can add only the ones you need.
 
 ```sh
 # npm package
 cordova plugin add scandit-cordova-datacapture-core
 cordova plugin add scandit-cordova-datacapture-barcode
+cordova plugin add scandit-cordova-datacapture-parser
+cordova plugin add scandit-cordova-datacapture-text
+cordova plugin add scandit-cordova-datacapture-id
 
 # git repo
 cordova plugin add https://github.com/Scandit/scandit-cordova-datacapture-core.git
 cordova plugin add https://github.com/Scandit/scandit-cordova-datacapture-barcode.git
+cordova plugin add https://github.com/Scandit/scandit-cordova-datacapture-parser.git
+cordova plugin add https://github.com/Scandit/scandit-cordova-datacapture-text.git
+cordova plugin add https://github.com/Scandit/scandit-cordova-datacapture-id.git
 ```
 
 :::note

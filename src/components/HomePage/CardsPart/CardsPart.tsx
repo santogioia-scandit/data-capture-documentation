@@ -22,6 +22,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
           content={barcodeScanning}
           mainColor="#065DB8"
           cardColor="#C3E1FF"
+          linkStarted="/barcode-scanning"
         ></CardsGroup>
         <button
           className={style.hiddenBtn}
@@ -37,6 +38,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
           content={idScanning}
           mainColor="var(--IDScanningColor)"
           cardColor="var(--IDScanningColor)"
+          linkStarted="/id-scanning"
         ></CardsGroup>
       </div>
     </div>

@@ -28,7 +28,7 @@ that you added the necessary dependencies. If you have not done that yet, check 
 You can retrieve your Scandit Data Capture SDK license key, by signing in to [your Scandit account](https://ssl.scandit.com/dashboard/sign-in).
 :::
 
-Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [support@scandit.com](mailto:support@scandit.com).
+Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [Scandit Support](mailto:support@scandit.com).
 
 ### Configure and Initialize the Library
 

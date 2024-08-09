@@ -26,7 +26,7 @@ import ScanditAndroid from "./ScanditAndroid";
 import ScanditCapacitor from "./ScanditCapacitor";
 import ScanditCordova from "./ScanditCordova";
 import ScanditFlutter from "./ScanditFlutter";
-import ScanditISO from "./ScanditISO";
+import ScanditIOS from "./ScanditIOS";
 import ScanditReact from "./ScanditReact";
 import Logo from "./Logo";
 import LabelCapture from "./LabelCapture";
@@ -67,7 +67,7 @@ export {
   ScanditCapacitor,
   ScanditCordova,
   ScanditFlutter,
-  ScanditISO,
+  ScanditIOS,
   ScanditReact,
   Logo,
   LabelCapture,

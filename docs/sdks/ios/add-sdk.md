@@ -4,9 +4,6 @@ toc_max_heading_level: 4
 pagination_next: null
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Installation
 
 This page describes how to integrate the Scandit Data Capture SDK into your iOS project. The SDK can be added via:
@@ -22,20 +19,21 @@ Before you begin, make sure you have the following prerequisites in place:
 
 - Latest version of Xcode
 - iOS project with a deployment target of iOS 13.0+
-- Scandit license key
+- Scandit license key, sign up for a [free trial](https://www.scandit.com/trial/) if you don't already have a license key
 
 ## CocoaPods
 
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects. To integrate the Scandit Data Capture SDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'ScanditBarcodeCapture', '~> |shortversion|'
+pod 'ScanditBarcodeCapture',
+# Add the following pods if you want to use additional features
+pod 'ScanditIdCapture',
+pod 'ScanditParser',
 ```
 
 :::note
-The `|shortversion|` placeholder in the snippet above should be replaced with the short version you want to use. For example, `6.20`.
-
-Additionally, this command also download `ScanditCaptureCore` as `ScanditBarcodeCapture` depends on it.
+This command also downloads `ScanditCaptureCore` as `ScanditBarcodeCapture` depends on it.
 :::
 
 ## Carthage
@@ -54,13 +52,20 @@ You also need to add [`ScanditCaptureCore`](https://docs.scandit.com/data-captur
 binary "https://ssl.scandit.com/sdk/download/carthage/ScanditCaptureCore.json"
 ```
 
+If applicable for your use case, you can also add the following Carthage binaries:
+
+```ruby
+binary "https://ssl.scandit.com/sdk/download/carthage/ScanditIdCapture.json"
+binary "https://ssl.scandit.com/sdk/download/carthage/ScanditParser.json"
+```
+
 ## Swift Package Manager
 
-To integrate the Scandit Data Capture SDK into your Xcode project using Swift Package Manager:
+To integrate the Scandit Data Capture SDK into your Xcode project using Swift Package Manager, add the frameworks you want to add in the _Swift Packages_ section of your project.
 
-Add the frameworks you want to add in the _Swift Packages_ section of your project. Add our SPM package repository:
+Add our SPM package repository:
 
-```swift
+```shell
 https://github.com/Scandit/datacapture-spm
 ```
 
@@ -70,7 +75,10 @@ Or if you prefer checking out git repositories via SSH:
 git@github.com:Scandit/datacapture-spm.git
 ```
 
-You also need to add [`ScanditCaptureCore`](https://docs.scandit.com/data-capture-sdk/ios/core/api.html) since [`ScanditBarcodeCapture`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api.html) API depends on it.
+You also need to add [`ScanditCaptureCore`](https://docs.scandit.com/data-capture-sdk/ios/core/api.html) since [`ScanditBarcodeCapture`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api.html) API depends on it, and if applicable for your use case, you can also add the following packages:
+
+- `ScanditIdCapture`
+- `ScanditParser`
 
 ## Add the Frameworks Manually
 
@@ -98,6 +106,8 @@ To import the Scandit Data Capture SDK into your source code, add the following 
 ```swift
 import ScanditCaptureCore
 import ScanditBarcodeCapture
+import ScanditIdCapture
+import ScanditParser
 ```
 
 </TabItem>
@@ -106,6 +116,8 @@ import ScanditBarcodeCapture
 ```objectivec
 @import ScanditCaptureCore;
 @import ScanditBarcodeCapture;
+@import ScanditIdCapture;
+@import ScanditParser;
 ```
 
 </TabItem>
