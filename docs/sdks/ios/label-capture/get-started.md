@@ -3,7 +3,7 @@ pagination_prev: null
 pagination_next: null
 ---
 
-## Get Started
+# Get Started
 
 _ScanditLabelCapture_ coordinates the process of simultaneously capturing data contained in multiple barcodes and text that occur together. The basis of label capture is a label definition that specifies the spatial arrangement as well as the content of the barcodes and text of the label (its fields). Typical use cases for label capture are labels consisting of:
 

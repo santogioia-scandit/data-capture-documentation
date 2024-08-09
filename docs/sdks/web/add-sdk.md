@@ -10,12 +10,11 @@ This page describes how to integrate the Scandit Data Capture SDK into your web 
 
 Scandit Data Capture SDKs are distributed as [npm packages](https://www.npmjs.com/search?q=scandit-web-datacapture-*).
 
-You need to add the `scandit-web-datacapture-core`, which contains the shared functionality used by the other data capture packages. 
+You need to add the `scandit-web-datacapture-core` package, which contains the shared functionality used by the other data capture packages. 
 
 If you’re using `barcodecapture`-related functionalities, make sure to also add the `scandit-web-datacapture-barcode` package. In addition you need a add `scandit-web-datacapture-id` - the [ScanditIdCapture API](https://docs.scandit.com/data-capture-sdk/web/id-capture/overview.html) - if you want to scan personal identification documents, such as identity cards, passports or visas.
 
 :::note
-
 You can safely remove _barcode_ or _id_ dependencies if you are not going to use their features.
 :::
 
@@ -24,7 +23,7 @@ You can safely remove _barcode_ or _id_ dependencies if you are not going to use
 Before you begin, make sure you have the following prerequisites in place:
 
 - The latest stable version of Node.js and npm (required only if including and building the SDK as part of an app, instead of just including it as an external resource from a CDN in HTML).
-- Valid Scandit Data Capture SDK license key
+- Valid Scandit Data Capture SDK license, sign up for a [free trial](https://www.scandit.com/trial/) if you don't already have a license key
 
 :::warning
 Devices running the Scandit Data Capture SDK need to have a GPU and run a browser capable of making it available (requires [WebGL - current support?](https://caniuse.com/#feat=webgl) and [OffscreenCanvas - current support?](https://caniuse.com/#feat=offscreencanvas)) or the performance will drastically decrease.

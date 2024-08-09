@@ -19,23 +19,21 @@ Before you begin, make sure you have the following prerequisites in place:
 
 - Latest version of Xcode
 - iOS project with a deployment target of iOS 13.0+
-- Scandit license key
+- Scandit license key, sign up for a [free trial](https://www.scandit.com/trial/) if you don't already have a license key
 
 ## CocoaPods
 
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects. To integrate the Scandit Data Capture SDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'ScanditBarcodeCapture', '~> |shortversion|'
+pod 'ScanditBarcodeCapture',
 # Add the following pods if you want to use additional features
-pod 'ScanditIdCapture', '~> |shortversion|'
-pod 'ScanditParser', '~> |shortversion|'
+pod 'ScanditIdCapture',
+pod 'ScanditParser',
 ```
 
 :::note
-The `|shortversion|` placeholder in the snippet above should be replaced with the short version you want to use. For example, `6.26`.
-
-Additionally, this command also downloads `ScanditCaptureCore` as `ScanditBarcodeCapture` depends on it.
+This command also downloads `ScanditCaptureCore` as `ScanditBarcodeCapture` depends on it.
 :::
 
 ## Carthage

@@ -5,7 +5,7 @@ displayed_sidebar: sdcSidebar
 
 # Composite Codes
 
-The Scandit Data Capture SDK supports scanning of all [GS1 Composite Codes](./barcode-symbologies#gs1-composite-codes).
+The Scandit Data Capture SDK supports scanning of all [GS1 Composite Codes](./barcode-symbologies#gs1-composite-codes). The specification defines three different types: A, B and C.
 
 :::note
 Composite codes are only supported in `SDCBarcodeCapture`.
@@ -90,7 +90,7 @@ if let compositeData = compositeData {
 
 ## Avoiding the Scanning of Barcodes without Composite
 
-For a use-case where only composite codes should be scanned but no single barcodes, the same type of rejection as shown in the [Barcode Capture Reject Sample](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureRejectSample) can be used.
+For a use-case where only barcodes with add-ons should be scanned, the same type of rejection as shown in the _BarcodeCaptureRejectSample_ (available from the Samples page of your preferred framework) can be used.
 
 If composite data is available:
 
