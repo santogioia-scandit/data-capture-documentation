@@ -22,6 +22,16 @@ export default function HomePage() {
     framework: framework?.framework || "ios",
   });
 
+  useEffect(() => {
+    const storedFramework = localStorageUtil.getItem("selectedFramework");
+    if (storedFramework) {
+      setSelectedFramework({
+        frameworkParent: storedFramework.frameworkParent || "ios",
+        framework: storedFramework.framework || "ios",
+      });
+    }
+  }, []);
+
 
   return (
     <div className={style.homeWrapper}>

@@ -1,9 +1,11 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import style from "./Frameworks.module.css";
 import { frameworkCards } from "../data/frameworkCardsArr";
 import { FrameworkCard } from "./FrameworkCard";
 import CardAdditional from "./CardAdditional";
 import localStorageUtil from "../../utils/localStorageUtil";
 import { Framework } from "@site/src/pages";
+import { FrameworkCardType } from "../../constants/types";
 
 interface FrameworksProps {
   setSelectedFramework: (framework: Framework) => void;
@@ -14,11 +16,16 @@ export default function Frameworks({
   setSelectedFramework,
   selectedFramework,
 }: FrameworksProps) {
-  function clickedFramework(e, framework) {
-    localStorageUtil.setItem("selectedFramework", {
-      frameworkParent: framework.framework,
-      framework: e.target.value,
-    });
+  function clickedFramework(
+    e: React.MouseEvent<HTMLDivElement>,
+    framework: FrameworkCardType
+  ) {
+    if (typeof window !== "undefined") {
+      localStorageUtil.setItem("selectedFramework", {
+        frameworkParent: framework.framework,
+        framework: e.currentTarget.dataset.value,
+      });
+    }
   }
 
   return (
@@ -29,7 +36,9 @@ export default function Frameworks({
       <form className={style.iconList}>
         {frameworkCards.map((item) => (
           <div
-            onClick={(e) => clickedFramework(e, item)}
+            onClick={(e) =>
+              clickedFramework(e, item)
+            }
             key={item.framework}
             className={style.frameworkCardWrapper}
           >

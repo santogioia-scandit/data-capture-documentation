@@ -1,7 +1,7 @@
 import { Bolt, IDValidate, IdCapture } from "../../IconComponents";
 import { frameworkCards } from "./frameworkCardsArr";
 import { IDScanning } from "../../constants/scanningEnums";
-import { FrameworkCard } from "../../constants/types";
+import { FrameworkCardType } from "../../constants/types";
 
 export function createIdScanningArr(framework: string) {
   function findFrameworkData() {
@@ -21,7 +21,7 @@ export function createIdScanningArr(framework: string) {
   }
   const frameworkData = findFrameworkData();
 
-  function getFrameworkPath(frameworkData: FrameworkCard): string {
+  function getFrameworkPath(frameworkData: FrameworkCardType): string {
     return frameworkData?.link ? frameworkData.link : framework;
   }
 

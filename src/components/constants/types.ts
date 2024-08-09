@@ -14,12 +14,12 @@ export interface CardGroupType {
   groupName: string;
 }
 
-export interface FrameworkCard {
+export interface FrameworkCardType {
   framework: string;
   icon: JSX.Element;
   barcodeScanning: BarcodeScanning[];
   IDScanning?: IDScanning[];
   hasChildren?: boolean;
-  additional?: FrameworkCard[];
+  additional?: FrameworkCardType[];
   link?: string;
 }

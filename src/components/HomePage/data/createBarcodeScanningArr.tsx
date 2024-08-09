@@ -11,11 +11,11 @@ import {
   Parser,
   Sparkscan,
 } from "../../IconComponents";
-import { FrameworkCard } from "../../constants/types";
+import { FrameworkCardType } from "../../constants/types";
 
 export function createBarcodeScanningArr(framework: string, allCards: boolean) {
   function findFrameworkData() {
-    const frameworkData: FrameworkCard = frameworkCards.find(
+    const frameworkData: FrameworkCardType = frameworkCards.find(
       (item) => item.framework === framework
     );
 
@@ -40,7 +40,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
     BarcodeScanning.BarcodeSelection,
   ];
 
-  function getFrameworkPath(frameworkData: FrameworkCard): string {
+  function getFrameworkPath(frameworkData: FrameworkCardType): string {
     return frameworkData?.link ? frameworkData.link : framework;
   }
 
