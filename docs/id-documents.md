@@ -296,3 +296,29 @@ ID Capture supports the following documents with PDF417 barcodes:
 | Australia - Victoria                 | Driver’s License, Proof of Age Card      |
 | Australia - Western Australia        | Driver’s License                         |
 | New Zealand                          | Driver’s License, Passport               |
+
+
+## Anonymized Documents
+
+If `SDCIdAnonymizationMode` is enabled, certain sensitive fields are not extracted from documents (their values are returned as nil) and/or are blacked out on the returned document images. This currently affects human-readable text (VIZ) & Machine Readable Zones (MRZ).
+
+Here is the list of the affected documents and their respective fields:
+
+| Country      | Documents                                               | Fields                                                |
+|--------------|---------------------------------------------------------|-------------------------------------------------------|
+| Germany      | ID Card                                                  | Document Number (VIZ & MRZ), Additional Document Number, Full MRZ |
+| Germany      | Passport, Diplomatic Passport, Minor’s Passport          | Document Number (VIZ & MRZ), Full MRZ                 |
+| Hong Kong    | ID Card                                                  | Document Number                                       |
+| Hong Kong    | Passport, Diplomatic Passport                            | Document Number (VIZ & MRZ), MRZ Opt1, Full MRZ       |
+| Malaysia     | MyKad, MyKAS, MyKid, MyPR, MyTentera                     | Religion                                              |
+| Netherlands  | Driver’s License                                         | Personal ID Number                                    |
+| Netherlands  | ID Card                                                  | Personal ID Number, MRZ Opt1, Full MRZ                |
+| Netherlands  | Passport, Diplomatic Passport                            | MRZ Opt1, Full MRZ                                    |
+| Singapore    | Driver’s License                                         | Document Number                                       |
+| Singapore    | Employment Pass                                          | Personal ID Number                                    |
+| Singapore    | Fin Card, ID Card, Resident ID                           | Document Number                                       |
+| Singapore    | Passport, Diplomatic Passport                            | Document Number (VIZ & MRZ), MRZ Opt1, Full MRZ       |
+| Singapore    | S Pass, Work Permit                                      | Document Number, Personal ID Number                   |
+| South Korea  | Driver’s License                                         | Personal ID Number                                    |
+| South Korea  | ID Card                                                  | Document Number                                       |
+| South Korea  | Passport, Diplomatic Passport                            | Personal ID Number, MRZ Opt1, Full MRZ                |

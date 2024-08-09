@@ -18,7 +18,7 @@ The repository with all the samples can be found [here](https://github.com/Scand
 #### Barcode Capture
 
 
-##### [Single Scan](https://github.com/Scandit/datacapture-web-samples/BarcodeCaptureSimpleSample)
+##### [Single Scan](https://github.com/Scandit/datacapture-web-samples/tree/master/BarcodeCaptureSimpleSample)
 
 Simple sample showing how to use the Barcode Capture mode to scan a single barcode.
 
@@ -26,11 +26,11 @@ Simple sample showing how to use the Barcode Capture mode to scan a single barco
 This sample is also available [here](https://github.com/Scandit/datacapture-web-samples/tree/master/BarcodeCaptureReactSample) for React, and for Progressive Web Apps (PWAs) [here](https://github.com/Scandit/datacapture-web-samples/tree/master/BarcodeCaptureSimplePwaSample).
 :::
 
-##### [Capture Views](https://github.com/Scandit/datacapture-web-samples/BarcodeCaptureViewsSample)
+##### [Capture Views](https://github.com/Scandit/datacapture-web-samples/tree/master/BarcodeCaptureViewsSample)
 
 Demonstrates the various ways to best integrate the scanner into the UI of your app.
 
-##### [Capture Settings](https://github.com/Scandit/datacapture-web-samples/BarcodeCaptureSettingsSample)
+##### [Capture Settings](https://github.com/Scandit/datacapture-web-samples/tree/master/BarcodeCaptureSettingsSample)
 
 Demonstrates how you can adapt the barcode capture settings best to your needs and experiment with all the options.
 
@@ -40,7 +40,7 @@ Demonstrates how you can adapt the barcode capture settings best to your needs a
 
 ![SparkScan List Building](/img/samples/sparkscan_list_building.png)
 
-###### [List Building](https://github.com/Scandit/datacapture-web-samples/ListBuildingSample)
+###### [List Building](https://github.com/Scandit/datacapture-web-samples/tree/master/ListBuildingSample)
 
 Use SparkScan to populate a list of scanned barcodes.
 
@@ -50,11 +50,11 @@ Use SparkScan to populate a list of scanned barcodes.
 
 Examples utilizing the low-level `BarcodeTracking` API.
 
-##### [Simple Highlight](https://github.com/Scandit/datacapture-web-samples/MatrixScanSimpleSample)
+##### [Simple Highlight](https://github.com/Scandit/datacapture-web-samples/tree/master/MatrixScanSimpleSample)
 
 Simple sample showing how to use MatrixScan to highlight barcodes in a frame.
 
-##### [AR Bubbles](https://github.com/Scandit/datacapture-web-samples/MatrixScanBubblesSample)
+##### [AR Bubbles](https://github.com/Scandit/datacapture-web-samples/tree/master/MatrixScanBubblesSample)
 
 Demonstrates more advanced use of MatrixScan by showing AR bubbles above the barcodes with the barcode data.
 
@@ -64,20 +64,20 @@ Demonstrates more advanced use of MatrixScan by showing AR bubbles above the bar
 
 ### ID Capture
 
-#### [Simple ID Capture](https://github.com/Scandit/datacapture-web-samples/IdCaptureSimpleSample)
+#### [Simple ID Capture](https://github.com/Scandit/datacapture-web-samples/tree/master/IdCaptureSimpleSample)
 
 Simple sample showing how to use the ID Capture mode to scan an ID card.
 
-#### [Extended ID Capture](https://github.com/Scandit/datacapture-web-samples/IdCaptureExtendedSample)
+#### [Extended ID Capture](https://github.com/Scandit/datacapture-web-samples/tree/master/IdCaptureExtendedSample)
 
 Sample showing how to use the ID Capture mode to scan an ID card with additional fields.
 
-#### [Settings](https://github.com/Scandit/datacapture-web-samples/IdCaptureSettingsSample)
+#### [Settings](https://github.com/Scandit/datacapture-web-samples/tree/master/IdCaptureSettingsSample)
 
 Demonstrates how you can adapt the ID capture settings best to your needs and experiment with all the options.
 
 ### ID Verification
 
-#### [US Driver's License](https://github.com/Scandit/datacapture-web-samples/USDLVerificationSample)
+#### [US Driver's License](https://github.com/Scandit/datacapture-web-samples/tree/master/USDLVerificationSample)
 
 Sample showing how to use the ID Capture mode to verify a US driver's license.

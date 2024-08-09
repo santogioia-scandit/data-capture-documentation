@@ -114,14 +114,15 @@ We suggest to serve the library files with the proper headers Content-Length and
 
 Some of the Scandit Data Capture SDK modules depend on others to work:
 
-|---|---|
+
 | Module | Dependencies |
+|---|---|
 | ScanditCaptureCore | No dependencies |
 | ScanditBarcodeCapture | - ScanditCaptureCore |
 
 ## Create the Data Capture Context
 
-The first step to add capture capabilities to your application is to create a new data capture context.
+The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/web/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext).
 
 ```js
 // the license key used in configure() will be used

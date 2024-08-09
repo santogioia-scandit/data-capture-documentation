@@ -7,7 +7,7 @@ pagination_next: null
 
 # iOS SDK Samples
 
-This page provides a list of samples available for the Scandit Data Capture SDK for Android. Each sample demonstrates a specific feature or use case of the SDK.
+This page provides a list of samples available for the Scandit Data Capture SDK for iOS. Each sample demonstrates a specific feature or use case of the SDK.
 
 The repository with all the samples can be found [here](https://github.com/Scandit/datacapture-ios-samples/tree/master), and each individual sample is linked below.
 
