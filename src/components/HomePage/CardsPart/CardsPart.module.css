@@ -1,0 +1,41 @@
+.cardsPartWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(20px, 6.3vw, 90px);
+}
+
+.cardsGroupWrapper {
+  width: 50%;
+}
+
+.hiddenBtn {
+  display: flex;
+  align-items: center;
+  color: #065db8;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.icon {
+  color: #065db8;
+}
+
+.reversIcon {
+  transform: rotateZ(180deg);
+}
+
+@media (width < 600px) {
+  .cardsPartWrapper {
+    flex-direction: column;
+  }
+  .cardsGroupWrapper {
+    width: 100%;
+  }
+}
+

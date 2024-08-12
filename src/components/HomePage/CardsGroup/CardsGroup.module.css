@@ -1,0 +1,55 @@
+.cardsGroupWrapper ul {
+  padding: 0;
+}
+
+.cardsGroupHeader {
+  border-bottom: 1px solid var(--nav-border);
+  padding-bottom: 20px;
+}
+
+.cardsGroupBtn {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: clamp(12px, 1.6vw, 16px);
+  line-height: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.cardsGroupIcon {
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.cardsGroup {
+  list-style: none;
+  margin: 45px 0;
+}
+
+.cardsGroupTitle {
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.cardsGroupSubTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cardsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px 40px;
+  margin-top: 30px;
+}

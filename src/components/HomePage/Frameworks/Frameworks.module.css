@@ -1,0 +1,29 @@
+.text {
+  margin: 56px 0 24px;
+  text-align: center;
+  color: #717375;
+  font-weight: 700;
+  font-size: 18px;
+}
+.iconList {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(6px, 2vw, 35px);
+  padding: 0;
+  margin-bottom: 140px;
+}
+
+.additionalFrameworks {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  top: calc(100% + 30px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.frameworkCardWrapper {
+  position: relative;
+}

@@ -1,0 +1,29 @@
+.dataCaptureCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 197px;
+  height: 80px;
+  border: 1px solid var(--nav-border);
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--light-black);
+}
+
+.text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.dataCaptureCardIcon {
+  min-width: 20px;
+}
+
+@media (width < 500px) {
+  .dataCaptureCard {
+    width: 100%;
+  }
+}

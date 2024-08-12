@@ -1,0 +1,19 @@
+.sloganWrapper {
+  max-width: 790px;
+  margin: 0 auto;
+  color: var(--light-black);
+}
+
+.title {
+  font-size: clamp(30px, 4.8vw, 48px);
+  line-height: clamp(30px, 7vw, 78px);
+  text-align: center;
+  font-weight: 700;
+}
+
+.subTitle {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+}

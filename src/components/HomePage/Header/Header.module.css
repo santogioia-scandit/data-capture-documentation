@@ -1,0 +1,70 @@
+.hiddenText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px clamp(20px, 7.6vw, 80px);
+  height: clamp(50px, 7.6vw, 76px);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.logo {
+  color: var(--light-black);
+  padding-right: 12px;
+  max-width: clamp(90px, 12vw, 120px);
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  margin: 0;
+  padding: 0 12px;
+  border-left: 1px solid var(--nav-border);
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 400;
+  line-height: 23px;
+  color: var(--light-blue-100);
+}
+
+.authBtns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btnLogin {
+  font-size: clamp(12px, 1.6vw, 16px);
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--light-black);
+}
+
+.btnLogin:hover {
+  color: var(--light-black);
+}
+
+.btnSignUp {
+  font-size: clamp(12px, 1.6vw, 16px);
+  padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.6vw, 16px);
+  border-radius: 100px;
+  color: var(--light-white);
+  background: linear-gradient(to right, #56e2ef 0%, #1074d8 100%);
+}
+
+.btnSignUp:hover {
+  text-decoration: none;
+  color: var(--light-white);
+}
