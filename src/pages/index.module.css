@@ -21,3 +21,24 @@
   align-items: center;
   justify-content: center;
 }
+
+.body {
+  padding: clamp(30px, 5vw, 40px) clamp(50px, 5vw, 80px);
+}
+
+.frameworksMobile {
+  display: none;
+}
+
+.frameworksDesktop {
+  display: block;
+}
+
+@media (width < 600px) {
+  .frameworksMobile {
+    display: block;
+  }
+  .frameworksDesktop {
+    display: none;
+  }
+}

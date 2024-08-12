@@ -1,4 +1,4 @@
-export default function Flutter() {
+export default function Flutter({ iconClass = "svg-wrap--blue" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,7 @@ export default function Flutter() {
       height="100%"
       viewBox="0 0 40 40"
       fill="none"
-      className="svg-wrap--blue"
+      className={iconClass}
     >
       <path d="M8.99854 35L4.99854 35L4.99853 31" stroke="currentColor" strokeWidth="2"/>
       <path d="M31 35L35 35L35 31" stroke="currentColor" strokeWidth="2"/>

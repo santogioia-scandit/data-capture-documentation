@@ -1,0 +1,15 @@
+.themeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--light-gray-60);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .themeBtn {
+  border-color: var(--dark-blue-70);
+}
