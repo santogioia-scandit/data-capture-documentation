@@ -77,7 +77,7 @@ There are two potential cases when a barcode of a symbology with enabled composi
 Inside `SDCBarcodeCaptureListener.barcodeCapture:didScanInSession:frameData:` the data can be retrieved from the recognized barcode as follows:
 
 ```swift
-let barcode = session.newlyRecognizedBarcodes[0]
+let barcode = session.newlyRecognizedBarcode[0]
 
 let data = barcode.data
 let compositeData = barcode.compositeData

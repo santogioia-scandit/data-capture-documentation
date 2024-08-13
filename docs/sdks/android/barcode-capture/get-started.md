@@ -101,7 +101,7 @@ First conform to the `BarcodeCaptureListener` interface. For example:
 @Override
 public void onBarcodeScanned(@NonNull BarcodeCapture barcodeCapture,
         @NonNull BarcodeCaptureSession session, @NonNull FrameData frameData) {
-    List<Barcode> recognizedBarcodes = session.getNewlyRecognizedBarcodes();
+    List<Barcode> recognizedBarcodes = session.getNewlyRecognizedBarcode();
     // Do something with the barcodes.
 }
 ```

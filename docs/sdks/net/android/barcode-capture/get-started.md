@@ -63,7 +63,7 @@ First implement the [IBarcodeCaptureListener](https://docs.scandit.com/data-capt
 ```csharp
 public void OnBarcodeScanned(BarcodeCapture barcodeCapture, BarcodeCaptureSession session, IFrameData frameData)
 {
-IList<Barcode> barcodes = session?.NewlyRecognizedBarcodes;
+IList<Barcode> barcodes = session?.NewlyRecognizedBarcode;
 // Do something with the barcodes
 }
 ```
@@ -79,7 +79,7 @@ Alternatively to register [IBarcodeCaptureListener](https://docs.scandit.com/dat
 ```csharp
 barcodeCapture.BarcodeScanned += (object sender, BarcodeCaptureEventArgs args) =>
 {
-IList<Barcode> barcodes = args.Session?.NewlyRecognizedBarcodes;
+IList<Barcode> barcodes = args.Session?.NewlyRecognizedBarcode;
 // Do something with the barcodes
 }
 ```

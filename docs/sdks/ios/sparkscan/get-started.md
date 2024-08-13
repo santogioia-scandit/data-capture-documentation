@@ -106,7 +106,7 @@ To keep track of the barcodes that have been scanned, implement the [`SDCSparkSc
 sparkScan.addListener(self)
 ```
 
-[`SDCSparkScanListener.sparkScan:didScanInSession:frameData:`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [`SDCSparkScanSession.newlyRecognizedBarcodes`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes).
+[`SDCSparkScanListener.sparkScan:didScanInSession:frameData:`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [`SDCSparkScanSession.newlyRecognizedBarcode`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcode).
 
 Please note that this list only contains one barcode entry.
 
@@ -116,7 +116,7 @@ extension ViewController: SparkScanListener {
                       didScanIn session: SparkScanSession,
                       frameData: FrameData?) {
         // Gather the recognized barcode
-        let barcode = session.newlyRecognizedBarcodes.first
+        let barcode = session.newlyRecognizedBarcode.first
         // This method is invoked from a recognition internal thread.
         // Dispatch to the main thread to update the internal barcode list.
         DispatchQueue.main.async {

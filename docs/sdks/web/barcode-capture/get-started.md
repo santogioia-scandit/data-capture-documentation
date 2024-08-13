@@ -167,7 +167,7 @@ First implement the [BarcodeCaptureListener](#) interface. For example:
 ```js
 const listener = {
 	didScan: (barcodeCapture, session) => {
-		const recognizedBarcodes = session.newlyRecognizedBarcodes;
+		const recognizedBarcodes = session.newlyRecognizedBarcode;
 		// Do something with the barcodes
 	},
 };

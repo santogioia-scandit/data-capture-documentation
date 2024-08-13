@@ -72,7 +72,7 @@ First you will need to show these buttons:
 ```js
 // Show the MatrixScan Count and MatrixScan Find buttons
 sparkScanView.barcodeCountButtonVisible = true;
-sparkScanView.fastFindButtonVisible = true;
+sparkScanView.barcodeFindButtonVisible = true;
 ```
 
 ## Customization

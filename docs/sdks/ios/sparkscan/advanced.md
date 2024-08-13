@@ -69,13 +69,14 @@ SparkScan offers pre-build buttons you can add to the setting toolbar to easily 
 First you will need to show these buttons:
 
 ```swift
-// Show the MatrixScan Count and FastFind buttons
+// Show the MatrixScan Count and MatrixScan Find buttons
 sparkScanView.isBarcodeCountButtonVisible = true
+sparkScanView.isBarcodeFindButtonVisible = true
 ```
 
 ![SparkScan Setting Toolbar](../img/toolbars.png)
 
-In addition you have to add a listener to the [`SDCSparkScanView`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [`SDCSparkScanView.UIDelegate`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.UiListener). You will then receive callbacks when the **FastFind** button or **Barcode Count** button is tapped from the toolbar.
+In addition you have to add a listener to the [`SDCSparkScanView`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [`SDCSparkScanView.UIDelegate`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.UiListener). You will then receive callbacks when the **Barcode Find** button or **Barcode Count** button is tapped from the toolbar.
 
 ```swift
 self.sparkScanView.UIDelegate = self
@@ -86,7 +87,7 @@ func barcodeCountButtonTappedInView(_ sparkScanView: SparkScanView) {
 
 }
 
-func fastFindButtonTappedInView(_ sparkScanView: SparkScanView) {
+func barcodeFindButtonTappedInView(_ sparkScanView: SparkScanView) {
 
 }
 ```
