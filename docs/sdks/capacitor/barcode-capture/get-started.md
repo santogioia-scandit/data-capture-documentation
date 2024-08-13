@@ -63,7 +63,7 @@ First implement the [BarcodeCaptureListener](https://docs.scandit.com/data-captu
 ```js
 const listener = {
 	didScan: (barcodeCapture, session) => {
-		const recognizedBarcodes = session.newlyRecognizedBarcodes;
+		const recognizedBarcodes = session.newlyRecognizedBarcode;
 		// Do something with the barcodes
 	},
 };

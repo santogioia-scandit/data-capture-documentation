@@ -90,7 +90,7 @@ To keep track of the barcodes that have been scanned, implement the [SparkScanLi
 sparkScan.addListener(this);
 ```
 
-[SparkScanListener.onBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [SparkScanSession.newlyRecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes).
+[SparkScanListener.onBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [SparkScanSession.newlyRecognizedBarcode](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcode).
 
 :::note
 Note that this list only contains one barcode entry.
@@ -102,7 +102,7 @@ public void onBarcodeScanned(
     @NonNull SparkScan sparkScan, @NonNull SparkScanSession session, @Nullable FrameData data
 ) {
     // Gather the recognized barcode
-    Barcode barcode = session.getNewlyRecognizedBarcodes().get(0);
+    Barcode barcode = session.getNewlyRecognizedBarcode().get(0);
 
     // This method is invoked from a recognition internal thread.
     // Run the specified action in the UI thread to update the internal barcode list.

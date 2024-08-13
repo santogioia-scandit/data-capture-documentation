@@ -123,18 +123,18 @@ sparkScan.AddListener(this);
 
 [ISparkScanListener.OnBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can
 be retrieved from the first object in the provided barcodes list:
-[SparkScanSession.NewlyRecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes). Please note that this list only contains one barcode entry.
+[SparkScanSession.NewlyRecognizedBarcode](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcode). Please note that this list only contains one barcode entry.
 
 ```csharp
 public void OnBarcodeScanned(SparkScan sparkScan, SparkScanSession session, IFrameData? data)
 {
-if (session.NewlyRecognizedBarcodes.Count == 0)
+if (session.NewlyRecognizedBarcode.Count == 0)
 {
 return;
 }
 
 // Gather the recognized barcode
-Barcode barcode = session.NewlyRecognizedBarcodes[0];
+Barcode barcode = session.NewlyRecognizedBarcode[0];
 
 // This method is invoked from a recognition internal thread.
 // Run the specified action in the UI thread to update the internal barcode list.
@@ -151,13 +151,13 @@ Alternatively to register [ISparkScanListener](https://docs.scandit.com/data-cap
 ```csharp
 sparkScan.BarcodeScanned += (object sender, SparkScanEventArgs args) =>
 {
-if (args.Session.NewlyRecognizedBarcodes.Count == 0)
+if (args.Session.NewlyRecognizedBarcode.Count == 0)
 {
 return;
 }
 
 // Gather the recognized barcode
-Barcode barcode = args.Session.NewlyRecognizedBarcodes[0];
+Barcode barcode = args.Session.NewlyRecognizedBarcode[0];
 
 // This method is invoked from a recognition internal thread.
 // Run the specified action in the UI thread to update the internal barcode list.

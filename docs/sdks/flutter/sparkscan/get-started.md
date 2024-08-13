@@ -76,7 +76,7 @@ To keep track of the barcodes that have been scanned, implement the [SparkScanLi
 sparkScan.addListener(this);
 ```
 
-[SparkScanListener.onBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [SparkScanSession.newlyRecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes).
+[SparkScanListener.onBarcodeScanned()](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list: [SparkScanSession.newlyRecognizedBarcode](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcode).
 
 :::note
 Note that this list only contains one barcode entry.
@@ -85,10 +85,10 @@ Note that this list only contains one barcode entry.
 ```dart
 @override
 void didScan(SparkScan sparkScan, SparkScanSession session, Future<FrameData?> getFrameData()) {
-  if (session.newlyRecognizedBarcodes.isEmpty) return;
+  if (session.newlyRecognizedBarcode.isEmpty) return;
 
   // Gather the recognized barcode
-  var barcode = session.newlyRecognizedBarcodes[0];
+  var barcode = session.newlyRecognizedBarcode[0];
 
   // Do something with the recognized barcode
 }

@@ -97,7 +97,7 @@ To keep track of the barcodes that have been scanned, implement the
 const listener = {
 	didScan: (sparkScan, session, getFrameData) => {
 		// Gather the recognized barcode
-		const barcode = session.newlyRecognizedBarcodes[0];
+		const barcode = session.newlyRecognizedBarcode[0];
 
 		// Handle the barcode
 	},
@@ -107,7 +107,7 @@ sparkScan.addListener(listener);
 ```
 
 [SparkScanListener.didScan()](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-listener.html#method-scandit.datacapture.barcode.spark.ISparkScanListener.OnBarcodeScanned) is called when a new barcode has been scanned. This result can be retrieved from the first object in the provided barcodes list:
-[SparkScanSession.newlyRecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes). Please note that this list only contains one barcode entry.
+[SparkScanSession.newlyRecognizedBarcode](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcode). Please note that this list only contains one barcode entry.
 
 ## Scan Some Barcodes
 

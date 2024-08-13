@@ -71,7 +71,7 @@ extension ViewController: BarcodeCaptureListener {
   func barcodeCapture(_ barcodeCapture: BarcodeCapture,
                    didScanIn session: BarcodeCaptureSession,
                    frameData: FrameData) {
-        let recognizedBarcodes = session.newlyRecognizedBarcodes
+        let recognizedBarcodes = session.newlyRecognizedBarcode
         for barcode in recognizedBarcodes {
             // Do something with the barcode.
         }
