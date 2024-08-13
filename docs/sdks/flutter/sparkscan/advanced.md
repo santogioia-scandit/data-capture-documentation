@@ -75,13 +75,13 @@ First you need to show these buttons:
 ```dart
 // Show the MatrixScan Count and MatrixScan Find buttons
 sparkScanView.barcodeCountButtonVisible = true;
-sparkScanView.fastFindButtonVisible = true;
+sparkScanView.barcodeFindButtonVisible = true;
 ```
 <!--
 ![SparkScan Setting Toolbar](/img/sparkscan/toolbar-advanced.png)
 -->
 
-In addition you have to add a listener to the [SparkScanView](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [SparkScanView.setListener()](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.SetListener). Subsequent to this, you receive callbacks when the **FastFind** button or **Barcode Count** button is tapped from the toolbar.
+In addition you have to add a listener to the [SparkScanView](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [SparkScanView.setListener()](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.SetListener). Subsequent to this, you receive callbacks when the **Barcode Find** button or **Barcode Count** button is tapped from the toolbar.
 
 ```dart
 sparkScanView.setListener(this);
@@ -93,7 +93,7 @@ void didTapBarcodeCountButton(SparkScanView view) {
 }
 
 @override
-void didTapFastFindButton(SparkScanView view) {
+void didTapBarcodeFindButton(SparkScanView view) {
 }
 ```
 

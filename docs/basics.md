@@ -1,7 +1,6 @@
-<!-- ---
+---
 sidebar_position: 1
 toc_max_heading_level: 4
-slug: /
 sidebar_label: 'Overview'
 hide_title: true
 displayed_sidebar: sdcSidebar
@@ -200,4 +199,4 @@ ID Bolt is a cloud-based identity scanning solution that can be quickly and easi
 <CustomDocCard title="ID Bolt" description="Get Started with ID Bolt" link="./hosted/id-bolt/overview" smallIcon ><Bolt/></CustomDocCard>
 
 
-</CustomDocCardsWrapper> -->
+</CustomDocCardsWrapper>

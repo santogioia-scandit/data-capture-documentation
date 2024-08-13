@@ -91,14 +91,15 @@ SparkScan offers pre-build buttons you can add to the setting toolbar to easily 
 First you need to show these buttons:
 
 ```java
-// Show the MatrixScan Count and FastFind buttons
+// Show the MatrixScan Count and BarcodeFind buttons
 sparkScanView.setBarcodeCountButtonVisible(true);
+sparkScanView.setBarcodeFindButtonVisible(true);
 ```
 <!--
 ![SparkScan Setting Toolbar](/img/sparkscan/toolbar-advanced.png)
 -->
 
-In addition you have to add a listener to the [SparkScanView](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [SparkScanView.setListener()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.SetListener). Subsequent to this, you receive callbacks when the **FastFind** button or **Barcode Count** button is tapped from the toolbar.
+In addition you have to add a listener to the [SparkScanView](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) via [SparkScanView.setListener()](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.SetListener). Subsequent to this, you receive callbacks when the **Barcode Find** button or **Barcode Count** button is tapped from the toolbar.
 
 ```java
 sparkScanView.setListener(this);
@@ -106,7 +107,7 @@ sparkScanView.setListener(this);
 //...
 
 @Override
-public void onFastFindButtonTap(
+public void onBarcodeFindButtonTap(
         @NonNull SparkScanView view
 ) {
 

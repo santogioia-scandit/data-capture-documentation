@@ -77,7 +77,7 @@ First implement the [BarcodeCaptureListener](https://docs.scandit.com/data-captu
 ```dart
 @override
 void didScan(BarcodeCapture barcodeCapture, BarcodeCaptureSession session) {
-var recognizedBarcodes = session.newlyRecognizedBarcodes;
+var recognizedBarcodes = session.newlyRecognizedBarcode;
 // Do something with the barcodes.
 }
 ```

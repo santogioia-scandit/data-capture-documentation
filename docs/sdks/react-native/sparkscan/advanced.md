@@ -73,24 +73,24 @@ SparkScan offers pre-build buttons you can add to the setting toolbar to easily 
 First you will need to show these buttons:
 
 ```js
-// Show the MatrixScan Count and FastFind buttons
+// Show the MatrixScan Count and MatrixScan Find buttons
 sparkScanView.barcodeCountButtonVisible = true;
-sparkScanView.fastFindButtonVisible = true;
+sparkScanView.barcodeFindButtonVisible = true;
 ```
 
 <!--
 ![SparkScan Setting Toolbar](/img/sparkscan/toolbar-advanced.png)
 -->
 
-In addition you have to add a listener to the `scandit.datacapture.barcode.spark.ui.SparkScanView` via `scandit.datacapture.barcode.spark.ui.SparkScanView.UiListener`. You will then receive callbacks when the **FastFind** button or **Barcode Count** button is tapped from the toolbar.
+In addition you have to add a listener to the `scandit.datacapture.barcode.spark.ui.SparkScanView` via `scandit.datacapture.barcode.spark.ui.SparkScanView.UiListener`. You will then receive callbacks when the **Barcode Find** button or **Barcode Count** button is tapped from the toolbar.
 
 ```js
 const uiListener = {
     onBarcodeCountButtonTappedIn: (sparkScanView) => {
       console.log('onBarcodeCountButtonTappedIn');
     },
-    onFastFindButtonTappedIn: (sparkScanView) => {
-      console.log('onFastFindButtonTappedIn');
+    onBarcodeFindButtonTappedIn: (sparkScanView) => {
+      console.log('onBarcodeFindButtonTappedIn');
     }
 }
 
