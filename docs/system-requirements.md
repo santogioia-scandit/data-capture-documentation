@@ -39,10 +39,10 @@ On Android hardware acceleration has to be enabled for the camera preview to wor
 | URL/createObjectURL | [URL.createObjectURL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) is used to create a URL for the video stream. Check [supported browser versions](https://caniuse.com/#feat=bloburls). |
 | Web Workers | [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) are used to run the video processing algorithms in a separate thread. Check [supported browser versions](https://caniuse.com/#feat=webworkers). |
 | SharedArrayBuffer | [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) is **required** for simultaneous multiple barcode tracking. Check [supported browser versions](https://caniuse.com/#feat=sharedarraybuffer). |
-| MediaDevices.getUserMedia | [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) is required for camera video streaming. Check [supported browser versions](https://caniuse.com/#feat=stream). |
-| OffscreenCanvas | [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) allows for GPU acceleration in Web Worker. Check [supported browser versions](https://caniuse.com/#feat=offscreencanvas). |
-| WebGL | [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) is used for GPU acceleration. Check [supported browser versions](https://caniuse.com/#feat=webgl). |
-| WebAssembly SIMD | [WebAssembly SIMD](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD) is used for SIMD acceleration. Check [supported browser versions](https://caniuse.com/#feat=simd). |
+| MediaDevices.getUserMedia | Optional. [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) is required for camera video streaming. Check [supported browser versions](https://caniuse.com/#feat=stream). |
+| OffscreenCanvas | Optional. [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) allows for GPU acceleration in Web Worker. Check [supported browser versions](https://caniuse.com/#feat=offscreencanvas). |
+| WebGL | Optional. [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) is used for GPU acceleration. Check [supported browser versions](https://caniuse.com/#feat=webgl). |
+| WebAssembly SIMD | Optional. [WebAssembly SIMD](https://chromestatus.com/feature/6533147810332672) is used for OCR computation acceleration. |
 
 ### Browser Compatibility
 

@@ -134,7 +134,7 @@ const overlay = BarcodeCaptureOverlay.withBarcodeCaptureForView(
 );
 ```
 
-### Disabling Barcode Capture
+## Disabling Barcode Capture
 
 To disable barcode capture, for instance as a consequence of a barcode being recognized, set [BarcodeCapture.isEnabled](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/barcode-capture.html#property-scandit.datacapture.barcode.BarcodeCapture.IsEnabled) to _false_.
 

@@ -35,7 +35,7 @@ HashSet<short> activeSymbolCounts = new HashSet<short>(new short[] { 6, 7, 8 });
 symbologySettings.ActiveSymbolCounts = activeSymbolCounts;
 ```
 
-## How to Calculate the Active Symbol Count
+### How to Calculate the Active Symbol Count
 
 Calculating the active symbol count is symbology-specific as each symbology has a different symbol definition. To understand what a symbology’s default active symbol count range is and to learn how to compute the active symbol count for a particular symbology, consult the documentation on [symbology properties](https://docs.scandit.com/data-capture-sdk/dotnet.android/barcode-capture/symbology-properties.html). As an alternative, you can also use the Scandit Demo App in the [iOS App Store](https://itunes.apple.com/us/app/scandit-barcode-scanner-demo/id453880584), or [Android Play Store](https://play.google.com/store/apps/details?id=com.scandit.demoapp). After you have installed the app, select the “Any Code” mode and scan the codes you are interested in. The active symbol count will appear on the result screen.
 

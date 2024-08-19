@@ -86,7 +86,7 @@ sparkScanComponent.stopScanning();
 }
 ```
 
-## Register the Listener to Be Informed When a New Barcode Is Scanned
+## Register The Listener
 
 To keep track of the barcodes that have been scanned, implement the
 [SparkScanListener](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
