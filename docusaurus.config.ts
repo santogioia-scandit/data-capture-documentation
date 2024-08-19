@@ -222,17 +222,13 @@ const config: Config = {
          {
            title: "Community",
            items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/scandit/",
+            },
              {
                label: "Stack Overflow",
                href: "https://stackoverflow.com/questions/tagged/scandit",
-             },
-             {
-               label: "Facebook",
-               href: "https://facebook/scandit",
-             },
-             {
-               label: "Twitter",
-               href: "https://twitter.com/scandit",
              },
            ],
          },
@@ -242,10 +238,6 @@ const config: Config = {
              {
                label: "Blog",
                to: "https://www.scandit.com/blog/?_blog_categories=developers",
-             },
-             {
-               label: "GitHub",
-               href: "https://github.com/scandit/",
              },
              {
                label: "Scandit.com",

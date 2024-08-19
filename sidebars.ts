@@ -20,11 +20,11 @@ const sidebars: SidebarsConfig = {
 			type: 'category',
 			label: 'Scandit Smart Data Capture',
 			items: [
-				'basics',
+        'barcode-scanning',
+        'id-scanning',
 				'core-concepts',
 				'features-by-framework',
         'system-requirements',
-				// 'best-practices-for-usability',
 				{
 					type: 'category',
 					label: 'Supported Symbologies and IDs',
@@ -1127,6 +1127,14 @@ const sidebars: SidebarsConfig = {
                     "sdks/capacitor/sparkscan/advanced",
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'Barcode Selection',
+                  items: [
+                    "sdks/capacitor/barcode-selection/intro",
+                    "sdks/capacitor/barcode-selection/get-started",
+                  ],
+                },
               ],
             },
           ],
@@ -1142,6 +1150,30 @@ const sidebars: SidebarsConfig = {
                 "sdks/capacitor/matrixscan/intro",
                 "sdks/capacitor/matrixscan/get-started",
                 "sdks/capacitor/matrixscan/advanced",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Pre-built Workflows',
+              items: [
+                {
+                  type: 'category',
+                  label: 'MatrixScan Count',
+                  items: [
+                    "sdks/capacitor/matrixscan-count/intro",
+                    "sdks/capacitor/matrixscan-count/get-started",
+                    "sdks/capacitor/matrixscan-count/advanced",
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'MatrixScan Find',
+                  items: [
+                    "sdks/capacitor/matrixscan-find/intro",
+                    "sdks/capacitor/matrixscan-find/get-started",
+                    "sdks/capacitor/matrixscan-find/advanced",
+                  ],
+                },
               ],
             },
           ],
