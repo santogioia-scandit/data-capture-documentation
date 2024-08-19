@@ -44,14 +44,6 @@ Sample that uses the camera to read a single QR code that starts with “09:” 
 
 Use SparkScan to populate a list of scanned barcodes.
 
-##### Barcode Selection
-
-![Barcode Selection](/img/samples/barcode_selection.png)
-
-###### [Selection Settings](https://github.com/Scandit/datacapture-react-native-samples/tree/master/BarcodeSelectionSettingsSample)
-
-Demonstrates how you can adapt the barcode selection settings best to your needs and experiment with all the options.
-
 ### Multi-Scanning
 
 #### MatrixScan AR

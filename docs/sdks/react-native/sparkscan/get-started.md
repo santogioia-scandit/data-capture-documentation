@@ -11,6 +11,16 @@ In this guide you will learn step-by-step how to add SparkScan to your applicati
 3. Create the SparkScanView with the desired settings and bind it to the application’s lifecycle.
 4. Register the listener to be informed when new barcodes are scanned and update your data whenever this event occurs.
 
+## Prerequisites
+
+- The latest stable version of [React Native CLI and other related tools and dependencies](https://reactnative.dev/docs/environment-setup).
+- A valid Scandit Data Capture SDK license key. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
+- If you have not already done so, see [this guide](../add-sdk.md) for information on how to add the Scandit Data Capture SDK to your project.
+
+:::warning
+Android devices running the Scandit Data Capture SDK need to have a GPU or the performance will drastically decrease.
+:::
+
 ## Create a New Data Capture Context Instance
 
 The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/react-native/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
@@ -21,7 +31,7 @@ const context = DataCaptureContext.forLicenseKey("-- ENTER YOUR SCANDIT LICENSE 
 
 ## Configure the SparkScan Mode
 
-The SparkScan Mode is configured through SparkScanSettings and allows you to register one or more listeners that are informed whenever a new barcode is scanned.
+The SparkScan Mode is configured through [SparkScanSettings](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/spark-scan-settings.html) and allows you to register one or more listeners that are informed whenever a new barcode is scanned.
 
 For this tutorial, we will set up SparkScan for scanning EAN13 codes. Change this to the correct symbologies for your use case (for example, Code 128, Code 39…).
 
@@ -40,14 +50,14 @@ const sparkScan = SparkScan.forSettings(settings);
 
 The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
 
-The SparkScanView appearance can be customized through SparkScanViewSettings.
+The [SparkScanView](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) appearance can be customized through SparkScanViewSettings.
 
 ```js
 const viewSettings = new SparkScanViewSettings();
 // setup the desired appearance settings by updating the fields in the object above
 ```
 
-By adding a SparkScanView, the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
+By adding a [SparkScanView](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView), the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
 
 Add a SparkScanView to your view hierarchy:
 
@@ -78,7 +88,7 @@ sparkScanComponent.stopScanning();
 }
 ```
 
-## Register the Listener to Be Informed When a New Barcode Is Scanned
+## Register The Listener
 
 To keep track of the barcodes that have been scanned, implement the
 [SparkScanListener](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.

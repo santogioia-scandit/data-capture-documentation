@@ -81,7 +81,7 @@ protected void onResume() {
 }
 ```
 
-## Register the Listener
+## Register The Listener
 
 To keep track of the barcodes that have been scanned, implement the [SparkScanListener](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
 
@@ -115,4 +115,5 @@ public void onBarcodeScanned(
 
 ## Scan Some Barcodes
 
-Here is a [handy PDF of Barcodes](https://github.com/Scandit/.github/blob/main/images/PrintTheseBarcodes.pdf) that you can print out and improve your scanning efficiency.
+Now that you’re up and running, go find some barcodes to scan. Don’t feel like getting up from your desk? Here’s a [handy pdf of barcodes](https://github.com/Scandit/.github/blob/main/images/PrintTheseBarcodes.pdf) you can
+print out.

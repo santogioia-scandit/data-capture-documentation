@@ -5,11 +5,7 @@ pagination_next: null
 
 # Advanced Configurations
 
-SparkScan offers an out-of-the-box experience optimized for efficiency and a frictionless worker experience. This experience has been crafted after many user testing and with the product knowledge gained in the many years of Scandit.
-
-While this out-of-the-box experience suits most use-cases, Scandit understand there are some special cases in which some configuration is still needed.
-
-This page describes the key customization and advanced settings you may need to customize SparkScan and obtain the best experience possible.
+SparkScan is optimized by default for efficiency, accuracy, and a seamless user experience. However, there are some cases where you might want to customize the behavior of SparkScan. This guide will show you how to add additional capabilities and further customize SparkScan to best fit your needs.
 
 ## Advanced Capabilities
 
@@ -19,7 +15,7 @@ Allowing the end user to control the scanner with hardware buttons can be useful
 
 SparkScan offers a built-in API to let you do this via [SparkScanViewSettings.hardwareTriggerEnabled](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view-settings.html#property-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.HardwareTriggerEnabled).
 
-### Trigger Error State
+#### Trigger Error State
 
 You may want to introduce logic in your app to show an error message when scanning specific barcodes (e.g. barcodes already added to the list, barcodes from the wrong lot etc.). SparkScan offers a built-in error state you can easily set to trigger an error feedback prompt to the user.
 
@@ -63,24 +59,6 @@ A small timeout (for instance, less than `2`seconds) could allow the user to sca
 ### Reject Barcodes
 
 To prevent scanning unwanted barcodes (like those already listed or from incorrect lots), use SparkScan's built-in error state. Setting the [`Error.resumeCapturingDelay`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-barcode-feedback.html#property-scandit.datacapture.barcode.spark.feedback.Error.ResumeCapturingDelay) parameter to `0` allows the user to continue scanning immediately without pausing on rejected codes.
-
-#### Default workflow
-
-This is the standard workflow for use cases in which the accurate selection of a barcode (e.g. long range scanning or many barcode close together) is occasional.
-
-The Preview is only visible when scanning and remains hidden otherwise. There are two scanning modes:
-
-* **Default mode**: Mini preview without aimer (barcodes can be scanned anywhere in the mini-preview).
-* **Target mode**: Big preview with an aimer to precisely scan barcodes far away or close together.
-
-#### Accuracy workflow
-
-This is the workflow for use cases where you mainly want to select one barcode among many, or you need to look through the preview at all times to ensure the right scan.
-
-The Preview is always visible, with scanning only active when tapping/holding the trigger button. There are two scanning modes:
-
-* **Default mode**: Mini preview with an aimer, only scanning aimed barcodes to increase precision.
-* **Expanded mode**: Big preview with an aimer in case you want to be more precise or you need to zoom in.
 
 ### Add Modes to the Setting Toolbar
 

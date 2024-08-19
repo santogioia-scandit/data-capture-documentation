@@ -9,7 +9,7 @@ SparkScan is optimized by default for efficiency, accuracy, and a seamless user 
 
 ## Advanced Capabilities
 
-### Trigger the Error State
+### Trigger Error State
 
 You may want to introduce logic in your app to show an error message when scanning specific barcodes (e.g. barcodes already added to the list, barcodes from the wrong lot etc.). SparkScan offers a built-in error state you can easily set to trigger an error feedback prompt to the user. You will be able to customize:
 
@@ -57,11 +57,11 @@ You can have different error states triggered by different logic conditions. The
   <img src="/img/sparkscan/error-duplicate.png" alt="Duplicate scan error" /><br></br>This error state for a code that has been scanned more than once.
 </p>
 
-## Reject Barcodes
+### Reject Barcodes
 
 To prevent scanning unwanted barcodes (like those already listed or from incorrect lots), use SparkScan’s built-in error state. Setting the [`SparkScanBarcodeErrorFeedback.resumeCapturingDelay`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-barcode-feedback.html#property-scandit.datacapture.barcode.spark.feedback.Error.ResumeCapturingDelay) parameter to 0 allows the user to continue scanning immediately without pausing on rejected codes.
 
-## Add Advanced Scanning Modes to the Setting Toolbar
+### Add Advanced Scanning Modes to the Setting Toolbar
 
 SparkScan is our best solution for high-speed single scanning and scan-intensive workflows. Depending on your use case, you can use SparkScan scan in conjunction with other Scandit advanced scanning modes, such as MatrixScan Find or MatrixScan Count, to speed up your workflows.
 
@@ -81,7 +81,7 @@ sparkScanView.barcodeFindButtonVisible = true;
 
 All texts (guidance inside the trigger button and hints’ messages), colors and opacity of the SparkScan UI elements (trigger button, setting toolbar, toasts) can be customized to match the desired language and color scheme. Please refer to [SparkScanView](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) for the full list of available parameters.
 
-### Hide Controls from the Setting Toolbar
+### Add Controls to the Setting Toolbar
 
 The Setting Toolbar comes with default buttons included, but the full list of available controls includes:
 

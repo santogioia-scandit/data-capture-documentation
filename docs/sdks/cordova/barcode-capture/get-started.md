@@ -5,7 +5,7 @@ pagination_prev: null
 
 # Get Started
 
-In this guide you will learn step by step how to add barcode capture to your application. Roughly, the steps are:
+In this guide you will learn step by step how to add barcode capture to your application. The general steps are:
 
 - Include the ScanditBarcodeCapture library and its dependencies to your project, if any.
 - Create a new [data capture context](https://docs.scandit.com/data-capture-sdk/cordova/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext) instance, initialized with your license key.

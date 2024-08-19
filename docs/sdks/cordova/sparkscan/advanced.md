@@ -9,13 +9,13 @@ SparkScan is optimized by default for efficiency, accuracy, and a seamless user 
 
 ## Advanced Capabilities
 
-### Control the Scanner through a Hardware Button
+### Hardware Button Control
 
 Allowing the end user to control the scanner with hardware buttons can be useful if your users typically wear gloves. It can also improve ergonomics in some workflows.
 
 SparkScan offers a built-in API to let you do this via [`SparkScanViewSettings.hardwareTriggerEnabled`](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api/ui/spark-scan-view-settings.html#property-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.HardwareTriggerEnabled).
 
-### Trigger the Error State
+### Trigger Error State
 
 You may want to introduce logic in your app to show an error message when scanning specific barcodes (e.g. barcodes already added to the list, barcodes from the wrong lot etc.). SparkScan offers a built-in error state you can easily set to trigger an error feedback prompt to the user. You will be able to customize:
 
@@ -42,9 +42,11 @@ To prevent scanning unwanted barcodes (like those already listed or from incorre
 
 ### Customize colors and texts
 
-All texts (guidance inside the trigger button and hints’ messages), colors and opacity of the SparkScan UI elements (trigger button, setting toolbar, toasts) can be customized to match the desired language and color scheme. Please refer to [SparkScanView](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) for the full list of available parameters.
+All text, colors and opacity of the SparkScan UI elements (trigger button, setting toolbar, toasts) can be customized to match the desired language and color scheme.
 
-### Hide Controls from the Setting Toolbar
+Please refer to [SparkScanView](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) for the full list of available parameters.
+
+### Add Controls to the Setting Toolbar
 
 The Setting Toolbar comes with default buttons included, but the full list of available controls includes:
 

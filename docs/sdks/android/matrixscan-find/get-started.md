@@ -100,7 +100,7 @@ public void onPause() {
 }
 ```
 
-## Register the Listener
+## Register The Listener
 
 The `BarcodeFindView` displays a **Finish** button next to its shutter button button. 
 

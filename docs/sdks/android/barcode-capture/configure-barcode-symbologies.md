@@ -5,7 +5,7 @@ pagination_next: null
 
 # Configure Barcode Symbologies
 
-This page describes the stesps to configure a barcode based capture mode ([BarcodeCapture](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-capture.html#class-scandit.datacapture.barcode.BarcodeCapture) and [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking)) to read the barcodes that you need it to read. The available symbol count range, checksum, extensions, etc. for all symbologies are listed in [Symbology Properties](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/symbology-properties.html).
+This page describes the stesps to configure a barcode based capture mode ([BarcodeCapture](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-capture.html#class-scandit.datacapture.barcode.BarcodeCapture) and [BarcodeTracking](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking)) to read the barcodes that you need it to read. The available symbol count range, checksum, extensions, etc., for all symbologies are listed in [Symbology Properties](../../../symbology-properties.md).
 
 ## Prerequisites
 
