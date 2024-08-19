@@ -11,6 +11,16 @@ This page describes the step-by-step instructions that helps you to add SparkSca
 - Create the SparkScanView with the desired settings and bind it to the application’s lifecycle
 - Register the listener to be informed when new barcodes are scanned and update your data whenever this event occurs
 
+## Prerequisites
+
+- The latest stable version of the [Flutter SDK](https://pub.dev/publishers/scandit.com/packages).
+- A valid Scandit Data Capture SDK license key. You can sign up for a free [test account](https://ssl.scandit.com/dashboard/sign-up?p=test&utm%5Fsource=documentation).
+- If you have not already done so, see [this guide](../add-sdk.md) for information on how to add the Scandit Data Capture SDK to your project
+
+:::note
+Devices running the Scandit Data Capture SDK need to have a GPU or the performance will drastically decrease.
+:::
+
 ## Create a New Data Capture Context Instance
 
 The first step to add capture capabilities to your application is to create a new Data Capture Context. The context expects a valid Scandit Data Capture SDK license key during construction.
@@ -67,7 +77,7 @@ void didChangeAppLifecycleState(AppLifecycleState state) {
 }
 ```
 
-## Register the Listener
+## Register The Listener
 
 To keep track of the barcodes that have been scanned, implement the [SparkScanListener](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
 
@@ -96,4 +106,5 @@ void didScan(SparkScan sparkScan, SparkScanSession session, Future<FrameData?> g
 
 ## Scan Some Barcodes
 
-Here is a [handy PDF of Barcodes](https://github.com/Scandit/.github/blob/main/images/PrintTheseBarcodes.pdf) that you can print out and improve your scanning efficiency.
+Now that you’re up and running, go find some barcodes to scan. Don’t feel like getting up from your desk? Here’s a [handy pdf of barcodes](https://github.com/Scandit/.github/blob/main/images/PrintTheseBarcodes.pdf) you can
+print out.

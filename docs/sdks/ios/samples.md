@@ -68,7 +68,7 @@ Sample showing how Barcode Selection can be used to reorder items from a catalog
 
 #### MatrixScan AR
 
-Examples utilizing the low-level `BarcodeTracking` API.
+Examples utilizing the low-level [`BarcodeTracking`](https://docs.scandit.com/data-capture-sdk/ios/barcode-capture/api/barcode-tracking.html) API.
 
 ##### [Simple Highlight](https://github.com/Scandit/datacapture-ios-samples/tree/master/MatrixScanSimpleSample)
 
@@ -94,7 +94,7 @@ Use MatrixScan to batch scan and count the number of barcodes in a frame.
 
 ###### [Receiving](https://github.com/Scandit/datacapture-ios-samples/tree/master/ReceivingSample)
 
-Use a combination of SparkScan and [MatrixScan Count](#matrixscan-count) for a receiving use case.
+Use a combination of [SparkScan](#sparkscan) and MatrixScan Count for a receiving use case.
 
 ###### [Expiry Management](https://github.com/Scandit/datacapture-ios-samples/tree/master/ExpiryManagementSample)
 

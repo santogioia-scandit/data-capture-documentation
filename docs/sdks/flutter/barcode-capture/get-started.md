@@ -21,8 +21,8 @@ The general steps are:
 ## Initialize the barcode plugin
 
 :::warning
-
 Without initializing the barcode plugin, runtime crashes will occur. However, you don’t have to initialize the core plugin, as initializing the barcode plugin already does that for you, as presented in the snippet below.
+:::
 
 Before accessing anything of the Scandit Data Capture SDK functionality. You have to initialize the barcode plugin.
 

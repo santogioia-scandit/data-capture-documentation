@@ -25,8 +25,13 @@ The UI workflow is designed to be as simple and ergonomic as possible, and inclu
 Upon completing the scanning process, if all items have been successfully scanned, you can advance the user to the next scan automatically. Next steps may be finalizing order receipt if all items are present, reviewing the scan list to identify items that shouldn’t be present, or moving on to the next order.
 
 :::note
-MatrixScan Count does not include a UI for reviewing the scan list, but a recommended UI for this process can be seen in our Receiving Sample.
+MatrixScan Count does not include a UI for reviewing the scan list, but a recommended UI for this process can be seen in our [Receiving Sample](../samples.md#receiving-1).
 :::
+
+## Prerequisites
+
+- [Installed the Scandit Data Capture SDK](/sdks/ios/add-sdk.md).
+- A valid Scandit Data Capture SDK license key including MatrixScan AR add-on. You can sign up for a [free test account](https://www.scandit.com/trial/).
 
 ## Supported Symbologies
 

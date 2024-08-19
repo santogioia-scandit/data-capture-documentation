@@ -32,7 +32,7 @@ DataCaptureContext dataCaptureContext = DataCaptureContext.forLicenseKey("-- ENT
 
 ## Configure the Barcode Count Mode
 
-The main entry point for the Barcode Count Mode is the `BarcodeCount` object. It is configured through [BarcodeCountSettings](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-count.html#class-scandit.datacapture.barcode.count.BarcodeCountSettings) and allows you to register one or more listeners that are informed whenever a scan phase has finished.
+The main entry point for the Barcode Count Mode is the `BarcodeCount` object. It is configured through [BarcodeCountSettings](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/barcode-count-settings.html) and allows you to register one or more listeners that are informed whenever a scan phase has finished.
 
 Here we set up Barcode Count for tracking EAN13 codes, however you must change this to the appropriate symbologies for your use case. If you are sure that your environment has only unique barcodes, you can also enable `BarcodeCountSettings.expectsOnlyUniqueBarcodes`. This option improves scanning performance as long as you are sure that no duplicates are present.
 
