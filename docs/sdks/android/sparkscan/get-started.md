@@ -50,7 +50,7 @@ SparkScan sparkScan = new SparkScan(settings);
 
 The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
 
-The `SparkScanView` appearance can be customized through `SparkScanViewSettings`.
+The [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view.html) appearance can be customized through [`SparkScanViewSettings`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/spark-scan-view-settings.html).
 
 ```java
 SparkScanViewSettings viewSettings = new SparkScanViewSettings();
@@ -64,6 +64,8 @@ Construct a new SparkScan view. The SparkScan view is automatically added to the
 ```java
 SparkScanView sparkScanView = SparkScanView.newInstance(parentView, dataCaptureContext, sparkScan, viewSettings);
 ```
+
+See the [SparkScan Workflow Options](./intro.md#workflow-options) section for more information.
 
 Additionally, make sure to call `sparkScanView.onPause()` and `sparkScanView.onResume()` in your Fragment/Activity `onPause` and `onResume` callbacks. You have to call these for the correct functioning of the `SparkScanView`.
 
