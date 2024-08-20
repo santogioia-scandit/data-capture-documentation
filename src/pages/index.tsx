@@ -16,26 +16,35 @@ export interface Framework {
 }
 
 export default function HomePage() {
-  const framework = localStorageUtil.getItem("selectedFramework");  ;
+  const framework = localStorageUtil.getItem("selectedFramework");
   const [selectedFramework, setSelectedFramework] = useState<Framework>({
     frameworkParent: framework?.frameworkParent || "ios",
     framework: framework?.framework || "ios",
   });
+  const [isFlashing, setIsFlashing] = useState(false);
 
   useEffect(() => {
-    const storedFramework = localStorageUtil.getItem("selectedFramework");       
+    const storedFramework = localStorageUtil.getItem("selectedFramework");
     if (storedFramework) {
       setSelectedFramework({
         frameworkParent: storedFramework.frameworkParent || "ios",
-        framework: storedFramework.framework || storedFramework.frameworkParent || "ios",
+        framework:
+          storedFramework.framework || storedFramework.frameworkParent || "ios",
       });
     }
   }, []);
 
+  const handleFrameworkClick = () => {
+    setIsFlashing(true);
+    setTimeout(() => {
+      setIsFlashing(false);
+    }, 100);
+  };
+
   return (
     <div className={style.homeWrapper}>
       <Header></Header>
-      <div className={style.body}>
+      <div className={`${style.body} ${isFlashing ? style.flash : ""}`}>
         <Slogan></Slogan>
 
         <div className={style.frameworksMobile}>
@@ -49,6 +58,7 @@ export default function HomePage() {
           <Frameworks
             setSelectedFramework={setSelectedFramework}
             selectedFramework={selectedFramework}
+            handleFrameworkClick={handleFrameworkClick}
           ></Frameworks>
         </div>
 

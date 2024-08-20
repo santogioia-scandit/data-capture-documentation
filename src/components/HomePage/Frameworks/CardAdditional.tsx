@@ -7,6 +7,7 @@ export default function CardAdditional({
   framework,
   selectedFramework,
   setSelectedFramework,
+  handleFrameworkClick,
 }) {
   function selectFramework(e: React.ChangeEvent<HTMLInputElement>) {
     const formData = new FormData(e.target.form);
@@ -27,6 +28,7 @@ export default function CardAdditional({
       let data = existingData ? JSON.parse(existingData) : {};
       data.framework = framework.framework;
       localStorageUtil.setItem("selectedFramework", data);
+      handleFrameworkClick();
     }
   }
 

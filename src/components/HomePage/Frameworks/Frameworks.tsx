@@ -10,11 +10,13 @@ import { FrameworkCardType } from "../../constants/types";
 interface FrameworksProps {
   setSelectedFramework: (framework: Framework) => void;
   selectedFramework: Framework;
+  handleFrameworkClick: () => void;
 }
 
 export default function Frameworks({
   setSelectedFramework,
   selectedFramework,
+  handleFrameworkClick,
 }: FrameworksProps) {
   function clickedFramework(
     e: React.MouseEvent<HTMLDivElement>,
@@ -42,6 +44,7 @@ export default function Frameworks({
             data-value={item.framework}
           >
             <FrameworkCard
+              handleFrameworkClick={handleFrameworkClick}
               framework={item}
               selectedFramework={selectedFramework}
               setSelectedFramework={setSelectedFramework}
@@ -53,6 +56,7 @@ export default function Frameworks({
                   {item.additional.map((unit) => {
                     return (
                       <CardAdditional
+                        handleFrameworkClick={handleFrameworkClick}
                         key={unit.framework}
                         framework={unit}
                         selectedFramework={selectedFramework}
