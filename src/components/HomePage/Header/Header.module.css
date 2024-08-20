@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px clamp(20px, 7.6vw, 80px);
-  height: clamp(50px, 7.6vw, 76px);
+  padding: 10px clamp(16px, 4vw, 80px);
+  height: clamp(68px, 7.6vw, 76px);
   border-bottom: 1px solid var(--nav-border);
 }
 
@@ -33,7 +33,7 @@
   margin: 0;
   padding: 0 12px;
   border-left: 1px solid var(--nav-border);
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 400;
   line-height: 23px;
   color: var(--light-blue-100);
@@ -42,14 +42,14 @@
 .authBtns {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
 .btnLogin {
-  font-size: clamp(12px, 1.6vw, 16px);
+  font-size: 16px;
   font-weight: 500;
   line-height: 20px;
   color: var(--light-black);
+  margin-right: 16px;
 }
 
 .btnLogin:hover {
@@ -57,14 +57,57 @@
 }
 
 .btnSignUp {
-  font-size: clamp(12px, 1.6vw, 16px);
-  padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.6vw, 16px);
+  font-size: 16px;
+  padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.8vw, 18px);
   border-radius: 100px;
   color: var(--light-white);
-  background: linear-gradient(to right, #56e2ef 0%, #1074d8 100%);
+  background: var(--btn-gradient);
+  margin-right: 20px;
 }
 
 .btnSignUp:hover {
   text-decoration: none;
   color: var(--light-white);
+}
+
+.btnGitHub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.2vw, 12px);
+  border: 1px solid var(--nav-border);
+  border-radius: 100px;
+  color: var(--light-black);
+  cursor: pointer;
+  margin-right: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  transition: border-color 250ms linear;
+}
+
+.btnGitHub:hover {
+  color: var(--light-black);
+  text-decoration: none;
+  border-color: var(--light-gray-80);
+}
+
+.gitHubIcon {
+  color: var(--light-black);
+}
+
+.delimiter {
+  height: 20px;
+  width: 1px;
+  background-color: var(--nav-border);
+  margin-right: 20px;
+}
+
+@media (width < 650px) {
+  .btnGitHub,
+  .delimiter {
+    display: none;
+  }
+  .btnSignUp {
+    margin-right: 0;
+  }
 }

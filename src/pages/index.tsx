@@ -16,22 +16,21 @@ export interface Framework {
 }
 
 export default function HomePage() {
-  const framework = localStorageUtil.getItem("selectedFramework");
+  const framework = localStorageUtil.getItem("selectedFramework");  ;
   const [selectedFramework, setSelectedFramework] = useState<Framework>({
     frameworkParent: framework?.frameworkParent || "ios",
     framework: framework?.framework || "ios",
   });
 
   useEffect(() => {
-    const storedFramework = localStorageUtil.getItem("selectedFramework");
+    const storedFramework = localStorageUtil.getItem("selectedFramework");       
     if (storedFramework) {
       setSelectedFramework({
         frameworkParent: storedFramework.frameworkParent || "ios",
-        framework: storedFramework.framework || "ios",
+        framework: storedFramework.framework || storedFramework.frameworkParent || "ios",
       });
     }
   }, []);
-
 
   return (
     <div className={style.homeWrapper}>
@@ -53,7 +52,7 @@ export default function HomePage() {
           ></Frameworks>
         </div>
 
-        <CardsPart selectedFramework={selectedFramework.framework}></CardsPart>
+        <CardsPart selectedFramework={selectedFramework}></CardsPart>
         <DataCapture></DataCapture>
         <FrameworkExplore></FrameworkExplore>
       </div>

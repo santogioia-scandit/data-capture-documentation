@@ -14,9 +14,7 @@ export default function Card({ card, cardColor, mainColor }: CardProps) {
     <li
       className={`${style.card} ${!card.isActive ? style.cardNotActive : ""}`}
       style={{
-        background: card.isActive
-          ? `linear-gradient(90deg, var(--gradient) 0%, ${cardColor} 100%)`
-          : "transparent",
+        background: card.isActive ? `${cardColor}` : "transparent",
       }}
     >
       <Link
@@ -25,13 +23,20 @@ export default function Card({ card, cardColor, mainColor }: CardProps) {
         }`}
         to={card.isActive ? card.link : ""}
       >
-        <div style={{ color: card.isActive ? mainColor : "#000" }}>
+        <div className={style.cardIcon} style={{ color: mainColor }}>
           {card.icon}
         </div>
         <p className={style.cardTitle}>
           {card.name} <Arrow iconClass={style.cardsGroupIcon} />
         </p>
-        <p className={style.cardApi}>{card.text}</p>
+        <p
+          className={style.cardApi}
+          style={{
+            color: mainColor === "var(--IDScanningColor)" ? "#91BFC3" : "",
+          }}
+        >
+          {card.text}
+        </p>
       </Link>
     </li>
   );

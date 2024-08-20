@@ -1,10 +1,11 @@
 .text {
-  margin: 56px 0 24px;
+  margin: 30px 0 24px;
   text-align: center;
-  color: #717375;
+  color: var(--subtitle-text-color);
   font-weight: 700;
   font-size: 18px;
 }
+
 .iconList {
   position: relative;
   display: flex;

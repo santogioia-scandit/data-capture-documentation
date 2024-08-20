@@ -36,11 +36,10 @@ export default function Frameworks({
       <form className={style.iconList}>
         {frameworkCards.map((item) => (
           <div
-            onClick={(e) =>
-              clickedFramework(e, item)
-            }
+            onClick={(e) => clickedFramework(e, item)}
             key={item.framework}
             className={style.frameworkCardWrapper}
+            data-value={item.framework}
           >
             <FrameworkCard
               framework={item}
