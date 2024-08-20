@@ -6,6 +6,21 @@ title: Release Notes
 pagination_prev: null
 ---
 
+## 6.26.0
+
+**Released**: August 15, 2024
+
+### Performance Improvements
+
+#### Barcode
+
+* Improved ArUco scanning when color inverted codes are enabled.
+* Improved tracking robustness on Barcode Count.
+* Significantly lowered the rate of false positives (i.e., presumed unscanned barcodes) when using Barcode Count.
+* Improved recognition rate for Composite Codes, with a particular focus on codes with small 2d components (e.g. PDF417).
+* Improved recognition rate of linear codes which are partially affected by damage or covered in plastic wrap, with a particular focus on Codabar barcodes.
+* Improved localization of postal codes, up to 25% faster.
+
 ## 6.25.0
 
 **Released:** July 5, 2024
