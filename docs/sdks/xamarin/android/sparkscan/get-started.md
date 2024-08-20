@@ -11,7 +11,7 @@ In this guide you will learn step-by-step how to add SparkScan to your applicati
 - Create the SparkScanView with the desired settings and bind it to the application’s lifecycle.
 - Register the listener to be informed when new barcodes are scanned and update your data whenever this event occurs.
 
-## 1. Create a New Data Capture Context Instance
+## Create a New Data Capture Context Instance
 
 The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/xamarin.android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
@@ -19,7 +19,7 @@ The first step to add capture capabilities to your application is to create a ne
 DataCaptureContext dataCaptureContext = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE--");
 ```
 
-## 2. Configure the SparkScan Mode
+## Configure the SparkScan Mode
 
 The SparkScan Mode is configured through SparkScanSettings and allows you to register one or more listeners that are informed whenever a new barcode is scanned.
 
@@ -40,20 +40,22 @@ Next, create a SparkScan instance with the settings initialized in the previous 
 SparkScan sparkScan = new SparkScan(settings);
 ```
 
-## 3. Setup the Spark Scan View
+## Setup the Spark Scan View
 
 The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
 
-The SparkScanView appearance can be customized through SparkScanViewSettings.
+The [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/xamarin.android/barcode-capture/api/ui/spark-scan-view.html) appearance can be customized through [`SparkScanViewSettings`](https://docs.scandit.com/data-capture-sdk/xamarin.android/barcode-capture/api/ui/spark-scan-view-settings.html).
 
 ```csharp
 SparkScanViewSettings viewSettings = new SparkScanViewSettings();
 // setup the desired appearance settings by updating the fields in the object above
 ```
 
-By adding a SparkScanView, the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
+See the [SparkScan Workflow Options](./intro.md#workflow-options) section for more information.
 
-Add a SparkScanView to your view hierarchy:
+By adding a [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/xamarin.android/barcode-capture/api/ui/spark-scan-view.html), the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
+
+Add a [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/xamarin.android/barcode-capture/api/ui/spark-scan-view.html) to your view hierarchy:
 
 Construct a new SparkScan view. The SparkScan view is automatically added to the provided parentView (preferably an instance of [SparkScanCoordinatorLayout](https://docs.scandit.com/data-capture-sdk/xamarin.android/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanCoordinatorLayout)):
 
@@ -77,7 +79,7 @@ base.OnResume();
 }
 ```
 
-## 4. Register the Listener to Be Informed When a New Barcode Is Scanned
+## Register the Listener to Be Informed When a New Barcode Is Scanned
 
 To keep track of the barcodes that have been scanned, implement the [ISparkScanListener](https://docs.scandit.com/data-capture-sdk/xamarin.android/barcode-capture/api/spark-scan-listener.html#interface-scandit.datacapture.barcode.spark.ISparkScanListener) interface and register the listener to the SparkScan mode.
 
@@ -135,7 +137,7 @@ this.sparkScanView.EmitFeedback(new SparkScanViewSuccessFeedback());
 }
 ```
 
-## 5. Scan Some Barcodes
+## Scan Some Barcodes
 
 Now that you’re up and running, go find some barcodes to scan. Don’t feel like getting up from your desk? Here’s a [handy pdf of barcodes](https://github.com/Scandit/.github/blob/main/images/PrintTheseBarcodes.pdf)
 you can print out.
