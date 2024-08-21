@@ -18,10 +18,16 @@ export default function FrameworksMobile({
 }: FrameworksMobileProps) {
   const [openSelector, setOpenSelector] = useState(false);
   const menuRef = useRef<HTMLFormElement>(null);
+  const fieldRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        fieldRef.current &&
+        !fieldRef.current.contains(event.target as Node)
+      ) {
         setOpenSelector(false);
       }
     }
@@ -47,6 +53,13 @@ export default function FrameworksMobile({
         frameworkParent: framework.framework,
         framework: e.target.value,
       });
+      if (
+        e.target.value &&
+        e.target.value !== "netParent" &&
+        e.target.value !== "xamarinParent"
+      ) {
+        setOpenSelector(false);
+      }
     }
   }
 
@@ -61,6 +74,7 @@ export default function FrameworksMobile({
             <div
               className={style.field}
               onClick={() => setOpenSelector(!openSelector)}
+              ref={fieldRef}
             >
               {FrameworksName[
                 selectedFramework.framework as keyof typeof FrameworksName
