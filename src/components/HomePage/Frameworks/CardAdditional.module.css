@@ -9,7 +9,6 @@
   gap: 4px;
   height: clamp(30px, 3vw, 42px);
   padding: 0 10px;
-  width: clamp(38px, 4vw, 48px);
   height: clamp(38px, 4vw, 48px);
   border: 1px solid var(--nav-border);
   border-radius: 8px;
@@ -25,11 +24,18 @@
   color: var(--icon-hover);
 }
 
-.checkedFramework {
-  background-color: var(--frameworksBg);
-  color: var(--icon-hover);
+[data-theme="dark"] .iconWrapper:hover {
+  color: #0f1723;
 }
 
+.checkedFramework {
+  background-color: var(--frameworksBg);
+  color: #0f1723;
+}
+
+[data-theme="light"] .checkedFramework {
+  color: #fff;
+}
 .titleLabelHover {
   display: none;
   position: absolute;

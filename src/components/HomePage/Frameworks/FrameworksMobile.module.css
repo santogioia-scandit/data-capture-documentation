@@ -9,11 +9,30 @@
   height: 48px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 6px 20px;
   color: #717375;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 30px;
+}
+
+.fieldIcon,
+.open {
+  height: 20px;
+}
+
+.open {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.text {
+  margin: 30px 0 24px;
+  text-align: center;
+  color: var(--subtitle-text-color);
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .optionsMain {

@@ -7,6 +7,7 @@ export function FrameworkCard({
   selectedFramework,
   setSelectedFramework,
   hasAdditional = false,
+  handleFrameworkClick,
 }) {
   function selectFramework(e: React.ChangeEvent<HTMLInputElement>) {
     const formData = new FormData(e.target.form);
@@ -16,6 +17,7 @@ export function FrameworkCard({
       framework: hasAdditional ? prevState.framework : frameworkValue,
       frameworkParent: frameworkValue,
     }));
+    !hasAdditional && handleFrameworkClick();
   }
 
   return (

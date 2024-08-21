@@ -11,6 +11,7 @@
 
 .frameworkExploreList {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   list-style: none;
@@ -22,4 +23,10 @@
   max-width: 550px;
   font-size: 16px;
   font-weight: 400;
+}
+
+@media (width < 500px) {
+  .frameworkExploreList {
+    flex-direction: column;
+  }
 }

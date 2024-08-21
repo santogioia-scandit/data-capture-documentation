@@ -33,6 +33,14 @@
   color: white;
 }
 
+[data-theme="dark"] .input:checked + .iconWrapper .iconStyle {
+  color: #0f1723;
+}
+
+[data-theme="dark"] .iconWrapper:hover {
+  color: #0f1723;
+}
+
 .input:checked + .iconWrapper {
   background-color: var(--frameworksBg);
 }

@@ -4,31 +4,33 @@ import { createBarcodeScanningArr } from "../data/createBarcodeScanningArr";
 import { createIdScanningArr } from "../data/createIdScanningArr";
 import { ArrowDropDown } from "../../IconComponents";
 import { useState } from "react";
+import { FrameworksName } from "../../constants/frameworksName";
+import { Framework } from "@site/src/pages";
 
 interface CardsPartProps {
-  selectedFramework: string;
+  selectedFramework: Framework;
 }
 
 export default function CardsPart({ selectedFramework }: CardsPartProps) {
-  const [allCards, setAllCards] = useState(true);
-  const barcodeScanning = createBarcodeScanningArr(selectedFramework, allCards);
-  const idScanning = createIdScanningArr(selectedFramework);
+  const [allCards, setAllCards] = useState(false);
+  const barcodeScanning = createBarcodeScanningArr(selectedFramework.framework, allCards);
+  const idScanning = createIdScanningArr(selectedFramework.framework);  
 
   return (
     <div className={style.cardsPartWrapper}>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title="Barcode Scanning"
+          title={`Barcode Scanning for ${FrameworksName[selectedFramework.framework]}`}
           content={barcodeScanning}
-          mainColor="#065DB8"
-          cardColor="#C3E1FF"
+          mainColor="var(--barcode-scanning-color)"
+          cardColor="var(--barcode-scanning-gradient)"
           linkStarted="/barcode-scanning"
         ></CardsGroup>
         <button
           className={style.hiddenBtn}
           onClick={() => setAllCards(!allCards)}
         >
-          {allCards ? "Hide all functionality" : "See all functionality"}
+          {allCards ? "Show less" : "Show more functionality"}
           <ArrowDropDown iconClass={allCards ? style.reversIcon : style.icon} />
         </button>
       </div>
@@ -37,7 +39,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
           title="ID Scanning"
           content={idScanning}
           mainColor="var(--IDScanningColor)"
-          cardColor="var(--IDScanningColor)"
+          cardColor="var(--id-scanning-gradient)"
           linkStarted="/id-scanning"
         ></CardsGroup>
       </div>

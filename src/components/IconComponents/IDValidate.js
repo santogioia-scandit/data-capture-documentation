@@ -8,7 +8,7 @@ export default function IDValidate({iconClass=''}) {
       xmlns="http://www.w3.org/2000/svg"
       className={iconClass}
     >
-      <g opacity="0.5">
+      <g>
         <path
           d="M8.99854 4.99365L4.99854 4.99365L4.99853 8.99365"
           stroke="currentColor"
