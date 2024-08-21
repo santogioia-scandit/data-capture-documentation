@@ -433,7 +433,7 @@ GS1 Composite Codes as defined in ISO/IEC 24723:2010 are made up of a 1D and 2D 
 
 ### GS1 Data Carrier
 
-The GS1 organization defined a standard to encode application specific data in a barcode. The symbologies Code128, GS1 DataBar, DataMatrix and QR codes can contain GS1 encoded data.
+The GS1 organization defined a [standard](https://www.google.com/url?q=https://www.gs1.org/standards/barcodes-epcrfid-id-keys/gs1-general-specifications&sa=D&source=editors&ust=1724244897545334&usg=AOvVaw10tvH29tXazbZZd0PTU1uR) to encode application specific data in a barcode. The symbologies Code128, GS1 DataBar, DataMatrix and QR codes can contain GS1 encoded data.
 
 The barcode property `SDCBarcode.isGS1DataCarrier` tells you if a barcode contains GS1 encoded data. GS1 data has to be accessed using `SDCBarcode.rawData` and not `SDCBarcode.data` because it is stored in machine readable form and might contain non-printable characters such as group separators (ASCII 29).
 

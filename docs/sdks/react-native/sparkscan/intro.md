@@ -35,22 +35,22 @@ Scanning modes:
 - **Target mode**: Ideal for scanning scenarios where precision is important. This mode will add an aimer to the preview, to precisely select the barcode to scan. This is useful when multiple barcodes are in view (e.g. long range scanning).
 
 :::note
-Users can enable the target mode by toggling the dedicated icon in the setting toolbar, shown by default (`SDCSparkScanView.targetModeButtonVisible`). Hiding this button will remove the possibility to toggle scanning mode for the end-user.
+Users can enable the target mode by toggling the dedicated icon in the setting toolbar, shown by default ([`SparkScanView.targetModeButtonVisible`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.TargetModeButtonVisible)). Hiding this button will remove the possibility to toggle scanning mode for the end-user.
 :::
 
 Scanning behaviors:
 
 - **Single scan**: Scan one barcode at a time. The user needs to trigger the scanner every time to scan a barcode. This allows for a more controlled scanning and lower battery consumption.
 - **Continuous scan**: Scan barcodes consecutively. The user needs to trigger the scanner once and barcodes will be scanned without any further interaction before each scan. This allows for a smoother experience when multiple barcodes need to be scanned consecutively.
-    - Users can enable continuous scanning by holding down the trigger button (`SDCSparkScanViewSettings.holdToScanEnabled`). This gesture can be disabled.
-    - Developers can show a dedicated setting in the toolbar to let the user enable continuous scan mode (`SDCSparkScanView.scanningBehaviorButtonVisible`), which is hidden by default.
+    - Users can enable continuous scanning by holding down the trigger button ([`SparkScanViewSettings.holdToScanEnabled`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/spark-scan-view-settings.html#property-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings.HoldToScanEnabled)). This gesture can be disabled.
+    - Developers can show a dedicated setting in the toolbar to let the user enable continuous scan mode ([`SparkScanView.scanningBehaviorButtonVisible`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.ScanningBehaviorButtonVisible)), which is hidden by default.
 
 Camera preview behaviors:
 
 - **Default**: Preview fades away when the scanner is off. This lets the user check important information displayed by the app and reduces battery consumption.
 - **Persistent**: Preview remains visible, but darkened, even when the scanner is off. This is useful for scenarios where you want to select a barcode (among many) or need to look through the preview at all times (to ensure the right scan) - especially if used in conjunction with the target mode.
 
-Developers can set a combination of scanning mode, scanning behavior and camera preview behavior - defining the initial state of the scanner. This can be done by setting the default scanning mode (SDCSparkScanViewSettings.defaultScanningMode).
+Developers can set a combination of scanning mode, scanning behavior and camera preview behavior - defining the initial state of the scanner. This can be done by setting the default scanning mode (SparkScanViewSettings.defaultScanningMode).
 
 ## Workflow Description
 
@@ -68,6 +68,6 @@ Upon completing the scanning process (or to interact with the customer app layer
 
 ## Supported Symbologies
 
-SparkScan supports all of the major symbologies listed here: Barcode Symbologies except DotCode, MaxiCode and postal codes (KIX, RM4SCC, LAPA 4SC, USPS Intelligent Mail, etc.).
+SparkScan supports all of the major symbologies listed in [Barcode Symbologies](../../../barcode-symbologies.md) except DotCode, MaxiCode and postal codes (KIX, RM4SCC, LAPA 4SC, USPS Intelligent Mail, etc.).
 
 If you are not familiar with the symbologies that are relevant for your use case, you can use capture presets that are tailored for different verticals (e.g. retail, logistics, etc.).
