@@ -38,6 +38,20 @@ resumeCapturingDelay: 6, visualFeedbackColor: UIColor.red))
 
 To prevent scanning unwanted barcodes (like those already listed or from incorrect lots), use SparkScan’s built-in error state. Setting the [`SparkScanBarcodeErrorFeedback.resumeCapturingDelay`](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api/ui/spark-scan-barcode-feedback.html#property-scandit.datacapture.barcode.spark.feedback.Error.ResumeCapturingDelay) parameter to 0 allows the user to continue scanning immediately without pausing on rejected codes.
 
+### Add Advanced Scanning Modes to the Setting Toolbar
+
+SparkScan is our best solution for high-speed single scanning and scan-intensive workflows. Depending on your use case, you can use SparkScan in conjunction with other Scandit advanced scanning modes, such as MatrixScan Find or MatrixScan Count, to speed up your workflows.
+
+SparkScan offers pre-build buttons you can add to the setting toolbar to easily move to different scan modes from within the SparkScan UI.
+
+First you need to show these buttons:
+
+```js
+// Show the MatrixScan Count and MatrixScan Find buttons
+sparkScanView.barcodeCountButtonVisible = true;
+sparkScanView.barcodeFindButtonVisible = true;
+```
+
 ## Customization
 
 ### Customize colors and texts
