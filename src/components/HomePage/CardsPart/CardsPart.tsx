@@ -13,8 +13,11 @@ interface CardsPartProps {
 
 export default function CardsPart({ selectedFramework }: CardsPartProps) {
   const [allCards, setAllCards] = useState(false);
-  const barcodeScanning = createBarcodeScanningArr(selectedFramework.framework, allCards);
-  const idScanning = createIdScanningArr(selectedFramework.framework);  
+  const barcodeScanning = createBarcodeScanningArr(
+    selectedFramework.framework,
+    allCards
+  );
+  const idScanning = createIdScanningArr(selectedFramework.framework);
 
   return (
     <div className={style.cardsPartWrapper}>
@@ -36,7 +39,9 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
       </div>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title="ID Scanning"
+          title={`ID scanning for ${
+            FrameworksName[selectedFramework.framework]
+          }`}
           content={idScanning}
           mainColor="var(--IDScanningColor)"
           cardColor="var(--id-scanning-gradient)"
