@@ -50,12 +50,14 @@ const sparkScan = Scandit.SparkScan.forSettings(settings);
 
 The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
 
-The SparkScanView appearance can be customized through [`SparkScanViewSettings`](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/ui/spark-scan-view-settings.html#class-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings).
+The [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/ui/spark-scan-view-settings.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) appearance can be customized through [`SparkScanViewSettings`](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/ui/spark-scan-view-settings.html#class-scandit.datacapture.barcode.spark.ui.SparkScanViewSettings).
 
 ```js
 const viewSettings = new Scandit.SparkScanViewSettings();
 // setup the desired appearance settings by updating the fields in the object above
 ```
+
+See the [SparkScan Workflow Options](./intro.md#workflow-options) section for more information.
 
 By adding a `SparkScanView`, the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
 

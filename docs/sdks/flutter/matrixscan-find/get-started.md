@@ -17,7 +17,7 @@ The general steps are:
 4. Register a listener to be notified with found items
 5. Start searching
 
-## 1. Create a new Data Capture Context instance
+## Create a new Data Capture Context instance
 
 The first step to add find capabilities to your application is to create a new [DataCaptureContext](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
@@ -25,7 +25,7 @@ The first step to add find capabilities to your application is to create a new [
 var dataCaptureContext = DataCaptureContext.forLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
-## 2. Configure the Barcode Find Mode
+## Configure the Barcode Find Mode
 
 The main entry point for the Barcode Find Mode is the [BarcodeFind](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/barcode-find.html#class-scandit.datacapture.barcode.find.BarcodeFind) object. You can configure the supported Symbologies through its [BarcodeFindSettings](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/barcode-find-settings.html#class-scandit.datacapture.barcode.find.BarcodeFindSettings), and set up the list of items that you want MatrixScan Find to highlight (e.g. a list of products).
 
@@ -58,7 +58,7 @@ var mode = BarcodeFind(settings);
 mode.setItemList(items);
 ```
 
-## 3. Setup the BarcodeFindView
+## Setup the BarcodeFindView
 
 MatrixScan Find’s built-in AR user interface includes buttons and overlays that guide the user through the searching process. By adding a [BarcodeFindView](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-find-view.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindView), the scanning interface (camera preview and searching UI elements) will be added automatically to your application.
 
@@ -101,7 +101,7 @@ barcodeFindView.widgetPaused();
 }
 ```
 
-## 4. Register a listener to be notified with found items
+## Register a listener to be notified with found items
 
 The BarcodeFindView displays next to its shutter button a handy “finish” button. Register a [BarcodeFindViewUiListener](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-find-view.html#interface-scandit.datacapture.barcode.find.ui.IBarcodeFindViewUiListener) to be notified what items have been found once the finish button is pressed.
 
@@ -118,7 +118,7 @@ void didTapFinishButton(Set<BarcodeFindItem> foundItems) {
 }
 ```
 
-## 5. Start searching
+## Start searching
 
 As soon as everything is set up, control the [BarcodeFindView](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-find-view.html#class-scandit.datacapture.barcode.find.ui.BarcodeFindView) to start the search.
 
