@@ -28,7 +28,7 @@ export default function FrameworkExplore() {
 
   return (
     <div className={style.frameworkExplore}>
-      <h2 className={style.frameworkExploreTitle}>Explore by Framework</h2>
+      <h2 className={style.frameworkExploreTitle}>Explore By Framework</h2>
       <p className={style.frameworkExploreText}>
         Get started with the Scandit Data Capture SDK using your preferred
         framework.

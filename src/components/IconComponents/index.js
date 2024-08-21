@@ -37,6 +37,9 @@ import IdCapture from "./IdCapture";
 import Moon from "./Moon";
 import Sun from "./Sun";
 import ArrowDropDown from "./ArrowDropDown";
+import GitHub from './GitHub';
+import BarcodeGenerator from './BarcodeGenerator';
+import ArrowDown from './ArrowDown';
 
 export {
   Sparkscan,
@@ -78,4 +81,7 @@ export {
   Moon,
   Sun,
   ArrowDropDown,
+  GitHub,
+  BarcodeGenerator,
+  ArrowDown
 };

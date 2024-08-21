@@ -76,6 +76,7 @@ export const frameworkCards = [
   {
     framework: "react",
     icon: <ScanditReact iconClass={style.iconStyle} />,
+    link: 'react-native',
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
       BarcodeScanning.MatrixScan,
@@ -246,7 +247,6 @@ export const frameworkCards = [
     icon: <Titanium iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
-      BarcodeScanning.MatrixScan,
       BarcodeScanning.ScanditExpress,
     ],
     IDScanning: [],

@@ -5,11 +5,18 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: 1px solid var(--light-gray-60);
+  border: 1px solid var(--nav-border);
   background-color: transparent;
   cursor: pointer;
+  transition: border-color 250ms linear;
 }
 
-html[data-theme="dark"] .themeBtn {
-  border-color: var(--dark-blue-70);
+.themeBtn:hover {
+  border-color: var(--light-gray-80);
+}
+
+@media (width < 650px) {
+  .themeBtn {
+    display: none;
+  }
 }

@@ -2,6 +2,7 @@ import { BarcodeScanning } from "../../constants/scanningEnums";
 import { frameworkCards } from "./frameworkCardsArr";
 import {
   BarcodeCapture,
+  BarcodeGenerator,
   BarcodeSelection,
   Express,
   LabelCapture,
@@ -90,7 +91,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
         {
           name: BarcodeScanning.BarcodeGenerator,
           text: "Generate Supported Symbologies",
-          icon: <Parser />,
+          icon: <BarcodeGenerator />,
           isActive: frameworkData?.barcodeScanning.includes(
             BarcodeScanning.BarcodeGenerator
           ),
