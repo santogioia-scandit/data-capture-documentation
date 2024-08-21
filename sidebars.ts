@@ -30,16 +30,10 @@ const sidebars: SidebarsConfig = {
 					label: 'Supported Symbologies and IDs',
           collapsed: false,
 					items: [
-            {
-              type: 'category',
-              label: 'Barcode Symbologies',
-              collapsed: false,
-              link: {
-                type: 'doc',
-                id: 'barcode-symbologies',
-              },
-              items: ['symbology-properties','extension-codes', 'scanning-composite-codes'],
-            },
+            'barcode-symbologies',
+            'symbology-properties',
+            'extension-codes',
+            'scanning-composite-codes',
             'id-documents',
           ]
 				},
