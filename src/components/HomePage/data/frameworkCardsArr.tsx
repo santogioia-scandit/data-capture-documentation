@@ -247,7 +247,6 @@ export const frameworkCards = [
     icon: <Titanium iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
-      BarcodeScanning.MatrixScan,
       BarcodeScanning.ScanditExpress,
     ],
     IDScanning: [],

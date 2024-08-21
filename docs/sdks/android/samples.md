@@ -90,7 +90,7 @@ Use MatrixScan to batch scan and count the number of barcodes in a frame.
 
 ###### [Receiving](https://github.com/Scandit/datacapture-android-samples/tree/master/ReceivingSample)
 
-Use a combination of [SparkScan](#sparkscans) and MatrixScan Count for a receiving use case.
+Use a combination of [SparkScan](#sparkscan) and MatrixScan Count for a receiving use case.
 
 ###### [Expiry Management](https://github.com/Scandit/datacapture-android-samples/tree/master/ExpiryManagementSample)
 

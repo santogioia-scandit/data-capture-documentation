@@ -23,9 +23,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
     <div className={style.cardsPartWrapper}>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title={`Barcode scanning for ${
-            FrameworksName[selectedFramework.framework]
-          }`}
+          title={`Barcode Scanning for ${FrameworksName[selectedFramework.framework]}`}
           content={barcodeScanning}
           mainColor="var(--barcode-scanning-color)"
           cardColor="var(--barcode-scanning-gradient)"
@@ -41,7 +39,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
       </div>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title={`Barcode scanning for ${
+          title={`ID scanning for ${
             FrameworksName[selectedFramework.framework]
           }`}
           content={idScanning}
