@@ -8,7 +8,7 @@ export default function DataCapture() {
       <h2 className={style.dataCaptureTitle}>Data Capture Basics</h2>
       <p className={style.dataCaptureText}>
         Learn about the core concepts used throughout the Scandit Data Capture
-        SDK and the full suite of available features amd functionalities.
+        SDK and the full suite of available features and functionalities.
       </p>
       <ul className={style.dataCaptureList}>
         {dataCaptureArr.map((item, index) => (
