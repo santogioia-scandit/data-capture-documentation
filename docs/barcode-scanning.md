@@ -110,29 +110,29 @@ SparkScan is a high-speed single scanning mode that enables you to quickly and e
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="iOS" description="Integrate SparkScan in iOS" link="./sdks/ios/sparkscan/intro" smallIcon ><Ios/></CustomDocCard>
+<CustomDocCard title="iOS" description="Integrate SparkScan in iOS" link="../sdks/ios/sparkscan/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate SparkScan in Android" link="./sdks/android/sparkscan/intro" Icon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate SparkScan in Android" link="../sdks/android/sparkscan/intro" Icon ><Android/></CustomDocCard>
 
-<CustomDocCard title="Web" description="Integrate SparkScan for Web" link="./sdks/web/sparkscan/intro" Icon ><Javascript/> </CustomDocCard>
+<CustomDocCard title="Web" description="Integrate SparkScan for Web" link="../sdks/web/sparkscan/intro" Icon ><Javascript/> </CustomDocCard>
 
-<CustomDocCard title="Cordova" description="Integrate SparkScan in Cordova" link="./sdks/cordova/sparkscan/intro" smallIcon ><Cordova/> </CustomDocCard>
+<CustomDocCard title="Cordova" description="Integrate SparkScan in Cordova" link="../sdks/cordova/sparkscan/intro" smallIcon ><Cordova/> </CustomDocCard>
 
-<CustomDocCard title="React Native" description="Integrate SparkScan in React Native" link="./sdks/react-native/sparkscan/intro" smallIcon ><ReactIcon/> </CustomDocCard>
+<CustomDocCard title="React Native" description="Integrate SparkScan in React Native" link="../sdks/react-native/sparkscan/intro" smallIcon ><ReactIcon/> </CustomDocCard>
 
-<CustomDocCard title="Flutter" description="Integrate SparkScan in Flutter" link="./sdks/flutter/sparkscan/intro" smallIcon ><Flutter/> </CustomDocCard>
+<CustomDocCard title="Flutter" description="Integrate SparkScan in Flutter" link="../sdks/flutter/sparkscan/intro" smallIcon ><Flutter/> </CustomDocCard>
 
-<CustomDocCard title="Capacitor" description="Integrate SparkScan in Capacitor" link="./sdks/capacitor/sparkscan/intro" smallIcon ><Capacitor/></CustomDocCard>
+<CustomDocCard title="Capacitor" description="Integrate SparkScan in Capacitor" link="../sdks/capacitor/sparkscan/intro" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title="Xamarin iOS" description="Integrate SparkScan in Xamarin iOS" link="./sdks/xamarin/ios/sparkscan/intro" smallIcon ><XamarinIos/></CustomDocCard>
+<CustomDocCard title="Xamarin iOS" description="Integrate SparkScan in Xamarin iOS" link="../sdks/xamarin/ios/sparkscan/intro" smallIcon ><XamarinIos/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Android" description="Integrate SparkScan for Xamarin Android" link="./sdks/xamarin/android/sparkscan/intro" Icon ><XamarinAndroid/></CustomDocCard>
+<CustomDocCard title="Xamarin Android" description="Integrate SparkScan for Xamarin Android" link="../sdks/xamarin/android/sparkscan/intro" Icon ><XamarinAndroid/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate SparkScan in Xamarin Forms" link="./sdks/xamarin/forms/sparkscan/intro" smallIcon ><XamarinForms/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate SparkScan in Xamarin Forms" link="../sdks/xamarin/forms/sparkscan/intro" smallIcon ><XamarinForms/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate SparkScan in .NET iOS" link="./sdks/net/ios/sparkscan/intro" smallIcon ><NetIos/></CustomDocCard>
+<CustomDocCard title=".NET iOS" description="Integrate SparkScan in .NET iOS" link="../sdks/net/ios/sparkscan/intro" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate SparkScan in .NET Android" link="./sdks/net/android/sparkscan/intro" smallIcon ><NetAndroid/></CustomDocCard>
+<CustomDocCard title=".NET Android" description="Integrate SparkScan in .NET Android" link="../sdks/net/android/sparkscan/intro" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 
@@ -142,25 +142,25 @@ MatrixScan Count is a batch scanning mode that enables you to quickly and easily
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="iOS" description="Integrate MatrixScan Count in iOS" link="./sdks/ios/matrixscan-count/intro" smallIcon ><Ios/></CustomDocCard>
+<CustomDocCard title="iOS" description="Integrate MatrixScan Count in iOS" link="../sdks/ios/matrixscan-count/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate MatrixScan Count in Android" link="./sdks/android/matrixscan-count/intro" Icon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate MatrixScan Count in Android" link="../sdks/android/matrixscan-count/intro" Icon ><Android/></CustomDocCard>
 
-<CustomDocCard title="React Native" description="Integrate MatrixScan Count in React Native" link="./sdks/react-native/matrixscan-count/intro" smallIcon ><ReactIcon/> </CustomDocCard>
+<CustomDocCard title="React Native" description="Integrate MatrixScan Count in React Native" link="../sdks/react-native/matrixscan-count/intro" smallIcon ><ReactIcon/> </CustomDocCard>
 
-<CustomDocCard title="Flutter" description="Integrate MatrixScan Count in Flutter" link="./sdks/flutter/matrixscan-count/intro" smallIcon ><Flutter/> </CustomDocCard>
+<CustomDocCard title="Flutter" description="Integrate MatrixScan Count in Flutter" link="../sdks/flutter/matrixscan-count/intro" smallIcon ><Flutter/> </CustomDocCard>
 
-<CustomDocCard title="Capacitor" description="Integrate MatrixScan Count in Capacitor" link="./sdks/capacitor/matrixscan-count/intro" smallIcon ><Capacitor/></CustomDocCard>
+<CustomDocCard title="Capacitor" description="Integrate MatrixScan Count in Capacitor" link="../sdks/capacitor/matrixscan-count/intro" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title="Xamarin iOS" description="Integrate MatrixScan Count in Xamarin iOS" link="./sdks/xamarin/ios/matrixscan-count/intro" smallIcon ><XamarinIos/></CustomDocCard>
+<CustomDocCard title="Xamarin iOS" description="Integrate MatrixScan Count in Xamarin iOS" link="../sdks/xamarin/ios/matrixscan-count/intro" smallIcon ><XamarinIos/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Android" description="Integrate MatrixScan Count for Xamarin Android" link="./sdks/xamarin/android/matrixscan-count/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
+<CustomDocCard title="Xamarin Android" description="Integrate MatrixScan Count for Xamarin Android" link="../sdks/xamarin/android/matrixscan-count/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate MatrixScan Count in Xamarin Forms" link="./sdks/xamarin/forms/matrixscan-count/intro" smallIcon ><XamarinForms/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate MatrixScan Count in Xamarin Forms" link="../sdks/xamarin/forms/matrixscan-count/intro" smallIcon ><XamarinForms/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate MatrixScan Count in .NET iOS" link="./sdks/net/ios/matrixscan-count/intro" smallIcon ><NetIos/></CustomDocCard>
+<CustomDocCard title=".NET iOS" description="Integrate MatrixScan Count in .NET iOS" link="../sdks/net/ios/matrixscan-count/intro" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate MatrixScan Count in .NET Android" link="./sdks/net/android/matrixscan-count/intro" smallIcon ><NetAndroid/></CustomDocCard>
+<CustomDocCard title=".NET Android" description="Integrate MatrixScan Count in .NET Android" link="../sdks/net/android/matrixscan-count/intro" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 
@@ -170,19 +170,19 @@ MatrixScan Find is a search and find mode that enables you to quickly and easily
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="iOS" description="Integrate MatrixScan Find in iOS" link="./sdks/ios/matrixscan-find/intro" smallIcon ><Ios/></CustomDocCard>
+<CustomDocCard title="iOS" description="Integrate MatrixScan Find in iOS" link="../sdks/ios/matrixscan-find/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate MatrixScan Find in Android" link="./sdks/android/matrixscan-find/intro" Icon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate MatrixScan Find in Android" link="../sdks/android/matrixscan-find/intro" Icon ><Android/></CustomDocCard>
 
-<CustomDocCard title="React Native" description="Integrate MatrixScan Find in React Native" link="./sdks/react-native/matrixscan-find/intro" smallIcon ><ReactIcon/> </CustomDocCard>
+<CustomDocCard title="React Native" description="Integrate MatrixScan Find in React Native" link="../sdks/react-native/matrixscan-find/intro" smallIcon ><ReactIcon/> </CustomDocCard>
 
-<CustomDocCard title="Flutter" description="Integrate MatrixScan Find in Flutter" link="./sdks/flutter/matrixscan-find/intro" smallIcon ><Flutter/> </CustomDocCard>
+<CustomDocCard title="Flutter" description="Integrate MatrixScan Find in Flutter" link="../sdks/flutter/matrixscan-find/intro" smallIcon ><Flutter/> </CustomDocCard>
 
-<CustomDocCard title="Capacitor" description="Integrate MatrixScan Find in Capacitor" link="./sdks/capacitor/matrixscan-find/intro" smallIcon ><Capacitor/></CustomDocCard>
+<CustomDocCard title="Capacitor" description="Integrate MatrixScan Find in Capacitor" link="../sdks/capacitor/matrixscan-find/intro" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate MatrixScan Find in .NET iOS" link="./sdks/net/ios/matrixscan-find/intro" smallIcon ><NetIos/></CustomDocCard>
+<CustomDocCard title=".NET iOS" description="Integrate MatrixScan Find in .NET iOS" link="../sdks/net/ios/matrixscan-find/intro" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate MatrixScan Find in .NET Android" link="./sdks/net/android/matrixscan-find/intro" smallIcon ><NetAndroid/></CustomDocCard>
+<CustomDocCard title=".NET Android" description="Integrate MatrixScan Find in .NET Android" link="../sdks/net/android/matrixscan-find/intro" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 
@@ -192,27 +192,27 @@ Barcode Selection is a mode that enables you to quickly and easily scan multiple
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="iOS" description="Integrate Barcode Selection in iOS" link="./sdks/ios/barcode-selection/intro" smallIcon ><Ios/></CustomDocCard>
+<CustomDocCard title="iOS" description="Integrate Barcode Selection in iOS" link="../sdks/ios/barcode-selection/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate Barcode Selection in Android" link="./sdks/android/barcode-selection/intro" Icon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate Barcode Selection in Android" link="../sdks/android/barcode-selection/intro" Icon ><Android/></CustomDocCard>
 
-<CustomDocCard title="Cordova" description="Integrate Barcode Selection in Cordova" link="./sdks/cordova/barcode-selection/intro" smallIcon ><Cordova/> </CustomDocCard>
+<CustomDocCard title="Cordova" description="Integrate Barcode Selection in Cordova" link="../sdks/cordova/barcode-selection/intro" smallIcon ><Cordova/> </CustomDocCard>
 
-<CustomDocCard title="React Native" description="Integrate Barcode Selection in React Native" link="./sdks/react-native/barcode-selection/intro" smallIcon ><ReactIcon/> </CustomDocCard>
+<CustomDocCard title="React Native" description="Integrate Barcode Selection in React Native" link="../sdks/react-native/barcode-selection/intro" smallIcon ><ReactIcon/> </CustomDocCard>
 
-<CustomDocCard title="Flutter" description="Integrate Barcode Selection in Flutter" link="./sdks/flutter/barcode-selection/intro" smallIcon ><Flutter/> </CustomDocCard>
+<CustomDocCard title="Flutter" description="Integrate Barcode Selection in Flutter" link="../sdks/flutter/barcode-selection/intro" smallIcon ><Flutter/> </CustomDocCard>
 
-<CustomDocCard title="Capacitor" description="Integrate Barcode Selection in Capacitor" link="./sdks/capacitor/barcode-selection/intro" smallIcon ><Capacitor/></CustomDocCard>
+<CustomDocCard title="Capacitor" description="Integrate Barcode Selection in Capacitor" link="../sdks/capacitor/barcode-selection/intro" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title="Xamarin iOS" description="Integrate Barcode Selection in Xamarin iOS" link="./sdks/xamarin/ios/barcode-selection/intro" smallIcon ><XamarinIos/></CustomDocCard>
+<CustomDocCard title="Xamarin iOS" description="Integrate Barcode Selection in Xamarin iOS" link="../sdks/xamarin/ios/barcode-selection/intro" smallIcon ><XamarinIos/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Android" description="Integrate Barcode Selection for Xamarin Android" link="./sdks/xamarin/android/barcode-selection/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
+<CustomDocCard title="Xamarin Android" description="Integrate Barcode Selection for Xamarin Android" link="../sdks/xamarin/android/barcode-selection/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate Barcode Selection in Xamarin Forms" link="./sdks/xamarin/forms/barcode-selection/intro" smallIcon ><XamarinForms/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate Barcode Selection in Xamarin Forms" link="../sdks/xamarin/forms/barcode-selection/intro" smallIcon ><XamarinForms/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate Barcode Selection in .NET iOS" link="./sdks/net/ios/barcode-selection/intro" smallIcon ><NetIos/></CustomDocCard>
+<CustomDocCard title=".NET iOS" description="Integrate Barcode Selection in .NET iOS" link="../sdks/net/ios/barcode-selection/intro" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate Barcode Selection in .NET Android" link="./sdks/net/android/barcode-selection/intro" smallIcon ><NetAndroid/></CustomDocCard>
+<CustomDocCard title=".NET Android" description="Integrate Barcode Selection in .NET Android" link="../sdks/net/android/barcode-selection/intro" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 
@@ -227,31 +227,31 @@ Barcode Capture is a mode that enables you to quickly and easily scan and captur
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="iOS" description="Integrate Barcode Capture in iOS" link="./sdks/ios/barcode-capture/get-started" smallIcon ><Ios/></CustomDocCard>
+<CustomDocCard title="iOS" description="Integrate Barcode Capture in iOS" link="../sdks/ios/barcode-capture/get-started" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate Barcode Capture in Android" link="./sdks/android/barcode-capture/get-started" Icon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate Barcode Capture in Android" link="../sdks/android/barcode-capture/get-started" Icon ><Android/></CustomDocCard>
 
-<CustomDocCard title="Web" description="Integrate Barcode Capture for Web" link="./sdks/web/barcode-capture/get-started" smallIcon ><Javascript/> </CustomDocCard>
+<CustomDocCard title="Web" description="Integrate Barcode Capture for Web" link="../sdks/web/barcode-capture/get-started" smallIcon ><Javascript/> </CustomDocCard>
 
-<CustomDocCard title="Cordova" description="Integrate Barcode Capture in Cordova" link="./sdks/cordova/barcode-capture/get-started" smallIcon ><Cordova/> </CustomDocCard>
+<CustomDocCard title="Cordova" description="Integrate Barcode Capture in Cordova" link="../sdks/cordova/barcode-capture/get-started" smallIcon ><Cordova/> </CustomDocCard>
 
-<CustomDocCard title="React Native" description="Integrate Barcode Capture in React Native" link="./sdks/react-native/barcode-capture/get-started" smallIcon ><ReactIcon/> </CustomDocCard>
+<CustomDocCard title="React Native" description="Integrate Barcode Capture in React Native" link="../sdks/react-native/barcode-capture/get-started" smallIcon ><ReactIcon/> </CustomDocCard>
 
-<CustomDocCard title="Flutter" description="Integrate Barcode Capture in Flutter" link="./sdks/flutter/barcode-capture/get-started" smallIcon ><Flutter/> </CustomDocCard>
+<CustomDocCard title="Flutter" description="Integrate Barcode Capture in Flutter" link="../sdks/flutter/barcode-capture/get-started" smallIcon ><Flutter/> </CustomDocCard>
 
-<CustomDocCard title="Capacitor" description="Integrate Barcode Capture in Capacitor" link="./sdks/capacitor/barcode-capture/get-started" smallIcon ><Capacitor/></CustomDocCard>
+<CustomDocCard title="Capacitor" description="Integrate Barcode Capture in Capacitor" link="../sdks/capacitor/barcode-capture/get-started" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title="Titanium" description="Integrate Barcode Capture in Titanium" link="./sdks/titanium/barcode-capture/get-started" smallIcon ><Titanium/></CustomDocCard>
+<CustomDocCard title="Titanium" description="Integrate Barcode Capture in Titanium" link="../sdks/titanium/barcode-capture/get-started" smallIcon ><Titanium/></CustomDocCard>
 
-<CustomDocCard title="Xamarin iOS" description="Integrate Barcode Capture in Xamarin iOS" link="./sdks/xamarin/ios/barcode-capture/get-started" smallIcon ><XamarinIos/></CustomDocCard>
+<CustomDocCard title="Xamarin iOS" description="Integrate Barcode Capture in Xamarin iOS" link="../sdks/xamarin/ios/barcode-capture/get-started" smallIcon ><XamarinIos/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Android" description="Integrate Barcode Capture for Xamarin Android" link="./sdks/xamarin/android/barcode-capture/get-started" smallIcon ><XamarinAndroid/></CustomDocCard>
+<CustomDocCard title="Xamarin Android" description="Integrate Barcode Capture for Xamarin Android" link="../sdks/xamarin/android/barcode-capture/get-started" smallIcon ><XamarinAndroid/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate Barcode Capture in Xamarin Forms" link="./sdks/xamarin/forms/barcode-capture/get-started" smallIcon ><XamarinForms/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate Barcode Capture in Xamarin Forms" link="../sdks/xamarin/forms/barcode-capture/get-started" smallIcon ><XamarinForms/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate Barcode Capture in .NET iOS" link="./sdks/net/ios/barcode-capture/get-started" smallIcon ><NetIos/></CustomDocCard>
+<CustomDocCard title=".NET iOS" description="Integrate Barcode Capture in .NET iOS" link="../sdks/net/ios/barcode-capture/get-started" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate Barcode Capture in .NET Android" link="./sdks/net/android/barcode-capture/get-started" smallIcon ><NetAndroid/></CustomDocCard>
+<CustomDocCard title=".NET Android" description="Integrate Barcode Capture in .NET Android" link="../sdks/net/android/barcode-capture/get-started" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 
@@ -261,29 +261,29 @@ MatrixScan + Augmented Reality is a mode that enables you to quickly and easily 
 
 <CustomDocCardsWrapper>
 
-<CustomDocCard title="iOS" description="Integrate MatrixScan + AR in iOS" link="./sdks/ios/matrixscan/intro" smallIcon ><Ios/></CustomDocCard>
+<CustomDocCard title="iOS" description="Integrate MatrixScan + AR in iOS" link="../sdks/ios/matrixscan/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate MatrixScan + AR in Android" link="./sdks/android/matrixscan/intro" Icon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate MatrixScan + AR in Android" link="../sdks/android/matrixscan/intro" Icon ><Android/></CustomDocCard>
 
-<CustomDocCard title="Web" description="Integrate MatrixScan + AR for Web" link="./sdks/web/matrixscan/intro" smallIcon ><Javascript/> </CustomDocCard>
+<CustomDocCard title="Web" description="Integrate MatrixScan + AR for Web" link="../sdks/web/matrixscan/intro" smallIcon ><Javascript/> </CustomDocCard>
 
-<CustomDocCard title="Cordova" description="Integrate MatrixScan + AR in Cordova" link="./sdks/cordova/matrixscan/intro" smallIcon ><Cordova/> </CustomDocCard>
+<CustomDocCard title="Cordova" description="Integrate MatrixScan + AR in Cordova" link="../sdks/cordova/matrixscan/intro" smallIcon ><Cordova/> </CustomDocCard>
 
-<CustomDocCard title="React Native" description="Integrate MatrixScan + AR in React Native" link="./sdks/react-native/matrixscan/intro" smallIcon ><ReactIcon/> </CustomDocCard>
+<CustomDocCard title="React Native" description="Integrate MatrixScan + AR in React Native" link="../sdks/react-native/matrixscan/intro" smallIcon ><ReactIcon/> </CustomDocCard>
 
-<CustomDocCard title="Flutter" description="Integrate MatrixScan + AR in Flutter" link="./sdks/flutter/matrixscan/intro" smallIcon ><Flutter/> </CustomDocCard>
+<CustomDocCard title="Flutter" description="Integrate MatrixScan + AR in Flutter" link="../sdks/flutter/matrixscan/intro" smallIcon ><Flutter/> </CustomDocCard>
 
-<CustomDocCard title="Capacitor" description="Integrate MatrixScan + AR in Capacitor" link="./sdks/capacitor/matrixscan/intro" smallIcon ><Capacitor/></CustomDocCard>
+<CustomDocCard title="Capacitor" description="Integrate MatrixScan + AR in Capacitor" link="../sdks/capacitor/matrixscan/intro" smallIcon ><Capacitor/></CustomDocCard>
 
-<CustomDocCard title="Xamarin iOS" description="Integrate MatrixScan + AR in Xamarin iOS" link="./sdks/xamarin/ios/matrixscan/intro" smallIcon ><XamarinIos/></CustomDocCard>
+<CustomDocCard title="Xamarin iOS" description="Integrate MatrixScan + AR in Xamarin iOS" link="../sdks/xamarin/ios/matrixscan/intro" smallIcon ><XamarinIos/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Android" description="Integrate MatrixScan + AR for Xamarin Android" link="./sdks/xamarin/android/matrixscan/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
+<CustomDocCard title="Xamarin Android" description="Integrate MatrixScan + AR for Xamarin Android" link="../sdks/xamarin/android/matrixscan/intro" smallIcon ><XamarinAndroid/></CustomDocCard>
 
-<CustomDocCard title="Xamarin Forms" description="Integrate MatrixScan + AR in Xamarin Forms" link="./sdks/xamarin/forms/matrixscan/intro" smallIcon ><XamarinForms/></CustomDocCard>
+<CustomDocCard title="Xamarin Forms" description="Integrate MatrixScan + AR in Xamarin Forms" link="../sdks/xamarin/forms/matrixscan/intro" smallIcon ><XamarinForms/></CustomDocCard>
 
-<CustomDocCard title=".NET iOS" description="Integrate MatrixScan + AR in .NET iOS" link="./sdks/net/ios/matrixscan/intro" smallIcon ><NetIos/></CustomDocCard>
+<CustomDocCard title=".NET iOS" description="Integrate MatrixScan + AR in .NET iOS" link="../sdks/net/ios/matrixscan/intro" smallIcon ><NetIos/></CustomDocCard>
 
-<CustomDocCard title=".NET Android" description="Integrate MatrixScan + AR in .NET Android" link="./sdks/net/android/matrixscan/intro" smallIcon ><NetAndroid/></CustomDocCard>
+<CustomDocCard title=".NET Android" description="Integrate MatrixScan + AR in .NET Android" link="../sdks/net/android/matrixscan/intro" smallIcon ><NetAndroid/></CustomDocCard>
 
 </CustomDocCardsWrapper>
 
