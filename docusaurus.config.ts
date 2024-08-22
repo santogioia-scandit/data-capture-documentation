@@ -70,7 +70,7 @@ const config: Config = {
       appId: "RYKD97E6SH",
       apiKey: "8372250579ef3ea82cc637a28e50f73f",
       indexName: "scandit",
-      contextualSearch: false,
+      contextualSearch: true,
     },
     image: "img/social-card.jpg",
     docs: {
