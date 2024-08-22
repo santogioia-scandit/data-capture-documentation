@@ -1,4 +1,4 @@
-export default function NetIos({ iconClass = "" }) {
+export default function NetIos({ iconClass = "svg-wrap--blue" }) {
   return (
     <svg
       width="40"

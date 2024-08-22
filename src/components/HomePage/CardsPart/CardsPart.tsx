@@ -19,15 +19,31 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
   );
   const idScanning = createIdScanningArr(selectedFramework.framework);
 
+  const transformFrameworkName = (framework: string): string => {
+    const frameworkUrls: { [key: string]: string } = {
+      react: "sdks/react-native/add-sdk",
+      linux: "https://docs.scandit.com/stable/c_api/index.html",
+      netIos: "sdks/net/ios/add-sdk",
+      netAndroid: "sdks/net/android/add-sdk",
+      xamarinIos: "sdks/xamarin/ios/add-sdk",
+      xamarinAndroid: "sdks/xamarin/android/add-sdk",
+      xamarin: "sdks/xamarin/forms/add-sdk",
+    };
+
+    return frameworkUrls[framework] || `sdks/${framework}/add-sdk`;
+  };
+
   return (
     <div className={style.cardsPartWrapper}>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title={`Barcode Scanning for ${FrameworksName[selectedFramework.framework]}`}
+          title={`Barcode Scanning for ${
+            FrameworksName[selectedFramework.framework]
+          }`}
           content={barcodeScanning}
           mainColor="var(--barcode-scanning-color)"
           cardColor="var(--barcode-scanning-gradient)"
-          linkStarted="/barcode-scanning"
+          linkStarted={`${transformFrameworkName(selectedFramework.framework)}`}
         ></CardsGroup>
         <button
           className={style.hiddenBtn}
@@ -39,13 +55,13 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
       </div>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title={`ID scanning for ${
+          title={`ID Scanning for ${
             FrameworksName[selectedFramework.framework]
           }`}
           content={idScanning}
           mainColor="var(--IDScanningColor)"
           cardColor="var(--id-scanning-gradient)"
-          linkStarted="/id-scanning"
+          linkStarted={`${transformFrameworkName(selectedFramework.framework)}`}
         ></CardsGroup>
       </div>
     </div>

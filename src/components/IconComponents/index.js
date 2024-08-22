@@ -40,6 +40,10 @@ import ArrowDropDown from "./ArrowDropDown";
 import GitHub from './GitHub';
 import BarcodeGenerator from './BarcodeGenerator';
 import ArrowDown from './ArrowDown';
+import JavascriptFramework from './JavascriptFramework';
+import XamarinIosFramework from './XamarinIosFramework';
+import XamarinAndroidFramework from './XamarinAndroidFramework';
+import TitaniumFramework from './TitaniumFramework';
 
 export {
   Sparkscan,
@@ -83,5 +87,9 @@ export {
   ArrowDropDown,
   GitHub,
   BarcodeGenerator,
-  ArrowDown
+  ArrowDown,
+  JavascriptFramework,
+  XamarinIosFramework,
+  XamarinAndroidFramework,
+  TitaniumFramework,
 };
