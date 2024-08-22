@@ -55,7 +55,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
       </div>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title={`ID scanning for ${
+          title={`ID Scanning for ${
             FrameworksName[selectedFramework.framework]
           }`}
           content={idScanning}
