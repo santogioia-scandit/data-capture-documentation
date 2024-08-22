@@ -19,15 +19,24 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
   );
   const idScanning = createIdScanningArr(selectedFramework.framework);
 
+  const transformFrameworkName = (framework) => {
+    if (framework === "react") {
+      return "react-native";
+    }
+    return framework;
+  };
+
   return (
     <div className={style.cardsPartWrapper}>
       <div className={style.cardsGroupWrapper}>
         <CardsGroup
-          title={`Barcode Scanning for ${FrameworksName[selectedFramework.framework]}`}
+          title={`Barcode Scanning for ${
+            FrameworksName[selectedFramework.framework]
+          }`}
           content={barcodeScanning}
           mainColor="var(--barcode-scanning-color)"
           cardColor="var(--barcode-scanning-gradient)"
-          linkStarted="/barcode-scanning"
+          linkStarted={`sdks/${transformFrameworkName(selectedFramework.framework)}/add-sdk`}
         ></CardsGroup>
         <button
           className={style.hiddenBtn}
@@ -45,7 +54,7 @@ export default function CardsPart({ selectedFramework }: CardsPartProps) {
           content={idScanning}
           mainColor="var(--IDScanningColor)"
           cardColor="var(--id-scanning-gradient)"
-          linkStarted="/id-scanning"
+          linkStarted={`sdks/${transformFrameworkName(selectedFramework.framework)}/add-sdk`}
         ></CardsGroup>
       </div>
     </div>

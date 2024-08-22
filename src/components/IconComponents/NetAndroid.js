@@ -1,4 +1,4 @@
-export default function NetAndroid({ iconClass = "" }) {
+export default function NetAndroid({ iconClass = "svg-wrap--blue" }) {
   return (
     <svg
       width="24"
