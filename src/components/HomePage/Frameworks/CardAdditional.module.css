@@ -28,14 +28,20 @@
   color: #0f1723;
 }
 
+[data-theme="light"] .iconWrapper:hover {
+  color: #fff;
+}
+
 .checkedFramework {
   background-color: var(--frameworksBg);
   color: #0f1723;
 }
 
 [data-theme="light"] .checkedFramework {
+  background-color: var(--frameworksBg);
   color: #fff;
 }
+
 .titleLabelHover {
   display: none;
   position: absolute;

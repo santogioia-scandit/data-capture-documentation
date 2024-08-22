@@ -15,8 +15,28 @@
 }
 
 .cardNotActiveLink {
-  opacity: 0.4;
+  position: relative;
   user-select: none;
+}
+
+.cardNotActiveLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffffc9;
+}
+
+[data-theme="dark"] .cardNotActiveLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #141f2ebb;
 }
 
 .cardNotActiveLink:hover {

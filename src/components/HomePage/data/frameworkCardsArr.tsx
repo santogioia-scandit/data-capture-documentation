@@ -1,6 +1,6 @@
 import {
   AntDesign,
-  Javascript,
+  JavascriptFramework,
   Net,
   NetAndroid,
   NetIos,
@@ -10,10 +10,10 @@ import {
   ScanditFlutter,
   ScanditIOS,
   ScanditReact,
-  Titanium,
+  TitaniumFramework,
   Xamarin,
-  XamarinAndroid,
-  XamarinIos,
+  XamarinAndroidFramework,
+  XamarinIosFramework,
 } from "../../IconComponents";
 import style from "../Frameworks/FrameworkCard.module.css";
 import { BarcodeScanning, IDScanning } from "../../constants/scanningEnums";
@@ -59,7 +59,7 @@ export const frameworkCards = [
   },
   {
     framework: "web",
-    icon: <Javascript iconClass={style.iconStyle} />,
+    icon: <JavascriptFramework iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
       BarcodeScanning.MatrixScan,
@@ -119,7 +119,7 @@ export const frameworkCards = [
     additional: [
       {
         framework: "xamarinIos",
-        icon: <XamarinIos iconClass={style.iconStyle} />,
+        icon: <XamarinIosFramework iconClass={style.iconStyle} />,
         link: 'xamarin/ios',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
@@ -134,7 +134,7 @@ export const frameworkCards = [
       },
       {
         framework: "xamarinAndroid",
-        icon: <XamarinAndroid iconClass={style.iconStyle} />,
+        icon: <XamarinAndroidFramework iconClass={style.iconStyle} />,
         link: 'xamarin/android',
         barcodeScanning: [
           BarcodeScanning.BarcodeCapture,
@@ -244,7 +244,7 @@ export const frameworkCards = [
   },
   {
     framework: "titanium",
-    icon: <Titanium iconClass={style.iconStyle} />,
+    icon: <TitaniumFramework iconClass={style.iconStyle} />,
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
       BarcodeScanning.ScanditExpress,
