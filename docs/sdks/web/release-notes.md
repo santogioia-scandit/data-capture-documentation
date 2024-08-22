@@ -6,6 +6,50 @@ title: Release Notes
 pagination_prev: null
 ---
 
+## 6.26.0
+
+**Released**: August 15, 2024
+
+### New Features
+
+#### ID
+
+* Added properties [`VizResult.firstName`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/viz-result.html#property-scandit.datacapture.id.VizResult.FirstName), [`VizResult.lastName`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/viz-result.html#property-scandit.datacapture.id.VizResult.LastName), [`VizResult.secondaryLastName`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/viz-result.html#property-scandit.datacapture.id.VizResult.SecondaryLastName), [`VizResult.fullName`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/viz-result.html#property-scandit.datacapture.id.VizResult.FullName).
+* Added [`DrivingLicenseDetails.restrictions`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/driving-license-details.html#property-scandit.datacapture.id.DrivingLicenseDetails.Restrictions) and [`DrivingLicenseDetails.endorsements`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/driving-license-details.html#property-scandit.datacapture.id.DrivingLicenseDetails.Endorsements) which correspond to the restrictions to driving privileges and to the additional privileges granted to the driver license owner respectively.
+* Added [`IdCapture.parse()`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/id-capture.html#method-scandit.datacapture.id.IdCapture.Parse) that parses string representations of MRZ and PDF417 barcode raw data, returning [`CapturedId`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/captured-id.html#class-scandit.datacapture.id.CapturedId).
+
+#### Core
+
+* Added [`RectangularViewfinder.disabledColor`](https://docs.scandit.com/data-capture-sdk/web/core/api/rectangular-viewfinder.html#property-scandit.datacapture.core.ui.RectangularViewfinder.DisabledColor) to color the logo and viewfinder when the mode is disabled.
+
+### Performance Improvements
+
+#### Barcode
+
+* Improved ArUco scanning when color inverted codes are enabled.
+* Improved tracking robustness on Barcode Count.
+* Significantly lowered the rate of false positives (i.e., presumed unscanned barcodes) when using Barcode Count.
+* Improved recognition rate for Composite Codes, with a particular focus on codes with small 2d components (e.g. PDF417).
+* Improved recognition rate of linear codes which are partially affected by damage or covered in plastic wrap, with a particular focus on Codabar barcodes.
+* Improved localization of postal codes, up to 25% faster.
+
+### Bug Fixes
+
+#### ID
+
+* Fixed an issue where ID Capture could get occasionally stuck when presented with the back side of a document while the front is expected.
+* Fixed an issue introduced in 6.25, where capturing MRZ was not possible in Safari on MacOS and on iOS in landscape mode.
+* Fixed an error 255 that would prevent capturing MRZ for some license keys, for which this feature was enabled.
+
+### Deprecations
+
+* Deprecated [`SparkScanSession.newlyRecognizedBarcodes`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcodes), prefer [`SparkScanSession.newlyRecognizedBarcode`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/spark-scan-session.html#property-scandit.datacapture.barcode.spark.SparkScanSession.NewlyRecognizedBarcode).
+* Deprecated [`BarcodeCaptureSession.newlyRecognizedBarcodes`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-capture-session.html#property-scandit.datacapture.barcode.BarcodeCaptureSession.NewlyRecognizedBarcodes), prefer [`BarcodeCaptureSession.newlyRecognizedBarcode`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-capture-session.html#property-scandit.datacapture.barcode.BarcodeCaptureSession.NewlyRecognizedBarcode).
+* Deprecated [`SparkScanView.soundModeButtonVisible`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.SoundModeButtonVisible), [`SparkScanView.hapticModeButtonVisible`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.HapticModeButtonVisible).
+* Deprecated [`LaserlineViewfinderStyle`](https://docs.scandit.com/data-capture-sdk/web/core/api/laserline-viewfinder.html#enum-scandit.datacapture.core.ui.LaserlineViewfinderStyle).
+* Deprecated [`LaserlineViewfinder`](https://docs.scandit.com/data-capture-sdk/web/core/api/laserline-viewfinder.html#class-scandit.datacapture.core.ui.LaserlineViewfinder).
+* Deprecated Legacy value of the [`BarcodeTrackingBasicOverlayStyle`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/barcode-tracking-basic-overlay.html#enum-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlayStyle).
+
 ## 6.25.0
 
 **Released:** July 5, 2024

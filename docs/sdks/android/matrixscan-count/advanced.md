@@ -25,7 +25,7 @@ This feature is used to provide users with more details regarding the items they
 
 ![Barcode Count Status](/img/matrixscan-count/barcode_count_status.png)
 
-See the [Expiry Management Sample](https://github.com/Scandit/datacapture-ios-samples/tree/master/ExpiryManagementSample) for an example of how to use this feature.
+See the [Expiry Management Sample](https://github.com/Scandit/datacapture-android-samples/tree/master/ExpiryManagementSample) for an example of how to use this feature.
 
 ## Strap Mode
 

@@ -18,7 +18,7 @@ The general steps are:
 - Resetting the Barcode Count Mode
 - List and exit callbacks
 
-## 1. Create A New Data Capture Context Instance
+## Create A New Data Capture Context Instance
 
 The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/dotnet.ios/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
 
@@ -26,7 +26,7 @@ The first step to add capture capabilities to your application is to create a ne
 DataCaptureContext dataCaptureContext = DataCaptureContext.ForLicenseKey("-- ENTER YOUR SCANDIT LICENSE KEY HERE --");
 ```
 
-## 2. Configure The Barcode Count Mode
+## Configure The Barcode Count Mode
 
 The main entry point for the Barcode Count Mode is the [BarcodeCount](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count.html#class-scandit.datacapture.barcode.count.BarcodeCount) object. It is configured through [BarcodeCountSettings](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count-settings.html#class-scandit.datacapture.barcode.count.BarcodeCountSettings) and allows you to register one or more listeners that are informed whenever a scan phase has finished.
 
@@ -43,7 +43,7 @@ If you are sure that your environment will only have unique barcodes (i.e. no du
 BarcodeCount barcodeCount = BarcodeCount.Create(dataCaptureContext, settings);
 ```
 
-## 3. Obtain Camera Instance And Set Frame Source Used
+## Obtain Camera Instance And Set Frame Source Used
 
 Our recommended camera settings should be used to achieve the best performance and user experience. The following couple of lines show how to get the recommended settings for MatrixScan Count and create the camera from it:
 
@@ -60,7 +60,7 @@ Because the frame source is configurable, the data capture context must be told 
 dataCaptureContext.SetFrameSourceAsync(camera);
 ```
 
-## 4. Register The Listener To Be Informed When Scanned Phase Is Over
+## Register The Listener To Be Informed When Scanned Phase Is Over
 
 To keep track of the barcodes that have been scanned, implement the [IBarcodeCountListener](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count-listener.html#interface-scandit.datacapture.barcode.count.IBarcodeCountListener) interface and register the listener.
 
@@ -79,7 +79,7 @@ barcodeCount.Scanned += (object sender, BarcodeCountEventArgs args) =>
 };
 ```
 
-## 5. Set Capture View And AR Overlays
+## Set Capture View And AR Overlays
 
 MatrixScan Count’s built-in AR user interface includes buttons and overlays that guide the user through the capturing process. By adding a [BarcodeCountView](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) the scanning interface (camera preview and scanning UI elements) will be added automatically to your application.
 
@@ -127,7 +127,7 @@ private void BarcodeCountViewHandlerChanged(object sender, EventArgs e)
 
 For MAUI development add [Scandit.DataCapture.Barcode.Maui](https://www.nuget.org/packages/Scandit.DataCapture.Barcode.Maui) NuGet package into your project.
 
-## 6. Set Up The Camera So That It Switches On When You Are In Scanning View
+## Set Up The Camera So That It Switches On When You Are In Scanning View
 
 The camera is not automatically turned on when you are in a scanning view. You need to set up the camera so that it switches on when needed and it switches off when not needed anymore. Similarly [BarcodeCount](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count.html#class-scandit.datacapture.barcode.count.BarcodeCount) should also be enabled and disabled. For instance, you should switch off the camera when the [BarcodeCountView](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) is not visible anymore (including when the app goes in the background), similarly you want to switch on the camera when the
 [BarcodeCountView](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/ui/barcode-count-view.html#class-scandit.datacapture.barcode.count.ui.BarcodeCountView) is visible (including when the app goes to the foreground). One way to achieve this is the following:
@@ -146,11 +146,11 @@ base.ViewWillAppear(animated);
 }
 ```
 
-## 7. Store And Retrieve Scanned Barcodes
+## Store And Retrieve Scanned Barcodes
 
 The values captured as part of the scanning process are part of the [session](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count-session.html#class-scandit.datacapture.barcode.count.BarcodeCountSession), and the session is not accessible outside [IBarcodeCountListener.OnScan()](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count-listener.html#method-scandit.datacapture.barcode.count.IBarcodeCountListener.OnScan). Therefore, we recommend that you store the values to present a list, for example when the user taps the list icon. To do this, make a copy of [BarcodeCountSession.RecognizedBarcodes](https://docs.scandit.com/data-capture-sdk/dotnet.ios/barcode-capture/api/barcode-count-session.html#property-scandit.datacapture.barcode.count.BarcodeCountSession.RecognizedBarcodes):
 
-## 8. Reset Barcode Count Mode
+## Reset Barcode Count Mode
 
 When the scanning process is over, you need to reset the mode to make it ready for the next process. This clears the list of barcodes scanned and all the AR overlays.
 
@@ -160,7 +160,7 @@ To reset Barcode Count’s scanning process, you need to call the [BarcodeCount.
 barcodeCount.Reset();
 ```
 
-## 9. List And Exit Callbacks
+## List And Exit Callbacks
 
 The UI includes two icons (buttons) named “List” and “Exit”. The SDK provides events so you can add the desired action when those icons are tapped by the user.
 
