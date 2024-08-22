@@ -52,6 +52,9 @@ const config: Config = {
           },
         },
         blog: false,
+        gtag: {
+          trackingID: 'G-TXJZRPJJ0T',
+        },
         googleTagManager: {
           containerId: 'GTM-THQQFD7',
         },
