@@ -52,6 +52,9 @@ const config: Config = {
           },
         },
         blog: false,
+        googleTagManager: {
+          containerId: 'GTM-THQQFD7',
+        },
         theme: {
           customCss: "./src/css/custom.scss",
         },
@@ -62,7 +65,7 @@ const config: Config = {
   themeConfig: {
     algolia: {
       appId: "RYKD97E6SH",
-      apiKey: "8372250579ef3ea82cc637a28e50f73f",
+      apiKey: "d355fd6e2c1e538272264f29c7dc625e",
       indexName: "scandit",
     },
     image: "img/social-card.jpg",
