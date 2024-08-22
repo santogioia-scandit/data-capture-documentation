@@ -66,17 +66,6 @@ dependencies {
 
 You can find the latest version on [Sonatype](https://s01.oss.sonatype.org/content/repositories/releases/com/scandit/datacapture/).
 
-:::note
-The core module depends on `okhttp` version 4.9.2. If your project already implements a different version of `okhttp` (within the supported version range specified in the requirements page), make sure to exclude the group from the gradle implementation of the core module.
-
-```java
-implementation("com.scandit.datacapture:core:[version]") {
-  exclude group: "com.squareup.okhttp3"
-}
-```
-
-:::
-
 ## Maven
 
 You can add the _mavenCentral_ repository in _pom.xml_ file:

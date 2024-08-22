@@ -51,22 +51,24 @@ var viewSettings = SparkScanViewSettings();
 
 The SparkScan built-in user interface includes the camera preview and scanning UI elements. These guide the user through the scanning process.
 
-The SparkScanView appearance can be customized through SparkScanViewSettings.
+The [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) appearance can be customized through [SparkScanViewSettings](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanViewSetttings).
 
 ```dart
 SparkScanViewSettings viewSettings = new SparkScanViewSettings();
 // setup the desired appearance settings by updating the fields in the object above
 ```
 
-By adding a SparkScanView, the scanning interface (camera preview and scanning UI elements) gets added automatically to your application.
+See the [SparkScan Workflow Options](./intro.md#workflow-options) section for more information.
 
-You can add a SparkScanView to your view hierarchy:
+By adding a [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView), the scanning interface (camera preview and scanning UI elements) gets added automatically to your application.
+
+You can add a [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView) to your view hierarchy:
 
 ```dart
 var sparkScanView = SparkScanView.forContext(YOUR_WIDGET_TREE_BODY, widget.dataCaptureContext, sparkScan, null);
 ```
 
-Additionally, make sure to call `ui.SparkScanView.OnPause` in your app state handling logic. You have to call this for the correct functioning of the `ui.SparkScanView`.
+Additionally, make sure to call [`SparkScanView.onPause()`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#method-scandit.datacapture.barcode.spark.ui.SparkScanView.OnPause) in your app state handling logic. You have to call this for the correct functioning of the [`SparkScanView`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#class-scandit.datacapture.barcode.spark.ui.SparkScanView).
 
 ```dart
 @override

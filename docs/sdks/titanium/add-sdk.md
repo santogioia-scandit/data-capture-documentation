@@ -33,7 +33,7 @@ If you have a paid subscription, please reach out to [Scandit Support](mailto:su
 
 Currently we support adding the Scandit Data Capture SDK Titanium modules to your project in two ways. The simplest way is to use the npm registry, alternatively you can manually download the modules and add them to your project.
 
-### 1. Create a new project (optional)
+### Create a new project (optional)
 
 If you do not have a Titanium project yet that you’ll use, you should create a new one.
 

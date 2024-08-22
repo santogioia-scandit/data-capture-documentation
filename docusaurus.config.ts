@@ -31,7 +31,7 @@ const config: Config = {
 
   presets: [
     [
-      "classic",
+      '@docusaurus/preset-classic',
       {
         docs: {
           routeBasePath: "/",
@@ -52,6 +52,12 @@ const config: Config = {
           },
         },
         blog: false,
+        gtag: {
+          trackingID: 'G-TXJZRPJJ0T',
+        },
+        googleTagManager: {
+          containerId: 'GTM-THQQFD7',
+        },
         theme: {
           customCss: "./src/css/custom.scss",
         },
@@ -64,6 +70,7 @@ const config: Config = {
       appId: "RYKD97E6SH",
       apiKey: "8372250579ef3ea82cc637a28e50f73f",
       indexName: "scandit",
+      contextualSearch: false,
     },
     image: "img/social-card.jpg",
     docs: {

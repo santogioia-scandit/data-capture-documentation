@@ -20,7 +20,7 @@ To experience Scandit scanning and verification capabilities firsthand, check ou
 
 <CustomDocCard title="iOS" description="Integrate ID Scanning in iOS" link="./sdks/ios/id-capture/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate ID Scanning in Android" link="./sdks/android/id-capture/intro" smallIcon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate ID Scanning in Android" link="./sdks/android/id-capture/intro" Icon ><Android/></CustomDocCard>
 
 <CustomDocCard title="Web" description="Integrate ID Scanning for Web" link="./sdks/web/id-capture/intro" smallIcon ><Javascript/> </CustomDocCard>
 
@@ -50,7 +50,7 @@ To experience Scandit scanning and verification capabilities firsthand, check ou
 
 <CustomDocCard title="iOS" description="Integrate ID Validation in iOS" link="./sdks/ios/id-validate/intro" smallIcon ><Ios/></CustomDocCard>
 
-<CustomDocCard title="Android" description="Integrate ID Validation in Android" link="./sdks/android/id-validate/intro" smallIcon ><Android/></CustomDocCard>
+<CustomDocCard title="Android" description="Integrate ID Validation in Android" link="./sdks/android/id-validate/intro" Icon ><Android/></CustomDocCard>
 
 <CustomDocCard title="Web" description="Integrate ID Validation for Web" link="./sdks/web/id-validate/intro" smallIcon ><Javascript/> </CustomDocCard>
 
