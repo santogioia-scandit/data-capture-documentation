@@ -68,7 +68,7 @@ const config: Config = {
   themeConfig: {
     algolia: {
       appId: "RYKD97E6SH",
-      apiKey: "ed236470c5dd25fec6424fdc3bc6bd5b",
+      apiKey: "8372250579ef3ea82cc637a28e50f73f",
       indexName: "scandit",
       contextualSearch: false,
     },
