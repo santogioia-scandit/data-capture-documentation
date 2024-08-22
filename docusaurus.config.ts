@@ -31,7 +31,7 @@ const config: Config = {
 
   presets: [
     [
-      "classic",
+      '@docusaurus/preset-classic',
       {
         docs: {
           routeBasePath: "/",
@@ -65,8 +65,9 @@ const config: Config = {
   themeConfig: {
     algolia: {
       appId: "RYKD97E6SH",
-      apiKey: "d355fd6e2c1e538272264f29c7dc625e",
+      apiKey: "ed236470c5dd25fec6424fdc3bc6bd5b",
       indexName: "scandit",
+      contextualSearch: false,
     },
     image: "img/social-card.jpg",
     docs: {
