@@ -21,6 +21,16 @@ More data formats will be added in future releases. Please contact us if the dat
 - [VIN](https://docs.scandit.com/data-capture-sdk/flutter/parser/vin.html)
 - [IATA BCBP](https://docs.scandit.com/data-capture-sdk/flutter/parser/iata-bcbp.html)
 
+## Prerequisites
+
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out [this guide](../add-sdk.md).
+
+:::note
+You can retrieve your Scandit Data Capture SDK license key, by signing in to [your Scandit account](https://ssl.scandit.com/dashboard/sign-in).
+:::
+
+First of all, include the ScanditParser library and its dependencies to your project, if any.
+
 ## Internal dependencies
 
 Some of the Scandit Data Capture SDK modules depend on others to work:

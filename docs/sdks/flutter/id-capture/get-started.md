@@ -19,7 +19,15 @@ The general steps are:
 - Setting up the Capture View and Overlay
 - Starting the Capture Process
 
-## Initialize the id plugin
+## Prerequisites
+
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out [this guide](../add-sdk.md).
+
+:::note
+You can retrieve your Scandit Data Capture SDK license key, by signing in to [your Scandit account](https://ssl.scandit.com/dashboard/sign-in).
+:::
+
+## Initialize the ID Plugin
 
 :::warning
 Without initializing the id plugin, runtime crashes will occur. However, you don’t have to initialize the core plugin, as initializing the id plugin already does that for you, as presented in the snippet below.

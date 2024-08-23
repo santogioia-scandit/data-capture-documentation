@@ -128,6 +128,3 @@ barcodeFindView.startSearching();
 
 This is the equivalent of pressing the “Play” button programmatically. It will start the search process, turn on the camera and hide the item carousel.
 
-## Samples
-
-The best way to start working with the Scandit Data Capture SDK is to run one of our sample apps. [See the full list of available samples](https://github.com/Scandit/datacapture-flutter-samples).
