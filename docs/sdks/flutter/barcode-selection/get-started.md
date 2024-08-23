@@ -17,6 +17,14 @@ The general steps are:
 - Display the camera preview by creating a [data capture view](https://docs.scandit.com/data-capture-sdk/flutter/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView).
 - If displaying a preview, optionally create a new [overlay](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-selection-basic-overlay.html#class-scandit.datacapture.barcode.selection.ui.BarcodeSelectionBasicOverlay) and add it to [data capture view](https://docs.scandit.com/data-capture-sdk/flutter/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView) for a better visual feedback.
 
+## Prerequisites
+
+Before starting with adding a capture mode, make sure that you have a valid Scandit Data Capture SDK license key and that you added the necessary dependencies. If you have not done that yet, check out [this guide](../add-sdk.md).
+
+:::note
+You can retrieve your Scandit Data Capture SDK license key, by signing in to [your account](https://ssl.scandit.com/dashboard/sign-in).
+:::
+
 ## Create the Data Capture Context
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.
@@ -70,7 +78,7 @@ Next, create a [BarcodeSelection](https://docs.scandit.com/data-capture-sdk/flut
 var barcodeSelection = BarcodeSelection.forContext(context, settings);
 ```
 
-### Register the Barcode Selection Listener
+## Register the Barcode Selection Listener
 
 To get informed whenever a new code has been recognized, add a [BarcodeSelectionListener](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/barcode-selection-listener.html#interface-scandit.datacapture.barcode.selection.IBarcodeSelectionListener) through [BarcodeSelection.addListener()](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/barcode-selection.html#method-scandit.datacapture.barcode.selection.BarcodeSelection.AddListener) and implement the listener methods to suit your application’s needs.
 
@@ -90,7 +98,7 @@ Then add the listener:
 barcodeSelection.addListener(this);
 ```
 
-### Use the Built-in Camera
+## Use the Built-in Camera
 
 The data capture context supports using different frame sources to perform recognition on. Most applications will use the built-in camera of the device, e.g. the world-facing camera of a device. The remainder of this tutorial will assume that you use the built-in camera.
 
@@ -126,8 +134,6 @@ The camera is off by default and must be turned on. This is done by calling
 camera.switchToDesiredState(FrameSourceState.on);
 ```
 
-
-
-### Disabling Barcode Selection
+## Disabling Barcode Selection
 
 To disable barcode selection, for instance when the selection is complete, set [BarcodeSelection.isEnabled](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/barcode-selection.html#property-scandit.datacapture.barcode.selection.BarcodeSelection.IsEnabled) to _false_. The effect is immediate: no more frames will be processed _after_ the change. However, if a frame is currently being processed, this frame will be completely processed and deliver any results/callbacks to the registered listeners. Note that disabling the capture mode does not stop the camera, the camera continues to stream frames until it is turned off.
