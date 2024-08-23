@@ -59,18 +59,6 @@ Alternatively, if you’re scanning both VIZ and MRZ documents, you can add the 
 
 Please note that your license may support only a subset of ID Capture features. If you would like to use additional features please contact us at [Scandit Support](mailto:support@scandit.com).
 
-## Show loading status with default UI
-
-To show some feedback to the user about the loading status you have two options: use the default UI provided with the SDK or subscribe to the loading status and update your own custom UI. Let’s see how we you can show the default UI
-
-### Show loading status with custom UI
-
-You can also just subscribe for the [loading status](https://docs.scandit.com/data-capture-sdk/flutter/core/api/web/loading-status.html) of the library by simply attaching a listener like this:
-
-:::note
-We suggest to serve the library files with the proper headersContent-Length and Content-Encoding if any compression is present. In case of totally missing information we will show an estimated progress
-:::
-
 ## Create the Data Capture Context
 
 The first step to add capture capabilities to your application is to create a new [data capture context](https://docs.scandit.com/data-capture-sdk/flutter/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.

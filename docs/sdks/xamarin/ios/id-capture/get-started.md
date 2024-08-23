@@ -59,6 +59,7 @@ Use [IdCaptureSettings](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id
 
 ::: warning
 Using [IdDocumentType.DlViz](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.DlViz) or [IdDocumentType.IdCardViz](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.IdCardViz) together with any MRZ document ([IdDocumentType.IdCardMrz](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.IdCardMrz),[IdDocumentType.VisaMrz](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.VisaMrz), [IdDocumentType.PassportMrz](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.PassportMrz), [IdDocumentType.SwissDlMrz](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-document-type.html#value-scandit.datacapture.id.IdDocumentType.SwissDlMrz)) while [SupportedSides.FrontAndBack](https://docs.scandit.com/data-capture-sdk/xamarin.ios/id-capture/api/id-supported-document-sides.html#value-scandit.datacapture.id.SupportedSides.FrontAndBack) is enabled is currently not supported.
+:::
 
 ```csharp
 IdCaptureSettings settings = new IdCaptureSettings
