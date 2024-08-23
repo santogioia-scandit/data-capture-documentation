@@ -30,7 +30,7 @@ You can retrieve your Scandit Data Capture SDK license key, by signing in to [yo
 
 First of all, include the ScanditParser library and its dependencies to your project, if any.
 
-### Internal dependencies
+## Internal dependencies
 
 Some of the Scandit Data Capture SDK modules depend on others to work:
 

@@ -14,7 +14,7 @@ There are two ways to add custom AR overlays to your application:
 
 The first option is the easiest and recommended approach for most applications. It covers adding, removing, and animating the overlay’s views whenever needed and is also flexible enough to cover the majority of use cases.
 
-## Using `BarcodeTrackingAdvancedOverlay`
+## Using BarcodeTrackingAdvancedOverlay
 
 As mentioned above, the advanced overlay combined with its [listener](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingAdvancedOverlayListener) offers an easy way of adding augmentations to your [DataCaptureView](https://docs.scandit.com/data-capture-sdk/web/core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView). In this guide we will add a view above each barcode showing its content.
 
