@@ -5,7 +5,7 @@ pagination_next: null
 
 # Get Started
 
-In this guide you will learn step by step how to add barcode selection to your application. Roughly, the steps are:
+In this guide you will learn step by step how to add barcode selection to your application. The general step are:
 
 - Create a new [data capture context](https://docs.scandit.com/data-capture-sdk/cordova/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext) instance, initialized with your license key.
 - Create a [barcode selection settings](https://docs.scandit.com/data-capture-sdk/cordova/barcode-capture/api/barcode-selection-settings.html#class-scandit.datacapture.barcode.selection.BarcodeSelectionSettings) and choose the right configuration.

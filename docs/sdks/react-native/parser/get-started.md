@@ -15,6 +15,7 @@ More data formats will be added in future releases. Please contact us if the dat
 - [Supported Data Formats](https://docs.scandit.com/data-capture-sdk/react-native/parser/formats.html)
 - [HIBC](https://docs.scandit.com/data-capture-sdk/react-native/parser/hibc.html)
 - [GS1 AI](https://docs.scandit.com/data-capture-sdk/react-native/parser/gs1ai.html)
+- [GS1 Digital Link](https://docs.scandit.com/data-capture-sdk/react-native/parser/gs1-digital-link.html)
 - [Swiss QR](https://docs.scandit.com/data-capture-sdk/react-native/parser/swissqr.html)
 - [VIN](https://docs.scandit.com/data-capture-sdk/react-native/parser/vin.html)
 - [IATA BCBP](https://docs.scandit.com/data-capture-sdk/react-native/parser/iata-bcbp.html)

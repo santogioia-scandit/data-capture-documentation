@@ -56,21 +56,6 @@ Some of the Scandit Data Capture SDK modules depend on others to work:
 Note that your license may support only a subset of ID Capture features. If you need to use additional features, [contact us](mailto:support@scandit.com).
 :::
 
-### Show Loading Status with Default UI
-
-To show some feedback to the user about the loading status, you have two options:
-
-- Use the default UI provided with the SDK
-- Subscribe to the loading status and update your own custom UI.
-
-### Show Loading Status with Custom UI
-
-In this case, you can subscribe for the [loading status](https://docs.scandit.com/data-capture-sdk/android/core/api/web/loading-status.html) of the library by simply attaching a listener like this:
-
-:::note
-It is recommended to serve the library files with appropriate headers *Content-Length* and *Content-Encoding* if any compression is present. In case of totally missing information, you may want to show an estimated progress.
-:::
-
 ## Create a Data Capture Context
 
 The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/android/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext). The context expects a valid Scandit Data Capture SDK license key during construction.

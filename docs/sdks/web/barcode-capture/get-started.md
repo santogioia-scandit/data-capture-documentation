@@ -27,6 +27,17 @@ Before starting with adding a capture mode, make sure that you have a valid Scan
 You can retrieve your Scandit Data Capture SDK license key, by signing in to your [Scandit account](https://ssl.scandit.com/dashboard/sign-in?p=test).
 :::
 
+
+### Internal dependencies
+
+Some of the Scandit Data Capture SDK modules depend on others to work:
+
+
+| Module | Dependencies |
+|---|---|
+| ScanditCaptureCore | No dependencies |
+| ScanditBarcodeCapture | - ScanditCaptureCore |
+
 ### Configure and Initialize the Library
 
 The library needs to be configured and initialized before it can be used, this is done via the [configure](https://docs.scandit.com/data-capture-sdk/web/core/api/web/configure.html) function.
@@ -64,7 +75,17 @@ await SDCCore.configure({
 You must _await_ the returned promise as shown to be able to continue.
 :::
 
-### Show loading status with default UI
+
+### Server side rendering and Server side generation
+
+If you use a web framework that renders also on the server (SSR or SSG) it’s recommended to execute the library only on the client turning off the rendering on the server.
+
+**For more information:**
+
+- [GatsbyJS - Using client side only packages](https://www.gatsbyjs.com/docs/using-client-side-only-packages/).
+- [NextJS - Lazy Loading with no ssr](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr).
+
+## Show loading status with default UI
 
 To show some feedback to the user about the loading status you have two options: use the default UI provided with the SDK or subscribe to the loading status and update your own custom UI. Let’s see how we you can show the default UI first:
 
@@ -87,16 +108,7 @@ const context = await SDCCore.DataCaptureContext.create();
 await view.setContext(context);
 ```
 
-### Server side rendering and Server side generation
-
-If you use a web framework that renders also on the server (SSR or SSG) it’s recommended to execute the library only on the client turning off the rendering on the server.
-
-**For more information:**
-
-- [GatsbyJS - Using client side only packages](https://www.gatsbyjs.com/docs/using-client-side-only-packages/).
-- [NextJS - Lazy Loading with no ssr](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr).
-
-### Show loading status with custom UI
+## Show loading status with custom UI
 
 You can also just subscribe for the [loading status](https://docs.scandit.com/data-capture-sdk/web/core/api/web/loading-status.html) of the library by simply attaching a listener like this:
 
@@ -116,16 +128,6 @@ await SDCCore.configure({
 We suggest to serve the library files with the proper headers Content-Length and Content-Encoding if any compression is present. In case of totally missing information we will show an estimated progress
 :::
 
-### Internal dependencies
-
-Some of the Scandit Data Capture SDK modules depend on others to work:
-
-
-| Module | Dependencies |
-|---|---|
-| ScanditCaptureCore | No dependencies |
-| ScanditBarcodeCapture | - ScanditCaptureCore |
-
 ## Create the Data Capture Context
 
 The first step to add capture capabilities to your application is to create a new [Data Capture Context](https://docs.scandit.com/data-capture-sdk/web/core/api/data-capture-context.html#class-scandit.datacapture.core.DataCaptureContext).
@@ -143,7 +145,7 @@ For this tutorial, we will setup barcode scanning for a small list of different 
 
 ```js
 const settings = new SDCBarcode.BarcodeCaptureSettings();
-settings.enableSymbologies[
+settings.enableSymbologies([
 	SDCBarcode.Symbology.Code128,
 	SDCBarcode.Symbology.Code39,
 	SDCBarcode.Symbology.QR,

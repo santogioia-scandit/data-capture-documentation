@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Quick overview
 
-_ID Capture_ provides the capability to scan personal identification documents, such as identity cards, passports or visas. In this guide you will learn step by step how to add ID Capture to your application. Roughly, the steps are:
+_ID Capture_ provides the capability to scan personal identification documents, such as identity cards, passports or visas. In this guide you will learn step by step how to add ID Capture to your application. The general step are:
 
 :::note
 Using ID Capture at the same time as other modes (e.g. Barcode Capture or Text Capture) is currently not supported.
@@ -74,7 +74,7 @@ For more information:
 - [GatsbyJS - Using client side only packages](https://www.gatsbyjs.com/docs/using-client-side-only-packages/).
 - [NextJS - Lazy Loading with no ssr](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr).
 
-### Show loading status with default UI
+## Show loading status with default UI
 
 To show some feedback to the user about the loading status you have two options: use the default UI provided with the SDK or subscribe to the loading status and update your own custom UI. Let’s see how we you can show the default UI first:
 
@@ -98,7 +98,7 @@ const context: Scandit.DataCaptureContext =
 await view.setContext(context);
 ```
 
-### Show loading status with custom UI
+## Show loading status with custom UI
 
 You can also just subscribe for the [loading status](https://docs.scandit.com/data-capture-sdk/web/core/api/web/loading-status.html) of the library by simply attaching a listener like this:
 
@@ -115,7 +115,6 @@ await SDCCore.configure({
 ```
 
 :::note
-
 We suggest to serve the library files with the proper headersContent-Length and Content-Encoding if any compression is present. In case of totally missing information we will show an estimated progress
 :::
 
