@@ -37,12 +37,15 @@ You can use the [jsDelivr](https://jsdelivr.com/) or [UNPKG](https://unpkg.com/)
 <!-- polyfill browsers not supporting import maps  -->
 <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.3/dist/es-module-shims.js"></script>
 <script type="importmap">
-	{
-		"imports": {
-			"scandit-web-datacapture-core": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-core@[version]/build/js/index.js",
-			"scandit-web-datacapture-barcode": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-barcode@[version]/build/js/index.js"
-		}
-	}
+      {
+        "imports": {
+          "scandit-web-datacapture-core": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-core@[version]/build/js/index.js",
+          "scandit-web-datacapture-barcode": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-barcode@[version]/build/js/index.js",
+          "scandit-web-datacapture-core/build/js/worker/index": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-core@[version]/build/js/worker/index.js",
+          "scandit-web-datacapture-barcode/": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-barcode@[version]/",
+          "scandit-web-datacapture-core/": "https://cdn.jsdelivr.net/npm/scandit-web-datacapture-core@[version]/"
+        }
+      }
 </script>
 
 <script type="module">
