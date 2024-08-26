@@ -104,7 +104,7 @@ export function createBarcodeScanningArr(framework: string, allCards: boolean) {
       ],
     },
     {
-      groupName: "Pre-built UI components",
+      groupName: "Pre-built workflows",
       cards: [
         {
           name: BarcodeScanning.SparkScan,
