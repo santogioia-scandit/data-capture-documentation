@@ -410,11 +410,15 @@ SparkScan received a number of updates and improvements:
 
 **Released**: December 14, 2023
 
+### Bug Fixes
+
 * Fixed a crash (SIGILL) on Samsung Galaxy S9 (Exynos 9810 based) with Android version 8.
 
 ## 6.20.1
 
 **Released**: November 28, 2023
+
+### Bug Fixes
 
 * Fixed a crash that happens after scanning ID documents without expiry date present in SupportedSides.FRONT_AND_BACK mode.
 * Fixed an issue preventing DataCaptureContext from being mocked in local tests.
