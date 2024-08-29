@@ -434,3 +434,259 @@ No updates for this framework in this release.
 #### Parser
 
 - Deprecated `ParserDataFormat.US_USID`, `ParserDataFormat.DLID`, and `ParserDataFormat.MRTD`. You should use `IdCapture` instead.
+
+
+## 6.20.3
+
+**Released**: January 18, 2024
+
+No updates for this framework in this release.
+
+## 6.20.2
+
+**Released**: December 14, 2023
+
+### Bug Fixes
+
+* Fixed a crash (SIGILL) on Samsung Galaxy S9 (Exynos 9810 based) with Android version 8.
+
+## 6.20.1
+
+**Released**: November 28, 2023
+
+### Bug Fixes
+
+* Fixed a crash when scanning AAMVA driver's license barcodes that contain non-ASCII characters.
+* Fixed an issue with scanning United Arab Emirates Resident IDs when `id.IdDocumentType.IdCardViz` and `id.SupportedSides.FrontAndBack` are selected.
+
+## 6.20.0
+
+**Released**: November 7, 2023
+
+### New Features
+
+#### ID
+
+- For ID cards issued by the United Arab Emirates data parsed from the Machine Readable Zone (MRZ) is now returned automatically when `id.IdDocumentType.IdCardViz` and `id.SupportedSides.FrontAndBack` are selected.
+
+### Bug Fixes
+
+#### Core
+
+- Fixed data races in `core.ui.DataCaptureView` that have a low probability of resulting in crashes.
+
+## 6.19.8
+
+**Released**: November 22, 2023
+
+No updates for this framework in this release.
+
+## 6.19.7
+
+**Released**: November 15, 2023
+
+### Bug Fixes
+
+#### Core
+
+- Fixed an issue affecting the iPhone 15 Pro/Pro Max where, after using the camera with 4k resolution and 4:3 aspect ratio, using another camera with a different resolution/aspect ratio would not work.
+- Fixed an issue affecting devices running iOS 17 and supporting macro mode, which prevented the camera from switching between wide and ultra-wide cameras.
+
+#### ID
+
+- Fixed a crash when scanning AAMVA driver's license barcodes that contain non-ASCII characters.
+
+## 6.19.6
+
+**Released**: November 10, 2023
+
+No updates for this framework in this release.
+
+## 6.19.5
+
+**Released**: November 3, 2023
+
+No updates for this framework in this release.
+
+## 6.19.4
+
+**Released**: November 1, 2023
+
+## 6.19.3
+
+**Released**: October 20, 2023
+
+### Bug Fixes
+
+#### Barcode
+
+- Fixed barcode scanning at angles when the restricted scan area is very small and certain sets of symbologies are enabled.
+
+## 6.19.2
+
+**Released**: October 12, 2023
+
+### Bug Fixes
+
+#### Core
+
+- Fixed an error 18 that would appear for most license keys that are from 2018 or before.
+
+## 6.19.1
+
+**Released**: September 27, 2023
+
+### Bug Fixes
+
+#### Barcode
+
+- Adjusted the recommended camera settings for all capture modes to improve their performance.
+
+## 6.19.0
+
+**Released**: September 19, 2023
+
+### New Features
+
+#### ID
+
+- Added support for extracting information in Arabic script for several documents.
+
+### Performance Improvements
+
+#### Barcode
+
+- Improved performance when a lot of symbologies are enabled when using `barcode.BarcodeCapture`.
+- Added support for Code128 with damaged end patterns (missing, fused or covered bars). This support is automatically disabled if “strict mode” is selected.
+- Improved QR code reader robustness for medium to large codes with small local deformations (e.g. crumpling, bending) or damage.
+- Improved responsiveness of AR overlays in MatrixScan and Barcode Selection.
+
+### Bug Fixes
+
+#### ID
+
+- Fixed an issue where it was not possible to scan certain Vietnamese passports.
+- Fixed an issue where it was sometimes not possible to scan a barcode from a Pennsylvania driver’s license.
+- Fixed an issue that caused a failure of the `id.AamvaVizBarcodeComparisonVerifier` for valid IDs.
+- Fixed an issue where scanning MRZ documents in ID Capture incorrectly displayed dates for year 2000.
+
+## 6.18.3
+
+**Released**: November 14, 2023
+
+No updates for this framework in this release.
+
+## 6.18.2
+
+**Released**: August 3, 2023
+
+No updates for this framework in this release.
+
+## 6.18.1
+
+**Released**: July 12, 2023
+
+No updates for this framework in this release.
+
+## 6.18.0
+
+**Released**: June 30, 2023
+
+### Performance Improvements
+
+#### Barcode
+
+- Improved Aztec code scan performance for bent and crumpled codes which is especially important for Railway tickets.
+- Improved scan performance of up-side-down codes for 1D fixed-length symbologies (e.g. EAN/UPC).
+- Improved scan performance for long rectangular MicroQR (rMQR) codes with perspective distortion.
+- Reduced CPU usage when data-matrix is enabled by a factor of 3 in many situations.
+
+### Bug Fixes
+
+- Fixed an issue causing internal plugin event emitters to have improper cleanup, which could in turn affect API listeners.
+
+#### Barcode
+
+- Fixed a `barcode.selection.BarcodeSelection` issue where the “toggle selection” setting was ignored and the scanner was acting as in “repeat selection” mode when `BarcodeSelectionSettings.SingleBarcodeAutoDetection` was enabled.
+
+### Deprecations
+
+#### Barcode
+
+- :`barcode.tracking.TrackedBarcode.ShouldAnimateFromPreviousToNextState` has been deprecated. :prop:`barcode.tracking.TrackedBarcode.Location` returns a continuously interpolated location so animating between locations is no longer needed.
+
+## 6.17.3
+
+**Released**: December 6, 2023
+
+No updates for this framework in this release.
+
+## 6.17.2
+
+**Released**: May 23, 2023
+
+### Behavioral Changes
+
+#### ID
+
+- Further improved requirements for document number comparison checks in `id.AamvaVizBarcodeComparisonVerifier`.
+
+## 6.17.1
+
+**Released**: April 28, 2023
+
+### Bug Fixes
+
+#### ID
+
+- Fixed an issue with license error being shown when scanning driver licenses in ID Capture without barcode feature.
+
+### Behavioral Changes
+
+#### ID
+
+- Improved requirements for expiration date, issue date and document number comparison checks in `id.AamvaVizBarcodeComparisonVerifier`.
+
+## 6.17.0
+
+**Released**: April 26, 2023
+
+### New Features
+
+#### Barcode
+
+- Added support for damaged QR and Micro QR finder patterns up to two borders can be missing/damaged.
+- Added `core.IFrameData` getters to: 
+  - `barcode.IBarcodeCaptureListener.OnBarcodeScanned`
+  - `barcode.tracking.IBarcodeTrackingListener.OnSessionUpdated`
+  - `barcode.selection.IBarcodeSelectionListener.OnSessionUpdated`
+  - `barcode.selection.IBarcodeSelectionListener.OnSelectionUpdated`
+  - `text.ITextCaptureListener.OnTextCaptured`
+
+#### ID
+
+- For ID documents issued by European Union countries data parsed from the Machine Readable Zone (MRZ) is now returned automatically when `id.IdDocumentType.DlViz` and `id.SupportedSides.FrontAndBack` are selected.
+- Improved support for parsing barcode data of mobile driver’s licenses (mDL) issued by the US state of Colorado.
+- Added `core.IFrameData` getters to `text.ITextCaptureListener.OnTextCaptured`.
+
+### Bug Fixes
+
+#### Barcode
+
+- Fixed an issue that prevented certain color-inverted Aztec codes from decoding.
+- Fixed a rare crash in the Aztec code reader.
+- Fixed a failure in the MicroPDF417 error correction when missing rows at the bottom of a code.
+
+#### Core
+
+- Updated the camera behavior to overcome the scanning challenges found on the iPhone 13 Pro (Max) and iPhone 14 Pro (Max) when using the built-in camera for barcode scanning. Our testing showed that barcodes that are less than 2 cm or ~1 inch in size (and usually have such small features) were impacted.
+
+#### ID
+
+- Fixed an issue with license error being shown when scanning driver licenses in ID Capture without barcode feature.
+
+### Deprecations
+
+#### ID
+
+- Deprecated `id.ui.IdCaptureOverlay.SetIdLayout`.
