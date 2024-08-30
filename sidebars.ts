@@ -228,7 +228,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "sdks/ios/barcode-generator",
+          id: "sdks/ios/barcode-generator/index",
           label: "Barcode Generator",
         },
       ],
@@ -418,7 +418,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "sdks/android/barcode-generator",
+          id: "sdks/android/barcode-generator/index",
           label: "Barcode Generator",
         },
       ],
