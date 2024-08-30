@@ -110,7 +110,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/ios/barcode-capture/get-started",
-                "sdks/ios/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -176,6 +175,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/ios/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -296,7 +300,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/android/barcode-capture/get-started",
-                "sdks/android/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -362,6 +365,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/android/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -482,7 +490,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/web/barcode-capture/get-started",
-                "sdks/web/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -516,6 +523,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/web/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -619,7 +631,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/cordova/barcode-capture/get-started",
-                "sdks/cordova/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -661,6 +672,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/cordova/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -763,7 +779,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/react-native/barcode-capture/get-started",
-                "sdks/react-native/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -829,6 +844,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/react-native/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -944,7 +964,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/flutter/barcode-capture/get-started",
-                "sdks/flutter/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -1010,6 +1029,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/flutter/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -1113,7 +1137,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/capacitor/barcode-capture/get-started",
-                "sdks/capacitor/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -1179,6 +1202,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/capacitor/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -1341,7 +1369,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/xamarin/ios/barcode-capture/get-started",
-                "sdks/xamarin/ios/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -1398,6 +1425,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/xamarin/ios/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -1501,7 +1533,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/xamarin/android/barcode-capture/get-started",
-                "sdks/xamarin/android/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -1558,6 +1589,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/xamarin/android/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -1661,7 +1697,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/xamarin/forms/barcode-capture/get-started",
-                "sdks/xamarin/forms/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -1718,6 +1753,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/xamarin/forms/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -1821,7 +1861,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/net/ios/barcode-capture/get-started",
-                "sdks/net/ios/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -1887,6 +1926,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/net/ios/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
@@ -1990,7 +2034,6 @@ const sidebars: SidebarsConfig = {
               label: 'Barcode Capture API',
               items: [
                 "sdks/net/android/barcode-capture/get-started",
-                "sdks/net/android/barcode-capture/configure-barcode-symbologies",
               ],
             },
             {
@@ -2056,6 +2099,11 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          id: "sdks/net/android/barcode-capture/configure-barcode-symbologies",
+          label: "Configure Barcode Symbologies",
         }, 
       ],
     },
