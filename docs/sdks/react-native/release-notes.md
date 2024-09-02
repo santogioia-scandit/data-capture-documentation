@@ -69,6 +69,43 @@ pagination_prev: null
 * Deprecated Legacy value of the [`BarcodeCaptureOverlayStyle`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-capture-overlay.html#enum-scandit.datacapture.barcode.ui.BarcodeCaptureOverlayStyle).
 * Deprecated Legacy value of the [`BarcodeTrackingBasicOverlayStyle`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-tracking-basic-overlay.html#enum-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlayStyle).
 
+## 6.25.3
+
+**Released**: September 2, 2024
+
+### Bug Fixes
+
+- Concatenated ArUco codes are now comma-separated.
+
+## 6.25.2
+
+**Released**: August 2, 2024
+
+#### Core
+
+- Fixed a rare reference table overflow by reducing the number of global refs created.
+
+## 6.25.1
+
+**Released**: August 1, 2024
+
+### Bug Fixes
+
+#### Barcode
+
+- Fixed an issue in MatrixScan Count that was causing a reset after a rotation.
+- Fixed an issue where the Barcode Generator could throw an exception on iOS.
+
+#### ID
+
+- Fixed an error 255 that would prevent capturing MRZ for some licenses where this feature is supposed to be enabled.
+
+#### Core
+
+- Fixed an issue where having no frame source available resulted in failure to return from the `core.IFrameSource.SwitchToDesiredStateAsync` call.
+- Fixed an issue where subsequent scans would fail due to improper context handling in React Native debug mode.
+- Fixed a crash using camera API 2 where an `IllegalStateException` could be thrown in some edge cases.
+
 ## 6.25.0
 
 **Released:** July 5, 2024

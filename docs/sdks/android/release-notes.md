@@ -61,6 +61,44 @@ pagination_prev: null
 * Deprecated Legacy value of the [`BarcodeTrackingBasicOverlayStyle`](https://docs.scandit.com/data-capture-sdk/android/barcode-capture/api/ui/barcode-tracking-basic-overlay.html#enum-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlayStyle).
 * Deprecated [`AamvaBarcodeVerificationResult.allChecksPassed`](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/aamva-barcode-verifier.html#property-scandit.datacapture.id.AamvaBarcodeVerificationResult.AllChecksPassed). [`AamvaBarcodeVerificationResult.status`](https://docs.scandit.com/data-capture-sdk/android/id-capture/api/aamva-barcode-verifier.html#property-scandit.datacapture.id.AamvaBarcodeVerificationResult.Status) should be used instead.
 
+## 6.25.3
+
+**Released**: September 2, 2024
+
+### Bug Fixes
+
+- Concatenated ArUco codes are now comma-separated.
+
+## 6.25.2
+
+**Released**: August 2, 2024
+
+### Bug Fixes
+
+#### Core
+
+- Fixed a rare reference table overflow by reducing the number of global refs created.
+
+## 6.25.1
+
+**Released**: August 1, 2024
+
+### Bug Fixes
+
+- Fixed crash (SIGILL) on Galaxy Note9 (SM-N960F & SM-N960X).
+
+#### Barcode
+
+- Fixed an issue in MatrixScan Count that was causing a reset after a rotation.
+
+#### ID
+
+- Fixed an error 255 that would prevent capturing MRZ for some licenses where this feature is supposed to be enabled.
+
+#### Core
+
+- Fixed a crash using camera API 2 where an `IllegalStateException` could be thrown in some edge cases.
+
 ## 6.25.0
 
 **Released**: July 5, 2024
