@@ -6,6 +6,16 @@ title: Release Notes
 pagination_prev: null
 ---
 
+## 6.26.1
+
+**Released**: September 4, 2024
+
+### Bug Fixes
+
+#### Barcode
+
+- Resolved cases in which  Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
+
 ## 6.26.0
 
 **Released**: August 15, 2024
