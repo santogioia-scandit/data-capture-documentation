@@ -10,11 +10,17 @@ pagination_prev: null
 
 **Released**: September 4, 2024
 
+### Behavioral Changes
+
+#### Core
+
+- The camera permission dialog is now delayed until the moment when camera is switching state. This change is intended to improve the user experience by showing the permission dialog only when the camera is actually needed.
+
 ### Bug Fixes
 
 #### Barcode
 
-- Resolved cases in which  Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
+- Resolved cases in which Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
 
 ## 6.26.0
 

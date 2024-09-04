@@ -14,7 +14,8 @@ pagination_prev: null
 
 #### Barcode
 
-- Resolved cases in which  Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
+- Resolved cases in which Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
+- Fixed a bug where importing the SDK in a node environment would cause an error.
 
 ## 6.26.0
 
