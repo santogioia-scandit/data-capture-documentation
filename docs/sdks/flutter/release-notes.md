@@ -1,10 +1,27 @@
 ---
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 displayed_sidebar: flutterSidebar
 hide_title: true
 title: Release Notes
 pagination_prev: null
 ---
+
+## 6.27.0
+
+**Released**: September 5, 2024
+
+### API Changes
+
+#### Barcode
+
+- The `BarcodeTrackingAdvancedOverlay` and `BarcodeTrackingAdvancedOverlayListener` have been removed. For further details about this backwards incompatible change, contact [Scandit Support](mailto:support@scandit.com).
+
+### Bug Fixes
+
+#### Barcode
+
+- Resolved cases in which Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
+- Fixed an issue where some updates to `SparkScanView` properties were not being propagated to the view.
 
 ## 6.26.0
 

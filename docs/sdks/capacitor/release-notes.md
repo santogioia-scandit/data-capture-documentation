@@ -1,10 +1,32 @@
 ---
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 displayed_sidebar: capacitorSidebar
 hide_title: true
 title: Release Notes
 pagination_prev: null
 ---
+
+## 6.27.0
+
+**Released**: September 5, 2024
+
+### API Changes
+
+#### Barcode
+
+- The [`BarcodeTrackingAdvancedOverlay.ViewForTrackedBarcode()`](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay.SetViewForTrackedBarcode) and [`BarcodeTrackingAdvancedOverlayListener.ViewForTrackedBarcode()`](https://docs.scandit.com/data-capture-sdk/capacitor/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingAdvancedOverlayListener.ViewForTrackedBarcode) methods no longer support rendering any kind of images. For further details about this backwards incompatible change, contact [Scandit Support](mailto:support@scandit.com).
+
+### Behavioral Changes
+
+#### Core
+
+- The camera permission dialog is now delayed until the moment when camera is switching state. This change is intended to improve the user experience by showing the permission dialog only when the camera is actually needed.
+
+### Bug Fixes
+
+#### Barcode
+
+- Resolved cases in which Smart Scan Intention was possibly reporting the wrong barcode when the camera was quickly changing direction with a single barcode in the scene.
 
 ## 6.26.0
 
