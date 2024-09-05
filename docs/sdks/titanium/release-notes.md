@@ -6,9 +6,9 @@ title: Release Notes
 pagination_prev: null
 ---
 
-## 6.26.1
+## 6.27.0
 
-**Released**: September 4, 2024
+**Released**: September 5, 2024
 
 ### Bug Fixes
 
