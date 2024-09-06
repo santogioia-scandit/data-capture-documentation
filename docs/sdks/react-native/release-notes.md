@@ -9,6 +9,17 @@ keywords:
   - react
 ---
 
+## 6.27.1
+
+**Released**: September 6, 2024
+
+### API Changes
+
+#### Barcode
+
+- - [`BarcodeTrackingAdvancedOverlay`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#) and [`BarcodeTrackingAdvancedOverlayListener`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#) have been re-added, with the following changes:
+  - The [`BarcodeTrackingAdvancedOverlay.ViewForTrackedBarcode()`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay.SetViewForTrackedBarcode) and [`BarcodeTrackingAdvancedOverlayListener.ViewForTrackedBarcode()`](https://docs.scandit.com/data-capture-sdk/react-native/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingAdvancedOverlayListener.ViewForTrackedBarcode) methods no longer support rendering any kind of images. For further details about this backwards incompatible change, contact [Scandit Support](mailto:support@scandit.com).
+
 ## 6.27.0
 
 **Released**: September 5, 2024
