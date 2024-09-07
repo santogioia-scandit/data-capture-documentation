@@ -9,6 +9,12 @@ keywords:
   - web
 ---
 
+## 6.27.1
+
+**Released** September 6, 2024
+
+No updates for this framework in this version.
+
 ## 6.27.0
 
 **Released**: September 5, 2024
