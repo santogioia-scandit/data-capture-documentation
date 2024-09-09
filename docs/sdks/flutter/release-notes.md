@@ -5,6 +5,7 @@ hide_title: true
 title: Release Notes
 pagination_prev: null
 framework: flutter
+tags: [flutter]
 keywords:
   - flutter
 ---
