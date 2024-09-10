@@ -491,6 +491,15 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: "category",
+              label: "MatrixScan Find",
+              items: [
+                "sdks/web/matrixscan-find/intro",
+                "sdks/web/matrixscan-find/get-started",
+                "sdks/web/matrixscan-find/advanced",
+              ],
+            },
+            {
+              type: "category",
               label: "MatrixScan API",
               items: [
                 "sdks/web/matrixscan/intro",
