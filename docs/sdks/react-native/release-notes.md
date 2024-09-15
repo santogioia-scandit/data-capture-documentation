@@ -10,7 +10,7 @@ keywords:
   - react
 ---
 
-## 6.28.0
+## 6.28.0-beta-1
 
 **Released**: September 10, 2024
 
