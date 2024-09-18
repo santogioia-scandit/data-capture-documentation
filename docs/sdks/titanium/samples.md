@@ -21,7 +21,6 @@ The repository with all the samples can be found [here](https://github.com/Scand
 
 #### Barcode Capture
 
-
 ##### [Single Scan](https://github.com/Scandit/datacapture-titanium-samples/tree/main/BarcodeCaptureSimpleSample)
 
 Simple sample showing how to use the Barcode Capture mode to scan a single barcode.
