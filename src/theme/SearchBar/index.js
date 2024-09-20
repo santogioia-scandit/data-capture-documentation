@@ -1,5 +1,6 @@
 import React, {
   useCallback,
+  useEffect,
   useMemo,
   useRef,
   useState,
@@ -46,8 +47,26 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
   const processSearchResultUrl = useSearchResultUrlProcessor();
   const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
   const configFacetFilters = props.searchParameters?.facetFilters ?? [];
-  const currentUrl = window.location.href;
   const [initialQuery, setInitialQuery] = useState(undefined);
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    const handleUrlChange = () => {
+      setCurrentUrl(window.location.href);
+    };
+    handleUrlChange();
+    window.addEventListener("popstate", handleUrlChange);
+
+    const originalPushState = window.history.pushState;
+    window.history.pushState = (...args) => {
+      originalPushState.apply(window.history, args);
+      handleUrlChange();
+    };
+
+    return () => {
+      window.removeEventListener("popstate", handleUrlChange);
+    };
+  }, []);
 
   const currentFramework = useMemo(() => {
     const regex = /\/sdks\/([\w-]+(?:\/android)?)/;
@@ -123,8 +142,8 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }) {
   }).current;
   const transformItems = useCallback(
     (items) => {
-      const filteredItems = items.filter(
-        (elem) => elem.url.includes(currentFramework) && elem.type === "lvl1"
+      const filteredItems = items.filter((elem) =>
+        elem.url.includes(currentFramework)
       );
       return props.transformItems
         ? // Custom transformItems
