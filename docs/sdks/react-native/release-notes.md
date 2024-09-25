@@ -10,9 +10,9 @@ keywords:
   - react
 ---
 
-## 6.28.0-beta-1
+## 6.28.0-beta-2
 
-**Released**: September 10, 2024
+**Released**: September 25, 2024
 
 ### New Features
 
@@ -25,11 +25,19 @@ platforms.
 
 #### ID
 
-* ID Capture supports scanning the Visual Inspection Zone (VIZ) of New York City IDs.
+* ID Capture now supports scanning:
+  * Visual Inspection Zone (VIZ) of New York City IDs.
+  * Florida Medical Marijuana IDs.
 
 #### Label
 
 * Added support for text fields that are identified only based on their data pattern. These do not need textual identifiers to be identified, and therefore no data type patterns (i.e., patterns for the textual identifiers) need to be specified for them.
+
+### Behavioral Changes
+
+#### Barcode
+
+* AR views (`BarcodeTrackingAdvancedOverlay` and `BarcodeTrackingAdvancedOverlayListener`) can only be displayed without image elements in the custom view. Please contact [Scandit Support](mailto:support@scandit.com) for details.
 
 ### Bug Fixes
 

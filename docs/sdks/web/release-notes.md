@@ -10,22 +10,26 @@ keywords:
   - web
 ---
 
-## 6.28.0-beta-1
+## 6.28.0-beta-2
 
-**Released**: September 10, 2024
+**Released**: September 25, 2024
 
 ### New Features
 
 #### Barcode
 
 * BarcodeFind is an API that implements [MatrixScan Find](/sdks/web/matrixscan-find/intro.md). MatrixScan Find is a pre-built UI that uses augmented reality overlays to highlight items that match predefined criteria. It allows you to add a search and find experience with augmented reality to an existing native app, with just a few lines of code.
+  * Added [`BarcodeFindTransformer`](https://docs.scandit.com/data-capture-sdk/web/barcode-capture/api/barcode-find-transformer.html).
 * On Barcode Capture and SparkScan, we optimized the frame processing time in 4k-UHD resolution with dynamic resolution selection, resulting in up to 35% reduction on high-end devices and consistent performance improvements across all supported devices.
 platforms.
 
 #### ID
 
-* ID Capture now supports scanning the Visual Inspection Zone (VIZ) on the back of the European  Health Insurance Card.
-* ID Capture supports scanning the Visual Inspection Zone (VIZ) of New York City IDs.
+* ID Capture now supports scanning:
+  * Visual Inspection Zone (VIZ) on the back of the European Health Insurance Card.
+  * Visual Inspection Zone (VIZ) of New York City IDs.
+  * Florida Medical Marijuana IDs.
+* Added Blood Type and Sponsor fields to [`CapturedResultType.VizResult`](https://docs.scandit.com/data-capture-sdk/web/id-capture/api/captured-id.html#property-scandit.datacapture.id.CapturedId.Viz).
 
 ### Bug Fixes
 
@@ -34,6 +38,8 @@ platforms.
 * Fixed result data encoding classification for raw byte data in 2d barcodes, in particular for Shift-JIS encoding.
 * Resolved cases in which Smart Scan Intention was possibly reporting the wrong barcode when when the camera was quickly changing direction with a single barcode in the scene.
 * Fixed an issue where it was not possible to scan non-fluorescent French-Post barcodes without the extension `fluorescent_orange_ink`.
+* Fixed a bug where importing the SDK in a node environment would cause an error.
+* Fixed an issue where, in rare cases, the page was not scrolling after detaching the DataCaptureView.
 
 ## 6.27.2
 
