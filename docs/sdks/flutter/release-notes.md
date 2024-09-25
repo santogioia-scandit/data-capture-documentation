@@ -34,6 +34,22 @@ platforms.
 * Resolved cases in which Smart Scan Intention was possibly reporting the wrong barcode when when the camera was quickly changing direction with a single barcode in the scene.
 * Fixed an issue where it was not possible to scan non-fluorescent French-Post barcodes without the extension `fluorescent_orange_ink`.
 
+## 6.27.2
+
+**Released**: September 23, 2024
+
+### New Features
+
+#### Barcode
+
+* The [`BarcodeTrackingAdvancedOverlay.ViewForTrackedBarcode()`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-tracking-advanced-overlay.html#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingAdvancedOverlay.SetViewForTrackedBarcode) and [`BarcodeTrackingAdvancedOverlayListener.ViewForTrackedBarcode()`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/barcode-tracking-advanced-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingAdvancedOverlayListener.ViewForTrackedBarcode) methods require a special license key to support rendering any kind of images as this feature is available only in limited countries. Please contact [Scandit Support](mailto:support@scandit.com) for details.
+
+### Bug Fixes
+
+#### Barcode
+
+* Fixed an issue with the unsubscribe mechanism for the [`SparkScanView.FeedbackDelegate`](https://docs.scandit.com/data-capture-sdk/flutter/barcode-capture/api/ui/spark-scan-view.html#property-scandit.datacapture.barcode.spark.ui.SparkScanView.FeedbackDelegate).
+
 ## 6.27.1
 
 **Released**: September 6, 2024
