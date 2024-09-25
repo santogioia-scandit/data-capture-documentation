@@ -33,12 +33,6 @@ platforms.
 
 * Added support for text fields that are identified only based on their data pattern. These do not need textual identifiers to be identified, and therefore no data type patterns (i.e., patterns for the textual identifiers) need to be specified for them.
 
-### Behavioral Changes
-
-#### Barcode
-
-* AR views (`BarcodeTrackingAdvancedOverlay` and `BarcodeTrackingAdvancedOverlayListener`) can only be displayed without image elements in the custom view. Please contact [Scandit Support](mailto:support@scandit.com) for details.
-
 ### Bug Fixes
 
 #### Barcode
