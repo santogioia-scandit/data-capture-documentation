@@ -35,55 +35,55 @@ const config: Config = {
         redirects: [
           {
             to: '/sdks/ios/add-sdk',
-            from: '/data-capture-sdk/ios',
+            from: ['/data-capture-sdk/ios', '/data-capture-sdk/ios/add-sdk.html'],
           },
           {
             to: '/sdks/android/add-sdk',
-            from: '/data-capture-sdk/android',
+            from: ['/data-capture-sdk/android', '/data-capture-sdk/android/add-sdk.html'],
           },
           {
             to: '/sdks/web/add-sdk',
-            from: '/data-capture-sdk/web',
+            from: ['/data-capture-sdk/web', '/data-capture-sdk/web/add-sdk.html'],
           },
           {
             to: '/sdks/cordova/add-sdk',
-            from: '/data-capture-sdk/cordova',
+            from: ['/data-capture-sdk/cordova', '/data-capture-sdk/cordova/add-sdk.html'],
           },
           {
             to: '/sdks/react-native/add-sdk',
-            from: '/data-capture-sdk/react-native',
+            from: ['/data-capture-sdk/react-native', '/data-capture-sdk/react-native/add-sdk.html'],
           },
           {
             to: '/sdks/flutter/add-sdk',
-            from: '/data-capture-sdk/flutter',
+            from: ['/data-capture-sdk/flutter', '/data-capture-sdk/flutter/add-sdk.html'],
           },
           {
             to: '/sdks/capacitor/add-sdk',
-            from: '/data-capture-sdk/capacitor',
+            from: ['/data-capture-sdk/capacitor', '/data-capture-sdk/capacitor/add-sdk.html'],
           },
           {
             to: '/sdks/titanium/add-sdk',
-            from: '/data-capture-sdk/titanium',
+            from: ['/data-capture-sdk/titanium', '/data-capture-sdk/titanium/add-sdk.html'],
           },
           {
             to: '/sdks/xamarin/ios/add-sdk',
-            from: '/data-capture-sdk/xamarin.ios',
+            from: ['/data-capture-sdk/xamarin.ios', '/data-capture-sdk/xamarin.ios/add-sdk.html'],
           },
           {
             to: '/sdks/xamarin/android/add-sdk',
-            from: '/data-capture-sdk/xamarin.android',
+            from: ['/data-capture-sdk/xamarin.android', '/data-capture-sdk/xamarin.android/add-sdk.html'],
           },
           {
             to: '/sdks/xamarin/forms/add-sdk',
-            from: '/data-capture-sdk/xamarin.forms',
+            from: ['/data-capture-sdk/xamarin.forms', '/data-capture-sdk/xamarin.forms/add-sdk.html'],
           },
           {
             to: '/sdks/net/ios/add-sdk',
-            from: '/data-capture-sdk/dotnet.ios',
+            from: ['/data-capture-sdk/dotnet.ios', '/data-capture-sdk/dotnet.ios/add-sdk.html'],
           },
           {
             to: '/sdks/net/android/add-sdk',
-            from: '/data-capture-sdk/dotnet.android',
+            from: ['/data-capture-sdk/dotnet.android', '/data-capture-sdk/dotnet.android/add-sdk.html'],
           },
           {
             to: '/id-documents',
