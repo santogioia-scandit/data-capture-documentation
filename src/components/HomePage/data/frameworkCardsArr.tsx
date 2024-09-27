@@ -247,6 +247,7 @@ export const frameworkCards = [
     barcodeScanning: [
       BarcodeScanning.BarcodeCapture,
       BarcodeScanning.BarcodeGenerator,
+      BarcodeScanning.MatrixScan,
     ],
     IDScanning: [],
   },
