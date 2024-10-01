@@ -104,6 +104,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/ios/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -284,6 +288,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/android/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -464,6 +472,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/web/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -610,6 +622,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/cordova/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -754,6 +770,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/react-native/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -929,6 +949,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/flutter/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -1092,6 +1116,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/capacitor/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -1315,6 +1343,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/xamarin/ios/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -1469,6 +1501,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/xamarin/android/single-scanning',
+          },
           collapsed: false,
           items: [
             {
@@ -1623,6 +1659,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Single Scanning',
+          link: {
+            type: 'doc',
+            id: 'sdks/xamarin/forms/single-scanning',
+          },
           collapsed: false,
           items: [
             {
