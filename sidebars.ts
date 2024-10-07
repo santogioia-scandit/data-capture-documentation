@@ -92,6 +92,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for iOS',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/ios/add-sdk',
         'sdks/ios/samples',
       ],
@@ -276,6 +281,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Android',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/android/add-sdk',
         'sdks/android/samples',
       ],
@@ -460,6 +470,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Web',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/web/add-sdk',
         'sdks/web/samples',
       ],
@@ -610,6 +625,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Cordova',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/cordova/add-sdk',
         'sdks/cordova/samples',
       ],
@@ -758,6 +778,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for React Native',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/react-native/add-sdk',
         'sdks/react-native/samples',
       ],
@@ -937,6 +962,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Flutter',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/flutter/add-sdk',
         'sdks/flutter/samples',
       ],
@@ -1104,6 +1134,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Capacitor',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/capacitor/add-sdk',
         'sdks/capacitor/samples',
       ],
@@ -1271,6 +1306,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Titanium',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/titanium/add-sdk',
         'sdks/titanium/samples',
       ],
@@ -1331,6 +1371,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Xamarin iOS',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/xamarin/ios/add-sdk',
         'sdks/xamarin/ios/samples',
       ],
@@ -1489,6 +1534,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Xamarin Android',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/xamarin/android/add-sdk',
         'sdks/xamarin/android/samples',
       ],
@@ -1647,6 +1697,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for Xamarin Forms',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/xamarin/forms/add-sdk',
         'sdks/xamarin/forms/samples',
       ],
@@ -1805,6 +1860,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for .NET iOS',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/net/ios/add-sdk',
         'sdks/net/ios/samples',
       ],
@@ -1968,6 +2028,11 @@ const sidebars: SidebarsConfig = {
       label: 'Data Capture SDK for .NET Android',
       collapsed: false,
       items: [
+        {
+          type: "link",
+          label: "Data Capture Basics",
+          href: "https://docs.scandit.com/core-concepts",
+        },
         'sdks/net/android/add-sdk',
         'sdks/net/android/samples',
       ],
