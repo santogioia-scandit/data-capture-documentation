@@ -141,13 +141,17 @@ barcodeCount.reset()
 The UI includes two icons (buttons): “List” and “Exit”. The SDK provides the callbacks so you can add the desired action when those icons are tapped by the user:
 
 ```java
-extension ViewController: BarcodeCountViewUIDelegate {
-    func listButtonTapped(for view: BarcodeCountView) {
-        // Show the current progress but the order is not completed
-    }
+@Override
+public void onListButtonTapped(
+    @NonNull BarcodeCountView view
+) {
+    // Show the current progress but the order is not completed
+}
 
-    func exitButtonTapped(for view: BarcodeCountView) {
-        // The order is completed
-    }
+@Override
+public void onExitButtonTapped(
+    @NonNull BarcodeCountView view
+) {
+    // The order is completed
 }
 ```
