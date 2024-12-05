@@ -13,11 +13,11 @@ keywords:
 
 Using the Find mode in Scandit Express requires providing a list of barcodes to be found to the end-user. There are multiple ways to create this list, detailed below.
 
-### Online Find List Generator
+### Online List generator
 
 We recommend that you start with creating a list with the barcodes to find (Find List) using our [Find List generator](https://express.scandit.com/find/list/generator/). Here is how it works:
 
-![Find List Generator](/img/express/find-list-generator.png)
+![List generator](/img/express/find-list-generator.png)
 
 ### Spreadsheet Find List
 
